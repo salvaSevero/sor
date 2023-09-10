@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sistemas/index.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sistemas/1_ComandosDocker.html">
       
       
+        <link rel="prev" href="0_MaquinasContenedores.html">
+      
+      
+        <link rel="next" href="2_EjemplosDocker.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Sistemas Operativos en Red</title>
+        <title>Comandos Básicos Docker - Sistemas Operativos en Red</title>
       
     
     
@@ -71,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#maquinas-virtuales-y-contenedores" class="md-skip">
+        <a href="#comandos-basicos-en-docker" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -106,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Máquinas virtuales y Contenedores.
+              Comandos Básicos Docker
             
           </span>
         </div>
@@ -196,6 +200,8 @@
       
   
   
+    
+  
   
     
     
@@ -210,13 +216,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
@@ -229,7 +235,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             1. UD1. Docker y Scripting
@@ -260,9 +266,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="1_ComandosDocker.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Comandos Básicos Docker
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="1_ComandosDocker.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -271,6 +297,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comandos" class="md-nav__link">
+    Comandos.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -338,84 +391,87 @@
                   
 
 
-<h1 id="maquinas-virtuales-y-contenedores"><strong>Máquinas virtuales y Contenedores.</strong><a class="headerlink" href="#maquinas-virtuales-y-contenedores" title="Permanent link">&para;</a></h1>
-<h2 id="que-es-la-virtualizacion"><strong>¿Qué es la virtualización?</strong><a class="headerlink" href="#que-es-la-virtualizacion" title="Permanent link">&para;</a></h2>
-<p>Permite reservar una serie de recursos del sistema (RAM, CPU, DISCO) para emular un sistema operativo (guest  / invitado) dentro de otro (host / anfitrión).</p>
-<p><strong>Ventajas:</strong></p>
-<ul>
-<li>Podemos aprovechar mejor el hardware de la máquina anfitriona, ya que estamos ejecutando varios "ordenadores" en uno mismo, aprovechando recursos que de otra forma es posible que no se llegaran a usar.</li>
-<li>Permite ejecutar software que quizá sea incompatible con tu sistema operativo anfitrión, ya sea por un motivo de versiones o porque son sistemas operativos diferentes (Windows, Linux, MAC).</li>
-</ul>
-<h2 id="que-es-un-hipervisor"><strong>¿Qué es un Hipervisor?</strong><a class="headerlink" href="#que-es-un-hipervisor" title="Permanent link">&para;</a></h2>
-<p>El hipervisor es la parte software que permite crear y gestionar las máquinas virtuales (asignar recursos, crear los discos virtuales, etc). </p>
-<p>Se distinguen <strong>dos tipos</strong>:</p>
-<p><strong>Hipervisores de tipo 1</strong> (hipervisores bare metal):</p>
-<ul>
-<li>
-<p>No necesitan de un sistema operativo anfitrión para comunicarse con los componentes del ordenador, por tanto la comunicación entre las máquinas virtuales y los componentes es más directa, rápida y eficiente. Es decir, si una máquina virtual necesita hacer una operación, se comunicará con el hipervisor y éste con la CPU. </p>
-</li>
-<li>
-<p>Ejemplos: VMWare ESXi, KVM, Hyper-V</p>
-</li>
-</ul>
-<p><strong>Hipervisores de tipo 2</strong> (hipervisores alojados):</p>
-<ul>
-<li>
-<p>Son una aplicación más del sistema operativo instalado en la máquina y el hipervisor accede al hardware de la máquina a través de ese sistema operativo. Por tanto, si una máquina virtual requiere hacer una operación, pasará la orden al hipervisor, éste al sistema operativo y de ahí a la CPU.</p>
-</li>
-<li>
-<p>Ejemplos: VirtualBox y VMWare Workstation.</p>
-</li>
-</ul>
-<figure>
-  <img src="imagenes/docker/hypervisores.png" width="700"/>
-</figure>
-
-<h2 id="que-es-un-contenedor"><strong>¿Qué es un Contenedor?</strong><a class="headerlink" href="#que-es-un-contenedor" title="Permanent link">&para;</a></h2>
-<figure>
-  <img src="imagenes/docker/contenedores.png" width="650"/>
-</figure>
-
-<ul>
-<li>
-<p>Los contenedores, a diferencia de las máquinas virtuales, comparten el kernel, archivos binarios y librerías del sistema operativo (anfitrión).</p>
-<p>💥 Por tanto un host Linux podrá crear contenedores relacionados con Linux, y un host Windows podrá crear contenedores Windows.</p>
-</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title"><strong>NOTA</strong></p>
-<ul>
-<li>Windows tiene la posibilidad de ejecutar contenedores Linux a través del aislamiento de Hyper-V (WSL). </li>
-<li>Básicamente activas un Kernel Linux en Windows y por tanto en Windows sí puedes generar contenedores de Linux.
-<figure>
-    <img src="imagenes/docker/windows.png" width="550"/>
-</figure></li>
-</ul>
+<h1 id="comandos-basicos-en-docker"><strong>Comandos Básicos en Docker</strong><a class="headerlink" href="#comandos-basicos-en-docker" title="Permanent link">&para;</a></h1>
+<div class="admonition danger">
+<p class="admonition-title">Crear un contenedor</p>
+<p><center> 🔥 docker [ run | start | stop | restart ] [OPCIONES] [contenedor] 🔥 </center></p>
 </div>
-<ul>
-<li>
-<p>Cada contenedor ocupa mucho menos espacio, puesto que se ahorra todo los ficheros del sistema del sistema operativo que ahora recoge de la máquina anfitriona.</p>
-</li>
-<li>
-<p>Su objetivo no es simular un sistema operativo completo, sino un servicio/aplicación en concreto, por tanto aquí también se produce un ahorro de espacio en disco.</p>
-<p>💥 Aunque un único contenedor puede emular varios servicios/aplicaciones es habitual tener varios contenedores y cada uno que tenga únicamente corriendo 1 servicio/  aplicación y las dependencias que se necesitan para que éste funcione.</p>
-</li>
-<li>
-<p>Arranca mucho más rápido que una máquina virtual, pues utiliza los procesos y ficheros del sistema del anfitrión, el cual ya se encuentra arrancado.</p>
-</li>
-<li>
-<p>Docker es integrable con servicios en la nube:</p>
-<p>💥 <strong>AWS (Amazon Web Service).</strong></p>
-<p>💥 <strong>Azure (Microsoft).</strong></p>
-<p>💥 <strong>Google Cloud.</strong></p>
-</li>
-<li>
-<p>Docker es un software que permite la creación y gestión de contenedores. </p>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Argumentos</th>
+<th style="text-align: left;"><center> Función </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>run</code></td>
+<td style="text-align: left;">Crea y arranca un contenedor --&gt; Si lo ejecutas varias veces ejecutas varios contenedores.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>start | stop |restart</code></td>
+<td style="text-align: left;">Arranca/Detiene/Reinicia un contenedor ya existente.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-d</code></td>
+<td style="text-align: left;">Arranca en segundo plano.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-p</code></td>
+<td style="text-align: left;">Traducción de puertos entre el contenedor y la máquina anfitriona. Solo se puede hacer a la hora de crear la máquina.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--name</code></td>
+<td style="text-align: left;">Nombre de la máquina.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-it</code></td>
+<td style="text-align: left;">Redirige la salida al terminal del contenedor, es decir, accedes al terminal del contenedor.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comandos"><strong>Comandos.</strong><a class="headerlink" href="#comandos" title="Permanent link">&para;</a></h3>
+<p>Si nos fijamos en la salida vemos que lo primero que hace es buscar la imagen “hello-world” en local, al no encontrarlo, lo descarga de un repositorio de docker y posteriormente lo ejecuta. 
+Si lo ejecutáis una segunda vez el código ya se ejecutará directamente en local (/var/lib/docker/).
+También podemos apreciar que la imagen que se carga es “hello-world:latest”, es decir, la última versión de la imagen del contenedor.</p>
 <figure>
-  <img src="imagenes/docker/docker.png" width="200"/>
+  <img src="imagenes/docker/ejemplo_1.png" width="700"/>
 </figure>
+
+<div class="admonition info">
+<p class="admonition-title">Mostrar los contenedores del sistema, tanto parados como activos</p>
+<p><center> 🔥 docker ps [opciones] 🔥 </center></p>
+<p>✨ Con –a se muestran todos los contenedores, los activos y los detenidos.</p>
+<p>✨ Una vez sabemos su “nombre” o su “ID” podemos arrancarlo/pararlo/reiniciarlo.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Copiar o renombrar contenedores.</p>
+<p><center> 🔥 docker [ cp |rename ] [contenedor] 🔥 </center> </p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Ejecutar comandos dentro del contenedor</p>
+<p><center> 🔥 docker exec [OPCIONES] NombreContenedor Comando [ArgumentosComando] 🔥 </center></p>
+<p>✨ -d: Ejecuta en segundo plano.</p>
+<p>✨-it: Enlaza la entrada y salida a nuestro terminal. Es como entrar al terminal del contenedor.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Acceder a los logs de ejecución del contenedor.</p>
+<p><center> 🔥 docker logs [OPCIONES] NombreContenedor 🔥 </center></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Listar todos los contenedores.</p>
+<p><center> 🔥 docker container ls –a 🔥 </center></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Eliminar un contenedor</p>
+<p><center> 🔥 docker container rm NombreContenedor 🔥 </center></p>
+<p>✨ Elimina un contenedor.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Crear una imagen a partir de un contenedor</p>
+<p><center> 🔥 docker commit contenedor imagen 🔥 </center></p>
+<p>✨Crear una imagen de un contenedor es la forma más sencilla para subir nuestro contenedor a la nube o para hacer un backup local.</p>
+</div>
 
 
 

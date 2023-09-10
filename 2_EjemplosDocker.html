@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sistemas/index.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sistemas/2_EjemplosDocker.html">
       
       
+        <link rel="prev" href="1_ComandosDocker.html">
+      
+      
+        <link rel="next" href="3_Clase.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Sistemas Operativos en Red</title>
+        <title>Ejemplos Básicos Docker - Sistemas Operativos en Red</title>
       
     
     
@@ -71,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#maquinas-virtuales-y-contenedores" class="md-skip">
+        <a href="#ejemplos-basicos-en-docker" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -106,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Máquinas virtuales y Contenedores.
+              Ejemplos Básicos Docker
             
           </span>
         </div>
@@ -196,6 +200,8 @@
       
   
   
+    
+  
   
     
     
@@ -210,13 +216,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
@@ -229,7 +235,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             1. UD1. Docker y Scripting
@@ -280,9 +286,18 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="2_EjemplosDocker.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="2_EjemplosDocker.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -291,6 +306,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -338,84 +354,63 @@
                   
 
 
-<h1 id="maquinas-virtuales-y-contenedores"><strong>Máquinas virtuales y Contenedores.</strong><a class="headerlink" href="#maquinas-virtuales-y-contenedores" title="Permanent link">&para;</a></h1>
-<h2 id="que-es-la-virtualizacion"><strong>¿Qué es la virtualización?</strong><a class="headerlink" href="#que-es-la-virtualizacion" title="Permanent link">&para;</a></h2>
-<p>Permite reservar una serie de recursos del sistema (RAM, CPU, DISCO) para emular un sistema operativo (guest  / invitado) dentro de otro (host / anfitrión).</p>
-<p><strong>Ventajas:</strong></p>
-<ul>
-<li>Podemos aprovechar mejor el hardware de la máquina anfitriona, ya que estamos ejecutando varios "ordenadores" en uno mismo, aprovechando recursos que de otra forma es posible que no se llegaran a usar.</li>
-<li>Permite ejecutar software que quizá sea incompatible con tu sistema operativo anfitrión, ya sea por un motivo de versiones o porque son sistemas operativos diferentes (Windows, Linux, MAC).</li>
-</ul>
-<h2 id="que-es-un-hipervisor"><strong>¿Qué es un Hipervisor?</strong><a class="headerlink" href="#que-es-un-hipervisor" title="Permanent link">&para;</a></h2>
-<p>El hipervisor es la parte software que permite crear y gestionar las máquinas virtuales (asignar recursos, crear los discos virtuales, etc). </p>
-<p>Se distinguen <strong>dos tipos</strong>:</p>
-<p><strong>Hipervisores de tipo 1</strong> (hipervisores bare metal):</p>
-<ul>
-<li>
-<p>No necesitan de un sistema operativo anfitrión para comunicarse con los componentes del ordenador, por tanto la comunicación entre las máquinas virtuales y los componentes es más directa, rápida y eficiente. Es decir, si una máquina virtual necesita hacer una operación, se comunicará con el hipervisor y éste con la CPU. </p>
-</li>
-<li>
-<p>Ejemplos: VMWare ESXi, KVM, Hyper-V</p>
-</li>
-</ul>
-<p><strong>Hipervisores de tipo 2</strong> (hipervisores alojados):</p>
-<ul>
-<li>
-<p>Son una aplicación más del sistema operativo instalado en la máquina y el hipervisor accede al hardware de la máquina a través de ese sistema operativo. Por tanto, si una máquina virtual requiere hacer una operación, pasará la orden al hipervisor, éste al sistema operativo y de ahí a la CPU.</p>
-</li>
-<li>
-<p>Ejemplos: VirtualBox y VMWare Workstation.</p>
-</li>
-</ul>
-<figure>
-  <img src="imagenes/docker/hypervisores.png" width="700"/>
-</figure>
-
-<h2 id="que-es-un-contenedor"><strong>¿Qué es un Contenedor?</strong><a class="headerlink" href="#que-es-un-contenedor" title="Permanent link">&para;</a></h2>
-<figure>
-  <img src="imagenes/docker/contenedores.png" width="650"/>
-</figure>
-
-<ul>
-<li>
-<p>Los contenedores, a diferencia de las máquinas virtuales, comparten el kernel, archivos binarios y librerías del sistema operativo (anfitrión).</p>
-<p>💥 Por tanto un host Linux podrá crear contenedores relacionados con Linux, y un host Windows podrá crear contenedores Windows.</p>
-</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title"><strong>NOTA</strong></p>
-<ul>
-<li>Windows tiene la posibilidad de ejecutar contenedores Linux a través del aislamiento de Hyper-V (WSL). </li>
-<li>Básicamente activas un Kernel Linux en Windows y por tanto en Windows sí puedes generar contenedores de Linux.
-<figure>
-    <img src="imagenes/docker/windows.png" width="550"/>
-</figure></li>
-</ul>
+<h1 id="ejemplos-basicos-en-docker"><strong>Ejemplos Básicos en Docker</strong><a class="headerlink" href="#ejemplos-basicos-en-docker" title="Permanent link">&para;</a></h1>
+<div class="admonition danger">
+<p class="admonition-title">Aviso</p>
+<p>En los siguientes ejemplos el nombre del contenedor será Salva.</p>
 </div>
 <ul>
-<li>
-<p>Cada contenedor ocupa mucho menos espacio, puesto que se ahorra todo los ficheros del sistema del sistema operativo que ahora recoge de la máquina anfitriona.</p>
-</li>
-<li>
-<p>Su objetivo no es simular un sistema operativo completo, sino un servicio/aplicación en concreto, por tanto aquí también se produce un ahorro de espacio en disco.</p>
-<p>💥 Aunque un único contenedor puede emular varios servicios/aplicaciones es habitual tener varios contenedores y cada uno que tenga únicamente corriendo 1 servicio/  aplicación y las dependencias que se necesitan para que éste funcione.</p>
-</li>
-<li>
-<p>Arranca mucho más rápido que una máquina virtual, pues utiliza los procesos y ficheros del sistema del anfitrión, el cual ya se encuentra arrancado.</p>
-</li>
-<li>
-<p>Docker es integrable con servicios en la nube:</p>
-<p>💥 <strong>AWS (Amazon Web Service).</strong></p>
-<p>💥 <strong>Azure (Microsoft).</strong></p>
-<p>💥 <strong>Google Cloud.</strong></p>
-</li>
-<li>
-<p>Docker es un software que permite la creación y gestión de contenedores. </p>
-</li>
+<li>Crear un contenedor nuevo con la última versión de Ubuntu.</li>
 </ul>
-<figure>
-  <img src="imagenes/docker/docker.png" width="200"/>
-</figure>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>Salva<span class="w"> </span>ubuntu
+</code></pre></div>
+<ul>
+<li>Acceder al contenedor haciendo uso del intérprete /bin/bash.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>Salva<span class="w"> </span>bash
+</code></pre></div>
+<ul>
+<li>Actualiza los repositorios e instala dentro del contendor.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>apt-get<span class="w"> </span>update
+<span class="linenos" data-linenos="2 "></span>apt-get<span class="w"> </span>install<span class="w"> </span>nano<span class="w"> </span>iputils-ping<span class="w"> </span>net-tools<span class="w"> </span>iproute2
+</code></pre></div>
+<ul>
+<li>Detén el contenedor desde la máquina anfitriona.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>docker<span class="w"> </span>stop<span class="w"> </span>Salva
+</code></pre></div>
+<ul>
+<li>Arranca el contenedor.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>docker<span class="w"> </span>start<span class="w"> </span>Salva
+</code></pre></div>
+<ul>
+<li>Descargar un fichero del contenedor a la máquina anfitriona.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>docker<span class="w"> </span>cp<span class="w"> </span>Salva:/home/prueba.txt<span class="w"> </span>.
+</code></pre></div>
+<ul>
+<li>Crear una imagen del contendor.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>docker<span class="w"> </span>commit<span class="w"> </span>Salva<span class="w"> </span>copiaContendor
+</code></pre></div>
+<ul>
+<li>Lista las imagenes que tienes en el sistema</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>docker<span class="w"> </span>images
+</code></pre></div>
+<ul>
+<li>Crea un .tar de la imagen copiaContendor.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>docker<span class="w"> </span>image<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </span>/home/usuario/backup.tar<span class="w"> </span>copiaContendor
+</code></pre></div>
+<ul>
+<li>Saca la imagen del .tar y vuélcala en un contenedor. Recuerda estar en el mismo directorio que el .tar.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>backup.tar
+<span class="linenos" data-linenos="2 "></span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>NuevoContenedor<span class="w"> </span>copiaContendor
+</code></pre></div>
 
 
 
