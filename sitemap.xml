@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://salvasevero.github.io/sistemas/index.html</loc>
+         <loc>https://salvasevero.github.io/sor/index.html</loc>
          <lastmod>2023-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://salvasevero.github.io/sistemas/0_MaquinasContenedores.html</loc>
+         <loc>https://salvasevero.github.io/sor/0_MaquinasContenedores.html</loc>
          <lastmod>2023-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://salvasevero.github.io/sistemas/1_ComandosDocker.html</loc>
+         <loc>https://salvasevero.github.io/sor/1_ComandosDocker.html</loc>
          <lastmod>2023-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://salvasevero.github.io/sistemas/2_EjemplosDocker.html</loc>
+         <loc>https://salvasevero.github.io/sor/2_EjemplosDocker.html</loc>
          <lastmod>2023-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://salvasevero.github.io/sistemas/3_Clase.html</loc>
+         <loc>https://salvasevero.github.io/sor/3_Clase.html</loc>
          <lastmod>2023-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
