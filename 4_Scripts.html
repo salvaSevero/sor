@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/3_Clase.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/4_Scripts.html">
       
       
+        <link rel="prev" href="1_ComandosDocker.html">
+      
+      
+        <link rel="next" href="5_Variables.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>¿Cómo trabajar en clase/casa usando docker? - Sistemas Operativos en Red</title>
+        <title>Creación de Scripts - Sistemas Operativos en Red</title>
       
     
     
@@ -75,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#como-trabajar-en-clasecasa-usando-docker" class="md-skip">
+        <a href="#scripts-en-linux" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -110,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ¿Cómo trabajar en clase/casa usando docker?
+              Creación de Scripts
             
           </span>
         </div>
@@ -224,6 +228,8 @@
       
   
   
+    
+  
   
     
     
@@ -236,13 +242,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
@@ -255,7 +261,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             1. UD1. Docker y Scripting
@@ -306,6 +312,8 @@
                 
   
   
+    
+  
   
     
     
@@ -316,13 +324,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
         
           <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
@@ -335,7 +343,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             Scripts
@@ -346,9 +354,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="4_Scripts.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Creación de Scripts
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="4_Scripts.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -357,6 +385,40 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-scripts" class="md-nav__link">
+    Creación de Scripts.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comentarios" class="md-nav__link">
+    Comentarios
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -412,17 +474,92 @@
                   
 
 
-<h1 id="como-trabajar-en-clasecasa-usando-docker">¿Cómo trabajar en clase/casa usando docker?<a class="headerlink" href="#como-trabajar-en-clasecasa-usando-docker" title="Permanent link">&para;</a></h1>
-<p>Muchos de vosotros hacéis uso de Windows en casa, por lo que os puede entrar dudas de cómo podemos llevar nuestro trabajo a casa para seguir con él.</p>
-<p>Existen dos opciones explicadas en los siguientes vídeos:</p>
-<ol>
-<li>
-<p><a href="https://youtu.be/4Qg3lo-Dej0">Guardarnos las imágenes en un <strong>USB</strong>.</a></p>
-</li>
-<li>
-<p><a href="https://youtu.be/H67DulUqURg">Subir las imágenes a <strong>Docker HUB</strong>.</a>.</p>
-</li>
-</ol>
+<h1 id="scripts-en-linux">Scripts en Linux.<a class="headerlink" href="#scripts-en-linux" title="Permanent link">&para;</a></h1>
+<h2 id="creacion-de-scripts">Creación de Scripts.<a class="headerlink" href="#creacion-de-scripts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>¿Dónde creo mis scripts?</li>
+</ul>
+<p>Lo primero que debemos preguntarnos es dónde vamos a crear el script.
+Si empezamos a crear el script en un directorio donde no tenemos permisos de escritura no nos dejará guardar los cambios y nuestro trabajo será en vano.</p>
+<ul>
+<li>¿Con qué creo mis scripts?</li>
+</ul>
+<p>Para la creación de scripts usaremos el editor de texto nano:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Controles</th>
+<th style="text-align: left;"><center> Funcionamiento </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>nano “NombreFichero”.sh</code></td>
+<td style="text-align: left;">Genera o Abre el fichero para su edición.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Control + o</code></td>
+<td style="text-align: left;">Guardar Cambios.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Control + x</code></td>
+<td style="text-align: left;">Salir.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Control + _</code></td>
+<td style="text-align: left;">Ir a una línea.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Alt + U</code></td>
+<td style="text-align: left;">Deshacer.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Alt + E</code></td>
+<td style="text-align: left;">Rehacer.</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>En la leyenda “^” equivale a “Control” y “M-“ equivale a “Alt”.</p>
+<figure>
+  <img src="imagenes\scripts\nano.PNG" width="800"/>
+</figure>
+
+<ul>
+<li>¿Cómo empiezo mis scripts?</li>
+</ul>
+<p>Lo primero será crear el “shebang”  --&gt; #!/bin/bash. </p>
+<figure>
+  <img src="imagenes\scripts\shebang.PNG" width="200"/>
+</figure>
+
+<p>La función del shebang es decirle al sistema operativo que cuando le digamos de ejecutar este fichero use el SHELL bash, cuya ubicación dentro del sistema es /bin/bash.
+Si vamos a la ruta /bin, veremos que existe un ejecutable llamado “bash”.</p>
+<figure>
+  <img src="imagenes\scripts\bash.PNG" width="500"/>
+</figure>
+
+<ul>
+<li>¿Cómo ejecuto mis scripts?</li>
+</ul>
+<p>Una vez guardados los cambios debemos darle permisos de ejecución al fichero, en caso de que estemos trabajando con un script. Es importante solo dar permiso de ejecución al usuario propietario, si no se puede producir una brecha de seguridad, pues los scripts suelen almacenar/manipular datos/servicios importantes de nuestro servidor. </p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>“NombreFichero”.sh
+</code></pre></div>
+<p>Una vez hecho, ya podemos ejecutar nuestro script de una de las siguientes formas:</p>
+<div class="highlight"><pre><span></span><code>./”NombreFichero”.sh
+bash<span class="w"> </span>“NombreFIchero”.sh
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>No uséis el comando “sh script.sh” donde script.sh es el nombre de vuestro script. Esto fuerza al terminal a usar el shell SHELL, y nosotros vamos a usar BASH. Por lo que en ciertos comandos nos dará error al usar SHELL. </p>
+</div>
+<h2 id="comentarios">Comentarios<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h2>
+<p>Importante el uso de comentarios para poder describir que hace cada parte del código, tanto de cara a vosotros como de cara a compañeros de trabajo que vayan a modificar tu código.</p>
+<p>Para ello se usa <strong>“#”</strong>:</p>
+<figure>
+  <img src="imagenes\scripts\ejemplo1.PNG" width="600"/>
+</figure>
 
 
 

@@ -8,8 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/3_Clase.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/5_Variables.html">
       
+      
+        <link rel="prev" href="4_Scripts.html">
       
       
       
@@ -18,7 +20,7 @@
     
     
       
-        <title>¿Cómo trabajar en clase/casa usando docker? - Sistemas Operativos en Red</title>
+        <title>Variables - Sistemas Operativos en Red</title>
       
     
     
@@ -75,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#como-trabajar-en-clasecasa-usando-docker" class="md-skip">
+        <a href="#variables-en-bash" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ¿Cómo trabajar en clase/casa usando docker?
+              Variables
             
           </span>
         </div>
@@ -224,6 +226,8 @@
       
   
   
+    
+  
   
     
     
@@ -236,13 +240,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
@@ -255,7 +259,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             1. UD1. Docker y Scripting
@@ -306,6 +310,8 @@
                 
   
   
+    
+  
   
     
     
@@ -316,13 +322,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
         
           <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
@@ -335,7 +341,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             Scripts
@@ -366,9 +372,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="5_Variables.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Variables
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="5_Variables.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -377,6 +403,54 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#como-creo-una-variable" class="md-nav__link">
+    ¿Cómo creo una variable?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-muestro-por-pantalla-una-variable" class="md-nav__link">
+    ¿Cómo muestro por pantalla una variable?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-recojo-informacion-del-usuario" class="md-nav__link">
+    ¿Cómo recojo información del usuario?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos-de-repaso" class="md-nav__link">
+    Vídeos de repaso.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -412,15 +486,85 @@
                   
 
 
-<h1 id="como-trabajar-en-clasecasa-usando-docker">¿Cómo trabajar en clase/casa usando docker?<a class="headerlink" href="#como-trabajar-en-clasecasa-usando-docker" title="Permanent link">&para;</a></h1>
-<p>Muchos de vosotros hacéis uso de Windows en casa, por lo que os puede entrar dudas de cómo podemos llevar nuestro trabajo a casa para seguir con él.</p>
-<p>Existen dos opciones explicadas en los siguientes vídeos:</p>
+<h1 id="variables-en-bash">Variables en BASH<a class="headerlink" href="#variables-en-bash" title="Permanent link">&para;</a></h1>
+<h2 id="como-creo-una-variable">¿Cómo creo una variable?<a class="headerlink" href="#como-creo-una-variable" title="Permanent link">&para;</a></h2>
+<p>Siempre que creemos una variable debemos hacer uso del <strong>“=” sin espacios en blanco</strong>.</p>
+<ul>
+<li>Los textos 🔀 comillas dobles.</li>
+<li>Los números 🔀 sin comillas dobles.</li>
+</ul>
+<figure>
+  <img src="imagenes\scripts\1.PNG" width="150"/>
+</figure>
+
+<p>Variables de cadenas de texto 🔀 Con comillas dobles.</p>
+<figure>
+  <img src="imagenes\scripts\2.PNG" width="150"/>
+</figure>
+
+<p>Variables que contienen el valor de un comando 🔀 Usando comillas abiertas.</p>
+<figure>
+  <img src="imagenes\scripts\3.PNG" width="400"/>
+</figure>
+
+<p>Variables compuestas de otras variables.</p>
+<figure>
+  <img src="imagenes\scripts\4.PNG" width="300"/>
+</figure>
+
+<h2 id="como-muestro-por-pantalla-una-variable">¿Cómo muestro por pantalla una variable?<a class="headerlink" href="#como-muestro-por-pantalla-una-variable" title="Permanent link">&para;</a></h2>
+<p>Haciendo uso del símbolo del dolar 🔀 “$”.</p>
+<figure>
+  <img src="imagenes\scripts\5.PNG" width="300"/>
+</figure>
+
+<p>Podemos hacer uso de la opción “echo –n” para mostrar varias salidas en la misma línea.</p>
+<figure>
+  <img src="imagenes\scripts\6.PNG" width="350"/>
+</figure>
+
+<figure>
+  <img src="imagenes\scripts\7.PNG" width="350"/>
+</figure>
+
+<p>Con la opción “echo –e” puedo hacer uso de caracteres especiales con la contrabarra:</p>
+<p>🔀 \n  Salto de línea.</p>
+<p>🔀 \t  Tabulador.</p>
+<figure>
+  <img src="imagenes\scripts\8.PNG" width="700"/>
+</figure>
+
+<figure>
+  <img src="imagenes\scripts/9.PNG" width="400"/>
+</figure>
+
+<h2 id="como-recojo-informacion-del-usuario">¿Cómo recojo información del usuario?<a class="headerlink" href="#como-recojo-informacion-del-usuario" title="Permanent link">&para;</a></h2>
+<p>Con el comando “read” podemos recoger lo que escriba el usuario por terminal y guardarlo en una variable.</p>
+<figure>
+  <img src="imagenes\scripts\10.PNG" width="300"/>
+</figure>
+
+<figure>
+  <img src="imagenes\scripts\11.PNG" width="300"/>
+</figure>
+
+<p>Podemos hacerlo todo en la misma línea con read –p:</p>
+<figure>
+  <img src="imagenes\scripts\12.PNG" width="300"/>
+</figure>
+
+<figure>
+  <img src="imagenes\scripts\13.PNG" width="300"/>
+</figure>
+
+<h2 id="videos-de-repaso">Vídeos de repaso.<a class="headerlink" href="#videos-de-repaso" title="Permanent link">&para;</a></h2>
+<p>Vídeos de repaso sobre scripts y variables:</p>
 <ol>
 <li>
-<p><a href="https://youtu.be/4Qg3lo-Dej0">Guardarnos las imágenes en un <strong>USB</strong>.</a></p>
+<p><a href="https://youtu.be/Yk8uW70A5xQ">Repaso de Scripts y Variables.</a></p>
 </li>
 <li>
-<p><a href="https://youtu.be/H67DulUqURg">Subir las imágenes a <strong>Docker HUB</strong>.</a>.</p>
+<p><a href="https://youtu.be/QtqXA0VEXEY">Ejemplos de uso de Variables.</a>.</p>
 </li>
 </ol>
 
