@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/2_EjemplosDocker.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/7_Comparadores.html">
       
       
+        <link rel="prev" href="6_Aritmetica.html">
+      
+      
+        <link rel="next" href="8_IF.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Ejemplos Básicos en Docker - Sistemas Operativos en Red</title>
+        <title>Comparadores - Sistemas Operativos en Red</title>
       
     
     
@@ -75,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ejemplos-basicos-en-docker" class="md-skip">
+        <a href="#comparadores" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -110,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ejemplos Básicos en Docker
+              Comparadores
             
           </span>
         </div>
@@ -224,6 +228,8 @@
       
   
   
+    
+  
   
     
     
@@ -236,13 +242,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
@@ -255,7 +261,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             1. UD1. Docker y Scripting
@@ -306,6 +312,8 @@
                 
   
   
+    
+  
   
     
     
@@ -322,13 +330,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
         
           <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
@@ -341,7 +349,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             Scripts
@@ -412,9 +420,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="7_Comparadores.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Comparadores
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="7_Comparadores.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -423,6 +451,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comparadores-aritmeticos" class="md-nav__link">
+    Comparadores Aritméticos.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparadores-de-archivos" class="md-nav__link">
+    Comparadores de Archivos.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparadores-de-cadenas-variables" class="md-nav__link">
+    Comparadores de cadenas / variables.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -478,62 +547,195 @@
                   
 
 
-<h1 id="ejemplos-basicos-en-docker"><strong>Ejemplos Básicos en Docker</strong><a class="headerlink" href="#ejemplos-basicos-en-docker" title="Permanent link">&para;</a></h1>
-<div class="admonition danger">
-<p class="admonition-title">Aviso</p>
-<p>En los siguientes ejemplos el nombre del contenedor será Salva.</p>
-</div>
-<ul>
-<li>Crear un contenedor nuevo con la última versión de Ubuntu.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>Salva<span class="w"> </span>ubuntu
+<h1 id="comparadores">Comparadores.<a class="headerlink" href="#comparadores" title="Permanent link">&para;</a></h1>
+<h2 id="comparadores-aritmeticos">Comparadores Aritméticos.<a class="headerlink" href="#comparadores-aritmeticos" title="Permanent link">&para;</a></h2>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Comparador</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>-eq</code></td>
+<td style="text-align: left;">Igual a (Equeal to)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-ne</code></td>
+<td style="text-align: left;">No Igual (Not Equal)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-gt</code></td>
+<td style="text-align: left;">Mayor que (Greater Than)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-ge</code></td>
+<td style="text-align: left;">Mayor o igual (Greater or Equal)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-lt</code></td>
+<td style="text-align: left;">Menor que (Lower Than)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-le</code></td>
+<td style="text-align: left;">Menor o igual (Lower or Equal)</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3 id="ejemplo-1">Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$edad</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Tienes más de 25 años.&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Tienes 25 o menos años.&quot;</span>
+<span class="k">fi</span>
 </code></pre></div>
-<ul>
-<li>Acceder al contenedor haciendo uso del intérprete /bin/bash.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>Salva<span class="w"> </span>bash
+<h3 id="ejemplo-2">Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$examenes</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;No tenemos exactamente 20 exámenes entregados, algo ha ido mal&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Han entregado 20 exámenes.&quot;</span>
+<span class="k">fi</span>
 </code></pre></div>
-<ul>
-<li>Actualiza los repositorios e instala dentro del contendor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>update
-apt-get<span class="w"> </span>install<span class="w"> </span>nano<span class="w"> </span>iputils-ping<span class="w"> </span>net-tools<span class="w"> </span>iproute2
+<h3 id="ejemplo-3">Ejemplo 3<a class="headerlink" href="#ejemplo-3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$memoria</span><span class="w"> </span>-le<span class="w"> </span><span class="m">100000</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Quedan 100MB o menos en el sistema.&quot;</span>
+<span class="k">fi</span>
 </code></pre></div>
-<ul>
-<li>Detén el contenedor desde la máquina anfitriona.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>stop<span class="w"> </span>Salva
+<h2 id="comparadores-de-archivos">Comparadores de Archivos.<a class="headerlink" href="#comparadores-de-archivos" title="Permanent link">&para;</a></h2>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Comparador</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>-f</code></td>
+<td style="text-align: left;">Verdadero si es un fichero</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-e</code></td>
+<td style="text-align: left;">Verdadero si existe</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-d</code></td>
+<td style="text-align: left;">Verdadero si es un directorio</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-r</code></td>
+<td style="text-align: left;">Verdadero si tengo permisos de lectura</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-w</code></td>
+<td style="text-align: left;">Verdadero si tengo permisos de escritura</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-x</code></td>
+<td style="text-align: left;">Verdadero si tengo permisos de ejecución</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-O</code></td>
+<td style="text-align: left;">Verdadero si soy el usuario propietario</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-G</code></td>
+<td style="text-align: left;">Verdadero si pertenezco al grupo propietario</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-s</code></td>
+<td style="text-align: left;">Verdadero si el fichero NO está vacío</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-L</code></td>
+<td style="text-align: left;">Verdadero si se trata de un enlace simbólico</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3 id="ejemplo-1_1">Ejemplo 1<a class="headerlink" href="#ejemplo-1_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">$carpeta</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;La carpeta existe, aunque quizá se trate de un fichero.&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;La carpeta no existe&quot;</span>
+<span class="k">fi</span>
 </code></pre></div>
-<ul>
-<li>Arranca el contenedor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>start<span class="w"> </span>Salva
+<h3 id="ejemplo-2_1">Ejemplo 2<a class="headerlink" href="#ejemplo-2_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="nv">$carpeta</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;La carpeta existe y se trata seguro de una carpeta.&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;La carpeta no existe&quot;</span>
+<span class="k">fi</span>
 </code></pre></div>
-<ul>
-<li>Descargar un fichero del contenedor a la máquina anfitriona.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>cp<span class="w"> </span>Salva:/home/prueba.txt<span class="w"> </span>.
+<h3 id="ejemplo-3_1">Ejemplo 3<a class="headerlink" href="#ejemplo-3_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-s<span class="w"> </span><span class="nv">$fichero</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El fichero contiene información.&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El fichero está vació y lo voy a borrar.&quot;</span>
+<span class="w">    </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$fichero</span>
+<span class="k">fi</span>
 </code></pre></div>
-<ul>
-<li>Crear una imagen del contendor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>commit<span class="w"> </span>Salva<span class="w"> </span>copiaContendor
+<h2 id="comparadores-de-cadenas-variables">Comparadores de cadenas / variables.<a class="headerlink" href="#comparadores-de-cadenas-variables" title="Permanent link">&para;</a></h2>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Comparador</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>=</code></td>
+<td style="text-align: left;">Verdadero si es igual</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>!=</code></td>
+<td style="text-align: left;">Verdadero si es diferente</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-n</code></td>
+<td style="text-align: left;">Verdadero si la variable tiene contenido</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-z</code></td>
+<td style="text-align: left;">Verdadero si la variable está vacía</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3 id="ejemplo-1_2">Ejemplo 1<a class="headerlink" href="#ejemplo-1_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ajc&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Bienvenido Alejandro!&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;¿Quién eres?&quot;</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Introduce tu nombre: &quot;</span><span class="w"> </span>nombre
+<span class="k">fi</span>
 </code></pre></div>
-<ul>
-<li>Lista las imagenes que tienes en el sistema</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>images
+<h3 id="ejemplo-2_2">Ejemplo 2<a class="headerlink" href="#ejemplo-2_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$salir</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;s&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El usuario quiere seguir jugando.&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El usuario quiere continuar jugando.&quot;</span>
+<span class="k">fi</span>
 </code></pre></div>
-<ul>
-<li>Crea un .tar de la imagen copiaContendor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>image<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </span>/home/usuario/backup.tar<span class="w"> </span>copiaContendor
-</code></pre></div>
-<ul>
-<li>Saca la imagen del .tar y vuélcala en un contenedor. Recuerda estar en el mismo directorio que el .tar.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>backup.tar
-docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>NuevoContenedor<span class="w"> </span>copiaContendor
+<h3 id="ejemplo-3_2">Ejemplo 3<a class="headerlink" href="#ejemplo-3_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="nv">$respuesta</span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hubo algún error y se ha recibido una respuesta vacía&quot;</span>
+<span class="k">fi</span>
 </code></pre></div>
 
 

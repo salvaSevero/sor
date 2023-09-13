@@ -8,8 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/2_EjemplosDocker.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/8_IF.html">
       
+      
+        <link rel="prev" href="7_Comparadores.html">
       
       
       
@@ -18,7 +20,7 @@
     
     
       
-        <title>Ejemplos Básicos en Docker - Sistemas Operativos en Red</title>
+        <title>Estructura IF - Sistemas Operativos en Red</title>
       
     
     
@@ -75,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ejemplos-basicos-en-docker" class="md-skip">
+        <a href="#estructura-if" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ejemplos Básicos en Docker
+              Estructura IF
             
           </span>
         </div>
@@ -224,6 +226,8 @@
       
   
   
+    
+  
   
     
     
@@ -236,13 +240,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
@@ -255,7 +259,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             1. UD1. Docker y Scripting
@@ -306,6 +310,8 @@
                 
   
   
+    
+  
   
     
     
@@ -322,13 +328,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
         
           <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
@@ -341,7 +347,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             Scripts
@@ -432,9 +438,18 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="8_IF.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="8_IF.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -443,6 +458,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -478,63 +494,54 @@
                   
 
 
-<h1 id="ejemplos-basicos-en-docker"><strong>Ejemplos Básicos en Docker</strong><a class="headerlink" href="#ejemplos-basicos-en-docker" title="Permanent link">&para;</a></h1>
-<div class="admonition danger">
-<p class="admonition-title">Aviso</p>
-<p>En los siguientes ejemplos el nombre del contenedor será Salva.</p>
+<h1 id="estructura-if">Estructura IF.<a class="headerlink" href="#estructura-if" title="Permanent link">&para;</a></h1>
+<p>Una estructura de programación IF sirve para generar condiciones:</p>
+<ul>
+<li>Si se cumple cierta condición realizaremos una acción, si no, realizaremos otra:</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Estructura IF simple</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condición<span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span>ACCIONES
+<span class="k">fi</span>
+</code></pre></div>
 </div>
+<p>Cosas que se deben tener en cuenta:</p>
 <ul>
-<li>Crear un contenedor nuevo con la última versión de Ubuntu.</li>
+<li>Hay que dejar un espacio en blanco entre los corchetes.</li>
+<li>Podemos hacer condiciones usando variables, haciendo uso del $, puesto que queremos comparar su contenido.</li>
+<li>Es recomendable tabular (indentar) las acciones para que  quede más limpio el código.</li>
+<li>Siempre debe terminar la estructura con “fi”</li>
 </ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>Salva<span class="w"> </span>ubuntu
+<p>Podemos crear condiciones con alternativas, donde si no se cumple una condición se realiza otra  lista de acciones:</p>
+<div class="admonition info">
+<p class="admonition-title">Estructura IF ELSE</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condición<span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span>ACCIONES
+<span class="k">else</span>
+<span class="w">    </span>ACCIONES
+<span class="k">fi</span>
 </code></pre></div>
-<ul>
-<li>Acceder al contenedor haciendo uso del intérprete /bin/bash.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>Salva<span class="w"> </span>bash
+</div>
+<p>Se pueden anidar muchas condiciones diferentes con el elemento “elif”:</p>
+<div class="admonition info">
+<p class="admonition-title">Estructura IF ELSE</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condición<span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span>ACCIONES
+<span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condición<span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span>ACCIONES
+<span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condición<span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span>ACCIONES
+<span class="k">else</span>
+<span class="w">    </span>ACCIONES
+<span class="k">fi</span>
 </code></pre></div>
-<ul>
-<li>Actualiza los repositorios e instala dentro del contendor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>update
-apt-get<span class="w"> </span>install<span class="w"> </span>nano<span class="w"> </span>iputils-ping<span class="w"> </span>net-tools<span class="w"> </span>iproute2
-</code></pre></div>
-<ul>
-<li>Detén el contenedor desde la máquina anfitriona.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>stop<span class="w"> </span>Salva
-</code></pre></div>
-<ul>
-<li>Arranca el contenedor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>start<span class="w"> </span>Salva
-</code></pre></div>
-<ul>
-<li>Descargar un fichero del contenedor a la máquina anfitriona.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>cp<span class="w"> </span>Salva:/home/prueba.txt<span class="w"> </span>.
-</code></pre></div>
-<ul>
-<li>Crear una imagen del contendor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>commit<span class="w"> </span>Salva<span class="w"> </span>copiaContendor
-</code></pre></div>
-<ul>
-<li>Lista las imagenes que tienes en el sistema</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>images
-</code></pre></div>
-<ul>
-<li>Crea un .tar de la imagen copiaContendor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>image<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </span>/home/usuario/backup.tar<span class="w"> </span>copiaContendor
-</code></pre></div>
-<ul>
-<li>Saca la imagen del .tar y vuélcala en un contenedor. Recuerda estar en el mismo directorio que el .tar.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>backup.tar
-docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>NuevoContenedor<span class="w"> </span>copiaContendor
-</code></pre></div>
+</div>
 
 
 
