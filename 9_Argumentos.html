@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/4_Scripts.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/9_Argumentos.html">
       
       
-        <link rel="prev" href="1_ComandosDocker.html">
+        <link rel="prev" href="8_IF.html">
       
-      
-        <link rel="next" href="5_Variables.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Creación de Scripts - Sistemas Operativos en Red</title>
+        <title>Argumentos - Sistemas Operativos en Red</title>
       
     
     
@@ -79,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scripts-en-linux" class="md-skip">
+        <a href="#argumentos" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creación de Scripts
+              Argumentos
             
           </span>
         </div>
@@ -362,29 +360,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Creación de Scripts
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="4_Scripts.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="4_Scripts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -393,40 +371,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creacion-de-scripts" class="md-nav__link">
-    Creación de Scripts.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comentarios" class="md-nav__link">
-    Comentarios
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -516,9 +460,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="9_Argumentos.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Argumentos
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="9_Argumentos.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -527,6 +491,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#videos-de-ejemplo" class="md-nav__link">
+    Vídeos de Ejemplo.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -562,92 +553,98 @@
                   
 
 
-<h1 id="scripts-en-linux">Scripts en Linux.<a class="headerlink" href="#scripts-en-linux" title="Permanent link">&para;</a></h1>
-<h2 id="creacion-de-scripts">Creación de Scripts.<a class="headerlink" href="#creacion-de-scripts" title="Permanent link">&para;</a></h2>
+<h1 id="argumentos">Argumentos.<a class="headerlink" href="#argumentos" title="Permanent link">&para;</a></h1>
+<p>Un argumento es un parámetros que se le pasa a una función o a un programa. Es decir, son variables de entrada. Puede haber más de uno o ninguno.</p>
+<p><center></p>
+<div class="admonition danger">
+<p class="admonition-title">Script con argumentos</p>
+<p>./script.sh arg1 arg2 arg3 … argN</p>
+</div>
+<p></center></p>
+<h3 id="ejemplo">Ejemplo:<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h3>
+<p>Ejecutamos el mismo script con diferentes argumentos, dando salidas distintas.</p>
+<figure>
+  <img src="imagenes\scripts\15.png" width="800"/>
+</figure>
+
 <ul>
-<li>¿Dónde creo mis scripts?</li>
+<li>
+<p>Se puede acceder al contenido de cada uno de los argumentos usando $X donde “X” es la posición del argumento (primero, segundo, tercero, ...).</p>
+</li>
+<li>
+<p>$0: Es el nombre del script → soyUnScript.sh.</p>
+</li>
+<li>
+<p>$*: Una lista con todos los argumentos → salva 1010 "Salva Serrano" /home/Salva /bin/bash.</p>
+</li>
+<li>
+<p>$#: Número de argumentos → 5.</p>
+</li>
 </ul>
-<p>Lo primero que debemos preguntarnos es dónde vamos a crear el script.
-Si empezamos a crear el script en un directorio donde no tenemos permisos de escritura no nos dejará guardar los cambios y nuestro trabajo será en vano.</p>
-<ul>
-<li>¿Con qué creo mis scripts?</li>
-</ul>
-<p>Para la creación de scripts usaremos el editor de texto nano:</p>
+<h3 id="ejemplo_1">Ejemplo<a class="headerlink" href="#ejemplo_1" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<div class="admonition info">
+<p class="admonition-title">Script con argumentos</p>
+<p>./soyUnScript.sh salva 1010 "Salva Serrano" /home/Salva /bin/bash</p>
+</div>
+<p></center></p>
 <p><center></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Controles</th>
-<th style="text-align: left;"><center> Funcionamiento </center></th>
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;"><center> Contenido </center></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><code>nano “NombreFichero”.sh</code></td>
-<td style="text-align: left;">Genera o Abre el fichero para su edición.</td>
+<td style="text-align: center;"><code>$0</code></td>
+<td style="text-align: left;">soyUnScript.sh</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>Control + o</code></td>
-<td style="text-align: left;">Guardar Cambios.</td>
+<td style="text-align: center;"><code>$1</code></td>
+<td style="text-align: left;">salva</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>Control + x</code></td>
-<td style="text-align: left;">Salir.</td>
+<td style="text-align: center;"><code>$2</code></td>
+<td style="text-align: left;">1010</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>Control + _</code></td>
-<td style="text-align: left;">Ir a una línea.</td>
+<td style="text-align: center;"><code>$3</code></td>
+<td style="text-align: left;">Salva Serrano</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>Alt + U</code></td>
-<td style="text-align: left;">Deshacer.</td>
+<td style="text-align: center;"><code>$4</code></td>
+<td style="text-align: left;">/home/Salva</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>Alt + E</code></td>
-<td style="text-align: left;">Rehacer.</td>
+<td style="text-align: center;"><code>$5</code></td>
+<td style="text-align: left;">/bin/bash</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>$*</code></td>
+<td style="text-align: left;">salva 1010 "Salva Serrano" /home/Salva /bin/bash</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>$#</code></td>
+<td style="text-align: left;">5</td>
 </tr>
 </tbody>
 </table>
 <p></center></p>
-<p>En la leyenda “^” equivale a “Control” y “M-“ equivale a “Alt”.</p>
-<figure>
-  <img src="imagenes\scripts\nano.png" width="800"/>
-</figure>
-
 <ul>
-<li>¿Cómo empiezo mis scripts?</li>
+<li>Los argumentos van separados por espacios y en caso de insertar un metacaracter, como por ejemplo asterisco (*), es necesario escaparlo con \:</li>
 </ul>
-<p>Lo primero será crear el “shebang”  🔀 #!/bin/bash. </p>
-<figure>
-  <img src="imagenes\scripts\shebang.png" width="200"/>
-</figure>
-
-<p>La función del shebang es decirle al sistema operativo que cuando le digamos de ejecutar este fichero use el SHELL bash, cuya ubicación dentro del sistema es /bin/bash.
-Si vamos a la ruta /bin, veremos que existe un ejecutable llamado “bash”.</p>
-<figure>
-  <img src="imagenes\scripts\bash.png" width="500"/>
-</figure>
-
-<ul>
-<li>¿Cómo ejecuto mis scripts?</li>
-</ul>
-<p>Una vez guardados los cambios debemos darle permisos de ejecución al fichero, en caso de que estemos trabajando con un script. Es importante solo dar permiso de ejecución al usuario propietario, si no se puede producir una brecha de seguridad, pues los scripts suelen almacenar/manipular datos/servicios importantes de nuestro servidor. </p>
-<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>“NombreFichero”.sh
-</code></pre></div>
-<p>Una vez hecho, ya podemos ejecutar nuestro script de una de las siguientes formas:</p>
-<div class="highlight"><pre><span></span><code>./”NombreFichero”.sh
-bash<span class="w"> </span>“NombreFIchero”.sh
-</code></pre></div>
+<p><center></p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>No uséis el comando “sh script.sh” donde script.sh es el nombre de vuestro script. Esto fuerza al terminal a usar el shell SHELL, y nosotros vamos a usar BASH. Por lo que en ciertos comandos nos dará error al usar SHELL. </p>
+<p class="admonition-title">Escapar carácteres especiales</p>
+<p>./soyUnScript.sh 5 \* 10</p>
 </div>
-<h2 id="comentarios">Comentarios<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h2>
-<p>Importante el uso de comentarios para poder describir que hace cada parte del código, tanto de cara a vosotros como de cara a compañeros de trabajo que vayan a modificar tu código.</p>
-<p>Para ello se usa 🔀 <strong>“#”</strong>:</p>
-<figure>
-  <img src="imagenes\scripts\ejemplo1.png" width="600"/>
-</figure>
+<p></center></p>
+<h2 id="videos-de-ejemplo">Vídeos de Ejemplo.<a class="headerlink" href="#videos-de-ejemplo" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://youtu.be/-j6-3HWyv_k">Ejemplos de Argumentos.</a></li>
+</ol>
 
 
 
