@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/1_ComandosDocker.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/11_Case.html">
       
       
-        <link rel="prev" href="0_MaquinasContenedores.html">
+        <link rel="prev" href="10_Argumentos.html">
       
-      
-        <link rel="next" href="4_Scripts.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Comandos Básicos Docker - Sistemas Operativos en Red</title>
+        <title>Esructura CASE - Sistemas Operativos en Red</title>
       
     
     
@@ -79,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#comandos-basicos-en-docker" class="md-skip">
+        <a href="#estructura-case" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Comandos Básicos Docker
+              Esructura CASE
             
           </span>
         </div>
@@ -292,29 +290,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Comandos Básicos Docker
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="1_ComandosDocker.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="1_ComandosDocker.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -323,47 +301,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#comandos" class="md-nav__link">
-    Comandos.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ejemplos-basicos-en-docker" class="md-nav__link">
-    Ejemplos Básicos en Docker
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#como-trabajar-en-clasecasa-usando-docker" class="md-nav__link">
-    ¿Cómo trabajar en clase/casa usando docker?
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -373,6 +310,8 @@
                 
   
   
+    
+  
   
     
     
@@ -395,13 +334,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
         
           <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
@@ -414,7 +353,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             Scripts
@@ -565,9 +504,18 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="11_Case.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="11_Case.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -576,6 +524,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -611,155 +560,83 @@
                   
 
 
-<h1 id="comandos-basicos-en-docker"><strong>Comandos Básicos en Docker</strong><a class="headerlink" href="#comandos-basicos-en-docker" title="Permanent link">&para;</a></h1>
-<h2 id="comandos"><strong>Comandos.</strong><a class="headerlink" href="#comandos" title="Permanent link">&para;</a></h2>
-<div class="admonition danger">
-<p class="admonition-title">Crear un contenedor</p>
-<p><center> 🔥 docker [ run | start | stop | restart ] [OPCIONES] [contenedor] 🔥 </center></p>
-</div>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Argumentos</th>
-<th style="text-align: left;"><center> Función </center></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>run</code></td>
-<td style="text-align: left;">Crea y arranca un contenedor --&gt; Si lo ejecutas varias veces ejecutas varios contenedores.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>start | stop |restart</code></td>
-<td style="text-align: left;">Arranca/Detiene/Reinicia un contenedor ya existente.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>-d</code></td>
-<td style="text-align: left;">Arranca en segundo plano.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>-p</code></td>
-<td style="text-align: left;">Traducción de puertos entre el contenedor y la máquina anfitriona. Solo se puede hacer a la hora de crear la máquina.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>--name</code></td>
-<td style="text-align: left;">Nombre de la máquina.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>-it</code></td>
-<td style="text-align: left;">Redirige la salida al terminal del contenedor, es decir, accedes al terminal del contenedor.</td>
-</tr>
-</tbody>
-</table>
-<p>Si nos fijamos en la salida vemos que lo primero que hace es buscar la imagen “hello-world” en local, al no encontrarlo, lo descarga de un repositorio de docker y posteriormente lo ejecuta. 
-Si lo ejecutáis una segunda vez el código ya se ejecutará directamente en local (/var/lib/docker/).
-También podemos apreciar que la imagen que se carga es “hello-world:latest”, es decir, la última versión de la imagen del contenedor.</p>
+<h1 id="estructura-case">Estructura CASE<a class="headerlink" href="#estructura-case" title="Permanent link">&para;</a></h1>
+<p>Estructura parecida al 🔀 IF.</p>
+<p>Va realizando comprobaciones y cuando una coincida, realiza una serie de acciones programadas y finaliza la condición.</p>
+<ul>
+<li>
+<p>Cada opción debe ir finalizada de paréntesis “)”.</p>
+</li>
+<li>
+<p>Cada acción debajo de cada condición debe ir finalizada de doble punto y coma “;;”</p>
+</li>
+<li>
+<p>Con el metacaracter “<em>” conseguimos que coincida cualquier cosa, por lo que siempre se cumplirá la condición. </em><em>Es equivalente al “else”</em>*.</p>
+</li>
+<li>
+<p>Se puede hacer uso de expresiones regulares.</p>
+</li>
+<li>
+<p>Se debe usar <strong>“esac”</strong> para finalizar la estructura.</p>
+</li>
+</ul>
+<h3 id="ejemplo-1-ejemplo-de-un-menu">Ejemplo 1. Ejemplo de un Menú.<a class="headerlink" href="#ejemplo-1-ejemplo-de-un-menu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1. Agregar Usuario.&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2. Eliminar Usuario.&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;3. Bloquear Usuario.&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;4. Salir.&quot;</span>
+
+<span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Elige una opcion: &quot;</span><span class="w"> </span>opcion
+
+<span class="k">case</span><span class="w"> </span><span class="nv">$opcion</span><span class="w"> </span><span class="k">in</span>
+<span class="w">        </span><span class="s2">&quot;1&quot;</span><span class="o">)</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Has elegido la opcion 1&quot;</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ahora creariamos el usuario&quot;</span><span class="p">;;</span>
+<span class="w">        </span><span class="s2">&quot;2&quot;</span><span class="o">)</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Has elegido la opcion 2, vamos a eliminar al usuario&quot;</span><span class="p">;;</span>
+<span class="w">        </span><span class="s2">&quot;3&quot;</span><span class="o">)</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Has elegido la opcion 3 ...&quot;</span><span class="p">;;</span>
+<span class="w">        </span><span class="s2">&quot;4&quot;</span><span class="o">)</span>
+<span class="w">                </span>exit<span class="p">;;</span>
+<span class="w">        </span>*<span class="o">)</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El usuario ha insertado cualquier otra cosa.&quot;</span>
+<span class="k">esac</span>
+</code></pre></div>
+<h3 id="ejemplo-2-multiples-lineas-de-ejecucion-por-opcion">Ejemplo 2. Múltiples líneas de ejecución por opción.<a class="headerlink" href="#ejemplo-2-multiples-lineas-de-ejecucion-por-opcion" title="Permanent link">&para;</a></h3>
+<p>Es importante que quede claro que podemos añadir varios comandos/acciones por cada opción, como se puede ver en el siguiente ejemplo en las opciones 0) y *).</p>
 <figure>
-  <img src="imagenes/docker/ejemplo_1.png" width="700"/>
+  <img src="imagenes\scripts\23.png" width="700"/>
 </figure>
 
-<div class="admonition info">
-<p class="admonition-title">Mostrar los contenedores del sistema, tanto parados como activos</p>
-<p><center> 🔥 docker ps [opciones] 🔥 </center></p>
-<p>✨ Con –a se muestran todos los contenedores, los activos y los detenidos.</p>
-<p>✨ Una vez sabemos su “nombre” o su “ID” podemos arrancarlo/pararlo/reiniciarlo.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Copiar o renombrar contenedores.</p>
-<p><center> 🔥 docker [ cp |rename ] [contenedor] 🔥 </center> </p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Ejecutar comandos dentro del contenedor</p>
-<p><center> 🔥 docker exec [OPCIONES] NombreContenedor Comando [ArgumentosComando] 🔥 </center></p>
-<p>✨ -d: Ejecuta en segundo plano.</p>
-<p>✨-it: Enlaza la entrada y salida a nuestro terminal. Es como entrar al terminal del contenedor.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Acceder a los logs de ejecución del contenedor.</p>
-<p><center> 🔥 docker logs [OPCIONES] NombreContenedor 🔥 </center></p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Listar todos los contenedores.</p>
-<p><center> 🔥 docker container ls –a 🔥 </center></p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Eliminar un contenedor</p>
-<p><center> 🔥 docker container rm NombreContenedor 🔥 </center></p>
-<p>✨ Elimina un contenedor.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Crear una imagen a partir de un contenedor</p>
-<p><center> 🔥 docker commit contenedor imagen 🔥 </center></p>
-<p>✨Crear una imagen de un contenedor es la forma más sencilla para subir nuestro contenedor a la nube o para hacer un backup local.</p>
-</div>
-<h2 id="ejemplos-basicos-en-docker"><strong>Ejemplos Básicos en Docker</strong><a class="headerlink" href="#ejemplos-basicos-en-docker" title="Permanent link">&para;</a></h2>
+<h3 id="ejemplo-3-el-uso-de-operadores-binarios-en-el-case">Ejemplo 3. El uso de operadores binarios en el case.<a class="headerlink" href="#ejemplo-3-el-uso-de-operadores-binarios-en-el-case" title="Permanent link">&para;</a></h3>
+<p>También podemos hacer uso de la | para integrar dos opciones posibles, es decir, que tanto si se cumple una u otra se ejecutarán los comandos asociadas a esa comprobación:</p>
+<p>Por ejemplo en el siguiente ejemplo, la primera comprobación será verdadera si nombre vale “álvaro” o “pepe”</p>
+<figure>
+  <img src="imagenes\scripts\24.png" width="500"/>
+</figure>
+
+<figure>
+  <img src="imagenes\scripts\25.png" width="500"/>
+</figure>
+
+<h3 id="ejemplo-4-el-uso-de">Ejemplo 4. El uso de ;;&amp;.<a class="headerlink" href="#ejemplo-4-el-uso-de" title="Permanent link">&para;</a></h3>
+<p><center></p>
 <div class="admonition danger">
-<p class="admonition-title">Aviso</p>
-<p>En los siguientes ejemplos el nombre del contenedor será Salva.</p>
+<p class="admonition-title">Con 🔀 ;;&amp; 🔀 podemos ejecutar múltiples condiciones</p>
 </div>
+<p></center></p>
 <ul>
-<li>Crear un contenedor nuevo con la última versión de Ubuntu.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>Salva<span class="w"> </span>ubuntu
-</code></pre></div>
-<ul>
-<li>Acceder al contenedor haciendo uso del intérprete /bin/bash.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>Salva<span class="w"> </span>bash
-</code></pre></div>
-<ul>
-<li>Actualiza los repositorios e instala dentro del contendor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>update
-apt-get<span class="w"> </span>install<span class="w"> </span>nano<span class="w"> </span>iputils-ping<span class="w"> </span>net-tools<span class="w"> </span>iproute2
-</code></pre></div>
-<ul>
-<li>Detén el contenedor desde la máquina anfitriona.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>stop<span class="w"> </span>Salva
-</code></pre></div>
-<ul>
-<li>Arranca el contenedor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>start<span class="w"> </span>Salva
-</code></pre></div>
-<ul>
-<li>Descargar un fichero del contenedor a la máquina anfitriona.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>cp<span class="w"> </span>Salva:/home/prueba.txt<span class="w"> </span>.
-</code></pre></div>
-<ul>
-<li>Crear una imagen del contendor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>commit<span class="w"> </span>Salva<span class="w"> </span>copiaContendor
-</code></pre></div>
-<ul>
-<li>Lista las imagenes que tienes en el sistema</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>images
-</code></pre></div>
-<ul>
-<li>Crea un .tar de la imagen copiaContendor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>image<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </span>/home/usuario/backup.tar<span class="w"> </span>copiaContendor
-</code></pre></div>
-<ul>
-<li>Saca la imagen del .tar y vuélcala en un contenedor. Recuerda estar en el mismo directorio que el .tar.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>backup.tar
-docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>NuevoContenedor<span class="w"> </span>copiaContendor
-</code></pre></div>
-<h2 id="como-trabajar-en-clasecasa-usando-docker"><strong>¿Cómo trabajar en clase/casa usando docker?</strong><a class="headerlink" href="#como-trabajar-en-clasecasa-usando-docker" title="Permanent link">&para;</a></h2>
-<p>Muchos de vosotros hacéis uso de Windows en casa, por lo que os puede entrar dudas de cómo podemos llevar nuestro trabajo a casa para seguir con él.</p>
-<p>Existen dos opciones explicadas en los siguientes vídeos:</p>
-<ol>
 <li>
-<p><a href="https://youtu.be/4Qg3lo-Dej0">Guardarnos las imágenes en un <strong>USB</strong>.</a></p>
+<p>Con “;;” le decimos al script que si se cumple esa condición termine la estructura y salga del “case” (una línea después del esac). </p>
 </li>
 <li>
-<p><a href="https://youtu.be/H67DulUqURg">Subir las imágenes a <strong>Docker HUB</strong>.</a>.</p>
+<p>Usando <strong>“;;&amp;”</strong> estamos indicando que en caso de ser cierta esa comprobación, ejecute las instrucciones asociadas, pero que siga comprobando el resto de opciones y si hay alguna cierta ejecute también las acciones asociadas a ella.</p>
 </li>
-</ol>
+</ul>
+<p>En el siguiente ejemplo la primera cláusula tiene un “;;&amp;”, por lo que por ejemplo si el usuario selecciona “Viernes” se mostrará por pantalla “A estudiar” y posteriormente se mostrará también “A descansar”, puesto que seguirá comprobando el resto de condiciones de la estructura case.</p>
+<figure>
+  <img src="imagenes\scripts\22.png" width="500"/>
+</figure>
 
 
 

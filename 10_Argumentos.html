@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/9_Argumentos.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/10_Argumentos.html">
       
       
-        <link rel="prev" href="8_IF.html">
+        <link rel="prev" href="9_Operadores_Binarios.html">
       
+      
+        <link rel="next" href="11_Case.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -328,6 +330,10 @@
       
         
       
+        
+      
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -460,6 +466,26 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="9_Operadores_Binarios.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operadores Binarios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -482,7 +508,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="9_Argumentos.html" class="md-nav__link md-nav__link--active">
+      <a href="10_Argumentos.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -518,6 +544,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11_Case.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Esructura CASE
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -580,8 +626,11 @@
 <li>
 <p>$#: Número de argumentos → 5.</p>
 </li>
+<li>
+<p>shift: Elimina el argumento uno ($1) y promueve una posición al resto de argumentos, es decir, lo que antes era $2 ahora será $1.</p>
+</li>
 </ul>
-<h3 id="ejemplo_1">Ejemplo<a class="headerlink" href="#ejemplo_1" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-1">Ejemplo 1.<a class="headerlink" href="#ejemplo-1" title="Permanent link">&para;</a></h3>
 <p><center></p>
 <div class="admonition info">
 <p class="admonition-title">Script con argumentos</p>
@@ -641,6 +690,30 @@
 <p>./soyUnScript.sh 5 \* 10</p>
 </div>
 <p></center></p>
+<h3 id="ejemplo-de">Ejemplo de $#.<a class="headerlink" href="#ejemplo-de" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Se han insertado 3 argumentos.&quot;</span>
+<span class="k">else</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Por favor, inserte 3 argumentos.&quot;</span>
+<span class="k">fi</span>
+</code></pre></div>
+<figure>
+  <img src="imagenes\scripts\21.png" width="400"/>
+</figure>
+
+<h3 id="ejemplo-shift">Ejemplo Shift.<a class="headerlink" href="#ejemplo-shift" title="Permanent link">&para;</a></h3>
+<p>Se puede observar como $1 va a ir valiendo cada uno de los argumentos.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El primer argumento es: </span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="nb">shift</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ahora el primer argumento es: </span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="nb">shift</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ahora el primer argumento es: </span><span class="nv">$1</span><span class="s2">&quot;</span>
+</code></pre></div>
+<figure>
+  <img src="imagenes\scripts\20.png" width="400"/>
+</figure>
+
 <h2 id="videos-de-ejemplo">Vídeos de Ejemplo.<a class="headerlink" href="#videos-de-ejemplo" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="https://youtu.be/-j6-3HWyv_k">Ejemplos de Argumentos.</a></li>
@@ -656,12 +729,6 @@
           
           
         </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-            
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-            Volver al principio
-          </button>
         
       </main>
       
@@ -692,7 +759,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "content.code.copy", "navigation.top"], "search": "assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "content.code.copy"], "search": "assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
       <script src="assets/javascripts/bundle.dff1b7c8.min.js"></script>
