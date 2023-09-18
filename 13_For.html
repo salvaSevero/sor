@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/4_Scripts.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/13_For.html">
       
       
-        <link rel="prev" href="1_ComandosDocker.html">
+        <link rel="prev" href="12_While_Until.html">
       
-      
-        <link rel="next" href="5_Variables.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Creación de Scripts - Sistemas Operativos en Red</title>
+        <title>Esructura FOR - Sistemas Operativos en Red</title>
       
     
     
@@ -79,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scripts-en-linux" class="md-skip">
+        <a href="#estructura-for-in" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creación de Scripts
+              Esructura FOR
             
           </span>
         </div>
@@ -370,29 +368,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Creación de Scripts
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="4_Scripts.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="4_Scripts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -401,40 +379,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creacion-de-scripts" class="md-nav__link">
-    Creación de Scripts.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comentarios" class="md-nav__link">
-    Comentarios
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -604,9 +548,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="13_For.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Esructura FOR
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="13_For.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -615,6 +579,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-in" class="md-nav__link">
+    FOR IN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-de-listas" class="md-nav__link">
+    Ejemplos de listas.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-genericos" class="md-nav__link">
+    Ejemplos genéricos.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -650,92 +655,133 @@
                   
 
 
-<h1 id="scripts-en-linux">Scripts en Linux.<a class="headerlink" href="#scripts-en-linux" title="Permanent link">&para;</a></h1>
-<h2 id="creacion-de-scripts">Creación de Scripts.<a class="headerlink" href="#creacion-de-scripts" title="Permanent link">&para;</a></h2>
-<ul>
-<li>¿Dónde creo mis scripts?</li>
-</ul>
-<p>Lo primero que debemos preguntarnos es dónde vamos a crear el script.
-Si empezamos a crear el script en un directorio donde no tenemos permisos de escritura no nos dejará guardar los cambios y nuestro trabajo será en vano.</p>
-<ul>
-<li>¿Con qué creo mis scripts?</li>
-</ul>
-<p>Para la creación de scripts usaremos el editor de texto nano:</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Controles</th>
-<th style="text-align: left;"><center> Funcionamiento </center></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>nano “NombreFichero”.sh</code></td>
-<td style="text-align: left;">Genera o Abre el fichero para su edición.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Control + o</code></td>
-<td style="text-align: left;">Guardar Cambios.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Control + x</code></td>
-<td style="text-align: left;">Salir.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Control + _</code></td>
-<td style="text-align: left;">Ir a una línea.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Alt + U</code></td>
-<td style="text-align: left;">Deshacer.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Alt + E</code></td>
-<td style="text-align: left;">Rehacer.</td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
-<p>En la leyenda “^” equivale a “Control” y “M-“ equivale a “Alt”.</p>
-<figure>
-  <img src="imagenes\scripts\nano.png" width="800"/>
-</figure>
-
-<ul>
-<li>¿Cómo empiezo mis scripts?</li>
-</ul>
-<p>Lo primero será crear el “shebang”  🔀 #!/bin/bash. </p>
-<figure>
-  <img src="imagenes\scripts\shebang.png" width="200"/>
-</figure>
-
-<p>La función del shebang es decirle al sistema operativo que cuando le digamos de ejecutar este fichero use el SHELL bash, cuya ubicación dentro del sistema es /bin/bash.
-Si vamos a la ruta /bin, veremos que existe un ejecutable llamado “bash”.</p>
-<figure>
-  <img src="imagenes\scripts\bash.png" width="500"/>
-</figure>
-
-<ul>
-<li>¿Cómo ejecuto mis scripts?</li>
-</ul>
-<p>Una vez guardados los cambios debemos darle permisos de ejecución al fichero, en caso de que estemos trabajando con un script. Es importante solo dar permiso de ejecución al usuario propietario, si no se puede producir una brecha de seguridad, pues los scripts suelen almacenar/manipular datos/servicios importantes de nuestro servidor. </p>
-<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>“NombreFichero”.sh
+<h1 id="estructura-for-in">Estructura FOR IN<a class="headerlink" href="#estructura-for-in" title="Permanent link">&para;</a></h1>
+<h2 id="for-in">FOR IN<a class="headerlink" href="#for-in" title="Permanent link">&para;</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">FOR IN<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>VARIABLE<span class="w"> </span><span class="k">in</span><span class="w"> </span>LISTA
+<span class="k">do</span>
+<span class="w">        </span>ACCIONES
+<span class="k">done</span>
 </code></pre></div>
-<p>Una vez hecho, ya podemos ejecutar nuestro script de una de las siguientes formas:</p>
-<div class="highlight"><pre><span></span><code>./”NombreFichero”.sh
-bash<span class="w"> </span>“NombreFIchero”.sh
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>No uséis el comando “sh script.sh” donde script.sh es el nombre de vuestro script. Esto fuerza al terminal a usar el shell SHELL, y nosotros vamos a usar BASH. Por lo que en ciertos comandos nos dará error al usar SHELL. </p>
+</p>
 </div>
-<h2 id="comentarios">Comentarios<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h2>
-<p>Importante el uso de comentarios para poder describir que hace cada parte del código, tanto de cara a vosotros como de cara a compañeros de trabajo que vayan a modificar tu código.</p>
-<p>Para ello se usa 🔀 <strong>“#”</strong>:</p>
+<ul>
+<li>
+<p>Permite recorrer una lista.</p>
+</li>
+<li>
+<p>Importante el espacio entre los corchetes y el uso de “do” y “done” para crear la estructura.</p>
+</li>
+<li>
+<p>Por defecto se interpreta como un objeto de la lista todo aquello que va separado por un espacio en blanco.</p>
+</li>
+<li>
+<p>Usaremos una variable y en cada iteración dicha variable tendrá un valor de la lista.</p>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Iteración<p>Se refiere a cada vez que se va ejecutando el bucle. La primera ejecución con el primer objeto de la lista es la primera iteración, la segunda vez será
+la segunda iteración, y así sucesivamente.</p>
+</p>
+</div>
+<h2 id="ejemplos-de-listas">Ejemplos de listas.<a class="headerlink" href="#ejemplos-de-listas" title="Permanent link">&para;</a></h2>
+<h3 id="ejemplo-de-lista-usando-literales">Ejemplo de lista usando literales.<a class="headerlink" href="#ejemplo-de-lista-usando-literales" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nv">iteracion</span><span class="o">=</span><span class="m">1</span>
+<span class="k">for</span><span class="w"> </span>nombres<span class="w"> </span><span class="k">in</span><span class="w"> </span>Salva<span class="w"> </span>Pepe<span class="w"> </span>Juan<span class="w"> </span>Domingo
+<span class="k">do</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;En la iteracion </span><span class="nv">$iteracion</span><span class="s2"> la variable vale </span><span class="nv">$nombres</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nb">let</span><span class="w"> </span><span class="nv">iteracion</span><span class="o">=</span><span class="nv">$iteracion</span>+1
+<span class="k">done</span>
+</code></pre></div>
 <figure>
-  <img src="imagenes\scripts\ejemplo1.png" width="600"/>
+  <img src="imagenes\scripts\27.png" width="300"/>
 </figure>
+
+<h3 id="ejemplo-de-lista-usando-variables">Ejemplo de lista usando variables.<a class="headerlink" href="#ejemplo-de-lista-usando-variables" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nv">directorios</span><span class="o">=</span><span class="sb">`</span>ls<span class="sb">`</span>
+<span class="nv">iteracion</span><span class="o">=</span><span class="m">1</span>
+<span class="k">for</span><span class="w"> </span>nombres<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$directorios</span>
+<span class="k">do</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El directorio en la iteracion </span><span class="nv">$iteracion</span><span class="s2"> es </span><span class="nv">$nombres</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nb">let</span><span class="w"> </span><span class="nv">iteracion</span><span class="o">=</span>iteracion+1
+<span class="k">done</span>
+</code></pre></div>
+<h3 id="ejemplo-de-lista-usando-comandos">Ejemplo de lista usando comandos.<a class="headerlink" href="#ejemplo-de-lista-usando-comandos" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nv">iteracion</span><span class="o">=</span><span class="m">1</span>
+<span class="k">for</span><span class="w"> </span>nombres<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>ls<span class="sb">`</span>
+<span class="k">do</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El directorio en la iteracion </span><span class="nv">$iteracion</span><span class="s2"> es </span><span class="nv">$nombres</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nb">let</span><span class="w"> </span><span class="nv">iteracion</span><span class="o">=</span>iteracion+1
+<span class="k">done</span>
+</code></pre></div>
+<h2 id="ejemplos-genericos">Ejemplos genéricos.<a class="headerlink" href="#ejemplos-genericos" title="Permanent link">&para;</a></h2>
+<h3 id="ejemplos-usando-el-comando-seq">Ejemplos usando el comando seq.<a class="headerlink" href="#ejemplos-usando-el-comando-seq" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>numero<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">10</span><span class="sb">`</span>
+<span class="k">do</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ahora la variable numero vale </span><span class="nv">$numero</span>
+<span class="s2">done</span>
+</code></pre></div>
+<h3 id="ejemplos-con-un-for-anidado">Ejemplos con un for anidado.<a class="headerlink" href="#ejemplos-con-un-for-anidado" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nv">filas</span><span class="o">=</span><span class="m">5</span>
+<span class="nv">columnas</span><span class="o">=</span><span class="m">5</span>
+<span class="k">for</span><span class="w"> </span>fila<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="nv">$filas</span><span class="sb">`</span>
+<span class="k">do</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span>col<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="nv">$columnas</span><span class="sb">`</span>
+<span class="w">        </span><span class="k">do</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;*&quot;</span>
+<span class="w">        </span><span class="k">done</span>
+<span class="w">        </span><span class="c1">#Para saltar de linea.</span>
+<span class="w">        </span><span class="nb">echo</span>
+<span class="k">done</span>
+</code></pre></div>
+<figure>
+  <img src="imagenes\scripts\28.png" width="50"/>
+</figure>
+
+<h3 id="ejemplo-recorriendo-un-fichero-sin-espacios-en-blanco">Ejemplo recorriendo un fichero SIN espacios en blanco.<a class="headerlink" href="#ejemplo-recorriendo-un-fichero-sin-espacios-en-blanco" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">#Solo nos quedamos con los primeros 3 campos porque el 4 de informacion personal</span>
+<span class="c1">#puede contener espacios</span>
+<span class="k">for</span><span class="w"> </span>linea<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>cat<span class="w"> </span>/etc/passwd<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;:&#39;</span><span class="w"> </span>-f1-3<span class="sb">`</span>
+<span class="k">do</span>
+<span class="w">        </span><span class="c1">#Nos quedamos con el nombre de usuario y su uid.</span>
+<span class="w">        </span><span class="nv">userID</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$linea</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;:&#39;</span><span class="w"> </span>-f3<span class="sb">`</span>
+<span class="w">        </span><span class="nv">usuario</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$linea</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;:&#39;</span><span class="w"> </span>-f1<span class="sb">`</span>
+<span class="w">        </span><span class="c1">#Si su UID es mayor de 1000 y menor de 65534 es un usuario normal.</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$userID</span><span class="w"> </span>-ge<span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">$userID</span><span class="w"> </span>-lt<span class="w"> </span><span class="m">65534</span><span class="w"> </span><span class="o">]]</span>
+<span class="w">        </span><span class="k">then</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$usuario</span><span class="s2"> es un usuario normal&quot;</span>
+<span class="w">        </span><span class="k">fi</span>
+<span class="k">done</span>
+</code></pre></div>
+<h3 id="ejemplo-recorriendo-un-fichero-con-espacios-en-blanco-usando-ifs">Ejemplo recorriendo un fichero CON espacios en blanco usando IFS.<a class="headerlink" href="#ejemplo-recorriendo-un-fichero-con-espacios-en-blanco-usando-ifs" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<div class="admonition danger">
+<p class="admonition-title">Cambiar el IFS<p>IFS=$'{\n}'</p>
+</p>
+</div>
+<p></center></p>
+<ul>
+<li>
+<p>El IFS es el separador por defecto del sistema.</p>
+</li>
+<li>
+<p>Existe la variable de entorno $IFS que nos indica cuál es.</p>
+</li>
+<li>
+<p>Podemos modificarla dentro de nuestro script como cualquier variable 🔀 IFS=$'{\n}'</p>
+</li>
+<li>
+<p>Por defecto el IFS es el espacio en blanco, por esa razón cada objeto de una lista está separado por un espacio en blanco.</p>
+</li>
+</ul>
+<p>En el siguiente ejemplo cambiamos el IFS al salto de línea, de esta forma cada iteración coge una linea entera.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">IFS</span><span class="o">=</span><span class="s1">$&#39;{\n}&#39;</span>
+
+<span class="k">for</span><span class="w"> </span>linea<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>ls<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-s<span class="w"> </span><span class="s1">&#39; &#39;</span><span class="sb">`</span>
+<span class="k">do</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$linea</span>
+<span class="k">done</span>
+</code></pre></div>
 
 
 

@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/4_Scripts.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/12_While_Until.html">
       
       
-        <link rel="prev" href="1_ComandosDocker.html">
+        <link rel="prev" href="11_Case.html">
       
       
-        <link rel="next" href="5_Variables.html">
+        <link rel="next" href="13_For.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Creación de Scripts - Sistemas Operativos en Red</title>
+        <title>Esructura WHILE - Sistemas Operativos en Red</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scripts-en-linux" class="md-skip">
+        <a href="#estructuras-while-y-until" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creación de Scripts
+              Esructura WHILE
             
           </span>
         </div>
@@ -370,29 +370,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Creación de Scripts
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="4_Scripts.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="4_Scripts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -401,40 +381,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creacion-de-scripts" class="md-nav__link">
-    Creación de Scripts.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comentarios" class="md-nav__link">
-    Comentarios
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -584,9 +530,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="12_While_Until.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Esructura WHILE
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="12_While_Until.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -595,6 +561,40 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    While
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#until" class="md-nav__link">
+    Until
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -650,91 +650,77 @@
                   
 
 
-<h1 id="scripts-en-linux">Scripts en Linux.<a class="headerlink" href="#scripts-en-linux" title="Permanent link">&para;</a></h1>
-<h2 id="creacion-de-scripts">Creación de Scripts.<a class="headerlink" href="#creacion-de-scripts" title="Permanent link">&para;</a></h2>
-<ul>
-<li>¿Dónde creo mis scripts?</li>
-</ul>
-<p>Lo primero que debemos preguntarnos es dónde vamos a crear el script.
-Si empezamos a crear el script en un directorio donde no tenemos permisos de escritura no nos dejará guardar los cambios y nuestro trabajo será en vano.</p>
-<ul>
-<li>¿Con qué creo mis scripts?</li>
-</ul>
-<p>Para la creación de scripts usaremos el editor de texto nano:</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Controles</th>
-<th style="text-align: left;"><center> Funcionamiento </center></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>nano “NombreFichero”.sh</code></td>
-<td style="text-align: left;">Genera o Abre el fichero para su edición.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Control + o</code></td>
-<td style="text-align: left;">Guardar Cambios.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Control + x</code></td>
-<td style="text-align: left;">Salir.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Control + _</code></td>
-<td style="text-align: left;">Ir a una línea.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Alt + U</code></td>
-<td style="text-align: left;">Deshacer.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Alt + E</code></td>
-<td style="text-align: left;">Rehacer.</td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
-<p>En la leyenda “^” equivale a “Control” y “M-“ equivale a “Alt”.</p>
-<figure>
-  <img src="imagenes\scripts\nano.png" width="800"/>
-</figure>
-
-<ul>
-<li>¿Cómo empiezo mis scripts?</li>
-</ul>
-<p>Lo primero será crear el “shebang”  🔀 #!/bin/bash. </p>
-<figure>
-  <img src="imagenes\scripts\shebang.png" width="200"/>
-</figure>
-
-<p>La función del shebang es decirle al sistema operativo que cuando le digamos de ejecutar este fichero use el SHELL bash, cuya ubicación dentro del sistema es /bin/bash.
-Si vamos a la ruta /bin, veremos que existe un ejecutable llamado “bash”.</p>
-<figure>
-  <img src="imagenes\scripts\bash.png" width="500"/>
-</figure>
-
-<ul>
-<li>¿Cómo ejecuto mis scripts?</li>
-</ul>
-<p>Una vez guardados los cambios debemos darle permisos de ejecución al fichero, en caso de que estemos trabajando con un script. Es importante solo dar permiso de ejecución al usuario propietario, si no se puede producir una brecha de seguridad, pues los scripts suelen almacenar/manipular datos/servicios importantes de nuestro servidor. </p>
-<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>“NombreFichero”.sh
+<h1 id="estructuras-while-y-until">Estructuras WHILE y UNTIL<a class="headerlink" href="#estructuras-while-y-until" title="Permanent link">&para;</a></h1>
+<h2 id="while">While<a class="headerlink" href="#while" title="Permanent link">&para;</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">WHILE<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>CONDICIÓN<span class="w"> </span><span class="o">]</span>
+<span class="k">do</span>
+<span class="w">        </span>ACCIONES
+<span class="k">done</span>
 </code></pre></div>
-<p>Una vez hecho, ya podemos ejecutar nuestro script de una de las siguientes formas:</p>
-<div class="highlight"><pre><span></span><code>./”NombreFichero”.sh
-bash<span class="w"> </span>“NombreFIchero”.sh
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>No uséis el comando “sh script.sh” donde script.sh es el nombre de vuestro script. Esto fuerza al terminal a usar el shell SHELL, y nosotros vamos a usar BASH. Por lo que en ciertos comandos nos dará error al usar SHELL. </p>
+</p>
 </div>
-<h2 id="comentarios">Comentarios<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h2>
-<p>Importante el uso de comentarios para poder describir que hace cada parte del código, tanto de cara a vosotros como de cara a compañeros de trabajo que vayan a modificar tu código.</p>
-<p>Para ello se usa 🔀 <strong>“#”</strong>:</p>
+<ul>
+<li>
+<p>El bucle while se repite mientras la condición sea verdadera.</p>
+</li>
+<li>
+<p>Es posible realizar bucles infinitos que están siempre ejecutándose, por ejemplo haciendo uso de la sentencia “true”, la cual siempre hace que la comprobación sea verdadera.</p>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">BUCLE INFINITO<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">]</span>
+<span class="k">do</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;BUCLE INFINITO&quot;</span>
+<span class="k">done</span>
+</code></pre></div>
+</p>
+</div>
+<ul>
+<li>Importante el espacio entre los corchetes y el uso de “do” y “done” para crear la estructura.</li>
+</ul>
+<h3 id="ejemplo-1-repite-hasta-que-el-usuario-meta-un-numero-entre-1-y-10">Ejemplo 1. Repite hasta que el usuario meta un numero entre 1 y 10<a class="headerlink" href="#ejemplo-1-repite-hasta-que-el-usuario-meta-un-numero-entre-1-y-10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Elige un numero entre 1 y 10&quot;</span><span class="w"> </span>numero
+
+
+<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$num</span><span class="w"> </span>-lt<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">$num</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">]</span>
+<span class="k">do</span>
+<span class="w">        </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Elige un numero entre 1 y 10&quot;</span><span class="w"> </span>numero
+<span class="k">done</span>
+</code></pre></div>
+<h3 id="ejemplo-2-repite-hasta-que-introduzca-un-usuario-valido-en-el-sistema">Ejemplo 2. Repite hasta que introduzca un usuario válido en el sistema.<a class="headerlink" href="#ejemplo-2-repite-hasta-que-introduzca-un-usuario-valido-en-el-sistema" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Introduce un usuario: &quot;</span><span class="w"> </span>usuario
+
+grep<span class="w"> </span>-qw<span class="w"> </span><span class="nv">$usuario</span><span class="w"> </span>/etc/passwd
+
+<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span>
+<span class="k">do</span>
+<span class="w">        </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Introduce un usuario: &quot;</span><span class="w"> </span>usuario
+<span class="w">        </span>grep<span class="w"> </span>-qw<span class="w"> </span><span class="nv">$usuario</span><span class="w"> </span>/etc/passwd
+<span class="k">done</span>
+</code></pre></div>
+<h2 id="until">Until<a class="headerlink" href="#until" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Muy parecido a la estructura while.</p>
+</li>
+<li>
+<p>Se ejecuta mientras la condición sea falsa. </p>
+</li>
+<li>
+<p>Sería equivalente a “Hasta que no sea cierto XXXX sigue realizando las tareas del bucle”.</p>
+</li>
+</ul>
+<h3 id="ejemplo-no-termina-hasta-que-a-tenga-el-valor-de-10">Ejemplo. No termina hasta que a tenga el valor de 10.<a class="headerlink" href="#ejemplo-no-termina-hasta-que-a-tenga-el-valor-de-10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">0</span>
+<span class="k">until</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$a</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">]</span>
+<span class="k">do</span>
+<span class="w">        </span><span class="nb">let</span><span class="w"> </span><span class="s2">&quot;a=</span><span class="nv">$a</span><span class="s2">+1&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$a</span>
+<span class="k">done</span>
+</code></pre></div>
 <figure>
-  <img src="imagenes\scripts\ejemplo1.png" width="600"/>
+  <img src="imagenes\scripts\26.png" width="300"/>
 </figure>
 
 

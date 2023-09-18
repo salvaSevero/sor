@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/4_Scripts.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/11_Case%20-%20copia.html">
       
       
-        <link rel="prev" href="1_ComandosDocker.html">
-      
-      
-        <link rel="next" href="5_Variables.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Creación de Scripts - Sistemas Operativos en Red</title>
+        <title>Estructura CASE - Sistemas Operativos en Red</title>
       
     
     
@@ -79,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scripts-en-linux" class="md-skip">
+        <a href="#estructura-case" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creación de Scripts
+              Estructura CASE
             
           </span>
         </div>
@@ -228,8 +224,6 @@
       
   
   
-    
-  
   
     
     
@@ -242,13 +236,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
@@ -261,7 +255,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             1. UD1. Docker y Scripting
@@ -312,8 +306,6 @@
                 
   
   
-    
-  
   
     
     
@@ -340,13 +332,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
         
           <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
@@ -359,7 +351,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             Scripts
@@ -370,29 +362,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Creación de Scripts
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="4_Scripts.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="4_Scripts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -401,40 +373,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creacion-de-scripts" class="md-nav__link">
-    Creación de Scripts.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comentarios" class="md-nav__link">
-    Comentarios
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -650,91 +588,82 @@
                   
 
 
-<h1 id="scripts-en-linux">Scripts en Linux.<a class="headerlink" href="#scripts-en-linux" title="Permanent link">&para;</a></h1>
-<h2 id="creacion-de-scripts">Creación de Scripts.<a class="headerlink" href="#creacion-de-scripts" title="Permanent link">&para;</a></h2>
+<h1 id="estructura-case">Estructura CASE<a class="headerlink" href="#estructura-case" title="Permanent link">&para;</a></h1>
+<p>Estructura parecida al 🔀 IF.</p>
+<p>Va realizando comprobaciones y cuando una coincida, realiza una serie de acciones programadas y finaliza la condición.</p>
 <ul>
-<li>¿Dónde creo mis scripts?</li>
+<li>
+<p>Cada opción debe ir finalizada de paréntesis “)”.</p>
+</li>
+<li>
+<p>Cada acción debajo de cada condición debe ir finalizada de doble punto y coma “;;”</p>
+</li>
+<li>
+<p>Con el metacaracter “<em>” conseguimos que coincida cualquier cosa, por lo que siempre se cumplirá la condición. </em><em>Es equivalente al “else”</em>*.</p>
+</li>
+<li>
+<p>Se puede hacer uso de expresiones regulares.</p>
+</li>
+<li>
+<p>Se debe usar <strong>“esac”</strong> para finalizar la estructura.</p>
+</li>
 </ul>
-<p>Lo primero que debemos preguntarnos es dónde vamos a crear el script.
-Si empezamos a crear el script en un directorio donde no tenemos permisos de escritura no nos dejará guardar los cambios y nuestro trabajo será en vano.</p>
-<ul>
-<li>¿Con qué creo mis scripts?</li>
-</ul>
-<p>Para la creación de scripts usaremos el editor de texto nano:</p>
+<h3 id="ejemplo-1-ejemplo-de-un-menu">Ejemplo 1. Ejemplo de un Menú.<a class="headerlink" href="#ejemplo-1-ejemplo-de-un-menu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1. Agregar Usuario.&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2. Eliminar Usuario.&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;3. Bloquear Usuario.&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;4. Salir.&quot;</span>
+
+<span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Elige una opcion: &quot;</span><span class="w"> </span>opcion
+
+<span class="k">case</span><span class="w"> </span><span class="nv">$opcion</span><span class="w"> </span><span class="k">in</span>
+<span class="w">        </span><span class="s2">&quot;1&quot;</span><span class="o">)</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Has elegido la opcion 1&quot;</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ahora creariamos el usuario&quot;</span><span class="p">;;</span>
+<span class="w">        </span><span class="s2">&quot;2&quot;</span><span class="o">)</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Has elegido la opcion 2, vamos a eliminar al usuario&quot;</span><span class="p">;;</span>
+<span class="w">        </span><span class="s2">&quot;3&quot;</span><span class="o">)</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Has elegido la opcion 3 ...&quot;</span><span class="p">;;</span>
+<span class="w">        </span><span class="s2">&quot;4&quot;</span><span class="o">)</span>
+<span class="w">                </span>exit<span class="p">;;</span>
+<span class="w">        </span>*<span class="o">)</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El usuario ha insertado cualquier otra cosa.&quot;</span>
+<span class="k">esac</span>
+</code></pre></div>
+<h3 id="ejemplo-2-multiples-lineas-de-ejecucion-por-opcion">Ejemplo 2. Múltiples líneas de ejecución por opción.<a class="headerlink" href="#ejemplo-2-multiples-lineas-de-ejecucion-por-opcion" title="Permanent link">&para;</a></h3>
+<p>Es importante que quede claro que podemos añadir varios comandos/acciones por cada opción, como se puede ver en el siguiente ejemplo en las opciones 0) y *).</p>
+<figure>
+  <img src="imagenes\scripts\23.png" width="700"/>
+</figure>
+
+<h3 id="ejemplo-3-el-uso-de-operadores-binarios-en-el-case">Ejemplo 3. El uso de operadores binarios en el case.<a class="headerlink" href="#ejemplo-3-el-uso-de-operadores-binarios-en-el-case" title="Permanent link">&para;</a></h3>
+<p>También podemos hacer uso de la | para integrar dos opciones posibles, es decir, que tanto si se cumple una u otra se ejecutarán los comandos asociadas a esa comprobación:</p>
+<p>Por ejemplo en el siguiente ejemplo, la primera comprobación será verdadera si nombre vale “álvaro” o “pepe”</p>
+<figure>
+  <img src="imagenes\scripts\24.png" width="500"/>
+</figure>
+
+<figure>
+  <img src="imagenes\scripts\25.png" width="500"/>
+</figure>
+
+<h3 id="ejemplo-4-el-uso-de">Ejemplo 4. El uso de ;;&amp;.<a class="headerlink" href="#ejemplo-4-el-uso-de" title="Permanent link">&para;</a></h3>
 <p><center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Controles</th>
-<th style="text-align: left;"><center> Funcionamiento </center></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>nano “NombreFichero”.sh</code></td>
-<td style="text-align: left;">Genera o Abre el fichero para su edición.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Control + o</code></td>
-<td style="text-align: left;">Guardar Cambios.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Control + x</code></td>
-<td style="text-align: left;">Salir.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Control + _</code></td>
-<td style="text-align: left;">Ir a una línea.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Alt + U</code></td>
-<td style="text-align: left;">Deshacer.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Alt + E</code></td>
-<td style="text-align: left;">Rehacer.</td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
-<p>En la leyenda “^” equivale a “Control” y “M-“ equivale a “Alt”.</p>
-<figure>
-  <img src="imagenes\scripts\nano.png" width="800"/>
-</figure>
-
-<ul>
-<li>¿Cómo empiezo mis scripts?</li>
-</ul>
-<p>Lo primero será crear el “shebang”  🔀 #!/bin/bash. </p>
-<figure>
-  <img src="imagenes\scripts\shebang.png" width="200"/>
-</figure>
-
-<p>La función del shebang es decirle al sistema operativo que cuando le digamos de ejecutar este fichero use el SHELL bash, cuya ubicación dentro del sistema es /bin/bash.
-Si vamos a la ruta /bin, veremos que existe un ejecutable llamado “bash”.</p>
-<figure>
-  <img src="imagenes\scripts\bash.png" width="500"/>
-</figure>
-
-<ul>
-<li>¿Cómo ejecuto mis scripts?</li>
-</ul>
-<p>Una vez guardados los cambios debemos darle permisos de ejecución al fichero, en caso de que estemos trabajando con un script. Es importante solo dar permiso de ejecución al usuario propietario, si no se puede producir una brecha de seguridad, pues los scripts suelen almacenar/manipular datos/servicios importantes de nuestro servidor. </p>
-<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>“NombreFichero”.sh
-</code></pre></div>
-<p>Una vez hecho, ya podemos ejecutar nuestro script de una de las siguientes formas:</p>
-<div class="highlight"><pre><span></span><code>./”NombreFichero”.sh
-bash<span class="w"> </span>“NombreFIchero”.sh
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>No uséis el comando “sh script.sh” donde script.sh es el nombre de vuestro script. Esto fuerza al terminal a usar el shell SHELL, y nosotros vamos a usar BASH. Por lo que en ciertos comandos nos dará error al usar SHELL. </p>
+<div class="admonition danger">
+<p class="admonition-title">Con 🔀 ;;&amp; 🔀 podemos ejecutar múltiples condiciones</p>
 </div>
-<h2 id="comentarios">Comentarios<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h2>
-<p>Importante el uso de comentarios para poder describir que hace cada parte del código, tanto de cara a vosotros como de cara a compañeros de trabajo que vayan a modificar tu código.</p>
-<p>Para ello se usa 🔀 <strong>“#”</strong>:</p>
+<p></center></p>
+<ul>
+<li>
+<p>Con “;;” le decimos al script que si se cumple esa condición termine la estructura y salga del “case” (una línea después del esac). </p>
+</li>
+<li>
+<p>Usando <strong>“;;&amp;”</strong> estamos indicando que en caso de ser cierta esa comprobación, ejecute las instrucciones asociadas, pero que siga comprobando el resto de opciones y si hay alguna cierta ejecute también las acciones asociadas a ella.</p>
+</li>
+</ul>
+<p>En el siguiente ejemplo la primera cláusula tiene un “;;&amp;”, por lo que por ejemplo si el usuario selecciona “Viernes” se mostrará por pantalla “A estudiar” y posteriormente se mostrará también “A descansar”, puesto que seguirá comprobando el resto de condiciones de la estructura case.</p>
 <figure>
-  <img src="imagenes\scripts\ejemplo1.png" width="600"/>
+  <img src="imagenes\scripts\22.png" width="500"/>
 </figure>
 
 
