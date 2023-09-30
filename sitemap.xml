@@ -2,92 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://salvasevero.github.io/sor/index.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/0_MaquinasContenedores.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/10_Argumentos.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/11_Case%20-%20copia.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/11_Case.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/12_While_Until.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/13_For.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/14_Break.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://salvasevero.github.io/sor/15_DockerVolumenes.html</loc>
+         <lastmod>2023-09-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://salvasevero.github.io/sor/16_EjemploDocker_WP.html</loc>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/1_ComandosDocker.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://salvasevero.github.io/sor/2_EjemplosDocker.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <loc>https://salvasevero.github.io/sor/2_EjemplosDocker%20-%20copia.html</loc>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/3_Clase.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/4_Scripts.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/5_Variables.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/6_Aritmetica.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/7_Comparadores.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/8_IF.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/9_Operadores_Binarios.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://salvasevero.github.io/sor/Anexo_SSH.html</loc>
-         <lastmod>2023-09-29</lastmod>
+         <lastmod>2023-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

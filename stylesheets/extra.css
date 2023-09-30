@@ -63,7 +63,8 @@
 
   .md-typeset .admonition,
 .md-typeset details {
-  border-width: 0;
+  border-width: 3;
   border-left-width: 4px;
   font-size: 15px;
 }
+
