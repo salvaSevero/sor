@@ -952,27 +952,22 @@
 </table>
 <p></center></p>
 <h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h2>
-<h3 id="selecciona-las-coincidencias-con-ubuntu">Selecciona las coincidencias con “ubuntu”:<a class="headerlink" href="#selecciona-las-coincidencias-con-ubuntu" title="Permanent link">&para;</a></h3>
-<figure>
-  <img src="imagenes\scripts\65.png" width="800"/>
-</figure>
-
+<h3 id="selecciona-las-lineas-donde-encuentra-la-coincidencia-ubuntu">Selecciona las líneas donde encuentra la coincidencia “ubuntu”:<a class="headerlink" href="#selecciona-las-lineas-donde-encuentra-la-coincidencia-ubuntu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/ubuntu/&#39;</span>p<span class="w"> </span>/etc/passwd
+</code></pre></div>
 <h3 id="selecciona-la-linea-1-fijate-que-al-ser-una-linea-no-lleva-barras">Selecciona la línea 1 (Fíjate que al ser una línea no lleva barras):<a class="headerlink" href="#selecciona-la-linea-1-fijate-que-al-ser-una-linea-no-lleva-barras" title="Permanent link">&para;</a></h3>
-<figure>
-  <img src="imagenes\scripts\66.png" width="500"/>
-</figure>
-
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;1&#39;</span>p<span class="w"> </span>/etc/passwd
+</code></pre></div>
 <h3 id="seleccionar-de-la-linea-5-a-la-7">Seleccionar de la línea 5 a la 7:<a class="headerlink" href="#seleccionar-de-la-linea-5-a-la-7" title="Permanent link">&para;</a></h3>
-<figure>
-  <img src="imagenes\scripts\67.png" width="500"/>
-</figure>
-
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;5,7&#39;</span>p<span class="w"> </span>/etc/passwd
+</code></pre></div>
 <h3 id="seleccionar-la-ultima-linea">Seleccionar la última línea:<a class="headerlink" href="#seleccionar-la-ultima-linea" title="Permanent link">&para;</a></h3>
-<figure>
-  <img src="imagenes\scripts\68.png" width="500"/>
-</figure>
-
-<h3 id="selecciona-desde-que-detecta-el-patron-hasta-el-final-de-linea">Selecciona desde que detecta el patrón hasta el final de línea:<a class="headerlink" href="#selecciona-desde-que-detecta-el-patron-hasta-el-final-de-linea" title="Permanent link">&para;</a></h3>
+<p>Muestra la última línea del fichero.</p>
+<p>La opción -n hace que no imprima el resto del fichero y la opción "p" que imprima la selección, en este caso la última línea.</p>
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;$&#39;</span>p<span class="w"> </span>/etc/passwd
+</code></pre></div>
+<h3 id="selecciona-desde-que-detecta-el-patron-hasta-el-final-del-fichero">Selecciona desde que detecta el patrón hasta el final del fichero:<a class="headerlink" href="#selecciona-desde-que-detecta-el-patron-hasta-el-final-del-fichero" title="Permanent link">&para;</a></h3>
+<p>El $ sin barras (//) hace referencia a la última línea.</p>
 <figure>
   <img src="imagenes\scripts\69.png" width="800"/>
 </figure>
@@ -997,25 +992,23 @@
 </div>
 <p></center></p>
 <h3 id="ejemplo-sustituye-los-patrones-salva-por-mr-salva">Ejemplo: Sustituye los patrones salva por Mr. Salva.<a class="headerlink" href="#ejemplo-sustituye-los-patrones-salva-por-mr-salva" title="Permanent link">&para;</a></h3>
-<figure>
-  <img src="imagenes\scripts\71.png" width="600"/>
-</figure>
-
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>s<span class="s1">&#39;/salva/Mr. Salva/&#39;</span>g<span class="w"> </span>lista.txt
+</code></pre></div>
 <h3 id="ejemplo-cuando-encuentra-un-guion-borra-el-resto-de-la-linea">Ejemplo: Cuando encuentra  un guión borra el resto de la línea.<a class="headerlink" href="#ejemplo-cuando-encuentra-un-guion-borra-el-resto-de-la-linea" title="Permanent link">&para;</a></h3>
-<figure>
-  <img src="imagenes\scripts\72.png" width="600"/>
-</figure>
-
+<p>Se elimina cualquier cosa (.*) que encuentre después de un guión.</p>
+<p>La salida del ejemplo sería "HOLA".</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;HOLA - QUÉ TAL???&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>s<span class="s1">&#39;/-.*//&#39;</span>g
+</code></pre></div>
 <h3 id="ejemplo-borra-los-comentarios">Ejemplo: Borra los comentarios.<a class="headerlink" href="#ejemplo-borra-los-comentarios" title="Permanent link">&para;</a></h3>
-<figure>
-  <img src="imagenes\scripts\73.png" width="600"/>
-</figure>
-
+<p>El ".*" es una expresión regular que indica cualquier cadena de texto.</p>
+<p>Por tanto se sustituye cualquier cadena de texto precedida de un # por una cadena vacía, de ahí las dos barras //.</p>
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>s<span class="s1">&#39;/#.*//&#39;</span>g<span class="w"> </span>ejemplos.txt
+</code></pre></div>
 <h2 id="anidar-varios-comandos-sed">Anidar varios comandos sed.<a class="headerlink" href="#anidar-varios-comandos-sed" title="Permanent link">&para;</a></h2>
 <p><center></p>
 <div class="admonition info">
-<p class="admonition-title">Sustituye coincidencias SED</p>
-<p>sd –e  s’/Patrón1/Patrón2/’g    –e     s’/Patrón1/Patrón2/’g    </p>
+<p class="admonition-title">Sustituye múltiples coincidencias SED</p>
+<p>sed –e  s’/Patrón1/Patrón2/’g    –e     s’/Patrón1/Patrón2/’g    </p>
 </div>
 <p></center></p>
 <h3 id="ejemplo-anade-tras-cada-letra-minuscula-encontrada-posteriormente-al-final-de-linea-borra-los-ultimos">Ejemplo: Añade ":" tras cada letra minúscula encontrada, posteriormente al final de línea borra los últimos ":".<a class="headerlink" href="#ejemplo-anade-tras-cada-letra-minuscula-encontrada-posteriormente-al-final-de-linea-borra-los-ultimos" title="Permanent link">&para;</a></h3>
@@ -1027,6 +1020,12 @@
 </figure>
 
 <h2 id="cambiar-el-contenido-de-un-fichero">Cambiar el contenido de un fichero.<a class="headerlink" href="#cambiar-el-contenido-de-un-fichero" title="Permanent link">&para;</a></h2>
+<p><center></p>
+<div class="admonition info">
+<p class="admonition-title">Sustituye coincidencias SED y actualiza el fichero</p>
+<p>sed -i  s’/Patrón1/Patrón2/’g </p>
+</div>
+<p></center></p>
 <ul>
 <li>
 <p>Todos estos ejemplos <strong>NO</strong> cambian el fichero en sí, solo muestran la salida de cómo quedaría. </p>
@@ -1035,10 +1034,10 @@
 <p>Para cambiar el contenido usaremos la opción -i.</p>
 </li>
 </ul>
-<h3 id="cambiamos-en-el-fichero-salva-por-salvador">Cambiamos en el fichero salva por Salvador.<a class="headerlink" href="#cambiamos-en-el-fichero-salva-por-salvador" title="Permanent link">&para;</a></h3>
-<figure>
-  <img src="imagenes\scripts\75.png" width="600"/>
-</figure>
+<h3 id="reemplazamos-en-el-fichero-las-cadenas-de-texto-salva-por-salvador">Reemplazamos en el fichero las cadenas de texto salva por Salvador.<a class="headerlink" href="#reemplazamos-en-el-fichero-las-cadenas-de-texto-salva-por-salvador" title="Permanent link">&para;</a></h3>
+<p>Recordad que si no usamos la opción -i nos muestra por pantalla como quedaría el fichero, pero NO lo cambia.</p>
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i<span class="w"> </span>s<span class="s1">&#39;/salva/Salvador/&#39;</span>g<span class="w"> </span>ejemplos.txt
+</code></pre></div>
 
 
 
