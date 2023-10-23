@@ -801,6 +801,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#acceso-al-recurso" class="md-nav__link">
+    Acceso al recurso.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#video-de-ejemplo" class="md-nav__link">
     Vídeo de Ejemplo.
   </a>
@@ -826,7 +833,7 @@
         
   
   <span class="md-ellipsis">
-    Opciones Básicas
+    Secciones
   </span>
   
 
@@ -973,6 +980,8 @@
 <p>✔️ Samba es una implementación libre de dicho protocolo smb creado por IBM.</p>
 <p>✔️ Posteriormente Windows modificó el código de smb y lo renombró como CIFS (Common Internet File System).</p>
 <p>✔️ Su finalidad es la compartición de recursos (directorios/ficheros) e impresoras entre sistemas heterogéneos (Windows/Linux/Solaris/Mac OSX).</p>
+<p>✔️ Samba suele usar el puerto 445 TCP.</p>
+<p>✔️ SMB tiene 3 versiones: SMB 1.0, 2.0 y 3.0. Nunca debemos usar 1.0 y deberíamos intentar usar 3.0 que es más seguro.</p>
 <p>✔️ Samba también nos permite crear servidores de dominio activo (Active Directory) como Windows Server.</p>
 <p><center></p>
 <div class="admonition info">
@@ -982,7 +991,11 @@
 </div>
 <p></center></p>
 <h2 id="instalacion">Instalación.<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>samba
+<h3 id="servidor">Servidor.<a class="headerlink" href="#servidor" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>install<span class="w"> </span>samba
+</code></pre></div>
+<h3 id="cliente">Cliente.<a class="headerlink" href="#cliente" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>install<span class="w"> </span>samba-client
 </code></pre></div>
 <h2 id="configuracion">Configuración.<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <h3 id="1-accedemos-al-fichero-de-configuracion">1. Accedemos al fichero de configuración.<a class="headerlink" href="#1-accedemos-al-fichero-de-configuracion" title="Permanent link">&para;</a></h3>
@@ -992,7 +1005,7 @@
 <p>🔥 Los "#" y los ";" son comentarios y no surgen efecto dentro del fichero de configuración.</p>
 </div>
 <p></center></p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/samba/smb.conf
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/etc/samba/smb.conf
 </code></pre></div>
 <h3 id="2-creamos-los-recursos-a-compartir-cambio-de-parametros-del-servicio">2. Creamos los recursos a compartir / Cambio de parámetros del servicio.<a class="headerlink" href="#2-creamos-los-recursos-a-compartir-cambio-de-parametros-del-servicio" title="Permanent link">&para;</a></h3>
 <p>Ejemplo: Al final del fichero añadimos un nuevo recurso.</p>
@@ -1001,18 +1014,18 @@
 <span class="w"> </span><span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/srv/samba/ejercicio1
 <span class="w"> </span><span class="nv">browsable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>yes
 <span class="w"> </span>guest<span class="w"> </span><span class="nv">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>yes
-<span class="w"> </span><span class="nb">read</span><span class="w"> </span><span class="nv">only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>yes
+<span class="w"> </span><span class="nb">read</span><span class="w"> </span><span class="nv">only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>no
 <span class="w"> </span>create<span class="w"> </span><span class="nv">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0777</span>
 </code></pre></div>
 <h3 id="3-creamos-en-el-servidor-el-recurso-a-compartir">3. Creamos en el servidor el recurso a compartir.<a class="headerlink" href="#3-creamos-en-el-servidor-el-recurso-a-compartir" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>–p<span class="w"> </span>/srv/samba/ejercicio1
-chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/srv/samba/ejercicio1
+chmod<span class="w"> </span><span class="m">744</span><span class="w"> </span>/srv/samba/ejercicio1
 </code></pre></div>
 <h3 id="4-reiniciamos-el-servicio-para-que-surjan-efecto-los-cambios-de-configuracion">4. Reiniciamos el servicio para que surjan efecto los cambios de configuración.<a class="headerlink" href="#4-reiniciamos-el-servicio-para-que-surjan-efecto-los-cambios-de-configuracion" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>smbd
+<div class="highlight"><pre><span></span><code>service<span class="w"> </span>smbd<span class="w"> </span>restart
 </code></pre></div>
-<h3 id="5-acceso-al-recurso">5. Acceso al recurso.<a class="headerlink" href="#5-acceso-al-recurso" title="Permanent link">&para;</a></h3>
-<p>🎇 OPCIÓN 1.</p>
+<h2 id="acceso-al-recurso">Acceso al recurso.<a class="headerlink" href="#acceso-al-recurso" title="Permanent link">&para;</a></h2>
+<h3 id="windows-opcion-1">Windows OPCIÓN 1.<a class="headerlink" href="#windows-opcion-1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Seleccionamos Red (Network).</li>
 </ul>
@@ -1021,14 +1034,91 @@ chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/
   <img src="imagenes\samba\1.png" width="600"/>
 </figure>
 
-<p>🎇 OPCIÓN 2.</p>
-<ul>
-<li>También podemos abrir un explorador de directorio y colocar en la barra de direcciones \\IP_Servidor:</li>
-</ul>
+<h3 id="windows-opcion-2">Windows OPCIÓN 2.<a class="headerlink" href="#windows-opcion-2" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<div class="admonition danger">
+<p class="admonition-title">ACCESO \\IP_Servidor</p>
+<p>🔥 Podemos abrir un explorador de directorio y colocar en la barra de direcciones \\IP_Servidor:</p>
+</div>
+<p></center></p>
 <figure>
   <img src="imagenes\samba\2.png" width="500"/>
 </figure>
 
+<h3 id="linux-interfaz-grafica">LINUX. Interfaz gráfica.<a class="headerlink" href="#linux-interfaz-grafica" title="Permanent link">&para;</a></h3>
+<p>En Linux podemos acceder desde una carpeta usando el protocolo smb:</p>
+<div class="highlight"><pre><span></span><code>smb://usuario@IPServidor/CarpetaCompartida
+</code></pre></div>
+<h3 id="linux-comandos">LINUX. Comandos.<a class="headerlink" href="#linux-comandos" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Averiguar dentro del servicio que carpetas compartidas hay disponibles.</li>
+</ol>
+<figure>
+  <img src="imagenes\samba\3.png" width="500"/>
+</figure>
+
+<ol start="2">
+<li>Acceso a la carpeta compartida.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1">#Importante escapar cada \, por eso hay 4 por un lado y 2 por otro...</span>
+smbclient<span class="w"> </span><span class="se">\\\\</span><span class="m">172</span>.17.0.2<span class="se">\\</span>ejercicio1
+</code></pre></div>
+<ol start="3">
+<li>Una vez dentro son comandos parecidos a FTP.</li>
+</ol>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Símbolo</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>ls</code></td>
+<td style="text-align: left;">Listar ficheros/carpetas.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cd</code></td>
+<td style="text-align: left;">Moverme entre carpetas.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>get</code></td>
+<td style="text-align: left;">Descargar un fichero.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>put</code></td>
+<td style="text-align: left;">Cargar un fichero.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>?</code></td>
+<td style="text-align: left;">Mostrar la ayuda.</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<figure>
+  <img src="imagenes\samba\4.png" width="500"/>
+</figure>
+
+<p>Recoger un fichero del servidor.</p>
+<div class="highlight"><pre><span></span><code>smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>get<span class="w"> </span>FICHERO_SERVIDOR<span class="w"> </span>FICHERO_CLIENTE
+</code></pre></div>
+<p>Recoger un fichero del servidor.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Se debe haber creado antes un usuario samba con smbpasswd -a &quot;usuario&quot;</span>
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>put<span class="w"> </span>FICHERO_CLIENTE<span class="w"> </span>FICHERO_SERVIDOR
+</code></pre></div>
+<h3 id="linux-script">LINUX. Script.<a class="headerlink" href="#linux-script" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>smbclient<span class="w"> </span><span class="se">\\\\</span><span class="m">172</span>.17.0.2<span class="se">\\</span>ejercicio1<span class="w"> </span>--password<span class="w"> </span><span class="m">123</span><span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">    get Fichero_Servidor Fichero_Cliente</span>
+<span class="s">    put Fichero_Cliente Fichero_Servidor</span>
+<span class="s">    exit</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<p>Otra opción es usar -c del comando:</p>
+<div class="highlight"><pre><span></span><code>smbclient<span class="w"> </span><span class="se">\\\\</span><span class="m">172</span>.17.0.2<span class="se">\\</span>ejercicio1<span class="w"> </span>--password<span class="w"> </span><span class="m">123</span><span class="w"> </span>-c<span class="w">  </span><span class="s2">&quot;get Fic_Servidor Fic_Cliente; put Fic_Cliente Fic_Servidor&quot;</span>
+</code></pre></div>
 <h2 id="video-de-ejemplo">Vídeo de Ejemplo.<a class="headerlink" href="#video-de-ejemplo" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="https://youtu.be/RfjdJ9W1gss">Creación de Recurso Compartido.</a></li>

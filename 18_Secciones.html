@@ -22,7 +22,7 @@
     
     
       
-        <title>Opciones Básicas - Sistemas Operativos en Red</title>
+        <title>Secciones - Sistemas Operativos en Red</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Opciones Básicas
+              Secciones
             
           </span>
         </div>
@@ -767,7 +767,7 @@
           
   
   <span class="md-ellipsis">
-    Opciones Básicas
+    Secciones
   </span>
   
 
@@ -778,7 +778,7 @@
         
   
   <span class="md-ellipsis">
-    Opciones Básicas
+    Secciones
   </span>
   
 
@@ -800,8 +800,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#documentacion-oficial" class="md-nav__link">
-    Documentación Oficial.
+  <a href="#seccion-global" class="md-nav__link">
+    Sección [global].
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seccion-homes" class="md-nav__link">
+    Sección [homes].
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seccion-printers" class="md-nav__link">
+    Sección [printers].
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seccion-personalizada" class="md-nav__link">
+    Sección Personalizada.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos-de-ejemplo" class="md-nav__link">
+    Vídeos de Ejemplo.
   </a>
   
 </li>
@@ -947,6 +975,77 @@
 
 
 <h1 id="secciones">Secciones.<a class="headerlink" href="#secciones" title="Permanent link">&para;</a></h1>
+<p>Dentro del fichero de configuración encontramos diversas secciones, entre las que destacaremos tres:</p>
+<h2 id="seccion-global">Sección [global].<a class="headerlink" href="#seccion-global" title="Permanent link">&para;</a></h2>
+<p>Las opciones especificadas aquí afectan a cualquier recurso compartido. Si una misma opción se declara en la sección global y en otra sección, por ejemplo [ejercicio1], tendrá mayor peso la de la sección más específica, es decir [ejercicio1].</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Símbolo</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>hosts allow</code></td>
+<td style="text-align: left;">Especifica desde qué direcciones IP se podrá acceder al servicio.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>hosts deny</code></td>
+<td style="text-align: left;">Especifica los rangos no permitidos, del mismo modo que host allow.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>security</code></td>
+<td style="text-align: left;">Especifica el nivel de seguridad con el que se puede acceder.</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3 id="ejemplos-hosts-allowdeny">Ejemplos Hosts Allow/Deny.<a class="headerlink" href="#ejemplos-hosts-allowdeny" title="Permanent link">&para;</a></h3>
+<p>hosts allow | deny: Permite restringir el acceso por IP:</p>
+<ul>
+<li>Permitir redes →  hosts allow = 192.168.2.0/24 192.168.3.0/24</li>
+<li>IP específica → hosts allow = 192.168.2.5 192.168.3.100 192.168.3.200</li>
+<li>Permitir por parte de red →   hosts allow = 192.168.   </li>
+<li>Rechazar por parte de red →  hosts deny = 10.  (Deniega acceso a todos los hosts que comiencen por 10.)</li>
+</ul>
+<p><center></p>
+<div class="admonition danger">
+<p class="admonition-title">Orden de Ejecución</p>
+<p>Su funcionamiento es de arriba abajo, como las listas de acceso. Es decir, si tenemos:</p>
+<p>hosts allow = 127.0.0.1 192.168.2.0/24 192.168.3.0/24</p>
+<p>hosts deny = 127.0.0.1 192.168.2.0/24 192.168.3.0/24</p>
+<p>El que cuenta es el primero que coincida, por tanto sí permitiría el acceso.</p>
+</div>
+<p></center></p>
+<h2 id="seccion-homes">Sección [homes].<a class="headerlink" href="#seccion-homes" title="Permanent link">&para;</a></h2>
+<p>Permite indicar las opciones para el /home de los usuarios existentes en el servidor. De tal forma que podríamos acceder a nuestro /home desde cualquier máquina del grupo de trabajo de la siguiente forma: <strong>\IP_SERVIDOR\usuario.</strong></p>
+<h2 id="seccion-printers">Sección [printers].<a class="headerlink" href="#seccion-printers" title="Permanent link">&para;</a></h2>
+<p>Información del trato para la compartición de impresoras en red.</p>
+<h2 id="seccion-personalizada">Sección Personalizada.<a class="headerlink" href="#seccion-personalizada" title="Permanent link">&para;</a></h2>
+<p>Cuando vamos a crear nuestra carpeta compartida, crearemos nuestra propia sección.</p>
+<p><div class="highlight"><pre><span></span><code><span class="o">[</span>compartidoUser1<span class="o">]</span>
+<span class="nv">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Carpeta<span class="w"> </span>compartida<span class="w"> </span>
+<span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/media/compartido/user1
+guest<span class="w"> </span><span class="nv">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Yes
+<span class="nb">read</span><span class="w"> </span><span class="nv">only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Yes
+write<span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>@Ceos,<span class="w"> </span>administrador,<span class="w"> </span>user1<span class="w"> </span>
+directory<span class="w"> </span><span class="nv">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0755</span>
+</code></pre></div>
+<center></p>
+<div class="admonition note">
+<p class="admonition-title">Resumen Ejemplo</p>
+<ul>
+<li>
+<p>Estas líneas crean un recurso compartido con el nombre compartidoUser1 en el directorio /media/compartido/user1 de solo lectura, con acceso de invitado, los usuarios administrador y user1 pueden escribir y el grupo @Ceos también.</p>
+</li>
+<li>
+<p>Además, se aplicará una máscara de permisos automática de 0755 a los ficheros y carpetas que se creen en este recurso.</p>
+</li>
+</ul>
+</div>
+<p></center></p>
 <p><center></p>
 <table>
 <thead>
@@ -1017,8 +1116,14 @@
 <p>Se puede compartir cualquier carpeta, no obstante, por estándar las carpetas compartidas de un servidor suelen encontrarse dentro del directorio /srv. </p>
 </div>
 <p></center></p>
-<h2 id="documentacion-oficial">Documentación Oficial.<a class="headerlink" href="#documentacion-oficial" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html">Enlace a la documentación oficial.</a></p>
+<p><center></p>
+<div class="admonition danger">
+<p class="admonition-title">Sticky Bit</p>
+<p>El primer bit del “umask” se usa para opciones especiales (stickybit, SGID o SUID) que quedan fuera de los contenidos del módulo, lo dejaremos a 0.</p>
+</div>
+<p></center></p>
+<h2 id="videos-de-ejemplo">Vídeos de Ejemplo.<a class="headerlink" href="#videos-de-ejemplo" title="Permanent link">&para;</a></h2>
+<p><a href="https://youtu.be/1x5NnJsFC9Q">Secciones dentro de SAMBA.</a></p>
 
 
 
