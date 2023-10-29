@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/12_While_Until.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/19_Docker_Redes.html">
       
       
-        <link rel="prev" href="11_Case.html">
+        <link rel="prev" href="16_EjemploDocker_WP.html">
       
       
-        <link rel="next" href="13_For.html">
+        <link rel="next" href="4_Scripts.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Esructura WHILE - Sistemas Operativos en Red</title>
+        <title>Redes - Sistemas Operativos en Red</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#estructuras-while-y-until" class="md-skip">
+        <a href="#redes" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Esructura WHILE
+              Redes
             
           </span>
         </div>
@@ -228,6 +228,8 @@
       
   
   
+    
+  
   
     
     
@@ -238,13 +240,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
@@ -257,7 +259,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             UD1. Virtualización
@@ -288,6 +290,8 @@
                 
   
   
+    
+  
   
     
     
@@ -302,13 +306,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
         
           <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
             
@@ -321,7 +325,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_2">
             <span class="md-nav__icon md-icon"></span>
             Docker
@@ -392,9 +396,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="19_Docker_Redes.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Redes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="19_Docker_Redes.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -403,6 +427,54 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-red" class="md-nav__link">
+    Tipos de Red.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comando-docker-network" class="md-nav__link">
+    Comando Docker Network.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traduccion-de-puertos" class="md-nav__link">
+    Traducción de puertos.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -427,8 +499,6 @@
       
   
   
-    
-  
   
     
     
@@ -457,13 +527,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
@@ -476,7 +546,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             UD2. Scripts
@@ -647,29 +717,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Esructura WHILE
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="12_While_Until.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="12_While_Until.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -678,40 +728,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#while" class="md-nav__link">
-    While
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#until" class="md-nav__link">
-    Until
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -975,78 +991,124 @@
                   
 
 
-<h1 id="estructuras-while-y-until">Estructuras WHILE y UNTIL<a class="headerlink" href="#estructuras-while-y-until" title="Permanent link">&para;</a></h1>
-<h2 id="while">While<a class="headerlink" href="#while" title="Permanent link">&para;</a></h2>
+<h1 id="redes">Redes.<a class="headerlink" href="#redes" title="Permanent link">&para;</a></h1>
+<h2 id="tipos-de-red">Tipos de Red.<a class="headerlink" href="#tipos-de-red" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Bridge</strong>: Todos los contenedores están en la misma red, pero separadas del anfitrión.</p>
+<p>🕸️ Por defecto se configura en este modo.</p>
+<p>🕸️ Podemos crear varias redes bridge, para que ciertos grupos de contenedores se vean entre ellas, pero no con el resto de contenedores.</p>
+<p>🕸️ Existe ya una red creada "bridge" por defecto  (docker network inspect bridge).</p>
+</li>
+<li>
+<p><strong>Host</strong>: El contenedor comparte toda la configuración de red de la máquina anfitriona. </p>
+<p>🕸️ Si el contenedor tiene un servicio en el puerto 80, podremos acceder a él desde el puerto 80 de la máquina anfitriona.</p>
+<p>🕸️ Existe ya una red creada "host" por defecto (docker network inspect host).</p>
+</li>
+<li>
+<p><strong>None</strong>: Contenedor sin red.</p>
+</li>
+</ul>
+<h2 id="comando-docker-network">Comando Docker Network.<a class="headerlink" href="#comando-docker-network" title="Permanent link">&para;</a></h2>
+<p>Algunos de las opciones más habituales a la hora de crear una red en docker son:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Opción</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>--driver</code></td>
+<td style="text-align: left;">Si queremos modo bridge, host, none.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--internal</code></td>
+<td style="text-align: left;">Restringe el acceso desde el exterior. Sin Internet.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--gateway</code></td>
+<td style="text-align: left;">Indica la puerta de enlace de la red.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--ip-range</code></td>
+<td style="text-align: left;">Delimita el rango de IPs asignables al contenedor.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--subnet</code></td>
+<td style="text-align: left;">Define la subred en formato CIDR</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--ip</code></td>
+<td style="text-align: left;">Especificar una IP en concreto</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--dns</code></td>
+<td style="text-align: left;">Especificar un servidor DNS en particular</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3 id="crear-una-red">Crear una red.<a class="headerlink" href="#crear-una-red" title="Permanent link">&para;</a></h3>
+<p>Ejemplo de una red:</p>
+<p>✔️ Nombre: miRED </p>
+<p>✔️ Red: 172.20.0.0/16</p>
+<p>✔️ Al contenedor se le va a asignar una IP 172.20.2.X</p>
+<p>✔️ Puerta de enlace: 172.20.2.100</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>--subnet<span class="o">=</span><span class="m">172</span>.20.0.0/16<span class="w"> </span>--ip-range<span class="o">=</span><span class="m">172</span>.20.2.0/24<span class="w"> </span>--gateway<span class="o">=</span><span class="m">172</span>.20.2.100<span class="w"> </span>miRED
+</code></pre></div>
+<h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h2>
+<h3 id="crear-un-contenedor-con-una-red">Crear un contenedor con una red.<a class="headerlink" href="#crear-un-contenedor-con-una-red" title="Permanent link">&para;</a></h3>
+<p>Se le asigna una red llamada "redInterna" creada con anterioridad.</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>miCONTENEDOR<span class="w"> </span>--network<span class="w"> </span>redInterna<span class="w"> </span>miIMAGEN
+</code></pre></div>
+<h3 id="conectar-una-red-a-un-contenedor-ya-existente">Conectar una red a un contenedor ya existente.<a class="headerlink" href="#conectar-una-red-a-un-contenedor-ya-existente" title="Permanent link">&para;</a></h3>
+<p><center></p>
 <div class="admonition danger">
-<p class="admonition-title">WHILE<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>CONDICIÓN<span class="w"> </span><span class="o">]</span>
-<span class="k">do</span>
-<span class="w">        </span>ACCIONES
-<span class="k">done</span>
-</code></pre></div>
-</p>
+<p class="admonition-title">BRIDGE</p>
+<p>Solo funciona con redes tipo Bridge. Para redes host debemos recrear el contenedor.</p>
 </div>
-<ul>
-<li>
-<p>El bucle while se repite mientras la condición sea verdadera.</p>
-</li>
-<li>
-<p>Es posible realizar bucles infinitos que están siempre ejecutándose, por ejemplo haciendo uso de la sentencia “true”, la cual siempre hace que la comprobación sea verdadera.</p>
-</li>
-</ul>
-<div class="admonition info">
-<p class="admonition-title">BUCLE INFINITO<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">]</span>
-<span class="k">do</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;BUCLE INFINITO&quot;</span>
-<span class="k">done</span>
+<p></center></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>connect<span class="w"> </span>miRED<span class="w"> </span>miCONTENEDOR
 </code></pre></div>
-</p>
+<h3 id="conectar-un-contenedor-a-la-red-de-la-maquina-anfitriona">Conectar un contenedor a la red de la máquina anfitriona.<a class="headerlink" href="#conectar-un-contenedor-a-la-red-de-la-maquina-anfitriona" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<div class="admonition tip">
+<p class="admonition-title">Red HOST</p>
+<p>Existe una red por defecto llamada host que une el contenedor con la red de la máquina anfitriona. </p>
 </div>
-<ul>
-<li>Importante el espacio entre los corchetes y el uso de “do” y “done” para crear la estructura.</li>
-</ul>
-<h3 id="ejemplo-1-repite-hasta-que-el-usuario-meta-un-numero-entre-1-y-10">Ejemplo 1. Repite hasta que el usuario meta un numero entre 1 y 10<a class="headerlink" href="#ejemplo-1-repite-hasta-que-el-usuario-meta-un-numero-entre-1-y-10" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Elige un numero entre 1 y 10&quot;</span><span class="w"> </span>numero
-
-
-<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$num</span><span class="w"> </span>-lt<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">$num</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">]</span>
-<span class="k">do</span>
-<span class="w">        </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Elige un numero entre 1 y 10&quot;</span><span class="w"> </span>numero
-<span class="k">done</span>
+<p></center></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>miCONTENEDOR<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>miIMAGEN
 </code></pre></div>
-<h3 id="ejemplo-2-repite-hasta-que-introduzca-un-usuario-valido-en-el-sistema">Ejemplo 2. Repite hasta que introduzca un usuario válido en el sistema.<a class="headerlink" href="#ejemplo-2-repite-hasta-que-introduzca-un-usuario-valido-en-el-sistema" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Introduce un usuario: &quot;</span><span class="w"> </span>usuario
-
-grep<span class="w"> </span>-qw<span class="w"> </span><span class="nv">$usuario</span><span class="w"> </span>/etc/passwd
-
-<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span>
-<span class="k">do</span>
-<span class="w">        </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Introduce un usuario: &quot;</span><span class="w"> </span>usuario
-<span class="w">        </span>grep<span class="w"> </span>-qw<span class="w"> </span><span class="nv">$usuario</span><span class="w"> </span>/etc/passwd
-<span class="k">done</span>
+<h3 id="conectar-un-contenedor-ya-existente-a-la-red-host">Conectar un contenedor ya existente a la red host.<a class="headerlink" href="#conectar-un-contenedor-ya-existente-a-la-red-host" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<div class="admonition danger">
+<p class="admonition-title">Limitación red HOST</p>
+<p>Debemos crear una imagen del contenedor y recrearlo.</p>
+</div>
+<p></center></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>commit<span class="w"> </span>miCONTENEDOR<span class="w"> </span>miIMAGEN
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>miCONTENEDOR<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>miIMAGEN
 </code></pre></div>
-<h2 id="until">Until<a class="headerlink" href="#until" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>Muy parecido a la estructura while.</p>
-</li>
-<li>
-<p>Se ejecuta mientras la condición sea falsa. </p>
-</li>
-<li>
-<p>Sería equivalente a “Hasta que no sea cierto XXXX sigue realizando las tareas del bucle”.</p>
-</li>
-</ul>
-<h3 id="ejemplo-no-termina-hasta-que-a-tenga-el-valor-de-10">Ejemplo. No termina hasta que a tenga el valor de 10.<a class="headerlink" href="#ejemplo-no-termina-hasta-que-a-tenga-el-valor-de-10" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">0</span>
-<span class="k">until</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$a</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">]</span>
-<span class="k">do</span>
-<span class="w">        </span><span class="nb">let</span><span class="w"> </span><span class="s2">&quot;a=</span><span class="nv">$a</span><span class="s2">+1&quot;</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$a</span>
-<span class="k">done</span>
+<h3 id="desconectar-una-red-de-un-contenedor">Desconectar una red de un contenedor.<a class="headerlink" href="#desconectar-una-red-de-un-contenedor" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>disconnect<span class="w"> </span>miRED<span class="w"> </span>miCONTENEDOR
 </code></pre></div>
-<figure>
-  <img src="imagenes\scripts\26.png" width="300"/>
-</figure>
+<h3 id="listar-las-redes-creadas">Listar las redes creadas.<a class="headerlink" href="#listar-las-redes-creadas" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>ls
+</code></pre></div>
+<h3 id="listar-las-redes-creadas_1">Listar las redes creadas.<a class="headerlink" href="#listar-las-redes-creadas_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>rm<span class="w"> </span>miRED
+</code></pre></div>
+<h3 id="informacion-detallada-de-una-red">Información detallada de una red.<a class="headerlink" href="#informacion-detallada-de-una-red" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>miRED
+</code></pre></div>
+<h2 id="traduccion-de-puertos">Traducción de puertos.<a class="headerlink" href="#traduccion-de-puertos" title="Permanent link">&para;</a></h2>
+<p>Podemos traducir puertos de nuestra máquina anfitriona al contenedor.</p>
+<p>Ejemplo. Todo lo que le llegue al puerto 8080 de la máquina anfitriona lo redirige al puerto 80 del contenedor.</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>miCONTENEDOR<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>miIMAGEN
+</code></pre></div>
 
 
 
