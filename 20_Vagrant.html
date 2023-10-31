@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/17_Samba.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/20_Vagrant.html">
       
       
-        <link rel="prev" href="14_Break.html">
-      
-      
-        <link rel="next" href="18_Secciones.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Samba - Sistemas Operativos en Red</title>
+        <title>Vagrant. - Sistemas Operativos en Red</title>
       
     
     
@@ -79,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#samba" class="md-skip">
+        <a href="#vagrant" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Samba
+              Vagrant.
             
           </span>
         </div>
@@ -712,8 +708,6 @@
       
   
   
-    
-  
   
     
     
@@ -724,13 +718,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
@@ -743,7 +737,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             UD3. Compartición de Recursos
@@ -754,29 +748,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Samba
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="17_Samba.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="17_Samba.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -785,61 +759,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#caracteristicas" class="md-nav__link">
-    Características.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion" class="md-nav__link">
-    Instalación.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracion" class="md-nav__link">
-    Configuración.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acceso-al-recurso" class="md-nav__link">
-    Acceso al recurso.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#video-de-ejemplo" class="md-nav__link">
-    Vídeo de Ejemplo.
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -996,160 +915,141 @@
                   
 
 
-<h1 id="samba">Samba.<a class="headerlink" href="#samba" title="Permanent link">&para;</a></h1>
-<h2 id="caracteristicas">Características.<a class="headerlink" href="#caracteristicas" title="Permanent link">&para;</a></h2>
-<p>✔️ IBM crea el servicio <strong>smb (Server Message Block)</strong> para la compartición de recursos, un software propietario usado por Windows.</p>
-<p>✔️ Samba es una implementación libre de dicho protocolo smb creado por IBM.</p>
-<p>✔️ Posteriormente Windows modificó el código de smb y lo renombró como CIFS (Common Internet File System).</p>
-<p>✔️ Su finalidad es la compartición de recursos (directorios/ficheros) e impresoras entre sistemas heterogéneos (Windows/Linux/Solaris/Mac OSX).</p>
-<p>✔️ Samba suele usar el puerto 139 o 445 TCP dependiendo de la versión.</p>
-<p>✔️ SMB tiene 3 versiones: SMB 1.0, 2.0 y 3.0. Nunca debemos usar 1.0 y deberíamos intentar usar 3.0 que es más seguro.</p>
-<p>✔️ Samba también nos permite crear servidores de dominio activo (Active Directory) como Windows Server.</p>
-<p><center></p>
-<div class="admonition info">
-<p class="admonition-title">RESUMEN</p>
-<p>🔥 CIFS: Protocolo SMB modificado por Windows para la compartición de recursos.</p>
-<p>🔥 SAMBA: Protocolo libre simulando la funcionalidad de SMB, usado en Linux.</p>
-</div>
-<p></center></p>
-<h2 id="instalacion">Instalación.<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<h3 id="servidor">Servidor.<a class="headerlink" href="#servidor" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>install<span class="w"> </span>samba
+<h1 id="vagrant">Vagrant.<a class="headerlink" href="#vagrant" title="Permanent link">&para;</a></h1>
+<p>Página oficial: https://www.vagrantup.com/</p>
+<p>Nube de boxes: https://app.vagrantup.com/boxes</p>
+<h2 id="instalacion-en-ubuntu">Instalación en Ubuntu.<a class="headerlink" href="#instalacion-en-ubuntu" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O-<span class="w"> </span>https://apt.releases.hashicorp.com/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/hashicorp-archive-keyring.gpg
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> main&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/hashicorp.list
+sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vagrant
 </code></pre></div>
-<h3 id="cliente">Cliente.<a class="headerlink" href="#cliente" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>install<span class="w"> </span>samba-client
-</code></pre></div>
-<h2 id="configuracion">Configuración.<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
-<h3 id="1-accedemos-al-fichero-de-configuracion">1. Accedemos al fichero de configuración.<a class="headerlink" href="#1-accedemos-al-fichero-de-configuracion" title="Permanent link">&para;</a></h3>
-<p><center></p>
-<div class="admonition danger">
-<p class="admonition-title">COMENTARIOS</p>
-<p>🔥 Los "#" y los ";" son comentarios y no surgen efecto dentro del fichero de configuración.</p>
-</div>
-<p></center></p>
-<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/etc/samba/smb.conf
-</code></pre></div>
-<h3 id="2-creamos-los-recursos-a-compartir-cambio-de-parametros-del-servicio">2. Creamos los recursos a compartir / Cambio de parámetros del servicio.<a class="headerlink" href="#2-creamos-los-recursos-a-compartir-cambio-de-parametros-del-servicio" title="Permanent link">&para;</a></h3>
-<p>Ejemplo: Al final del fichero añadimos un nuevo recurso.</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>ejercicio1<span class="o">]</span>
-<span class="w"> </span><span class="nv">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Prueba<span class="w"> </span>Ejercicio<span class="w"> </span><span class="m">1</span>
-<span class="w"> </span><span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/srv/ejercicio1
-<span class="w"> </span><span class="nv">browsable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>yes
-<span class="w"> </span>guest<span class="w"> </span><span class="nv">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>yes
-<span class="w"> </span><span class="nb">read</span><span class="w"> </span><span class="nv">only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>no
-<span class="w"> </span>create<span class="w"> </span><span class="nv">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0777</span>
-</code></pre></div>
-<h3 id="3-creamos-en-el-servidor-el-recurso-a-compartir">3. Creamos en el servidor el recurso a compartir.<a class="headerlink" href="#3-creamos-en-el-servidor-el-recurso-a-compartir" title="Permanent link">&para;</a></h3>
-<p>Es importante que en las carpetas a compartir y padres tengan permiso de ejecución para poder entrar en caso de que no pongamos restricción por usuario/contraseña.</p>
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>–p<span class="w"> </span>/srv/ejercicio1
-chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/srv/ejercicio1
-</code></pre></div>
-<h3 id="4-reiniciamos-el-servicio-para-que-surjan-efecto-los-cambios-de-configuracion">4. Reiniciamos el servicio para que surjan efecto los cambios de configuración.<a class="headerlink" href="#4-reiniciamos-el-servicio-para-que-surjan-efecto-los-cambios-de-configuracion" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>service<span class="w"> </span>smbd<span class="w"> </span>restart
-</code></pre></div>
-<h2 id="acceso-al-recurso">Acceso al recurso.<a class="headerlink" href="#acceso-al-recurso" title="Permanent link">&para;</a></h2>
-<h3 id="windows-opcion-1">Windows OPCIÓN 1.<a class="headerlink" href="#windows-opcion-1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Seleccionamos Red (Network).</li>
-</ul>
-<p>Puede que tengamos que habilitar el descubrimiento de redes.</p>
-<figure>
-  <img src="imagenes\samba\1.png" width="600"/>
-</figure>
-
-<h3 id="windows-opcion-2">Windows OPCIÓN 2.<a class="headerlink" href="#windows-opcion-2" title="Permanent link">&para;</a></h3>
-<p><center></p>
-<div class="admonition danger">
-<p class="admonition-title">ACCESO \\IP_Servidor</p>
-<p>🔥 Podemos abrir un explorador de directorio y colocar en la barra de direcciones \\IP_Servidor:</p>
-</div>
-<p></center></p>
-<figure>
-  <img src="imagenes\samba\2.png" width="500"/>
-</figure>
-
-<h3 id="linux-interfaz-grafica">LINUX. Interfaz gráfica.<a class="headerlink" href="#linux-interfaz-grafica" title="Permanent link">&para;</a></h3>
-<p>En Linux podemos acceder desde una carpeta usando el protocolo smb:</p>
-<div class="highlight"><pre><span></span><code>smb://usuario@IPServidor/CarpetaCompartida
-</code></pre></div>
-<figure>
-  <img src="imagenes\samba\5.png" width="500"/>
-</figure>
-
-<h3 id="linux-comandos">LINUX. Comandos.<a class="headerlink" href="#linux-comandos" title="Permanent link">&para;</a></h3>
+<h2 id="creacion-de-escenario-en-vagrant">Creación de escenario en Vagrant.<a class="headerlink" href="#creacion-de-escenario-en-vagrant" title="Permanent link">&para;</a></h2>
+<p>En Vagrant las máquinas virtuales se crean a partir de "boxes" (cajas).</p>
+<p>Las cajas son imágenes configurables de máquinas virtuales optimizadas que podemos ejecutar en VirtualBox, VMWare, Hyper-V, etc.</p>
 <ol>
-<li>Averiguar dentro del servicio que carpetas compartidas hay disponibles.</li>
+<li>
+<p>Accede a la carpeta donde deseas crear el entorno de Vagrant.</p>
+</li>
+<li>
+<p>Inicializa el entorno con:</p>
+</li>
 </ol>
-<figure>
-  <img src="imagenes\samba\3.png" width="500"/>
-</figure>
-
-<ol start="2">
-<li>Acceso a la carpeta compartida.</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="c1">#Importante escapar cada \, por eso hay 4 por un lado y 2 por otro...</span>
-smbclient<span class="w"> </span><span class="se">\\\\</span><span class="m">172</span>.17.0.2<span class="se">\\</span>ejercicio1
+<div class="highlight"><pre><span></span><code>vagrant<span class="w"> </span>init
 </code></pre></div>
 <ol start="3">
-<li>Una vez dentro son comandos parecidos a FTP.</li>
+<li>
+<p>Modifica el fichero "Vagrantfile".</p>
+</li>
+<li>
+<p>Descarga y Arranca el entorno configurado en el fichero "Vagrantfile".</p>
+</li>
 </ol>
+<div class="highlight"><pre><span></span><code>vagrant<span class="w"> </span>up
+</code></pre></div>
+<ol start="5">
+<li>Detener las máquinas virtuales.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>vagrant<span class="w"> </span>halt
+</code></pre></div>
 <p><center></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Símbolo</th>
+<th style="text-align: center;">Comandos</th>
 <th style="text-align: left;"><center> Significado </center></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><code>ls</code></td>
-<td style="text-align: left;">Listar ficheros/carpetas.</td>
+<td style="text-align: center;"><code>vagrant init</code></td>
+<td style="text-align: left;">Inicializa un entorno Vagrant y genera el fichero VagrantFile.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>cd</code></td>
-<td style="text-align: left;">Moverme entre carpetas.</td>
+<td style="text-align: center;"><code>vagrant up</code></td>
+<td style="text-align: left;">Levanta las máquinas según VagrantFile.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>get</code></td>
-<td style="text-align: left;">Descargar un fichero.</td>
+<td style="text-align: center;"><code>vagrant halt</code></td>
+<td style="text-align: left;">Detiene las máquinas.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>put</code></td>
-<td style="text-align: left;">Cargar un fichero.</td>
+<td style="text-align: center;"><code>vagrant reload</code></td>
+<td style="text-align: left;">Acceso por ssh a una MV.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>?</code></td>
-<td style="text-align: left;">Mostrar la ayuda.</td>
+<td style="text-align: center;"><code>vagrant destroy</code></td>
+<td style="text-align: left;">Reinicia la máquina vagrant y carga la nueva configuración de Vagrantfile.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>vagrant ssh &lt;boxname&gt;</code></td>
+<td style="text-align: left;">Acceso por ssh a una MV.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>vagrant box list</code></td>
+<td style="text-align: left;">Listado de cajas.</td>
 </tr>
 </tbody>
 </table>
 <p></center></p>
-<figure>
-  <img src="imagenes\samba\4.png" width="500"/>
-</figure>
+<h2 id="redes">Redes.<a class="headerlink" href="#redes" title="Permanent link">&para;</a></h2>
+<h3 id="redes-privadas">Redes Privadas.<a class="headerlink" href="#redes-privadas" title="Permanent link">&para;</a></h3>
+<p>Redes virtuales sin salida a Internet para interconectar máquinas virtuales.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Asignado por DHCP</span>
+config.vm.network<span class="w"> </span><span class="s2">&quot;private_network&quot;</span>,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;dhcp&quot;</span>
 
-<p>Recoger un fichero del servidor.</p>
-<div class="highlight"><pre><span></span><code>smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>get<span class="w"> </span>FICHERO_SERVIDOR<span class="w"> </span>FICHERO_CLIENTE
+<span class="c1">#Asignado Estáticamente.</span>
+config.vm.network<span class="w"> </span><span class="s2">&quot;private_network&quot;</span>,<span class="w"> </span>ip:<span class="w"> </span><span class="s2">&quot;192.168.55.10&quot;</span>
 </code></pre></div>
-<p>Recoger un fichero del servidor.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#Se debe haber creado antes un usuario samba con smbpasswd -a &quot;usuario&quot; </span>
-<span class="c1">#Dicho usuario debe existir en el sistema useradd salva -s /bin/false</span>
-smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>put<span class="w"> </span>FICHERO_CLIENTE<span class="w"> </span>FICHERO_SERVIDOR
+<h3 id="redes-publicas">Redes Públicas.<a class="headerlink" href="#redes-publicas" title="Permanent link">&para;</a></h3>
+<p>Interconecta con la red real de la máquina anfitriona (Red Bridge de VirtualBox).</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Asignado por DHCP</span>
+config.vm.network<span class="w">  </span><span class="s2">&quot;public_network&quot;</span>,<span class="w"> </span>bridge:<span class="w"> </span><span class="s2">&quot;eth0&quot;</span>
+
+<span class="c1">#Asignado Estáticamente</span>
+config.vm.network<span class="w"> </span><span class="s2">&quot;public_network&quot;</span>,<span class="w"> </span>ip:<span class="w"> </span><span class="s2">&quot;192.168.0.17&quot;</span>
 </code></pre></div>
-<h3 id="linux-script">LINUX. Script.<a class="headerlink" href="#linux-script" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>smbclient<span class="w"> </span><span class="se">\\\\</span><span class="m">172</span>.17.0.2<span class="se">\\</span>ejercicio1<span class="w"> </span>--password<span class="w"> </span><span class="m">123</span><span class="w"> </span><span class="s">&lt;&lt; EOF</span>
-<span class="s">    get Fichero_Servidor Fichero_Cliente</span>
-<span class="s">    put Fichero_Cliente Fichero_Servidor</span>
-<span class="s">    exit</span>
-<span class="s">EOF</span>
+<h2 id="snapshots">Snapshots.<a class="headerlink" href="#snapshots" title="Permanent link">&para;</a></h2>
+<p>Vagran snapshot: Permite generar Instantáneas que nos pueden servir de copias de seguridad en ciertos casos.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># se genera la captura.</span>
+vagrant<span class="w"> </span>snapshot<span class="w"> </span>save<span class="w"> </span>UbuntuServer_291023
+
+<span class="c1"># se comprueba que se ha creado.</span>
+vagrant<span class="w"> </span>snapshot<span class="w"> </span>list
+
+<span class="c1"># Después de realizar algún cambio se restaura.</span>
+vagrant<span class="w"> </span>snapshot<span class="w"> </span>restore<span class="w"> </span>UbuntuServer_291023
 </code></pre></div>
-<p>Otra opción es usar -c del comando:</p>
-<div class="highlight"><pre><span></span><code>smbclient<span class="w"> </span><span class="se">\\\\</span><span class="m">172</span>.17.0.2<span class="se">\\</span>ejercicio1<span class="w"> </span>--password<span class="w"> </span><span class="m">123</span><span class="w"> </span>-c<span class="w">  </span><span class="s2">&quot;get Fic_Servidor Fic_Cliente; put Fic_Cliente Fic_Servidor&quot;</span>
+<h2 id="ejemplo-vagrantfile-clase">Ejemplo VagrantFile Clase.<a class="headerlink" href="#ejemplo-vagrantfile-clase" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1">#Usuarios vagrant/vagrant</span>
+<span class="w">  </span>config.vm.define<span class="w"> </span><span class="s2">&quot;Server&quot;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">|</span>servidor<span class="p">|</span>
+<span class="w">    </span>servidor.vm.box<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ubuntu/focal64&quot;</span>
+<span class="w">    </span>servidor.vm.hostname<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Servidor&quot;</span>
+<span class="w">    </span>servidor.vm.network<span class="w"> </span><span class="s2">&quot;public_network&quot;</span>,<span class="w"> </span>bridge:<span class="w"> </span><span class="s2">&quot;eth0&quot;</span>
+<span class="w">    </span>servidor.vm.network<span class="w"> </span><span class="s2">&quot;private_network&quot;</span>,<span class="w"> </span>ip:<span class="w"> </span><span class="s2">&quot;10.0.100.101&quot;</span>
+<span class="w">    </span>servidor.vm.provider<span class="w"> </span>:virtualbox<span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">|</span>parametros<span class="p">|</span>
+<span class="w">      </span>parametros.name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Servidor_Vagrant&quot;</span>
+<span class="w">      </span>parametros.gui<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
+<span class="w">      </span>parametros.cpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">      </span>parametros.memory<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2048</span>
+<span class="w">    </span>end
+<span class="w">  </span>end
+<span class="w">  </span>config.vm.define<span class="w"> </span><span class="s2">&quot;Client&quot;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">|</span>cliente<span class="p">|</span>
+<span class="w">    </span>cliente.vm.box<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Caden/windows-10-pro-en-22h2-19045.3208&quot;</span>
+<span class="w">    </span>cliente.vm.box_version<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span>
+<span class="w">    </span>cliente.vm.hostname<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Cliente&quot;</span>
+<span class="w">    </span>cliente.vm.network<span class="w"> </span><span class="s2">&quot;private_network&quot;</span>,<span class="w"> </span>ip:<span class="w"> </span><span class="s2">&quot;10.0.100.102&quot;</span>
+<span class="w">    </span>cliente.vm.provider<span class="w"> </span>:virtualbox<span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">|</span>param<span class="p">|</span>
+<span class="w">      </span>param.name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Windows10_Cliente_Vagrant&quot;</span>
+<span class="w">      </span>param.check_guest_additions<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span>param.gui<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span>param.cpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
+<span class="w">      </span>param.memory<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4096</span>
+<span class="w">    </span>end
+<span class="w">  </span>end
 </code></pre></div>
-<h2 id="video-de-ejemplo">Vídeo de Ejemplo.<a class="headerlink" href="#video-de-ejemplo" title="Permanent link">&para;</a></h2>
+<h2 id="video-resumen">Vídeo Resumen.<a class="headerlink" href="#video-resumen" title="Permanent link">&para;</a></h2>
 <ol>
-<li><a href="https://youtu.be/RfjdJ9W1gss">Creación de Recurso Compartido.</a></li>
+<li><a href="https://youtu.be/6-wjFQ_RZ6o">Vagrant.</a></li>
 </ol>
 
 
