@@ -1102,6 +1102,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </
 </table>
 <p></center></p>
 <h2 id="redes">Redes.<a class="headerlink" href="#redes" title="Permanent link">&para;</a></h2>
+<p>Por defecto y de forma imperativa, las Máquinas se crearán con una interfaz NAT en el primer adaptador.</p>
 <h3 id="redes-privadas">Redes Privadas.<a class="headerlink" href="#redes-privadas" title="Permanent link">&para;</a></h3>
 <p>Redes virtuales sin salida a Internet para interconectar máquinas virtuales.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#Asignado por DHCP</span>
@@ -1134,8 +1135,7 @@ vagrant<span class="w"> </span>snapshot<span class="w"> </span>restore<span clas
 <span class="w">  </span>config.vm.define<span class="w"> </span><span class="s2">&quot;Server&quot;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">|</span>servidor<span class="p">|</span>
 <span class="w">    </span>servidor.vm.box<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ubuntu/focal64&quot;</span>
 <span class="w">    </span>servidor.vm.hostname<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Servidor&quot;</span>
-<span class="w">    </span>servidor.vm.network<span class="w"> </span><span class="s2">&quot;public_network&quot;</span>,<span class="w"> </span>bridge:<span class="w"> </span><span class="s2">&quot;eth0&quot;</span>
-<span class="w">    </span>servidor.vm.network<span class="w"> </span><span class="s2">&quot;private_network&quot;</span>,<span class="w"> </span>ip:<span class="w"> </span><span class="s2">&quot;10.0.100.101&quot;</span>
+<span class="w">    </span>servidor.vm.network<span class="w"> </span><span class="s2">&quot;private_network&quot;</span>,<span class="w"> </span>ip:<span class="w"> </span><span class="s2">&quot;192.168.56.100&quot;</span>
 <span class="w">    </span>servidor.vm.provider<span class="w"> </span>:virtualbox<span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">|</span>parametros<span class="p">|</span>
 <span class="w">      </span>parametros.name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Servidor_Vagrant&quot;</span>
 <span class="w">      </span>parametros.gui<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
@@ -1147,7 +1147,7 @@ vagrant<span class="w"> </span>snapshot<span class="w"> </span>restore<span clas
 <span class="w">    </span>cliente.vm.box<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Caden/windows-10-pro-en-22h2-19045.3208&quot;</span>
 <span class="w">    </span>cliente.vm.box_version<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span>
 <span class="w">    </span>cliente.vm.hostname<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Cliente&quot;</span>
-<span class="w">    </span>cliente.vm.network<span class="w"> </span><span class="s2">&quot;private_network&quot;</span>,<span class="w"> </span>ip:<span class="w"> </span><span class="s2">&quot;10.0.100.102&quot;</span>
+<span class="w">    </span>cliente.vm.network<span class="w"> </span><span class="s2">&quot;private_network&quot;</span>,<span class="w"> </span>ip:<span class="w"> </span><span class="s2">&quot;192.168.56.101&quot;</span>
 <span class="w">    </span>cliente.vm.provider<span class="w"> </span>:virtualbox<span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">|</span>param<span class="p">|</span>
 <span class="w">      </span>param.name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Windows10_Cliente_Vagrant&quot;</span>
 <span class="w">      </span>param.check_guest_additions<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
@@ -1157,6 +1157,13 @@ vagrant<span class="w"> </span>snapshot<span class="w"> </span>restore<span clas
 <span class="w">    </span>end
 <span class="w">  </span>end
 </code></pre></div>
+<ul>
+<li>Recordad que se crea siempre una interfaz NAT por defecto que usaremos para navegar.</li>
+</ul>
+<figure>
+  <img src="imagenes\samba\6.png" width="500"/>
+</figure>
+
 <h2 id="video-resumen">Vídeo Resumen.<a class="headerlink" href="#video-resumen" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://youtu.be/6-wjFQ_RZ6o">Vagrant.</a></li>
