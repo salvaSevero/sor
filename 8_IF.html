@@ -798,6 +798,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -857,6 +859,26 @@
   
   <span class="md-ellipsis">
     Secciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="21_UsuariosSamba.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usuarios
   </span>
   
 
@@ -997,7 +1019,7 @@
                   
 
 
-<h1 id="estructura-if">Estructura IF.<a class="headerlink" href="#estructura-if" title="Permanent link">&para;</a></h1>
+<div><h1 id="estructura-if">Estructura IF.<a class="headerlink" href="#estructura-if" title="Permanent link">¶</a></h1>
 <p>Una estructura de programación IF sirve para generar condiciones:</p>
 <ul>
 <li>Si se cumple cierta condición realizaremos una acción, si no, realizaremos otra:</li>
@@ -1045,94 +1067,94 @@
 <span class="k">fi</span>
 </code></pre></div>
 </div>
-<h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h2>
-<h3 id="ejemplo-1">Ejemplo 1.<a class="headerlink" href="#ejemplo-1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w">  </span><span class="s2">&quot;Cual es tu nombre? &quot;</span><span class="w"> </span>nombre
+<h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">¶</a></h2>
+<h3 id="ejemplo-1">Ejemplo 1.<a class="headerlink" href="#ejemplo-1" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w">  </span><span class="s2">"Cual es tu nombre? "</span><span class="w"> </span>nombre
 
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Salva&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Salva"</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Bienvenido Salva&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Bienvenido Salva"</span>
 <span class="k">fi</span>
 </code></pre></div>
-<h3 id="ejemplo-2">Ejemplo 2.<a class="headerlink" href="#ejemplo-2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w">  </span><span class="s2">&quot;Cual es tu nombre? &quot;</span><span class="w"> </span>nombre
+<h3 id="ejemplo-2">Ejemplo 2.<a class="headerlink" href="#ejemplo-2" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w">  </span><span class="s2">"Cual es tu nombre? "</span><span class="w"> </span>nombre
 
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Salva&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Salva"</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Bienvenido Salva&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Bienvenido Salva"</span>
 <span class="w">        </span>touch<span class="w"> </span>fichero.txt
 <span class="k">else</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;No eres Bienvenido&quot;</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;AutoDestruccion&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"No eres Bienvenido"</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"AutoDestruccion"</span>
 <span class="w">        </span>rm<span class="w"> </span>-f<span class="w"> </span>fichero.txt
 <span class="k">fi</span>
 </code></pre></div>
-<h3 id="ejemplo-3">Ejemplo 3.<a class="headerlink" href="#ejemplo-3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w">  </span><span class="s2">&quot;Cual es tu nombre? &quot;</span><span class="w"> </span>nombre
+<h3 id="ejemplo-3">Ejemplo 3.<a class="headerlink" href="#ejemplo-3" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w">  </span><span class="s2">"Cual es tu nombre? "</span><span class="w"> </span>nombre
 
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Salva&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Salva"</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Bienvenido Salva&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Bienvenido Salva"</span>
 <span class="w">        </span>touch<span class="w"> </span>fichero.txt
-<span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Pepe&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Pepe"</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Que tal Pepe?&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Que tal Pepe?"</span>
 <span class="k">else</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;No eres Bienvenido&quot;</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;AutoDestruccion&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"No eres Bienvenido"</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"AutoDestruccion"</span>
 <span class="w">        </span>rm<span class="w"> </span>-f<span class="w"> </span>fichero.txt
 <span class="k">fi</span>
 </code></pre></div>
-<h3 id="ejemplo-4">Ejemplo 4.<a class="headerlink" href="#ejemplo-4" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Cual es tu edad? &quot;</span><span class="w"> </span>edad
+<h3 id="ejemplo-4">Ejemplo 4.<a class="headerlink" href="#ejemplo-4" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Cual es tu edad? "</span><span class="w"> </span>edad
 
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$edad</span><span class="w"> </span>-ge<span class="w"> </span><span class="m">33</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Tienes la edad de Cristo o mas&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Tienes la edad de Cristo o mas"</span>
 <span class="k">else</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Tienes menos que la edad de Cristo&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Tienes menos que la edad de Cristo"</span>
 <span class="k">fi</span>
 </code></pre></div>
-<h3 id="ejemplo-5">Ejemplo 5.<a class="headerlink" href="#ejemplo-5" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Inserta un nombre de archivo: &quot;</span><span class="w"> </span>fic
+<h3 id="ejemplo-5">Ejemplo 5.<a class="headerlink" href="#ejemplo-5" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Inserta un nombre de archivo: "</span><span class="w"> </span>fic
 
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$fic</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fic</span><span class="s2"> es un fichero&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$fic</span><span class="s2"> es un fichero"</span>
 <span class="k">else</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fic</span><span class="s2"> no es un fichero&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$fic</span><span class="s2"> no es un fichero"</span>
 <span class="k">fi</span>
 </code></pre></div>
-<h3 id="ejemplo-6">Ejemplo 6.<a class="headerlink" href="#ejemplo-6" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Inserta un directorio: &quot;</span><span class="w"> </span>dir
+<h3 id="ejemplo-6">Ejemplo 6.<a class="headerlink" href="#ejemplo-6" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Inserta un directorio: "</span><span class="w"> </span>dir
 
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">$dir</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dir</span><span class="s2"> existe, pero no se si es un directorio.&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$dir</span><span class="s2"> existe, pero no se si es un directorio."</span>
 <span class="k">else</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dir</span><span class="s2"> no existe.&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$dir</span><span class="s2"> no existe."</span>
 <span class="k">fi</span>
 </code></pre></div>
-<h3 id="ejemplo-7">Ejemplo 7.<a class="headerlink" href="#ejemplo-7" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w">  </span><span class="s2">&quot;Indica un ficher o directorio: &quot;</span><span class="w"> </span>recurso
+<h3 id="ejemplo-7">Ejemplo 7.<a class="headerlink" href="#ejemplo-7" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w">  </span><span class="s2">"Indica un ficher o directorio: "</span><span class="w"> </span>recurso
 
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$recurso</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$recurso</span><span class="s2"> es un fichero&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$recurso</span><span class="s2"> es un fichero"</span>
 <span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="nv">$recurso</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$recurso</span><span class="s2"> es un directorio&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$recurso</span><span class="s2"> es un directorio"</span>
 <span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">$recurso</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$recurso</span><span class="s2"> existe pero no es ni un directorio ni un fichero&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$recurso</span><span class="s2"> existe pero no es ni un directorio ni un fichero"</span>
 <span class="k">else</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El </span><span class="nv">$recurso</span><span class="s2"> ni si quiera existe&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"El </span><span class="nv">$recurso</span><span class="s2"> ni si quiera existe"</span>
 <span class="k">fi</span>
 </code></pre></div>
-<h2 id="videos-de-ejemplo">Vídeos de Ejemplo.<a class="headerlink" href="#videos-de-ejemplo" title="Permanent link">&para;</a></h2>
+<h2 id="videos-de-ejemplo">Vídeos de Ejemplo.<a class="headerlink" href="#videos-de-ejemplo" title="Permanent link">¶</a></h2>
 <ol>
 <li><a href="https://youtu.be/dD9zn6mH0MY">Ejemplos de la Estructura IF.</a></li>
-</ol>
+</ol></div>
 
 
 

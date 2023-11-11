@@ -738,6 +738,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -797,6 +799,26 @@
   
   <span class="md-ellipsis">
     Secciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="21_UsuariosSamba.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usuarios
   </span>
   
 
@@ -937,7 +959,7 @@
                   
 
 
-<h1 id="estructura-case">Estructura CASE<a class="headerlink" href="#estructura-case" title="Permanent link">&para;</a></h1>
+<div><h1 id="estructura-case">Estructura CASE<a class="headerlink" href="#estructura-case" title="Permanent link">¶</a></h1>
 <p>Estructura parecida al 🔀 IF.</p>
 <p>Va realizando comprobaciones y cuando una coincida, realiza una serie de acciones programadas y finaliza la condición.</p>
 <ul>
@@ -957,51 +979,51 @@
 <p>Se debe usar <strong>“esac”</strong> para finalizar la estructura.</p>
 </li>
 </ul>
-<h3 id="ejemplo-1-ejemplo-de-un-menu">Ejemplo 1. Ejemplo de un Menú.<a class="headerlink" href="#ejemplo-1-ejemplo-de-un-menu" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1. Agregar Usuario.&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2. Eliminar Usuario.&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;3. Bloquear Usuario.&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;4. Salir.&quot;</span>
+<h3 id="ejemplo-1-ejemplo-de-un-menu">Ejemplo 1. Ejemplo de un Menú.<a class="headerlink" href="#ejemplo-1-ejemplo-de-un-menu" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"1. Agregar Usuario."</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"2. Eliminar Usuario."</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"3. Bloquear Usuario."</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"4. Salir."</span>
 
-<span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Elige una opcion: &quot;</span><span class="w"> </span>opcion
+<span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Elige una opcion: "</span><span class="w"> </span>opcion
 
 <span class="k">case</span><span class="w"> </span><span class="nv">$opcion</span><span class="w"> </span><span class="k">in</span>
-<span class="w">        </span><span class="s2">&quot;1&quot;</span><span class="o">)</span>
-<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Has elegido la opcion 1&quot;</span>
-<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ahora creariamos el usuario&quot;</span><span class="p">;;</span>
-<span class="w">        </span><span class="s2">&quot;2&quot;</span><span class="o">)</span>
-<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Has elegido la opcion 2, vamos a eliminar al usuario&quot;</span><span class="p">;;</span>
-<span class="w">        </span><span class="s2">&quot;3&quot;</span><span class="o">)</span>
-<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Has elegido la opcion 3 ...&quot;</span><span class="p">;;</span>
-<span class="w">        </span><span class="s2">&quot;4&quot;</span><span class="o">)</span>
+<span class="w">        </span><span class="s2">"1"</span><span class="o">)</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Has elegido la opcion 1"</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Ahora creariamos el usuario"</span><span class="p">;;</span>
+<span class="w">        </span><span class="s2">"2"</span><span class="o">)</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Has elegido la opcion 2, vamos a eliminar al usuario"</span><span class="p">;;</span>
+<span class="w">        </span><span class="s2">"3"</span><span class="o">)</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Has elegido la opcion 3 ..."</span><span class="p">;;</span>
+<span class="w">        </span><span class="s2">"4"</span><span class="o">)</span>
 <span class="w">                </span>exit<span class="p">;;</span>
 <span class="w">        </span>*<span class="o">)</span>
-<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El usuario ha insertado cualquier otra cosa.&quot;</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"El usuario ha insertado cualquier otra cosa."</span>
 <span class="k">esac</span>
 </code></pre></div>
-<h3 id="ejemplo-2-multiples-lineas-de-ejecucion-por-opcion">Ejemplo 2. Múltiples líneas de ejecución por opción.<a class="headerlink" href="#ejemplo-2-multiples-lineas-de-ejecucion-por-opcion" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-2-multiples-lineas-de-ejecucion-por-opcion">Ejemplo 2. Múltiples líneas de ejecución por opción.<a class="headerlink" href="#ejemplo-2-multiples-lineas-de-ejecucion-por-opcion" title="Permanent link">¶</a></h3>
 <p>Es importante que quede claro que podemos añadir varios comandos/acciones por cada opción, como se puede ver en el siguiente ejemplo en las opciones 0) y *).</p>
 <figure>
-  <img src="imagenes\scripts\23.png" width="700"/>
+  <img src="imagenes%5Cscripts%5C23.png" width="700">
 </figure>
 
-<h3 id="ejemplo-3-el-uso-de-operadores-binarios-en-el-case">Ejemplo 3. El uso de operadores binarios en el case.<a class="headerlink" href="#ejemplo-3-el-uso-de-operadores-binarios-en-el-case" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-3-el-uso-de-operadores-binarios-en-el-case">Ejemplo 3. El uso de operadores binarios en el case.<a class="headerlink" href="#ejemplo-3-el-uso-de-operadores-binarios-en-el-case" title="Permanent link">¶</a></h3>
 <p>También podemos hacer uso de la | para integrar dos opciones posibles, es decir, que tanto si se cumple una u otra se ejecutarán los comandos asociadas a esa comprobación:</p>
 <p>Por ejemplo en el siguiente ejemplo, la primera comprobación será verdadera si nombre vale “álvaro” o “pepe”</p>
 <figure>
-  <img src="imagenes\scripts\24.png" width="500"/>
+  <img src="imagenes%5Cscripts%5C24.png" width="500">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\25.png" width="500"/>
+  <img src="imagenes%5Cscripts%5C25.png" width="500">
 </figure>
 
-<h3 id="ejemplo-4-el-uso-de">Ejemplo 4. El uso de ;;&amp;.<a class="headerlink" href="#ejemplo-4-el-uso-de" title="Permanent link">&para;</a></h3>
-<p><center></p>
+<h3 id="ejemplo-4-el-uso-de">Ejemplo 4. El uso de ;;&amp;.<a class="headerlink" href="#ejemplo-4-el-uso-de" title="Permanent link">¶</a></h3>
+<p></p><center>
 <div class="admonition danger">
 <p class="admonition-title">Con 🔀 ;;&amp; 🔀 podemos ejecutar múltiples condiciones</p>
 </div>
-<p></center></p>
+<p></p></center>
 <ul>
 <li>
 <p>Con “;;” le decimos al script que si se cumple esa condición termine la estructura y salga del “case” (una línea después del esac). </p>
@@ -1012,8 +1034,8 @@
 </ul>
 <p>En el siguiente ejemplo la primera cláusula tiene un “;;&amp;”, por lo que por ejemplo si el usuario selecciona “Viernes” se mostrará por pantalla “A estudiar” y posteriormente se mostrará también “A descansar”, puesto que seguirá comprobando el resto de condiciones de la estructura case.</p>
 <figure>
-  <img src="imagenes\scripts\22.png" width="500"/>
-</figure>
+  <img src="imagenes%5Cscripts%5C22.png" width="500">
+</figure></div>
 
 
 

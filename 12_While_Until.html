@@ -798,6 +798,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -857,6 +859,26 @@
   
   <span class="md-ellipsis">
     Secciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="21_UsuariosSamba.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usuarios
   </span>
   
 
@@ -997,15 +1019,15 @@
                   
 
 
-<h1 id="estructuras-while-y-until">Estructuras WHILE y UNTIL<a class="headerlink" href="#estructuras-while-y-until" title="Permanent link">&para;</a></h1>
-<h2 id="while">While<a class="headerlink" href="#while" title="Permanent link">&para;</a></h2>
+<div><h1 id="estructuras-while-y-until">Estructuras WHILE y UNTIL<a class="headerlink" href="#estructuras-while-y-until" title="Permanent link">¶</a></h1>
+<h2 id="while">While<a class="headerlink" href="#while" title="Permanent link">¶</a></h2>
 <div class="admonition danger">
-<p class="admonition-title">WHILE<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>CONDICIÓN<span class="w"> </span><span class="o">]</span>
+<p class="admonition-title">WHILE</p><div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>CONDICIÓN<span class="w"> </span><span class="o">]</span>
 <span class="k">do</span>
 <span class="w">        </span>ACCIONES
 <span class="k">done</span>
 </code></pre></div>
-</p>
+
 </div>
 <ul>
 <li>
@@ -1016,37 +1038,37 @@
 </li>
 </ul>
 <div class="admonition info">
-<p class="admonition-title">BUCLE INFINITO<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">]</span>
+<p class="admonition-title">BUCLE INFINITO</p><div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">]</span>
 <span class="k">do</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;BUCLE INFINITO&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"BUCLE INFINITO"</span>
 <span class="k">done</span>
 </code></pre></div>
-</p>
+
 </div>
 <ul>
 <li>Importante el espacio entre los corchetes y el uso de “do” y “done” para crear la estructura.</li>
 </ul>
-<h3 id="ejemplo-1-repite-hasta-que-el-usuario-meta-un-numero-entre-1-y-10">Ejemplo 1. Repite hasta que el usuario meta un numero entre 1 y 10<a class="headerlink" href="#ejemplo-1-repite-hasta-que-el-usuario-meta-un-numero-entre-1-y-10" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Elige un numero entre 1 y 10&quot;</span><span class="w"> </span>numero
+<h3 id="ejemplo-1-repite-hasta-que-el-usuario-meta-un-numero-entre-1-y-10">Ejemplo 1. Repite hasta que el usuario meta un numero entre 1 y 10<a class="headerlink" href="#ejemplo-1-repite-hasta-que-el-usuario-meta-un-numero-entre-1-y-10" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Elige un numero entre 1 y 10"</span><span class="w"> </span>numero
 
 
 <span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$num</span><span class="w"> </span>-lt<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">$num</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">]</span>
 <span class="k">do</span>
-<span class="w">        </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Elige un numero entre 1 y 10&quot;</span><span class="w"> </span>numero
+<span class="w">        </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Elige un numero entre 1 y 10"</span><span class="w"> </span>numero
 <span class="k">done</span>
 </code></pre></div>
-<h3 id="ejemplo-2-repite-hasta-que-introduzca-un-usuario-valido-en-el-sistema">Ejemplo 2. Repite hasta que introduzca un usuario válido en el sistema.<a class="headerlink" href="#ejemplo-2-repite-hasta-que-introduzca-un-usuario-valido-en-el-sistema" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Introduce un usuario: &quot;</span><span class="w"> </span>usuario
+<h3 id="ejemplo-2-repite-hasta-que-introduzca-un-usuario-valido-en-el-sistema">Ejemplo 2. Repite hasta que introduzca un usuario válido en el sistema.<a class="headerlink" href="#ejemplo-2-repite-hasta-que-introduzca-un-usuario-valido-en-el-sistema" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Introduce un usuario: "</span><span class="w"> </span>usuario
 
 grep<span class="w"> </span>-qw<span class="w"> </span><span class="nv">$usuario</span><span class="w"> </span>/etc/passwd
 
 <span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span>
 <span class="k">do</span>
-<span class="w">        </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Introduce un usuario: &quot;</span><span class="w"> </span>usuario
+<span class="w">        </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Introduce un usuario: "</span><span class="w"> </span>usuario
 <span class="w">        </span>grep<span class="w"> </span>-qw<span class="w"> </span><span class="nv">$usuario</span><span class="w"> </span>/etc/passwd
 <span class="k">done</span>
 </code></pre></div>
-<h2 id="until">Until<a class="headerlink" href="#until" title="Permanent link">&para;</a></h2>
+<h2 id="until">Until<a class="headerlink" href="#until" title="Permanent link">¶</a></h2>
 <ul>
 <li>
 <p>Muy parecido a la estructura while.</p>
@@ -1058,17 +1080,17 @@ grep<span class="w"> </span>-qw<span class="w"> </span><span class="nv">$usuario
 <p>Sería equivalente a “Hasta que no sea cierto XXXX sigue realizando las tareas del bucle”.</p>
 </li>
 </ul>
-<h3 id="ejemplo-no-termina-hasta-que-a-tenga-el-valor-de-10">Ejemplo. No termina hasta que a tenga el valor de 10.<a class="headerlink" href="#ejemplo-no-termina-hasta-que-a-tenga-el-valor-de-10" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-no-termina-hasta-que-a-tenga-el-valor-de-10">Ejemplo. No termina hasta que a tenga el valor de 10.<a class="headerlink" href="#ejemplo-no-termina-hasta-que-a-tenga-el-valor-de-10" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">0</span>
 <span class="k">until</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$a</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">]</span>
 <span class="k">do</span>
-<span class="w">        </span><span class="nb">let</span><span class="w"> </span><span class="s2">&quot;a=</span><span class="nv">$a</span><span class="s2">+1&quot;</span>
+<span class="w">        </span><span class="nb">let</span><span class="w"> </span><span class="s2">"a=</span><span class="nv">$a</span><span class="s2">+1"</span>
 <span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$a</span>
 <span class="k">done</span>
 </code></pre></div>
 <figure>
-  <img src="imagenes\scripts\26.png" width="300"/>
-</figure>
+  <img src="imagenes%5Cscripts%5C26.png" width="300">
+</figure></div>
 
 
 

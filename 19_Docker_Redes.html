@@ -814,6 +814,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -873,6 +875,26 @@
   
   <span class="md-ellipsis">
     Secciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="21_UsuariosSamba.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usuarios
   </span>
   
 
@@ -1013,8 +1035,8 @@
                   
 
 
-<h1 id="redes">Redes.<a class="headerlink" href="#redes" title="Permanent link">&para;</a></h1>
-<h2 id="tipos-de-red">Tipos de Red.<a class="headerlink" href="#tipos-de-red" title="Permanent link">&para;</a></h2>
+<div><h1 id="redes">Redes.<a class="headerlink" href="#redes" title="Permanent link">¶</a></h1>
+<h2 id="tipos-de-red">Tipos de Red.<a class="headerlink" href="#tipos-de-red" title="Permanent link">¶</a></h2>
 <ul>
 <li>
 <p><strong>Bridge</strong>: Todos los contenedores están en la misma red, pero separadas del anfitrión.</p>
@@ -1031,9 +1053,9 @@
 <p><strong>None</strong>: Contenedor sin red.</p>
 </li>
 </ul>
-<h2 id="comando-docker-network">Comando Docker Network.<a class="headerlink" href="#comando-docker-network" title="Permanent link">&para;</a></h2>
+<h2 id="comando-docker-network">Comando Docker Network.<a class="headerlink" href="#comando-docker-network" title="Permanent link">¶</a></h2>
 <p>Algunos de las opciones más habituales a la hora de crear una red en docker son:</p>
-<p><center></p>
+<p></p><center>
 <table>
 <thead>
 <tr>
@@ -1072,8 +1094,8 @@
 </tr>
 </tbody>
 </table>
-<p></center></p>
-<h3 id="crear-una-red">Crear una red.<a class="headerlink" href="#crear-una-red" title="Permanent link">&para;</a></h3>
+<p></p></center>
+<h3 id="crear-una-red">Crear una red.<a class="headerlink" href="#crear-una-red" title="Permanent link">¶</a></h3>
 <p>Ejemplo de una red:</p>
 <p>✔️ Nombre: miRED </p>
 <p>✔️ Red: 172.20.0.0/16</p>
@@ -1081,56 +1103,56 @@
 <p>✔️ Puerta de enlace: 172.20.2.100</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>--subnet<span class="o">=</span><span class="m">172</span>.20.0.0/16<span class="w"> </span>--ip-range<span class="o">=</span><span class="m">172</span>.20.2.0/24<span class="w"> </span>--gateway<span class="o">=</span><span class="m">172</span>.20.2.100<span class="w"> </span>miRED
 </code></pre></div>
-<h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h2>
-<h3 id="crear-un-contenedor-con-una-red">Crear un contenedor con una red.<a class="headerlink" href="#crear-un-contenedor-con-una-red" title="Permanent link">&para;</a></h3>
+<h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">¶</a></h2>
+<h3 id="crear-un-contenedor-con-una-red">Crear un contenedor con una red.<a class="headerlink" href="#crear-un-contenedor-con-una-red" title="Permanent link">¶</a></h3>
 <p>Se le asigna una red llamada "redInterna" creada con anterioridad.</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>miCONTENEDOR<span class="w"> </span>--network<span class="w"> </span>redInterna<span class="w"> </span>miIMAGEN
 </code></pre></div>
-<h3 id="conectar-una-red-a-un-contenedor-ya-existente">Conectar una red a un contenedor ya existente.<a class="headerlink" href="#conectar-una-red-a-un-contenedor-ya-existente" title="Permanent link">&para;</a></h3>
-<p><center></p>
+<h3 id="conectar-una-red-a-un-contenedor-ya-existente">Conectar una red a un contenedor ya existente.<a class="headerlink" href="#conectar-una-red-a-un-contenedor-ya-existente" title="Permanent link">¶</a></h3>
+<p></p><center>
 <div class="admonition danger">
 <p class="admonition-title">BRIDGE</p>
 <p>Solo funciona con redes tipo Bridge. Para redes host debemos recrear el contenedor.</p>
 </div>
-<p></center></p>
+<p></p></center>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>connect<span class="w"> </span>miRED<span class="w"> </span>miCONTENEDOR
 </code></pre></div>
-<h3 id="conectar-un-contenedor-a-la-red-de-la-maquina-anfitriona">Conectar un contenedor a la red de la máquina anfitriona.<a class="headerlink" href="#conectar-un-contenedor-a-la-red-de-la-maquina-anfitriona" title="Permanent link">&para;</a></h3>
-<p><center></p>
+<h3 id="conectar-un-contenedor-a-la-red-de-la-maquina-anfitriona">Conectar un contenedor a la red de la máquina anfitriona.<a class="headerlink" href="#conectar-un-contenedor-a-la-red-de-la-maquina-anfitriona" title="Permanent link">¶</a></h3>
+<p></p><center>
 <div class="admonition tip">
 <p class="admonition-title">Red HOST</p>
 <p>Existe una red por defecto llamada host que une el contenedor con la red de la máquina anfitriona. </p>
 </div>
-<p></center></p>
+<p></p></center>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>miCONTENEDOR<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>miIMAGEN
 </code></pre></div>
-<h3 id="conectar-un-contenedor-ya-existente-a-la-red-host">Conectar un contenedor ya existente a la red host.<a class="headerlink" href="#conectar-un-contenedor-ya-existente-a-la-red-host" title="Permanent link">&para;</a></h3>
-<p><center></p>
+<h3 id="conectar-un-contenedor-ya-existente-a-la-red-host">Conectar un contenedor ya existente a la red host.<a class="headerlink" href="#conectar-un-contenedor-ya-existente-a-la-red-host" title="Permanent link">¶</a></h3>
+<p></p><center>
 <div class="admonition danger">
 <p class="admonition-title">Limitación red HOST</p>
 <p>Debemos crear una imagen del contenedor y recrearlo.</p>
 </div>
-<p></center></p>
+<p></p></center>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>commit<span class="w"> </span>miCONTENEDOR<span class="w"> </span>miIMAGEN
 docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>miCONTENEDOR<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>miIMAGEN
 </code></pre></div>
-<h3 id="desconectar-una-red-de-un-contenedor">Desconectar una red de un contenedor.<a class="headerlink" href="#desconectar-una-red-de-un-contenedor" title="Permanent link">&para;</a></h3>
+<h3 id="desconectar-una-red-de-un-contenedor">Desconectar una red de un contenedor.<a class="headerlink" href="#desconectar-una-red-de-un-contenedor" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>disconnect<span class="w"> </span>miRED<span class="w"> </span>miCONTENEDOR
 </code></pre></div>
-<h3 id="listar-las-redes-creadas">Listar las redes creadas.<a class="headerlink" href="#listar-las-redes-creadas" title="Permanent link">&para;</a></h3>
+<h3 id="listar-las-redes-creadas">Listar las redes creadas.<a class="headerlink" href="#listar-las-redes-creadas" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>ls
 </code></pre></div>
-<h3 id="listar-las-redes-creadas_1">Listar las redes creadas.<a class="headerlink" href="#listar-las-redes-creadas_1" title="Permanent link">&para;</a></h3>
+<h3 id="listar-las-redes-creadas_1">Listar las redes creadas.<a class="headerlink" href="#listar-las-redes-creadas_1" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>rm<span class="w"> </span>miRED
 </code></pre></div>
-<h3 id="informacion-detallada-de-una-red">Información detallada de una red.<a class="headerlink" href="#informacion-detallada-de-una-red" title="Permanent link">&para;</a></h3>
+<h3 id="informacion-detallada-de-una-red">Información detallada de una red.<a class="headerlink" href="#informacion-detallada-de-una-red" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>miRED
 </code></pre></div>
-<h2 id="traduccion-de-puertos">Traducción de puertos.<a class="headerlink" href="#traduccion-de-puertos" title="Permanent link">&para;</a></h2>
+<h2 id="traduccion-de-puertos">Traducción de puertos.<a class="headerlink" href="#traduccion-de-puertos" title="Permanent link">¶</a></h2>
 <p>Podemos traducir puertos de nuestra máquina anfitriona al contenedor.</p>
 <p>Ejemplo. Todo lo que le llegue al puerto 8080 de la máquina anfitriona lo redirige al puerto 80 del contenedor.</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>miCONTENEDOR<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>miIMAGEN
-</code></pre></div>
+</code></pre></div></div>
 
 
 

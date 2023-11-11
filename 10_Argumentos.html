@@ -791,6 +791,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -850,6 +852,26 @@
   
   <span class="md-ellipsis">
     Secciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="21_UsuariosSamba.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usuarios
   </span>
   
 
@@ -990,18 +1012,18 @@
                   
 
 
-<h1 id="argumentos">Argumentos.<a class="headerlink" href="#argumentos" title="Permanent link">&para;</a></h1>
+<div><h1 id="argumentos">Argumentos.<a class="headerlink" href="#argumentos" title="Permanent link">¶</a></h1>
 <p>Un argumento es un parámetros que se le pasa a una función o a un programa. Es decir, son variables de entrada. Puede haber más de uno o ninguno.</p>
-<p><center></p>
+<p></p><center>
 <div class="admonition danger">
 <p class="admonition-title">Script con argumentos</p>
 <p>./script.sh arg1 arg2 arg3 … argN</p>
 </div>
-<p></center></p>
-<h3 id="ejemplo">Ejemplo:<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h3>
+<p></p></center>
+<h3 id="ejemplo">Ejemplo:<a class="headerlink" href="#ejemplo" title="Permanent link">¶</a></h3>
 <p>Ejecutamos el mismo script con diferentes argumentos, dando salidas distintas.</p>
 <figure>
-  <img src="imagenes\scripts\15.png" width="800"/>
+  <img src="imagenes%5Cscripts%5C15.png" width="800">
 </figure>
 
 <ul>
@@ -1021,14 +1043,14 @@
 <p>shift: Elimina el argumento uno ($1) y promueve una posición al resto de argumentos, es decir, lo que antes era $2 ahora será $1.</p>
 </li>
 </ul>
-<h3 id="ejemplo-1">Ejemplo 1.<a class="headerlink" href="#ejemplo-1" title="Permanent link">&para;</a></h3>
-<p><center></p>
+<h3 id="ejemplo-1">Ejemplo 1.<a class="headerlink" href="#ejemplo-1" title="Permanent link">¶</a></h3>
+<p></p><center>
 <div class="admonition info">
 <p class="admonition-title">Script con argumentos</p>
 <p>./soyUnScript.sh salva 1010 "Salva Serrano" /home/Salva /bin/bash</p>
 </div>
-<p></center></p>
-<p><center></p>
+<p></p></center>
+<p></p><center>
 <table>
 <thead>
 <tr>
@@ -1071,44 +1093,44 @@
 </tr>
 </tbody>
 </table>
-<p></center></p>
+<p></p></center>
 <ul>
 <li>Los argumentos van separados por espacios y en caso de insertar un metacaracter, como por ejemplo asterisco (*), es necesario escaparlo con \:</li>
 </ul>
-<p><center></p>
+<p></p><center>
 <div class="admonition warning">
 <p class="admonition-title">Escapar carácteres especiales</p>
 <p>./soyUnScript.sh 5 \* 10</p>
 </div>
-<p></center></p>
-<h3 id="ejemplo-de">Ejemplo de $#.<a class="headerlink" href="#ejemplo-de" title="Permanent link">&para;</a></h3>
+<p></p></center>
+<h3 id="ejemplo-de">Ejemplo de $#.<a class="headerlink" href="#ejemplo-de" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Se han insertado 3 argumentos.&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Se han insertado 3 argumentos."</span>
 <span class="k">else</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Por favor, inserte 3 argumentos.&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Por favor, inserte 3 argumentos."</span>
 <span class="k">fi</span>
 </code></pre></div>
 <figure>
-  <img src="imagenes\scripts\21.png" width="400"/>
+  <img src="imagenes%5Cscripts%5C21.png" width="400">
 </figure>
 
-<h3 id="ejemplo-shift">Ejemplo Shift.<a class="headerlink" href="#ejemplo-shift" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-shift">Ejemplo Shift.<a class="headerlink" href="#ejemplo-shift" title="Permanent link">¶</a></h3>
 <p>Se puede observar como $1 va a ir valiendo cada uno de los argumentos.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El primer argumento es: </span><span class="nv">$1</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"El primer argumento es: </span><span class="nv">$1</span><span class="s2">"</span>
 <span class="nb">shift</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ahora el primer argumento es: </span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Ahora el primer argumento es: </span><span class="nv">$1</span><span class="s2">"</span>
 <span class="nb">shift</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ahora el primer argumento es: </span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Ahora el primer argumento es: </span><span class="nv">$1</span><span class="s2">"</span>
 </code></pre></div>
 <figure>
-  <img src="imagenes\scripts\20.png" width="400"/>
+  <img src="imagenes%5Cscripts%5C20.png" width="400">
 </figure>
 
-<h2 id="videos-de-ejemplo">Vídeos de Ejemplo.<a class="headerlink" href="#videos-de-ejemplo" title="Permanent link">&para;</a></h2>
+<h2 id="videos-de-ejemplo">Vídeos de Ejemplo.<a class="headerlink" href="#videos-de-ejemplo" title="Permanent link">¶</a></h2>
 <ol>
 <li><a href="https://youtu.be/-j6-3HWyv_k">Ejemplos de Argumentos.</a></li>
-</ol>
+</ol></div>
 
 
 

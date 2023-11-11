@@ -798,6 +798,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -857,6 +859,26 @@
   
   <span class="md-ellipsis">
     Secciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="21_UsuariosSamba.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usuarios
   </span>
   
 
@@ -997,9 +1019,9 @@
                   
 
 
-<h1 id="operaciones-matematicas">Operaciones Matemáticas.<a class="headerlink" href="#operaciones-matematicas" title="Permanent link">&para;</a></h1>
-<h2 id="operaciones">Operaciones<a class="headerlink" href="#operaciones" title="Permanent link">&para;</a></h2>
-<p><center></p>
+<div><h1 id="operaciones-matematicas">Operaciones Matemáticas.<a class="headerlink" href="#operaciones-matematicas" title="Permanent link">¶</a></h1>
+<h2 id="operaciones">Operaciones<a class="headerlink" href="#operaciones" title="Permanent link">¶</a></h2>
+<p></p><center>
 <table>
 <thead>
 <tr>
@@ -1030,15 +1052,15 @@
 </tr>
 </tbody>
 </table>
-<p></center></p>
-<h2 id="comandos-aritmeticos">Comandos Aritméticos.<a class="headerlink" href="#comandos-aritmeticos" title="Permanent link">&para;</a></h2>
+<p></p></center>
+<h2 id="comandos-aritmeticos">Comandos Aritméticos.<a class="headerlink" href="#comandos-aritmeticos" title="Permanent link">¶</a></h2>
 <p>Existen varias posibilidades para realizar operaciones matemáticas.</p>
-<h3 id="1-usando-doble-parentesis">1. Usando doble paréntesis:<a class="headerlink" href="#1-usando-doble-parentesis" title="Permanent link">&para;</a></h3>
+<h3 id="1-usando-doble-parentesis">1. Usando doble paréntesis:<a class="headerlink" href="#1-usando-doble-parentesis" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nv">suma</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">$x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">$y</span><span class="w"> </span><span class="k">))</span>
 </code></pre></div>
-<h3 id="2-usando-el-comando-let">2. Usando el comando “let”:<a class="headerlink" href="#2-usando-el-comando-let" title="Permanent link">&para;</a></h3>
+<h3 id="2-usando-el-comando-let">2. Usando el comando “let”:<a class="headerlink" href="#2-usando-el-comando-let" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">#Ejemplo de Multiplicación:</span>
-<span class="nb">let</span><span class="w"> </span><span class="s2">&quot;mult = </span><span class="nv">$x</span><span class="s2"> * </span><span class="nv">$y</span><span class="s2">&quot;</span>
+<span class="nb">let</span><span class="w"> </span><span class="s2">"mult = </span><span class="nv">$x</span><span class="s2"> * </span><span class="nv">$y</span><span class="s2">"</span>
 
 <span class="c1">#Ejemplo de triplicar un valor:</span>
 <span class="nb">let</span><span class="w"> </span>“mult<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$mult</span><span class="w"> </span>*<span class="w"> </span><span class="m">3</span>”
@@ -1048,7 +1070,7 @@
 <span class="nb">let</span><span class="w"> </span>mult++
 <span class="nb">let</span><span class="w"> </span>mult--
 </code></pre></div>
-<h3 id="3-usar-el-comando-expr">3. Usar el comando “expr”:<a class="headerlink" href="#3-usar-el-comando-expr" title="Permanent link">&para;</a></h3>
+<h3 id="3-usar-el-comando-expr">3. Usar el comando “expr”:<a class="headerlink" href="#3-usar-el-comando-expr" title="Permanent link">¶</a></h3>
 <ul>
 <li>Este comando es más antiguo y tiene el inconveniente de tener que escaparse (añadir ) delanta de cada carácter especial como *,&lt;,&gt;,(,), etc.</li>
 </ul>
@@ -1069,7 +1091,7 @@ expr<span class="w"> </span>substr<span class="w"> </span>“Hola<span class="w"
 <span class="c1">#. Desde el carácter número 6, devuelve los siguientes 5 caracteres → “Mundo”</span>
 expr<span class="w"> </span>substr<span class="w"> </span>“Hola<span class="w"> </span>Mundo”<span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">5</span>
 </code></pre></div>
-<h3 id="4-comando-bc-para-decimales">4. Comando "bc" para decimales.<a class="headerlink" href="#4-comando-bc-para-decimales" title="Permanent link">&para;</a></h3>
+<h3 id="4-comando-bc-para-decimales">4. Comando "bc" para decimales.<a class="headerlink" href="#4-comando-bc-para-decimales" title="Permanent link">¶</a></h3>
 <p>Para trabajar con decimales debemos usar el comando “bc”:</p>
 <div class="highlight"><pre><span></span><code>operacion=`echo “7.5 * 12.5” | bc `
 </code></pre></div>
@@ -1079,7 +1101,7 @@ expr<span class="w"> </span>substr<span class="w"> </span>“Hola<span class="w"
 </code></pre></div>
 <p>Si queremos cierto número de decimales usamos la opción scale:</p>
 <div class="highlight"><pre><span></span><code>operacion=`echo “scale=3;7.5 * 12.5” | bc `
-</code></pre></div>
+</code></pre></div></div>
 
 
 

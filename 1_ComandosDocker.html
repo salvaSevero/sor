@@ -807,6 +807,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -866,6 +868,26 @@
   
   <span class="md-ellipsis">
     Secciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="21_UsuariosSamba.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usuarios
   </span>
   
 
@@ -1006,11 +1028,11 @@
                   
 
 
-<h1 id="comandos-basicos-en-docker"><strong>Comandos Básicos en Docker</strong><a class="headerlink" href="#comandos-basicos-en-docker" title="Permanent link">&para;</a></h1>
-<h2 id="comandos"><strong>Comandos.</strong><a class="headerlink" href="#comandos" title="Permanent link">&para;</a></h2>
+<div><h1 id="comandos-basicos-en-docker"><strong>Comandos Básicos en Docker</strong><a class="headerlink" href="#comandos-basicos-en-docker" title="Permanent link">¶</a></h1>
+<h2 id="comandos"><strong>Comandos.</strong><a class="headerlink" href="#comandos" title="Permanent link">¶</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">Crear un contenedor</p>
-<p><center> 🔥 docker [ run | start | stop | restart ] [OPCIONES] [contenedor] 🔥 </center></p>
+<p></p><center> 🔥 docker [ run | start | stop | restart ] [OPCIONES] [contenedor] 🔥 </center>
 </div>
 <table>
 <thead>
@@ -1050,44 +1072,44 @@
 Si lo ejecutáis una segunda vez el código ya se ejecutará directamente en local (/var/lib/docker/).
 También podemos apreciar que la imagen que se carga es “hello-world:latest”, es decir, la última versión de la imagen del contenedor.</p>
 <figure>
-  <img src="imagenes/docker/ejemplo_1.png" width="700"/>
+  <img src="imagenes/docker/ejemplo_1.png" width="700">
 </figure>
 
 <div class="admonition info">
 <p class="admonition-title">Mostrar los contenedores del sistema, tanto parados como activos</p>
-<p><center> 🔥 docker ps [opciones] 🔥 </center></p>
+<p></p><center> 🔥 docker ps [opciones] 🔥 </center>
 <p>✨ Con –a se muestran todos los contenedores, los activos y los detenidos.</p>
 <p>✨ Una vez sabemos su “nombre” o su “ID” podemos arrancarlo/pararlo/reiniciarlo.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Copiar o renombrar contenedores.</p>
-<p><center> 🔥 docker [ cp |rename ] [contenedor] 🔥 </center> </p>
+<p></p><center> 🔥 docker [ cp |rename ] [contenedor] 🔥 </center> 
 </div>
 <div class="admonition info">
 <p class="admonition-title">Ejecutar comandos dentro del contenedor</p>
-<p><center> 🔥 docker exec [OPCIONES] NombreContenedor Comando [ArgumentosComando] 🔥 </center></p>
+<p></p><center> 🔥 docker exec [OPCIONES] NombreContenedor Comando [ArgumentosComando] 🔥 </center>
 <p>✨ -d: Ejecuta en segundo plano.</p>
 <p>✨-it: Enlaza la entrada y salida a nuestro terminal. Es como entrar al terminal del contenedor.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Acceder a los logs de ejecución del contenedor.</p>
-<p><center> 🔥 docker logs [OPCIONES] NombreContenedor 🔥 </center></p>
+<p></p><center> 🔥 docker logs [OPCIONES] NombreContenedor 🔥 </center>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Listar todos los contenedores.</p>
-<p><center> 🔥 docker container ls –a 🔥 </center></p>
+<p></p><center> 🔥 docker container ls –a 🔥 </center>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Eliminar un contenedor</p>
-<p><center> 🔥 docker container rm NombreContenedor 🔥 </center></p>
+<p></p><center> 🔥 docker container rm NombreContenedor 🔥 </center>
 <p>✨ Elimina un contenedor.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Crear una imagen a partir de un contenedor</p>
-<p><center> 🔥 docker commit contenedor imagen 🔥 </center></p>
+<p></p><center> 🔥 docker commit contenedor imagen 🔥 </center>
 <p>✨Crear una imagen de un contenedor es la forma más sencilla para subir nuestro contenedor a la nube o para hacer un backup local.</p>
 </div>
-<h2 id="ejemplos-basicos-en-docker"><strong>Ejemplos Básicos en Docker</strong><a class="headerlink" href="#ejemplos-basicos-en-docker" title="Permanent link">&para;</a></h2>
+<h2 id="ejemplos-basicos-en-docker"><strong>Ejemplos Básicos en Docker</strong><a class="headerlink" href="#ejemplos-basicos-en-docker" title="Permanent link">¶</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">Aviso</p>
 <p>En los siguientes ejemplos el nombre del contenedor será Salva.</p>
@@ -1144,7 +1166,7 @@ apt-get<span class="w"> </span>install<span class="w"> </span>nano<span class="w
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>backup.tar
 docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>NuevoContenedor<span class="w"> </span>copiaContendor
 </code></pre></div>
-<h2 id="como-trabajar-en-clasecasa-usando-docker"><strong>¿Cómo trabajar en clase/casa usando docker?</strong><a class="headerlink" href="#como-trabajar-en-clasecasa-usando-docker" title="Permanent link">&para;</a></h2>
+<h2 id="como-trabajar-en-clasecasa-usando-docker"><strong>¿Cómo trabajar en clase/casa usando docker?</strong><a class="headerlink" href="#como-trabajar-en-clasecasa-usando-docker" title="Permanent link">¶</a></h2>
 <p>Muchos de vosotros hacéis uso de Windows en casa, por lo que os puede entrar dudas de cómo podemos llevar nuestro trabajo a casa para seguir con él.</p>
 <p>Existen dos opciones explicadas en los siguientes vídeos:</p>
 <ol>
@@ -1154,7 +1176,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </sp
 <li>
 <p><a href="https://youtu.be/H67DulUqURg">Subir las imágenes a <strong>Docker HUB</strong>.</a>.</p>
 </li>
-</ol>
+</ol></div>
 
 
 

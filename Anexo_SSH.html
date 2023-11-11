@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://salvasevero.github.io/sor/Anexo_SSH.html">
       
       
-        <link rel="prev" href="18_Secciones.html">
+        <link rel="prev" href="21_UsuariosSamba.html">
       
       
         <link rel="next" href="Anexo_ExpresionesRegulares.html">
@@ -742,6 +742,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -801,6 +803,26 @@
   
   <span class="md-ellipsis">
     Secciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="21_UsuariosSamba.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usuarios
   </span>
   
 
@@ -997,73 +1019,73 @@
                   
 
 
-<h1 id="scripts-con-ssh-y-scp">Scripts con SSH y SCP.<a class="headerlink" href="#scripts-con-ssh-y-scp" title="Permanent link">&para;</a></h1>
+<div><h1 id="scripts-con-ssh-y-scp">Scripts con SSH y SCP.<a class="headerlink" href="#scripts-con-ssh-y-scp" title="Permanent link">¶</a></h1>
 <p>Para realizar las prácticas con ssh y scp se debe tener en cuenta:</p>
 <ul>
 <li>La máquina que ejecuta el script (Servidor) debe tener el paquete sshpass y ssh.</li>
 <li>El servidor debe tener instalado el paquete openssh-server.</li>
 <li>Los clientes deben tener instalado el paquete openssh-client.</li>
 </ul>
-<h2 id="ssh">SSH.<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
-<p><center></p>
+<h2 id="ssh">SSH.<a class="headerlink" href="#ssh" title="Permanent link">¶</a></h2>
+<p></p><center>
 <div class="admonition danger">
-<p class="admonition-title">Estructura SSH<p>ssh usuario@IP Origen Destino</p>
-</p>
+<p class="admonition-title">Estructura SSH</p><p>ssh usuario@IP Origen Destino</p>
+
 </div>
-<p></center></p>
+<p></p></center>
 <p>Vamos a utilizar este servicio para acceder a diferentes equipos, ejecutar comandos en ellos y recoger información de éstos.</p>
 <p>Es importante tener en cuenta que estamos usando <strong>contraseñas en texto plano (sin cifrar)</strong> que es algo totalmente desaconsejado, al igual que acceder al usuario con "root". Para hacerlo realmente seguro habría que realizarlo con pares de claves (privada/pública) que veréis en el módulo de servicios/seguridad informática.</p>
-<p><center></p>
+<p></p><center>
 <div class="admonition info">
-<p class="admonition-title">INFO<p>Si el usuario es el mismo en servidor y cliente no es necesario especificarlo.</p>
-</p>
+<p class="admonition-title">INFO</p><p>Si el usuario es el mismo en servidor y cliente no es necesario especificarlo.</p>
+
 </div>
-<p></center></p>
-<h3 id="ejemplo-1-acceder-a-una-maquina-y-devolver-la-informacion-de-un-comando">Ejemplo 1. Acceder a una máquina y devolver la información de un comando.<a class="headerlink" href="#ejemplo-1-acceder-a-una-maquina-y-devolver-la-informacion-de-un-comando" title="Permanent link">&para;</a></h3>
+<p></p></center>
+<h3 id="ejemplo-1-acceder-a-una-maquina-y-devolver-la-informacion-de-un-comando">Ejemplo 1. Acceder a una máquina y devolver la información de un comando.<a class="headerlink" href="#ejemplo-1-acceder-a-una-maquina-y-devolver-la-informacion-de-un-comando" title="Permanent link">¶</a></h3>
 <figure>
-  <img src="imagenes\scripts\31.png" width="700"/>
+  <img src="imagenes%5Cscripts%5C31.png" width="700">
 </figure>
 
-<h3 id="ejemplo-2-acceder-a-una-maquina-y-ejecutar-varios-comandos-en-el-cliente">Ejemplo 2. Acceder a una máquina y ejecutar varios comandos en el cliente.<a class="headerlink" href="#ejemplo-2-acceder-a-una-maquina-y-ejecutar-varios-comandos-en-el-cliente" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-2-acceder-a-una-maquina-y-ejecutar-varios-comandos-en-el-cliente">Ejemplo 2. Acceder a una máquina y ejecutar varios comandos en el cliente.<a class="headerlink" href="#ejemplo-2-acceder-a-una-maquina-y-ejecutar-varios-comandos-en-el-cliente" title="Permanent link">¶</a></h3>
 <figure>
-  <img src="imagenes\scripts\32.png" width="800"/>
+  <img src="imagenes%5Cscripts%5C32.png" width="800">
 </figure>
 
-<h3 id="ejemplo-3-ejecutar-comandos-en-un-cliente-y-guardar-la-informacion-devuelta-en-un-fichero-en-el-servidor">Ejemplo 3. Ejecutar comandos en un cliente y guardar la información devuelta en un fichero en el servidor.<a class="headerlink" href="#ejemplo-3-ejecutar-comandos-en-un-cliente-y-guardar-la-informacion-devuelta-en-un-fichero-en-el-servidor" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-3-ejecutar-comandos-en-un-cliente-y-guardar-la-informacion-devuelta-en-un-fichero-en-el-servidor">Ejemplo 3. Ejecutar comandos en un cliente y guardar la información devuelta en un fichero en el servidor.<a class="headerlink" href="#ejemplo-3-ejecutar-comandos-en-un-cliente-y-guardar-la-informacion-devuelta-en-un-fichero-en-el-servidor" title="Permanent link">¶</a></h3>
 <figure>
-  <img src="imagenes\scripts\33.png" width="700"/>
+  <img src="imagenes%5Cscripts%5C33.png" width="700">
 </figure>
 
-<h3 id="ejemplo-4-ejecutar-comandos-en-un-cliente-y-guardar-la-informacion-devuelta-en-una-variable">Ejemplo 4. Ejecutar comandos en un cliente y guardar la información devuelta en una variable.<a class="headerlink" href="#ejemplo-4-ejecutar-comandos-en-un-cliente-y-guardar-la-informacion-devuelta-en-una-variable" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-4-ejecutar-comandos-en-un-cliente-y-guardar-la-informacion-devuelta-en-una-variable">Ejemplo 4. Ejecutar comandos en un cliente y guardar la información devuelta en una variable.<a class="headerlink" href="#ejemplo-4-ejecutar-comandos-en-un-cliente-y-guardar-la-informacion-devuelta-en-una-variable" title="Permanent link">¶</a></h3>
 <figure>
-  <img src="imagenes\scripts\34.png" width="900"/>
+  <img src="imagenes%5Cscripts%5C34.png" width="900">
 </figure>
 
-<h2 id="scp">SCP.<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h2>
+<h2 id="scp">SCP.<a class="headerlink" href="#scp" title="Permanent link">¶</a></h2>
 <ul>
 <li>Este servicio está pensado principalmente para transferir o recibir ficheros a/desde ordenadores remotos.</li>
 </ul>
-<p><center></p>
+<p></p><center>
 <div class="admonition danger">
-<p class="admonition-title">Estructura SCP<p>scp usuario@IP Origen Destino</p>
-</p>
+<p class="admonition-title">Estructura SCP</p><p>scp usuario@IP Origen Destino</p>
+
 </div>
-<p></center></p>
+<p></p></center>
 <div class="admonition info">
-<p class="admonition-title">Ejemplos<p>Usuario: root</p>
+<p class="admonition-title">Ejemplos</p><p>Usuario: root</p>
 <p>Contraseña: salva</p>
 <p>Cliente: 172.17.0.3</p>
-</p>
+
 </div>
-<h3 id="ejemplo-1-pasar-un-fichero-a-la-carpeta-homead-del-equipo-remoto-1721703">Ejemplo 1: Pasar un fichero a la carpeta /home/ad del equipo remoto 172.17.0.3<a class="headerlink" href="#ejemplo-1-pasar-un-fichero-a-la-carpeta-homead-del-equipo-remoto-1721703" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sshpass<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;salva&#39;</span><span class="w"> </span>scp<span class="w"> </span>hosts.txt<span class="w"> </span><span class="m">172</span>.17.0.3:/home
+<h3 id="ejemplo-1-pasar-un-fichero-a-la-carpeta-homead-del-equipo-remoto-1721703">Ejemplo 1: Pasar un fichero a la carpeta /home/ad del equipo remoto 172.17.0.3<a class="headerlink" href="#ejemplo-1-pasar-un-fichero-a-la-carpeta-homead-del-equipo-remoto-1721703" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>sshpass<span class="w"> </span>-p<span class="w"> </span><span class="s1">'salva'</span><span class="w"> </span>scp<span class="w"> </span>hosts.txt<span class="w"> </span><span class="m">172</span>.17.0.3:/home
 </code></pre></div>
-<h3 id="ejemplo-2-recoger-un-fichero-de-un-cliente-y-dejarlo-en-la-carpeta-actual-del-servidor">Ejemplo 2: Recoger un fichero de un cliente y dejarlo en la carpeta actual del servidor.<a class="headerlink" href="#ejemplo-2-recoger-un-fichero-de-un-cliente-y-dejarlo-en-la-carpeta-actual-del-servidor" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sshpass<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;salva&#39;</span><span class="w"> </span>scp<span class="w"> </span><span class="m">172</span>.17.0.3:/home/prueba.sh<span class="w"> </span>.
+<h3 id="ejemplo-2-recoger-un-fichero-de-un-cliente-y-dejarlo-en-la-carpeta-actual-del-servidor">Ejemplo 2: Recoger un fichero de un cliente y dejarlo en la carpeta actual del servidor.<a class="headerlink" href="#ejemplo-2-recoger-un-fichero-de-un-cliente-y-dejarlo-en-la-carpeta-actual-del-servidor" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>sshpass<span class="w"> </span>-p<span class="w"> </span><span class="s1">'salva'</span><span class="w"> </span>scp<span class="w"> </span><span class="m">172</span>.17.0.3:/home/prueba.sh<span class="w"> </span>.
 </code></pre></div>
-<h3 id="ejemplo-3-recoger-un-fichero-de-un-cliente-y-dejarlo-en-la-carpeta-homesalva-de-mi-servidor">Ejemplo 3: Recoger un fichero de un cliente y dejarlo en la carpeta /home/salva de mi servidor.<a class="headerlink" href="#ejemplo-3-recoger-un-fichero-de-un-cliente-y-dejarlo-en-la-carpeta-homesalva-de-mi-servidor" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sshpass<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;salva&#39;</span><span class="w"> </span>scp<span class="w"> </span><span class="m">172</span>.17.0.3:/home/prueba.sh<span class="w"> </span>/home/salva
-</code></pre></div>
+<h3 id="ejemplo-3-recoger-un-fichero-de-un-cliente-y-dejarlo-en-la-carpeta-homesalva-de-mi-servidor">Ejemplo 3: Recoger un fichero de un cliente y dejarlo en la carpeta /home/salva de mi servidor.<a class="headerlink" href="#ejemplo-3-recoger-un-fichero-de-un-cliente-y-dejarlo-en-la-carpeta-homesalva-de-mi-servidor" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>sshpass<span class="w"> </span>-p<span class="w"> </span><span class="s1">'salva'</span><span class="w"> </span>scp<span class="w"> </span><span class="m">172</span>.17.0.3:/home/prueba.sh<span class="w"> </span>/home/salva
+</code></pre></div></div>
 
 
 

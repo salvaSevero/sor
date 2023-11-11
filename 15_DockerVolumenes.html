@@ -807,6 +807,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -866,6 +868,26 @@
   
   <span class="md-ellipsis">
     Secciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="21_UsuariosSamba.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usuarios
   </span>
   
 
@@ -1006,45 +1028,45 @@
                   
 
 
-<h1 id="volumenes-en-docker">Volúmenes en Docker.<a class="headerlink" href="#volumenes-en-docker" title="Permanent link">&para;</a></h1>
+<div><h1 id="volumenes-en-docker">Volúmenes en Docker.<a class="headerlink" href="#volumenes-en-docker" title="Permanent link">¶</a></h1>
 <ul>
 <li>Un contenedor por defecto no tiene persistencia.</li>
 </ul>
-<p><center></p>
+<p></p><center>
 <div class="admonition danger">
-<p class="admonition-title">PERSISTENCIA<p>Se entiende por contenedor persistente que aquel contenedor que almacene los datos incluso después de haber sido borrado dicho contenedor.</p>
+<p class="admonition-title">PERSISTENCIA</p><p>Se entiende por contenedor persistente que aquel contenedor que almacene los datos incluso después de haber sido borrado dicho contenedor.</p>
 <p>Es decir, si borramos un contenedor persistente podríamos continuar con todos nuestros datos al recrearlo.</p>
-</p>
+
 </div>
-<p></center></p>
+<p></p></center>
 <p>Para que se guarden tenemos 3 opciones:</p>
 <figure>
-  <img src="imagenes\scripts\35.png" width="400"/>
+  <img src="imagenes%5Cscripts%5C35.png" width="400">
 </figure>
 
-<h2 id="montajes-tmpfs">Montajes “tmpfs”:<a class="headerlink" href="#montajes-tmpfs" title="Permanent link">&para;</a></h2>
+<h2 id="montajes-tmpfs">Montajes “tmpfs”:<a class="headerlink" href="#montajes-tmpfs" title="Permanent link">¶</a></h2>
 <p>⚡ Los datos generados por el contendor se almacenan en el sistema operativo. Al detener el contenedor, se borran dichos datos.</p>
 <p>⚡Solo funciona en sistemas Linux.</p>
-<h2 id="directorios-enlazados-bind">Directorios Enlazados (bind):<a class="headerlink" href="#directorios-enlazados-bind" title="Permanent link">&para;</a></h2>
+<h2 id="directorios-enlazados-bind">Directorios Enlazados (bind):<a class="headerlink" href="#directorios-enlazados-bind" title="Permanent link">¶</a></h2>
 <p>⚡ La información se guarda fuera del servicio Docker, es decir, en una carpeta enlazada de nuestra máquina anfitriona. </p>
 <p>⚡ <strong>Ventaja</strong>: Podemos modificar los ficheros siendo propietarios de ellos, sin pasar por el servicio de docker y evitando posibles problemas de permisos. </p>
 <p>⚡ <strong>Desventaja</strong>: No se puede hacer uso de los comandos del servicio docker para gestionarlo. Un montaje bind en linux no se puede usar en Windows y viceversa. </p>
-<h3 id="ejemplo">Ejemplo.<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo">Ejemplo.<a class="headerlink" href="#ejemplo" title="Permanent link">¶</a></h3>
 <p>Todo lo que creemos en el /home de nuestro contenedor se guarda en la carpeta actual ($pwd).</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>volbind<span class="w">  </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>,target<span class="o">=</span>/home<span class="w"> </span>ubuntu<span class="w"> </span>
 </code></pre></div>
-<h2 id="volumenes">Volúmenes:<a class="headerlink" href="#volumenes" title="Permanent link">&para;</a></h2>
+<h2 id="volumenes">Volúmenes:<a class="headerlink" href="#volumenes" title="Permanent link">¶</a></h2>
 <p>⚡ La información se guarda dentro del servicio Docker, lo que nos permite mayor flexibilidad y facilidad a la hora de ser gestionados por el propio servicio (usar comandos del terminal de docker).</p>
 <p>⚡ Podemos pasar un volumen entre Linux / Windows.</p>
 <p>⚡ Es la forma más habitual de trabajar.</p>
 <p>⚡ Podemos hacer uso de los comandos "docker volume XXX" para gestionarlos.</p>
-<h3 id="ejemplo_1">Ejemplo.<a class="headerlink" href="#ejemplo_1" title="Permanent link">&para;</a></h3>
-<p><center></p>
+<h3 id="ejemplo_1">Ejemplo.<a class="headerlink" href="#ejemplo_1" title="Permanent link">¶</a></h3>
+<p></p><center>
 <div class="admonition info">
 <p class="admonition-title">MOUNT</p>
 <p>Podemos hacer uso tanto de -v como de - -mount para crear volúmenes en docker.</p>
 </div>
-<p></center></p>
+<p></p></center>
 <p>Se ha creado un volumen "miVol" que apunta a /home del contenedor.</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>ejemploVol<span class="w"> </span>-v<span class="w"> </span>miVol:/home<span class="w"> </span>ubuntu
 </code></pre></div>
@@ -1058,7 +1080,7 @@
 3. Crear otro contenedor usando el mismo volumen.
 </code></pre></div>
 <p>⚡ Tras estos pasos el nuevo contenedor seguirá almancenando todos mis ficheros del anterior contenedor. </p>
-<p>⚡ Los datos del /home de contenedor se están guardando realmente en la máquina anfitriona.</p>
+<p>⚡ Los datos del /home de contenedor se están guardando realmente en la máquina anfitriona.</p></div>
 
 
 

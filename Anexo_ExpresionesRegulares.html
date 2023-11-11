@@ -742,6 +742,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -801,6 +803,26 @@
   
   <span class="md-ellipsis">
     Secciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="21_UsuariosSamba.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usuarios
   </span>
   
 
@@ -1018,9 +1040,9 @@
                   
 
 
-<h1 id="expresiones-regulares">Expresiones Regulares<a class="headerlink" href="#expresiones-regulares" title="Permanent link">&para;</a></h1>
+<div><h1 id="expresiones-regulares">Expresiones Regulares<a class="headerlink" href="#expresiones-regulares" title="Permanent link">¶</a></h1>
 <p>Las expresiones regulares nos van a ayudar a seleccionar cadenas de texto que contengan un patrón.</p>
-<p><center></p>
+<p></p><center>
 <table>
 <thead>
 <tr>
@@ -1067,202 +1089,202 @@
 </tr>
 </tbody>
 </table>
-<p></center></p>
-<h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h2>
-<h3 id="ejemplo-del-uso-de">Ejemplo del uso de "."<a class="headerlink" href="#ejemplo-del-uso-de" title="Permanent link">&para;</a></h3>
+<p></p></center>
+<h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">¶</a></h2>
+<h3 id="ejemplo-del-uso-de">Ejemplo del uso de "."<a class="headerlink" href="#ejemplo-del-uso-de" title="Permanent link">¶</a></h3>
 <ul>
 <li>Se puede observar que da igual lo que se coloque en el lugar del punto, siempre y cuando sea un <strong>único carácter</strong>. </li>
 </ul>
 <p>Por ejemplo, “rXXot” no es seleccionado, en cambio “rXot” sí.</p>
 <figure>
-  <img src="imagenes\scripts\36.png" width="200"/>
+  <img src="imagenes%5Cscripts%5C36.png" width="200">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\37.png" width="300"/>
+  <img src="imagenes%5Cscripts%5C37.png" width="300">
 </figure>
 
-<h3 id="ejemplo-del-uso-de_1">Ejemplo del uso de "*"<a class="headerlink" href="#ejemplo-del-uso-de_1" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-del-uso-de_1">Ejemplo del uso de "*"<a class="headerlink" href="#ejemplo-del-uso-de_1" title="Permanent link">¶</a></h3>
 <ul>
 <li>En el caso del “*” quiere decir que la letra que le precede, puede estar o no y en caso de estar puede estar el número de veces que quiera.</li>
 </ul>
 <p>Por tanto en el ejemplo seleccionará todo aquello que empiece por una o más “r” consecutivas o que  no empiece por “r” y directamente muestre “oot”.</p>
 <figure>
-  <img src="imagenes\scripts\38.png" width="100"/>
+  <img src="imagenes%5Cscripts%5C38.png" width="100">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\39.png" width="300"/>
+  <img src="imagenes%5Cscripts%5C39.png" width="300">
 </figure>
 
-<h3 id="ejemplo-del-uso-de_2">Ejemplo del uso de "?"<a class="headerlink" href="#ejemplo-del-uso-de_2" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-del-uso-de_2">Ejemplo del uso de "?"<a class="headerlink" href="#ejemplo-del-uso-de_2" title="Permanent link">¶</a></h3>
 <ul>
 <li>En el caso del “?”, la letra precedente se repetirá una o ninguna. Por tanto en el ejemplo NO seleccionará “rrrroot”, pero sí “root” y “oot”:</li>
 </ul>
 <figure>
-  <img src="imagenes\scripts\40.png" width="100"/>
+  <img src="imagenes%5Cscripts%5C40.png" width="100">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\41.png" width="300"/>
+  <img src="imagenes%5Cscripts%5C41.png" width="300">
 </figure>
 
-<h3 id="ejemplo-del-uso-de_3">Ejemplo del uso de "+"<a class="headerlink" href="#ejemplo-del-uso-de_3" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-del-uso-de_3">Ejemplo del uso de "+"<a class="headerlink" href="#ejemplo-del-uso-de_3" title="Permanent link">¶</a></h3>
 <ul>
 <li>El “+” es parecido al “?” y al “*”, únicamente que el carácter que le precede debe repetirse o una vez o más de una vez. Por tanto en el ejemplo NO seleccionará “oot”, puesto que debe repetirse al menos una vez, pero SÍ seleccionará “root”, “rroot”, “rrrrrrroot”, etc.</li>
 </ul>
 <figure>
-  <img src="imagenes\scripts\42.png" width="100"/>
+  <img src="imagenes%5Cscripts%5C42.png" width="100">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\43.png" width="300"/>
+  <img src="imagenes%5Cscripts%5C43.png" width="300">
 </figure>
 
-<h3 id="ejemplo-del-uso-de_4">Ejemplo del uso de "[ ... ]"<a class="headerlink" href="#ejemplo-del-uso-de_4" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-del-uso-de_4">Ejemplo del uso de "[ ... ]"<a class="headerlink" href="#ejemplo-del-uso-de_4" title="Permanent link">¶</a></h3>
 <ul>
 <li>El caso de los corchetes [] es para indicar una lista de valores que se pueden dar. Por ejemplo para indicar que solo se puede introducir un número → [0-9] o para indicar que debe ser una letra [a-zA-Z].</li>
 </ul>
 <figure>
-  <img src="imagenes\scripts\44.png" width="100"/>
+  <img src="imagenes%5Cscripts%5C44.png" width="100">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\45.png" width="300"/>
+  <img src="imagenes%5Cscripts%5C45.png" width="300">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\46.png" width="300"/>
+  <img src="imagenes%5Cscripts%5C46.png" width="300">
 </figure>
 
-<h3 id="ejemplo-del-uso-de_5">Ejemplo del uso de "{}"<a class="headerlink" href="#ejemplo-del-uso-de_5" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-del-uso-de_5">Ejemplo del uso de "{}"<a class="headerlink" href="#ejemplo-del-uso-de_5" title="Permanent link">¶</a></h3>
 <ul>
 <li>El caso de las llaves {} tiene habitualmente 3 utilidades:</li>
 </ul>
 <p>Especificar exactamente el número de repeticiones {N}, es decir una letra se va a repetir necesariamente “N” veces. En el siguiente ejemplo nos cercioraremos de sacar aquellos patrones que sean 9 dígitos (números de teléfono).</p>
 <figure>
-  <img src="imagenes\scripts\47.png" width="100"/>
+  <img src="imagenes%5Cscripts%5C47.png" width="100">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\48.png" width="300"/>
+  <img src="imagenes%5Cscripts%5C48.png" width="300">
 </figure>
 
 <p>En el caso de que queramos que tenga N o más repeticiones usaremos {N,} (fijaos en la coma). En el siguiente ejemplo deberá componerse una contraseña que contiene letras o número (no signos) y además debe tener como mínimo 8 caracteres. Fíjate en que se debe entrecomillar en esta ocasión, puedes entrecomillar siempre ante la duda.</p>
 <figure>
-  <img src="imagenes\scripts\49.png" width="150"/>
+  <img src="imagenes%5Cscripts%5C49.png" width="150">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\50.png" width="350"/>
+  <img src="imagenes%5Cscripts%5C50.png" width="350">
 </figure>
 
 <p>En caso de que queramos que tenga entre un número especifico de repeticiones usamos {N,M} donde N es el mínimo y M el máximo de veces que se puede repetir, ambos incluidos.</p>
 <figure>
-  <img src="imagenes\scripts\51.png" width="150"/>
+  <img src="imagenes%5Cscripts%5C51.png" width="150">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\52.png" width="350"/>
+  <img src="imagenes%5Cscripts%5C52.png" width="350">
 </figure>
 
-<h3 id="ejemplo-del-uso-de_6">Ejemplo del uso de "^"<a class="headerlink" href="#ejemplo-del-uso-de_6" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-del-uso-de_6">Ejemplo del uso de "^"<a class="headerlink" href="#ejemplo-del-uso-de_6" title="Permanent link">¶</a></h3>
 <ul>
 <li>En el caso de “^”, es que la línea comience por la cadena o expresión regular indicada:</li>
 </ul>
 <p>En este ejemplo busca una contraseña que empiece por un número, seguido de cualquier cosa (.*).</p>
 <figure>
-  <img src="imagenes\scripts\53.png" width="150"/>
+  <img src="imagenes%5Cscripts%5C53.png" width="150">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\54.png" width="350"/>
+  <img src="imagenes%5Cscripts%5C54.png" width="350">
 </figure>
 
-<h3 id="ejemplo-del-uso-de_7">Ejemplo del uso de "[^...]"<a class="headerlink" href="#ejemplo-del-uso-de_7" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-del-uso-de_7">Ejemplo del uso de "[^...]"<a class="headerlink" href="#ejemplo-del-uso-de_7" title="Permanent link">¶</a></h3>
 <ul>
 <li>Cuando ponemos “^” dentro de los corchetes actúa como una negación. En el ejemplo se selecciona las cadenas de texto que NO tengan en ningún momento números.</li>
 </ul>
 <p>En este ejemplo busca una contraseña que empiece por un número, seguido de cualquier cosa (.*).</p>
 <figure>
-  <img src="imagenes\scripts\55.png" width="150"/>
+  <img src="imagenes%5Cscripts%5C55.png" width="150">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\56.png" width="350"/>
+  <img src="imagenes%5Cscripts%5C56.png" width="350">
 </figure>
 
-<h3 id="ejemplo-del-uso-de_8">Ejemplo del uso de "$"<a class="headerlink" href="#ejemplo-del-uso-de_8" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-del-uso-de_8">Ejemplo del uso de "$"<a class="headerlink" href="#ejemplo-del-uso-de_8" title="Permanent link">¶</a></h3>
 <ul>
 <li>Con el “$” simplemente indicamos que la línea termine de cierta manera:</li>
 </ul>
 <figure>
-  <img src="imagenes\scripts\57.png" width="150"/>
+  <img src="imagenes%5Cscripts%5C57.png" width="150">
 </figure>
 
 <figure>
-  <img src="imagenes\scripts\58.png" width="350"/>
+  <img src="imagenes%5Cscripts%5C58.png" width="350">
 </figure>
 
-<h2 id="expresiones-habituales">Expresiones Habituales.<a class="headerlink" href="#expresiones-habituales" title="Permanent link">&para;</a></h2>
-<p><center></p>
+<h2 id="expresiones-habituales">Expresiones Habituales.<a class="headerlink" href="#expresiones-habituales" title="Permanent link">¶</a></h2>
+<p></p><center>
 <div class="admonition info">
 <p class="admonition-title">Cualquier caracter</p>
 <p>.*</p>
 <p>El “.” nos da cualquier carácter, y el “*” nos dice que cualquier carácter se repita 0 o más veces.</p>
 </div>
-<p></center></p>
-<p><center></p>
+<p></p></center>
+<p></p><center>
 <div class="admonition info">
 <p class="admonition-title">Seleccionar una línea exacta</p>
 <p>^XXXXX$</p>
 <p>Con la “^” le indicamos que la expresión regular se da a comienzo de línea y con “$” indicamos que además debe terminar la línea con la expresión regular. “XXXX” es la expresión regular que queramos usar.</p>
 </div>
-<p></center></p>
-<p><center></p>
+<p></p></center>
+<p></p><center>
 <div class="admonition info">
 <p class="admonition-title">Seleccionar las líneas en blanco</p>
 <p>^$</p>
 <p>Con esto le estamos diciendo que la línea empiece y termine con nada en medio.</p>
 </div>
-<p></center></p>
-<h2 id="ejemplos-avanzados">Ejemplos Avanzados.<a class="headerlink" href="#ejemplos-avanzados" title="Permanent link">&para;</a></h2>
-<h3 id="uids-asignados-a-usuarios-1000-en-adelante">UIDs asignados a usuarios (1000 en adelante).<a class="headerlink" href="#uids-asignados-a-usuarios-1000-en-adelante" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/etc/passwd<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="w"> </span>-f3<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-wE<span class="w"> </span><span class="s1">&#39;^[1-9][0-9]{3,}&#39;</span>
+<p></p></center>
+<h2 id="ejemplos-avanzados">Ejemplos Avanzados.<a class="headerlink" href="#ejemplos-avanzados" title="Permanent link">¶</a></h2>
+<h3 id="uids-asignados-a-usuarios-1000-en-adelante">UIDs asignados a usuarios (1000 en adelante).<a class="headerlink" href="#uids-asignados-a-usuarios-1000-en-adelante" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/etc/passwd<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">':'</span><span class="w"> </span>-f3<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-wE<span class="w"> </span><span class="s1">'^[1-9][0-9]{3,}'</span>
 </code></pre></div>
 <figure>
-  <img src="imagenes\scripts\59.png" width="550"/>
+  <img src="imagenes%5Cscripts%5C59.png" width="550">
 </figure>
 
-<h3 id="comprobar-si-existe-un-usuario">Comprobar si existe un usuario.<a class="headerlink" href="#comprobar-si-existe-un-usuario" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;^salva:&#39;</span><span class="w"> </span>/etc/passwd
+<h3 id="comprobar-si-existe-un-usuario">Comprobar si existe un usuario.<a class="headerlink" href="#comprobar-si-existe-un-usuario" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'^salva:'</span><span class="w"> </span>/etc/passwd
 </code></pre></div>
 <figure>
-  <img src="imagenes\scripts\60.png" width="550"/>
+  <img src="imagenes%5Cscripts%5C60.png" width="550">
 </figure>
 
-<h3 id="usuarios-sin-contrasena">Usuarios sin contraseña.<a class="headerlink" href="#usuarios-sin-contrasena" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;^.*:!:&#39;</span><span class="w"> </span>/etc/shadow
+<h3 id="usuarios-sin-contrasena">Usuarios sin contraseña.<a class="headerlink" href="#usuarios-sin-contrasena" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'^.*:!:'</span><span class="w"> </span>/etc/shadow
 </code></pre></div>
 <figure>
-  <img src="imagenes\scripts\61.png" width="550"/>
+  <img src="imagenes%5Cscripts%5C61.png" width="550">
 </figure>
 
-<h3 id="usuarios-bloqueados">Usuarios Bloqueados.<a class="headerlink" href="#usuarios-bloqueados" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;^.*:![^:]&#39;</span><span class="w"> </span>/etc/shadow
+<h3 id="usuarios-bloqueados">Usuarios Bloqueados.<a class="headerlink" href="#usuarios-bloqueados" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'^.*:![^:]'</span><span class="w"> </span>/etc/shadow
 </code></pre></div>
 <figure>
-  <img src="imagenes\scripts\62.png" width="650"/>
+  <img src="imagenes%5Cscripts%5C62.png" width="650">
 </figure>
 
-<h3 id="seleccionar-ficheros">Seleccionar ficheros.<a class="headerlink" href="#seleccionar-ficheros" title="Permanent link">&para;</a></h3>
+<h3 id="seleccionar-ficheros">Seleccionar ficheros.<a class="headerlink" href="#seleccionar-ficheros" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span>^-
 </code></pre></div>
 <figure>
-  <img src="imagenes\scripts\63.png" width="550"/>
+  <img src="imagenes%5Cscripts%5C63.png" width="550">
 </figure>
 
-<h2 id="expresiones-regulares-y-scripts">Expresiones regulares y Scripts.<a class="headerlink" href="#expresiones-regulares-y-scripts" title="Permanent link">&para;</a></h2>
+<h2 id="expresiones-regulares-y-scripts">Expresiones regulares y Scripts.<a class="headerlink" href="#expresiones-regulares-y-scripts" title="Permanent link">¶</a></h2>
 <ul>
 <li>
 <p>Muchas veces tenemos que comparar si cierta variable cumple cierta expresión regular (MATCH). Para ello, en BASH, podemos hacer uso de “=~”.</p>
@@ -1271,12 +1293,12 @@
 <p>En el siguiente ejemplo se comprueba si el argumento pasado es un número o no.</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nv">expresion</span><span class="o">=</span><span class="s2">&quot;^[0-9]+</span>$<span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nv">expresion</span><span class="o">=</span><span class="s2">"^[0-9]+</span>$<span class="s2">"</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span><span class="nv">$expresion</span><span class="w"> </span><span class="o">]]</span>
 <span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ES UN NUMERO&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"ES UN NUMERO"</span>
 <span class="k">else</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;NO ES UN NUMERO&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"NO ES UN NUMERO"</span>
 <span class="k">fi</span>
 </code></pre></div>
 <p>Como se puede comprobar:</p>
@@ -1285,7 +1307,7 @@
 <li>Hacer uso de los dobles corchetes [[ … ]].</li>
 <li>Hacer uso del comparador especial =~ para expresiones regulares.</li>
 </ol>
-<h2 id="videos-de-repaso">Vídeos de repaso.<a class="headerlink" href="#videos-de-repaso" title="Permanent link">&para;</a></h2>
+<h2 id="videos-de-repaso">Vídeos de repaso.<a class="headerlink" href="#videos-de-repaso" title="Permanent link">¶</a></h2>
 <ol>
 <li>
 <p><a href="https://youtu.be/-TM-YNJ-68k">Expresiones Regulares.</a></p>
@@ -1293,7 +1315,7 @@
 <li>
 <p><a href="https://youtu.be/Gs1o-BIXGcI">Uso de Expresiones Regulares en Scripts.</a>.</p>
 </li>
-</ol>
+</ol></div>
 
 
 
