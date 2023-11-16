@@ -893,6 +893,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#restaurar-conexiones-en-windows" class="md-nav__link">
+    Restaurar Conexiones en Windows.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logs" class="md-nav__link">
+    Logs.
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1115,7 +1129,53 @@
 <p>hosts deny = 127.0.0.1 192.168.2.0/24 192.168.3.0/24</p>
 <p>El que cuenta es el primero que coincida, por tanto sí permitiría el acceso.</p>
 </div>
-<p></p></center></div>
+<p></p></center>
+<h2 id="restaurar-conexiones-en-windows">Restaurar Conexiones en Windows.<a class="headerlink" href="#restaurar-conexiones-en-windows" title="Permanent link">¶</a></h2>
+<p>En Windows las conexiones se quedan guardadas en memoria, por lo que una vez iniciado sesión en un servicio SAMBA, por ejemplo con el usuario "salva" ya no nos saltará de nuevo la ventana para introducir las credenciales de nuevo.</p>
+<p>En caso de que queramos borrar esa memoria debemos abrir una consola "cmd" y ejecutar "net use * /DEL".</p>
+<h2 id="logs">Logs.<a class="headerlink" href="#logs" title="Permanent link">¶</a></h2>
+<p>Los logs del sistema se suelen guardar en <strong>/var/log</strong>:</p>
+<ul>
+<li>syslog: Logs del sistema.</li>
+<li>auth.log: Intentos de logs de autentificaciones fallidas en servicios del sistema (SSH, SCP, SAMBA).</li>
+<li>/var/log/samba: Logs relacionados con samba.</li>
+</ul>
+<p>Por defecto en samba se almacena los fallos del servicio en syslog y los fallos de autenticación en auth.log.</p>
+<p></p><center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Opción</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>log level</code></td>
+<td style="text-align: left;">Especifica el nivel de detalle que se guardará en un log.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>log file</code></td>
+<td style="text-align: left;">Dónde vamos a guardar los logs.</td>
+</tr>
+</tbody>
+</table>
+<p></p></center>
+<p>Se puede especificar el detalle del registro por módulos, por ejemplo el módulo de auth_audit muestra información sobre los intentos de acceso.</p>
+<figure>
+  <img src="imagenes%5Csamba%5C8.png" width="400">
+</figure>
+
+<h3 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">¶</a></h3>
+<p>En el siguiente ejemplo se guarda un log por cada máquina (%m). Por ejemplo en "log.192.168.56.1"</p>
+<p>En ese log se guarda un nivel uno en general y un nivel 3 para autenticación.</p>
+<p>Level 1 del servicio --&gt; Solo guarda errores del servicio.</p>
+<p>Level 3 de autenticación --&gt; Guarda fallos y aciertos en la autenticación.</p>
+<div class="highlight"><pre><span></span><code>log<span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/var/log/samba/log.%m
+log<span class="w"> </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>auth_audit:3<span class="w"> </span>auth_json_audit:3
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>log<span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>%S.log
+</code></pre></div></div>
 
 
 
