@@ -1065,14 +1065,42 @@
 <p>Los usuarios deben existir tanto en samba como en el servidor.</p>
 </div>
 <p></p></center>
-<h3 id="crear-usuario-en-samba">Crear usuario en SAMBA<a class="headerlink" href="#crear-usuario-en-samba" title="Permanent link">¶</a></h3>
-<p>Es recomendable que la contraseña sea diferente a la usada en el sistema.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>smbpasswd<span class="w"> </span>–a<span class="w"> </span>“usuario”
-</code></pre></div>
 <h3 id="crear-usuario-en-el-servidor">Crear usuario en el servidor<a class="headerlink" href="#crear-usuario-en-el-servidor" title="Permanent link">¶</a></h3>
 <p>Si no queremos que este usuario pueda acceder al sistema podemos ponerle un shell inexistente y no ponerle contraseña en el sistema.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>useradd<span class="w"> </span>-s<span class="w"> </span>/bin/true<span class="w"> </span>“usuario”
 </code></pre></div>
+<h3 id="crear-usuario-en-samba">Crear usuario en SAMBA<a class="headerlink" href="#crear-usuario-en-samba" title="Permanent link">¶</a></h3>
+<p>Es recomendable que la contraseña sea diferente a la usada en el sistema.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>smbpasswd<span class="w"> </span>–a<span class="w"> </span>“usuario”
+</code></pre></div>
+<p></p><center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Opciones de smbpasswd</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>-e</code></td>
+<td style="text-align: left;">Habilitar usuario en samba</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-d</code></td>
+<td style="text-align: left;">Deshabilitar usuario en samba.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-x</code></td>
+<td style="text-align: left;">Eliminar un usuario</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-e</code></td>
+<td style="text-align: left;">Habilitar usuario en samba</td>
+</tr>
+</tbody>
+</table>
+<p></p></center>
 <h3 id="comprobar-usuarios-creados-en-samba">Comprobar usuarios creados en SAMBA<a class="headerlink" href="#comprobar-usuarios-creados-en-samba" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pdbedit<span class="w"> </span>-L
 </code></pre></div>
@@ -1124,15 +1152,21 @@
 </table>
 <div class="admonition danger">
 <p class="admonition-title">Orden de Ejecución</p>
-<p>Su funcionamiento es de arriba abajo, como las listas de acceso. Es decir, si tenemos:</p>
+<p>Su funcionamiento es más permisivo, es decir, si tenemos:</p>
 <p>hosts allow = 127.0.0.1 192.168.2.0/24 192.168.3.0/24</p>
 <p>hosts deny = 127.0.0.1 192.168.2.0/24 192.168.3.0/24</p>
-<p>El que cuenta es el primero que coincida, por tanto sí permitiría el acceso.</p>
+<p>Permite el acceso porque manda el allow ante el deny.</p>
 </div>
 <p></p></center>
 <h2 id="restaurar-conexiones-en-windows">Restaurar Conexiones en Windows.<a class="headerlink" href="#restaurar-conexiones-en-windows" title="Permanent link">¶</a></h2>
 <p>En Windows las conexiones se quedan guardadas en memoria, por lo que una vez iniciado sesión en un servicio SAMBA, por ejemplo con el usuario "salva" ya no nos saltará de nuevo la ventana para introducir las credenciales de nuevo.</p>
 <p>En caso de que queramos borrar esa memoria debemos abrir una consola "cmd" y ejecutar "net use * /DEL".</p>
+<p></p><center>
+<div class="admonition danger">
+<p class="admonition-title">Borrar Caché Windows (CMD)</p>
+<p>net use * /DEL</p>
+</div>
+<p></p></center>
 <h2 id="logs">Logs.<a class="headerlink" href="#logs" title="Permanent link">¶</a></h2>
 <p>Los logs del sistema se suelen guardar en <strong>/var/log</strong>:</p>
 <ul>
