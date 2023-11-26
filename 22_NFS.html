@@ -968,6 +968,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#opciones" class="md-nav__link">
+    Opciones.
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1197,7 +1204,67 @@ chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span
 <h3 id="configuracion_1">Configuración.<a class="headerlink" href="#configuracion_1" title="Permanent link">¶</a></h3>
 <figure>
   <img src="imagenes/samba/10.png" width="600">
-</figure></div>
+</figure>
+
+<h2 id="opciones">Opciones.<a class="headerlink" href="#opciones" title="Permanent link">¶</a></h2>
+<p></p><center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Opción</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>ro</code></td>
+<td style="text-align: left;">Solo lectura</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>rw</code></td>
+<td style="text-align: left;">Lectura y Escritura</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>sync</code></td>
+<td style="text-align: left;">Escribe en disco y luego confirma que la tarea ha sido realizada. Más lenta pero evita problemas posibles problemas de sincronismo.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>async</code></td>
+<td style="text-align: left;">Deshabilita sync. Confirma que la tarea ha sido realizadad y luego escribe en disco. Mejor rendimiento pero más posibilidad de crear ficheros corruptos.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>root_squash</code></td>
+<td style="text-align: left;">Un usuario administrador del sistema pierde sus privilegios al acceder de forma remota por NFS. En su lugar, se les trata como un usuario “nfsnobody” que es un usuario con permisos mínimos.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>no_root_squash</code></td>
+<td style="text-align: left;">Deshabilita la opción root_squash.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>subtree_check</code></td>
+<td style="text-align: left;">Tiene en cuenta los permisos de las carpetas padre.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>no_subtree_check</code></td>
+<td style="text-align: left;">No tiene en cuenta los permisos de las carpetas padre.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">async</p>
+<p>Mejora el rendimiento a cambio de que exista el riesgo de corrupción en los archivos o, incluso, en todo el sistema de archivos, si se produjese una interrupción del fluido eléctrico o un bloqueo del sistema. Recibe la orden de escritura y confirma al cliente que ha sido realizada con éxito (mentira, ya que no ha sido realizada), acto seguido puede recibir X órdenes de otros clientes y a todos les hará lo mismo, finalmente realiza escribe todos los cambios a la vez. Por tanto es más rápido que el método síncrono ya que no debe realizar tantos accesos a memoria.</p>
+</div>
+<p></p></center>
+<h3 id="ejemplos">Ejemplos<a class="headerlink" href="#ejemplos" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>/home<span class="w"> </span>*<span class="o">(</span>rw,sync,no_root_squash,no_subtree_check<span class="o">)</span>
+~/compartida<span class="w"> </span>*<span class="o">(</span>rw,sync,no_subtree_check<span class="o">)</span>
+
+/usr/local<span class="w">   </span><span class="m">192</span>.168.0.1<span class="o">(</span>ro<span class="o">)</span><span class="w"> </span><span class="m">192</span>.168.0.2<span class="o">(</span>ro<span class="o">)</span>
+/srv/salva<span class="w">        </span><span class="m">192</span>.168.0.1<span class="o">(</span>rw<span class="o">)</span><span class="w"> </span><span class="m">192</span>.168.0.2<span class="o">(</span>rw<span class="o">)</span>
+
+/srv/local<span class="w"> </span><span class="m">192</span>.168.0.0/255.255.255.0<span class="o">(</span>ro<span class="o">)</span>
+/srv/pepe<span class="w">      </span><span class="m">192</span>.168.0.0/255.255.255.0<span class="o">(</span>rw<span class="o">)</span>
+</code></pre></div></div>
 
 
 
