@@ -14,7 +14,7 @@
         <link rel="prev" href="21_UsuariosSamba.html">
       
       
-        <link rel="next" href="Anexo_SSH.html">
+        <link rel="next" href="23_Windows.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -975,10 +975,104 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#montaje-automatico" class="md-nav__link">
+    Montaje automático.
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UD4. Windows Server
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD4. Windows Server
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="23_Windows.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Características
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="26_AD.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Directorio Activo
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1013,9 +1107,9 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1026,8 +1120,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Anexo
           </label>
@@ -1264,6 +1358,21 @@ chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span
 
 /srv/local<span class="w"> </span><span class="m">192</span>.168.0.0/255.255.255.0<span class="o">(</span>ro<span class="o">)</span>
 /srv/pepe<span class="w">      </span><span class="m">192</span>.168.0.0/255.255.255.0<span class="o">(</span>rw<span class="o">)</span>
+</code></pre></div>
+<h2 id="montaje-automatico">Montaje automático.<a class="headerlink" href="#montaje-automatico" title="Permanent link">¶</a></h2>
+<p>La configuración de montaje de esta forma tiene un gran inconveniente, si se reinicia el cliente la configuración se pierde. Para solucionarlo se dispone de un archivo denominado /etc/fstab (file systems table) donde se guarda la información necesaria sobre los diferentes volúmenes que se montarán durante el arranque del sistema.</p>
+<p>Para modificar este archivo se debe tener en cuenta:</p>
+<p>Cada línea del archivo representa un volumen diferente y atiende al siguiente formato:</p>
+<p>Dispositivo: Referencia al volumen que vamos a montar. En este caso su valor será 192.168.2.4:/home/sor/compartida.</p>
+<p>Punto de montaje: La carpeta donde se montarán los datos del volumen. Su valor para la primera carpeta será /mnt/nfs/home/sor/compartida.</p>
+<p>Sistema de archivos: Indica el sistema de archivos utilizado en el volumen. En ambos casos, el valor será nfs.</p>
+<p>Opciones: Indica los parámetros que usará mount para montar el dispositivo. Estarán separadas por comas y no incluirán espacios. En este caso las opciones serán auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800. Estas opciones son explicadas en detalle en la documentación oficial de ubuntu Enlace.</p>
+<p>Frecuencia de respaldo: Frecuencia con la que se utiliza la herramienta dump para respaldar (copiar) el sistema de archivos. Si su valor es cero, el volumen no se respalda.</p>
+<p>Orden de revisión: Orden en el que la herramienta fsck revisa el volumen en busca de posibles errores durante el proceso de inicio. Si su valor es cero, el volumen no se revisa.</p>
+<p>Por lo tanto se debe incluir la línea indicada abajo para realizar la configuración automática del montaje:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/fstab
+<span class="c1">#IP_SERVIDOR:RUTA_SERVIDOR RUTA_CLIENTE nfs OPCIONES 0 0</span>
+<span class="m">192</span>.168.2.4:/home/sor/compartida<span class="w"> </span>/mnt/nfs/home/sor/compartida<span class="w"> </span>nfs<span class="w"> </span>auto,noatime,nolock,bg,nfsvers<span class="o">=</span><span class="m">3</span>,intr,tcp,actimeo<span class="o">=</span><span class="m">1800</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
 </code></pre></div></div>
 
 
