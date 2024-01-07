@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/31_TiposRed.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/32_Volumenes.html">
       
       
-        <link rel="prev" href="30_NIC.html">
+        <link rel="prev" href="31_TiposRed.html">
       
       
-        <link rel="next" href="32_Volumenes.html">
+        <link rel="next" href="33_CompartirRecursos.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Tipos de Red - Sistemas Operativos en Red</title>
+        <title>Volúmenes - Sistemas Operativos en Red</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cambiar-perfil-de-red" class="md-skip">
+        <a href="#volumenes" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tipos de Red
+              Volúmenes
             
           </span>
         </div>
@@ -1087,6 +1087,26 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="31_TiposRed.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de Red
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1102,18 +1122,18 @@
           
   
   <span class="md-ellipsis">
-    Tipos de Red
+    Volúmenes
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="31_TiposRed.html" class="md-nav__link md-nav__link--active">
+      <a href="32_Volumenes.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Tipos de Red
+    Volúmenes
   </span>
   
 
@@ -1135,15 +1155,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entorno-de-trabajo-real" class="md-nav__link">
-    Entorno de trabajo real:
+  <a href="#video-explicativo" class="md-nav__link">
+    Vídeo Explicativo.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nuestro-entorno-virtual" class="md-nav__link">
-    Nuestro entorno virtual:
+  <a href="#raid-redundant-array-of-independent-disks" class="md-nav__link">
+    RAID (Redundant Array of Independent Disks).
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-raid" class="md-nav__link">
+    Tipos de RAID.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-raid-en-windows-server" class="md-nav__link">
+    Crear RAID en Windows Server.
   </a>
   
 </li>
@@ -1152,26 +1186,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="32_Volumenes.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Volúmenes
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1328,61 +1342,125 @@
                   
 
 
-<div><h1 id="cambiar-perfil-de-red">Cambiar Perfil de Red.<a class="headerlink" href="#cambiar-perfil-de-red" title="Permanent link">¶</a></h1>
-<p>Los perfiles de red nos indican cómo se va a comportar nuestro equipo por defecto.</p>
+<div><h1 id="volumenes">Volúmenes.<a class="headerlink" href="#volumenes" title="Permanent link">¶</a></h1>
+<p>Es habitual tener varios discos duros dentro de un mismo servidor.</p>
+<ul>
+<li>Nos permite tener nuestros datos separados de nuestro sistema operativo, de tal forma que si falla el sistema no perdemos nuestros datos a la hora de restaurarlo.</li>
+</ul>
+<p>En el siguiente vídeo se explica como añadir un disco a un sistema Windows Server.</p>
+<h2 id="video-explicativo">Vídeo Explicativo.<a class="headerlink" href="#video-explicativo" title="Permanent link">¶</a></h2>
+<p></p><center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_SVvjlkspNM?si=wOxkYLiPf6hPLAyi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p></p></center>
+<h2 id="raid-redundant-array-of-independent-disks">RAID (Redundant Array of Independent Disks).<a class="headerlink" href="#raid-redundant-array-of-independent-disks" title="Permanent link">¶</a></h2>
 <ul>
 <li>
-<p><strong>Red pública</strong>: Son las redes que no gestionamos nosotros, por ejemplo si nos conectamos a una Wi-Fi en una cafetería o la del instituto.</p>
+<p>Combinación de varios discos independientes que funcionan como si fuera un único dispositivo de almacenamiento.</p>
 </li>
 <li>
-<p><strong>Red privada</strong>: Es una red de la cual tenemos la gestión, por ejemplo una red doméstica (nuestra casa) o la red interna de la empresa.</p>
+<p>Los datos pueden desglosarse en fragmentos, cada fragmento guardándose en un disco diferente de forma simultánea ➡️ mayor rendimiento.</p>
 </li>
 <li>
-<p><strong>DomainAuthenticated</strong>: Es aquella red que conforma el dominio. Se establece automáticamente.</p>
+<p>Los datos pueden duplicarse en varios discos ➡️ redundancia.</p>
+</li>
+<li>
+<p>Se puede establecer RAID mediante software o mediante hardware.</p>
 </li>
 </ul>
-<p>Escoger entre una u otra afecta principalmente a la hora de poder detectar y que nos detecten automáticamente en una red y facilitar la compartición de recursos. De tal forma que en una red pública dichas acciones son muchas más restrictivas, pues no suele ser normal que en una cafetería quieras que la gente te pueda descubrir y vayas a compartir recursos con ellos.</p>
-<h2 id="entorno-de-trabajo-real">Entorno de trabajo real:<a class="headerlink" href="#entorno-de-trabajo-real" title="Permanent link">¶</a></h2>
-<p>En un entorno real de trabajo obviamente va a depender de las necesidades de la empresa y sus características, pero algunas cosas que podríamos tener en mente son:</p>
-<p>✔️ Que el servidor no tenga acceso a Internet, únicamente cuando queramos que actualice.</p>
-<p>✔️ El servidor debe tener una IP fija.</p>
-<p>✔️ El servidor solo aceptará tráfico entrante de la red interna de la empresa y tráfico de sesiones ya prestablecidas e iniciadas por él, por ejemplo con un servidor de actualizaciones de Microsoft.</p>
-<p>✔️ La red interna la identificaremos como privada o de dominio en caso de que queramos compartir carpetas o impresoras desde el servidor.</p>
-<h2 id="nuestro-entorno-virtual">Nuestro entorno virtual:<a class="headerlink" href="#nuestro-entorno-virtual" title="Permanent link">¶</a></h2>
-<p>En nuestro entorno vamos a poner la red en privada / DomainAuthenticated. </p>
-<ol>
+<p></p><center>
+<div class="admonition danger">
+<p class="admonition-title">Software RAID </p>
+<p>RAID gestionado por el sistema operativo. Consume recursos de la CPU.</p>
+</div>
+<p></p></center>
+<p></p><center>
+<div class="admonition danger">
+<p class="admonition-title">Hardware RAID</p>
+<p>Gestionado por una controladora (tarjeta RAID) que hace creer al sistema operativo que existe un único disco. </p>
+<p>Este método es más rápido que el software RAID y libera de carga de trabajo a la CPU. </p>
+<p><figure>
+    <img src="imagenes/win/16.png" width="400">
+</figure></p>
+<p>La controladora RAID se conecta a la placa base por PCIe y coniene puertos SATA para conectar los discos directamente a la controladora y no a la placa base.</p>
+</div>
+<p></p></center>
+<h2 id="tipos-de-raid">Tipos de RAID.<a class="headerlink" href="#tipos-de-raid" title="Permanent link">¶</a></h2>
+<h3 id="raid-0">RAID 0.<a class="headerlink" href="#raid-0" title="Permanent link">¶</a></h3>
+<ul>
 <li>
-<p>Ejecutamos PowerShell como administrador.</p>
+<p>Los datos se fragmentan, cada fragmento se guarda simultáneamente en cada disco.</p>
+<p>✅ Incrementa el rendimiento. A mayor número de discos, mayor rendimiento.</p>
+<p>✅ No permite redundancia / tolerancia a fallos.</p>
+<p>✅ Mayor eficiencia en sistemas donde manejen grandes ficheros (ficheros de vídeo, imágenes, etc).</p>
 </li>
+</ul>
+<figure>
+    <img src="imagenes/win/17.png" width="300">
+</figure>
+
+<h3 id="raid-1">RAID 1.<a class="headerlink" href="#raid-1" title="Permanent link">¶</a></h3>
+<ul>
 <li>
-<p>Miramos la información de nuestra interfaz.</p>
-<p>a.  En caso de que en el apartado de Network Category os ponga “DomainAuthenticated” no debéis hacer nada.</p>
-<p>b.  Importante quedarse con el número que identifica a tu interfaz de red, en mi caso el 4.</p>
+<p>Va clonando cada fragmento de dato que se va insertando.</p>
+<p>✅ No produce una mejora del rendimiento, pero sí genera un disco redundante.</p>
+<p>✅ A mayor número de discos, mayor nivel de redundancia podremos tener.</p>
+<p>✅ Cuando se sustituya el disco averiado habrá que realizar un clonado del disco activo para volver a tener redundancia.</p>
 </li>
-</ol>
+</ul>
 <figure>
-  <img src="imagenes/win/11.png" width="400">
+    <img src="imagenes/win/18.png" width="300">
 </figure>
 
-<ol start="3">
-<li>Acto seguido cambiamos la categoría de esa interfaz (pública/privada/dominio) a Private.</li>
-</ol>
+<h3 id="raid-4">RAID 4.<a class="headerlink" href="#raid-4" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>Usa un disco dedicado para guardar información de paridad calculada a partir de los datos almacenados en los otros discos.</p>
+<p>✅ El disco de paridad permite la recuperación de datos de un disco, comparando los datos correctos y los datos corruptos.</p>
+<p>✅ Se necesita un mínimo de 3 discos para implementar la solución.</p>
+<p>✅ Supone un pequeño problema de rendimiento puesto que necesita consultar los datos para rellenar los bloques de paridad.</p>
+<p>✅ Es más costos puesto que tienes que destinar un disco sólo para almacenar información de paridad.</p>
+</li>
+</ul>
 <figure>
-  <img src="imagenes/win/12.png" width="600">
+    <img src="imagenes/win/21.png" width="400">
 </figure>
 
-<p>A veces a Windows le cuesta identificar la red por ejemplo tras el reinicio, para ello podemos hacer que aquellas redes desconocidas o que no han podido ser identificadas no las tome como públicas.</p>
+<h3 id="raid-5">RAID 5.<a class="headerlink" href="#raid-5" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>Usa la misma estrategia que RAID 4 con la diferencia que almacena los bloques de paridad en los propios discos de datos.</p>
+<p>✅ Menor coste al no necesitar un disco exclusivo para almacenar la información de paridad.</p>
+<p>✅ Necesita como mínimo 3 discos para su implementación.</p>
+<p>✅ Independientemente del número de discos, ante el fallo de dos discos la información es irrecuperable, sería como resolver una ecuación con dos incógnitas.</p>
+<p>✅ RAID 5 es ampliamente usado y ofrece el mejor equilibrio rendimiento / redundancia / precio.</p>
+</li>
+</ul>
 <figure>
-  <img src="imagenes/win/13.png" width="400">
+    <img src="imagenes/win/19.png" width="400">
 </figure>
 
+<h3 id="raid-anidado">RAID Anidado.<a class="headerlink" href="#raid-anidado" title="Permanent link">¶</a></h3>
+<p>Cabe la posibilidad de anidar diferentes niveles RAID para combinar las ventajas de cada uno.</p>
+<h3 id="raid-01">RAID 0+1.<a class="headerlink" href="#raid-01" title="Permanent link">¶</a></h3>
 <figure>
-  <img src="imagenes/win/14.png" width="600">
+    <img src="imagenes/win/20.png" width="400">
 </figure>
 
+<h3 id="raid-10">RAID 1+0.<a class="headerlink" href="#raid-10" title="Permanent link">¶</a></h3>
 <figure>
-  <img src="imagenes/win/15.png" width="600">
-</figure></div>
+    <img src="imagenes/win/22.png" width="400">
+</figure>
+
+<h3 id="raid-50">RAID 50.<a class="headerlink" href="#raid-50" title="Permanent link">¶</a></h3>
+<figure>
+    <img src="imagenes/win/23.png" width="700">
+</figure>
+
+<h2 id="crear-raid-en-windows-server">Crear RAID en Windows Server.<a class="headerlink" href="#crear-raid-en-windows-server" title="Permanent link">¶</a></h2>
+<p></p><center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-J7sRtpJSM0?si=UB5OUaCqGL8FECSh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p></p></center></div>
 
 
 

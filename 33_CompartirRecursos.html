@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/31_TiposRed.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/33_CompartirRecursos.html">
       
       
-        <link rel="prev" href="30_NIC.html">
+        <link rel="prev" href="32_Volumenes.html">
       
       
-        <link rel="next" href="32_Volumenes.html">
+        <link rel="next" href="Anexo_SSH.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Tipos de Red - Sistemas Operativos en Red</title>
+        <title>Compartir Recursos - Sistemas Operativos en Red</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cambiar-perfil-de-red" class="md-skip">
+        <a href="#compartir-recursos" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tipos de Red
+              Compartir Recursos
             
           </span>
         </div>
@@ -1087,29 +1087,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Tipos de Red
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="31_TiposRed.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="31_TiposRed.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1118,40 +1098,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#entorno-de-trabajo-real" class="md-nav__link">
-    Entorno de trabajo real:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nuestro-entorno-virtual" class="md-nav__link">
-    Nuestro entorno virtual:
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1181,9 +1127,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="33_CompartirRecursos.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Compartir Recursos
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="33_CompartirRecursos.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1192,6 +1158,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-explicativo" class="md-nav__link">
+    Vídeo Explicativo.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1328,61 +1321,26 @@
                   
 
 
-<div><h1 id="cambiar-perfil-de-red">Cambiar Perfil de Red.<a class="headerlink" href="#cambiar-perfil-de-red" title="Permanent link">¶</a></h1>
-<p>Los perfiles de red nos indican cómo se va a comportar nuestro equipo por defecto.</p>
+<div><h1 id="compartir-recursos">Compartir Recursos.<a class="headerlink" href="#compartir-recursos" title="Permanent link">¶</a></h1>
+<p>Podemos compartir recursos que se alojan en cualquier lugar de nuestra red.</p>
+<h3 id="que-entendemos-por-recursos">¿Qué entendemos por recursos?<a class="headerlink" href="#que-entendemos-por-recursos" title="Permanent link">¶</a></h3>
+<p>Habitualmente se refiere a una carpeta o fichero, el cuál suele estar alojado en un disco duro de datos, en un NAS o en la nube.</p>
+<h3 id="para-que-sirve">¿Para qué sirve?<a class="headerlink" href="#para-que-sirve" title="Permanent link">¶</a></h3>
+<p>Sirve para que varios clientes o usuarios accedan a los mismos ficheros de forma centralizada.</p>
+<h3 id="que-ventajas-tiene">¿Qué ventajas tiene?<a class="headerlink" href="#que-ventajas-tiene" title="Permanent link">¶</a></h3>
 <ul>
 <li>
-<p><strong>Red pública</strong>: Son las redes que no gestionamos nosotros, por ejemplo si nos conectamos a una Wi-Fi en una cafetería o la del instituto.</p>
+<p>No es necesario copiar el recurso localmente en los equipos --&gt; Ahorro de memoria.</p>
 </li>
 <li>
-<p><strong>Red privada</strong>: Es una red de la cual tenemos la gestión, por ejemplo una red doméstica (nuestra casa) o la red interna de la empresa.</p>
-</li>
-<li>
-<p><strong>DomainAuthenticated</strong>: Es aquella red que conforma el dominio. Se establece automáticamente.</p>
+<p>Puedes gestionar las políticas de seguridad de forma centralizada.</p>
 </li>
 </ul>
-<p>Escoger entre una u otra afecta principalmente a la hora de poder detectar y que nos detecten automáticamente en una red y facilitar la compartición de recursos. De tal forma que en una red pública dichas acciones son muchas más restrictivas, pues no suele ser normal que en una cafetería quieras que la gente te pueda descubrir y vayas a compartir recursos con ellos.</p>
-<h2 id="entorno-de-trabajo-real">Entorno de trabajo real:<a class="headerlink" href="#entorno-de-trabajo-real" title="Permanent link">¶</a></h2>
-<p>En un entorno real de trabajo obviamente va a depender de las necesidades de la empresa y sus características, pero algunas cosas que podríamos tener en mente son:</p>
-<p>✔️ Que el servidor no tenga acceso a Internet, únicamente cuando queramos que actualice.</p>
-<p>✔️ El servidor debe tener una IP fija.</p>
-<p>✔️ El servidor solo aceptará tráfico entrante de la red interna de la empresa y tráfico de sesiones ya prestablecidas e iniciadas por él, por ejemplo con un servidor de actualizaciones de Microsoft.</p>
-<p>✔️ La red interna la identificaremos como privada o de dominio en caso de que queramos compartir carpetas o impresoras desde el servidor.</p>
-<h2 id="nuestro-entorno-virtual">Nuestro entorno virtual:<a class="headerlink" href="#nuestro-entorno-virtual" title="Permanent link">¶</a></h2>
-<p>En nuestro entorno vamos a poner la red en privada / DomainAuthenticated. </p>
-<ol>
-<li>
-<p>Ejecutamos PowerShell como administrador.</p>
-</li>
-<li>
-<p>Miramos la información de nuestra interfaz.</p>
-<p>a.  En caso de que en el apartado de Network Category os ponga “DomainAuthenticated” no debéis hacer nada.</p>
-<p>b.  Importante quedarse con el número que identifica a tu interfaz de red, en mi caso el 4.</p>
-</li>
-</ol>
-<figure>
-  <img src="imagenes/win/11.png" width="400">
-</figure>
+<h2 id="video-explicativo">Vídeo Explicativo.<a class="headerlink" href="#video-explicativo" title="Permanent link">¶</a></h2>
+<p></p><center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Cg8XfxKcmJg?si=buvApccxlMQ1W2aX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<ol start="3">
-<li>Acto seguido cambiamos la categoría de esa interfaz (pública/privada/dominio) a Private.</li>
-</ol>
-<figure>
-  <img src="imagenes/win/12.png" width="600">
-</figure>
-
-<p>A veces a Windows le cuesta identificar la red por ejemplo tras el reinicio, para ello podemos hacer que aquellas redes desconocidas o que no han podido ser identificadas no las tome como públicas.</p>
-<figure>
-  <img src="imagenes/win/13.png" width="400">
-</figure>
-
-<figure>
-  <img src="imagenes/win/14.png" width="600">
-</figure>
-
-<figure>
-  <img src="imagenes/win/15.png" width="600">
-</figure></div>
+<p></p></center></div>
 
 
 
