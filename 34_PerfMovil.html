@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/33_CompartirRecursos.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/34_PerfMovil.html">
       
       
-        <link rel="prev" href="32_Volumenes.html">
+        <link rel="prev" href="33_CompartirRecursos.html">
       
       
-        <link rel="next" href="34_PerfMovil.html">
+        <link rel="next" href="Anexo_SSH.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Compartir Recursos - Sistemas Operativos en Red</title>
+        <title>Perfiles Móviles - Sistemas Operativos en Red</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#compartir-recursos" class="md-skip">
+        <a href="#perfi-movil" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Compartir Recursos
+              Perfiles Móviles
             
           </span>
         </div>
@@ -1129,6 +1129,26 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="33_CompartirRecursos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compartir Recursos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1144,18 +1164,18 @@
           
   
   <span class="md-ellipsis">
-    Compartir Recursos
+    Perfiles Móviles
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="33_CompartirRecursos.html" class="md-nav__link md-nav__link--active">
+      <a href="34_PerfMovil.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Compartir Recursos
+    Perfiles Móviles
   </span>
   
 
@@ -1187,26 +1207,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="34_PerfMovil.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Perfiles Móviles
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1343,24 +1343,34 @@
                   
 
 
-<div><h1 id="compartir-recursos">Compartir Recursos.<a class="headerlink" href="#compartir-recursos" title="Permanent link">¶</a></h1>
-<p>Podemos compartir recursos que se alojan en cualquier lugar de nuestra red.</p>
-<h3 id="que-entendemos-por-recursos">¿Qué entendemos por recursos?<a class="headerlink" href="#que-entendemos-por-recursos" title="Permanent link">¶</a></h3>
-<p>Habitualmente se refiere a una carpeta o fichero, el cuál suele estar alojado en un disco duro de datos, en un NAS o en la nube.</p>
-<h3 id="para-que-sirve">¿Para qué sirve?<a class="headerlink" href="#para-que-sirve" title="Permanent link">¶</a></h3>
-<p>Sirve para que varios clientes o usuarios accedan a los mismos ficheros de forma centralizada.</p>
-<h3 id="que-ventajas-tiene">¿Qué ventajas tiene?<a class="headerlink" href="#que-ventajas-tiene" title="Permanent link">¶</a></h3>
-<ul>
-<li>
-<p>No es necesario copiar el recurso localmente en los equipos --&gt; Ahorro de memoria.</p>
-</li>
-<li>
-<p>Puedes gestionar las políticas de seguridad de forma centralizada.</p>
-</li>
-</ul>
+<div><h1 id="perfi-movil">Perfi Móvil.<a class="headerlink" href="#perfi-movil" title="Permanent link">¶</a></h1>
+<p>Un perfil móvil es aquel en el que el usuario sincroniza sus archivos con el servidor de forma automática.</p>
+<p>De forma que, independientemente del equipo del dominio al que se conecte, siempre va a tener sus ficheros.</p>
+<p>Para ello hay que realizar una serie de pasos:</p>
+<h3 id="1-crear-recurso-compartido">1. Crear Recurso Compartido.<a class="headerlink" href="#1-crear-recurso-compartido" title="Permanent link">¶</a></h3>
+<p>Crear un recursos compartido que almacenará los datos de cada usuario.</p>
+<p>➡️ Se crea una carpeta por cada usuario.</p>
+<p>➡️Se usa el uso del "$" para que no sea visible la carpeta compartida.</p>
+<figure>
+    <img src="imagenes/win/25.png" width="500">
+</figure>
+
+<h3 id="2-modificar-permisos">2. Modificar Permisos.<a class="headerlink" href="#2-modificar-permisos" title="Permanent link">¶</a></h3>
+<p>Modificar los permisos de la carpeta compartida para que los usuarios puedan realizar cambios en ella.</p>
+<figure>
+    <img src="imagenes/win/24.png" width="500">
+</figure>
+
+<h3 id="3-crear-gpo-de-redireccion">3. Crear GPO de redirección.<a class="headerlink" href="#3-crear-gpo-de-redireccion" title="Permanent link">¶</a></h3>
+<p>Crear una Directiva de Grupo (GPO) a nivel de usuario para redirigir las carpetas del cliente al recurso compartido.</p>
+<p>➡️ Por ejemplo podemos indicar que solo se sincronice la carpeta "Escritorio" del cliente en el servidor.</p>
+<figure>
+    <img src="imagenes/win/26.png" width="700">
+</figure>
+
 <h2 id="video-explicativo">Vídeo Explicativo.<a class="headerlink" href="#video-explicativo" title="Permanent link">¶</a></h2>
 <p></p><center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Cg8XfxKcmJg?si=buvApccxlMQ1W2aX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hnLQlfdlmNw?si=CUdJz25cO8YOTpps" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <p></p></center></div>
 
