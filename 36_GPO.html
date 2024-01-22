@@ -1262,6 +1262,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#herencia-en-las-gpos" class="md-nav__link">
+    Herencia en las GPOs.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpeta-sysvol" class="md-nav__link">
+    Carpeta SYSVOL.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtros-gpos" class="md-nav__link">
+    Filtros GPOs.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#anexo" class="md-nav__link">
     Anexo.
   </a>
@@ -1470,6 +1491,21 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/58H4FgFWC8E?si=zMHjcPu9SSQ3oAEP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <p></p></center>
+<h2 id="herencia-en-las-gpos">Herencia en las GPOs.<a class="headerlink" href="#herencia-en-las-gpos" title="Permanent link">¶</a></h2>
+<p></p><center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n51YdgVQ68Q?si=4yVtRYM9PwTPGXer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p></p></center>
+<h2 id="carpeta-sysvol">Carpeta SYSVOL.<a class="headerlink" href="#carpeta-sysvol" title="Permanent link">¶</a></h2>
+<p></p><center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LnWI4vo0oTk?si=_ekCiN8T7gIrq39g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p></p></center>
+<h2 id="filtros-gpos">Filtros GPOs.<a class="headerlink" href="#filtros-gpos" title="Permanent link">¶</a></h2>
+<p></p><center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r58x4WdADZA?si=8g8zw_aCiO4UW24U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p></p></center>
 <h2 id="anexo">Anexo.<a class="headerlink" href="#anexo" title="Permanent link">¶</a></h2>
 <ul>
 <li>
@@ -1485,12 +1521,22 @@
 <p>Con el comando “gpresult /R” podemos comprobar que GPOs se están aplicando en mi usuario.</p>
 </li>
 </ul>
+<h3 id="comandos-que-se-lanzan-desde-el-cliente">Comandos que se lanzan desde el cliente.<a class="headerlink" href="#comandos-que-se-lanzan-desde-el-cliente" title="Permanent link">¶</a></h3>
 <p></p><center>
 <div class="highlight"><pre><span></span><code><span class="c1">#Fuerza la sincronización de las GPOs.</span>
 gpupdate<span class="w"> </span>/force
 
 <span class="c1">##Comprueba las GPOs aplicadas.</span>
 gpupdate<span class="w"> </span>/R
+</code></pre></div>
+<p></p></center>
+<h3 id="comandos-que-se-lanzan-desde-el-servidor">Comandos que se lanzan desde el servidor<a class="headerlink" href="#comandos-que-se-lanzan-desde-el-servidor" title="Permanent link">¶</a></h3>
+<p></p><center>
+<div class="highlight"><pre><span></span><code><span class="c1">#Actualizar Todos los equipos de una OU</span>
+Get-ADComputer<span class="w"> </span>–filter<span class="w"> </span>*<span class="w"> </span>-Searchbase<span class="w"> </span><span class="s2">"OU=Equipos,OU=XXXXXXX,DC=XXXXXXXXXX,DC=local"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>foreach<span class="o">{</span><span class="w"> </span>Invoke-GPUpdate<span class="w"> </span>–computer<span class="w"> </span><span class="nv">$_</span>.name<span class="w"> </span>-force<span class="w"> </span>-RandomDelayInMinutes<span class="w"> </span><span class="m">0</span><span class="o">}</span>
+
+<span class="c1">#Actualizar un equipo en especifico</span>
+Get-ADComputer<span class="w"> </span>–Filter<span class="w"> </span><span class="s1">'Name -like "NOMBREEQUIPO*"'</span><span class="w"> </span>-Searchbase<span class="w"> </span><span class="s2">"OU=Equipos,OU=XXXXXXXXXXXXX,DC=XXXXXXXXXXXXX,DC=local"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>foreach<span class="o">{</span><span class="w"> </span>Invoke-GPUpdate<span class="w"> </span>–Computer<span class="w"> </span><span class="nv">$_</span>.name<span class="w"> </span>-Force<span class="w"> </span>-RandomDelayInMinutes<span class="w"> </span><span class="m">0</span><span class="o">}</span>
 </code></pre></div>
 <p></p></center></div>
 
