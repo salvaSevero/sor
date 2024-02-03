@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/31_TiposRed.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/39_Seguridad.html">
       
       
-        <link rel="prev" href="30_NIC.html">
+        <link rel="prev" href="38_RSAT.html">
       
       
-        <link rel="next" href="32_Volumenes.html">
+        <link rel="next" href="Anexo_SSH.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Tipos de Red - Sistemas Operativos en Red</title>
+        <title>Seguridad - Sistemas Operativos en Red</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cambiar-perfil-de-red" class="md-skip">
+        <a href="#seguridad" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tipos de Red
+              Seguridad
             
           </span>
         </div>
@@ -1101,29 +1101,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Tipos de Red
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="31_TiposRed.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="31_TiposRed.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1132,40 +1112,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#entorno-de-trabajo-real" class="md-nav__link">
-    Entorno de trabajo real:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nuestro-entorno-virtual" class="md-nav__link">
-    Nuestro entorno virtual:
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1335,9 +1281,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="39_Seguridad.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Seguridad
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="39_Seguridad.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1346,6 +1312,40 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#controlar-los-administradores-de-los-equipos-locales" class="md-nav__link">
+    Controlar los administradores de los equipos locales.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpos-recomendables" class="md-nav__link">
+    GPOs Recomendables.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1482,60 +1482,103 @@
                   
 
 
-<div><h1 id="cambiar-perfil-de-red">Cambiar Perfil de Red.<a class="headerlink" href="#cambiar-perfil-de-red" title="Permanent link">¶</a></h1>
-<p>Los perfiles de red nos indican cómo se va a comportar nuestro equipo por defecto.</p>
+<div><h1 id="seguridad">Seguridad.<a class="headerlink" href="#seguridad" title="Permanent link">¶</a></h1>
+<p>Existen múltiples acciones entorno a la seguridad que se escapan al ámbito de este módulo.</p>
+<p>No obstante vamos a ver algunas de las pinceladas más importantes como administradores de un AD.</p>
+<h2 id="controlar-los-administradores-de-los-equipos-locales">Controlar los administradores de los equipos locales.<a class="headerlink" href="#controlar-los-administradores-de-los-equipos-locales" title="Permanent link">¶</a></h2>
 <ul>
 <li>
-<p><strong>Red pública</strong>: Son las redes que no gestionamos nosotros, por ejemplo si nos conectamos a una Wi-Fi en una cafetería o la del instituto.</p>
+<p>Si un trabajador trabaja en su ordenador con una cuenta de administrador local nos puede ocasionar muchos problemas:</p>
+<ul>
+<li>
+<p>Puede ejecutar un virus (keylogger, sniffer, ransomware) que ponga en un aprieto a todo el sistema.</p>
 </li>
 <li>
-<p><strong>Red privada</strong>: Es una red de la cual tenemos la gestión, por ejemplo una red doméstica (nuestra casa) o la red interna de la empresa.</p>
-</li>
-<li>
-<p><strong>DomainAuthenticated</strong>: Es aquella red que conforma el dominio. Se establece automáticamente.</p>
+<p>Es peor cuando los usuarios administradores son los mismso para muchos equipos locales, pues el atacante podría saltar fácilmente entre ellos.</p>
 </li>
 </ul>
-<p>Escoger entre una u otra afecta principalmente a la hora de poder detectar y que nos detecten automáticamente en una red y facilitar la compartición de recursos. De tal forma que en una red pública dichas acciones son muchas más restrictivas, pues no suele ser normal que en una cafetería quieras que la gente te pueda descubrir y vayas a compartir recursos con ellos.</p>
-<h2 id="entorno-de-trabajo-real">Entorno de trabajo real:<a class="headerlink" href="#entorno-de-trabajo-real" title="Permanent link">¶</a></h2>
-<p>En un entorno real de trabajo obviamente va a depender de las necesidades de la empresa y sus características, pero algunas cosas que podríamos tener en mente son:</p>
-<p>✔️ Que el servidor no tenga acceso a Internet, únicamente cuando queramos que actualice.</p>
-<p>✔️ El servidor debe tener una IP fija.</p>
-<p>✔️ El servidor solo aceptará tráfico entrante de la red interna de la empresa y tráfico de sesiones ya prestablecidas e iniciadas por él, por ejemplo con un servidor de actualizaciones de Microsoft.</p>
-<p>✔️ La red interna la identificaremos como privada o de dominio en caso de que queramos compartir carpetas o impresoras desde el servidor.</p>
-<h2 id="nuestro-entorno-virtual">Nuestro entorno virtual:<a class="headerlink" href="#nuestro-entorno-virtual" title="Permanent link">¶</a></h2>
-<p>En nuestro entorno vamos a poner la red en privada / DomainAuthenticated. </p>
+</li>
+</ul>
+<h3 id="comprobar-que-usuarios-pertenecen-a-un-grupo-local">Comprobar qué usuarios pertenecen a un grupo local.<a class="headerlink" href="#comprobar-que-usuarios-pertenecen-a-un-grupo-local" title="Permanent link">¶</a></h3>
+<p>Dentro de "Local Users and Groups" podemos ver los grupos locales del sistema y los usuarios que pertencen a él.</p>
+<figure>
+  <img src="imagenes/win/44.png" width="500">
+</figure>
+
+<h3 id="eliminar-todos-los-administradores-locales-de-los-equipos-del-dominio-mediante-una-gpo">Eliminar todos los administradores locales de los equipos del dominio mediante una GPO.<a class="headerlink" href="#eliminar-todos-los-administradores-locales-de-los-equipos-del-dominio-mediante-una-gpo" title="Permanent link">¶</a></h3>
+<p>Editamos una GPO y creamos una nueva política de grupos locales.</p>
+<figure>
+  <img src="imagenes/win/41.png" width="500">
+</figure>
+
+<figure>
+  <img src="imagenes/win/42.png" width="300">
+</figure>
+
+<p>Esta política va a realizar lo siguiente:</p>
+<ul>
+<li>
+<p>Eliminamos cualquier usuario local que estuviera en el grupo de administradores.</p>
+</li>
+<li>
+<p>Solo permite que los administradores del dominio sean también administradores locales.</p>
+</li>
+<li>
+<p>Si alguien pone en un futuro su usuario como administrador cuando la GPO se refresque volverá a eliminarlo. Por lo que es una medida de control.</p>
+</li>
+</ul>
+<h2 id="gpos-recomendables">GPOs Recomendables.<a class="headerlink" href="#gpos-recomendables" title="Permanent link">¶</a></h2>
+<h3 id="1-bbloquear-la-consola-cmd-en-los-clientes">1. Bbloquear la consola (CMD) en los clientes.<a class="headerlink" href="#1-bbloquear-la-consola-cmd-en-los-clientes" title="Permanent link">¶</a></h3>
+<figure>
+  <img src="imagenes/win/33.png" width="700">
+</figure>
+
+<h3 id="2-bbloquear-powershell-en-los-clientes">2. Bbloquear powershell en los clientes.<a class="headerlink" href="#2-bbloquear-powershell-en-los-clientes" title="Permanent link">¶</a></h3>
 <ol>
-<li>
-<p>Ejecutamos PowerShell como administrador.</p>
-</li>
-<li>
-<p>Miramos la información de nuestra interfaz.</p>
-<p>a.  En caso de que en el apartado de Network Category os ponga “DomainAuthenticated” no debéis hacer nada.</p>
-<p>b.  Importante quedarse con el número que identifica a tu interfaz de red, en mi caso el 4.</p>
-</li>
+<li>Sacamos la ruta absoluta del ejecutable:</li>
 </ol>
 <figure>
-  <img src="imagenes/win/11.png" width="400">
+  <img src="imagenes/win/35.png" width="700">
 </figure>
 
-<ol start="3">
-<li>Acto seguido cambiamos la categoría de esa interfaz (pública/privada/dominio) a Private.</li>
+<ol start="2">
+<li>Usamos la ruta absoluta para crear una directiva de software.</li>
 </ol>
 <figure>
-  <img src="imagenes/win/12.png" width="600">
+  <img src="imagenes/win/34.png" width="700">
 </figure>
 
-<p>A veces a Windows le cuesta identificar la red por ejemplo tras el reinicio, para ello podemos hacer que aquellas redes desconocidas o que no han podido ser identificadas no las tome como públicas.</p>
+<h3 id="3-bloquear-el-acceso-al-panel-de-control">3. Bloquear el acceso al Panel de Control.<a class="headerlink" href="#3-bloquear-el-acceso-al-panel-de-control" title="Permanent link">¶</a></h3>
 <figure>
-  <img src="imagenes/win/13.png" width="400">
+  <img src="imagenes/win/45.png" width="800">
 </figure>
 
+<h3 id="4-evitar-que-inserten-usbs">4. Evitar que inserten USBs.<a class="headerlink" href="#4-evitar-que-inserten-usbs" title="Permanent link">¶</a></h3>
 <figure>
-  <img src="imagenes/win/14.png" width="600">
+  <img src="imagenes/win/46.png" width="800">
 </figure>
 
+<h3 id="5-evitar-que-instalen-software">5. Evitar que instalen Software.<a class="headerlink" href="#5-evitar-que-instalen-software" title="Permanent link">¶</a></h3>
 <figure>
-  <img src="imagenes/win/15.png" width="600">
+  <img src="imagenes/win/47.png" width="800">
+</figure>
+
+<h3 id="6-deshabilitar-los-usuarios-invitados">6. Deshabilitar los usuarios invitados.<a class="headerlink" href="#6-deshabilitar-los-usuarios-invitados" title="Permanent link">¶</a></h3>
+<figure>
+  <img src="imagenes/win/48.png" width="800">
+</figure>
+
+<h3 id="7-evitar-reincicios-de-equipos-por-actualizaciones">7. Evitar reincicios de equipos por actualizaciones.<a class="headerlink" href="#7-evitar-reincicios-de-equipos-por-actualizaciones" title="Permanent link">¶</a></h3>
+<p>Nos ayudará a impedir que mientras haya un usuaro registrado en el equipo se reinicie el equipo por una actualización.</p>
+<figure>
+  <img src="imagenes/win/49.png" width="800">
+</figure>
+
+<h3 id="8-generar-alertas-cada-vez-que-alguiente-cambia-o-crea-una-gpo">8. Generar alertas cada vez que alguiente cambia o crea una GPO.<a class="headerlink" href="#8-generar-alertas-cada-vez-que-alguiente-cambia-o-crea-una-gpo" title="Permanent link">¶</a></h3>
+<p>Es importante llevar una auditoría de nuestro sistema.</p>
+<p>Una cosa habitual que puede crear un atacante son GPOs o modificarlas para sus fines, por tanto es importante tener registrada esta actividad.</p>
+<figure>
+  <img src="imagenes/win/50.png" width="600">
 </figure></div>
 
 
