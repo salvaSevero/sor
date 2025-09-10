@@ -1653,10 +1653,11 @@
 
 <div><h1 id="comandos-basicos-en-docker"><strong>Comandos Básicos en Docker</strong><a class="headerlink" href="#comandos-basicos-en-docker" title="Permanent link">¶</a></h1>
 <h2 id="comandos"><strong>Comandos.</strong><a class="headerlink" href="#comandos" title="Permanent link">¶</a></h2>
+<p><strong>Crear un contenedor</strong></p>
 <div class="admonition danger">
-<p class="admonition-title">Crear un contenedor</p>
-<p></p><center> 🔥 docker [ run | start | stop | restart ] [OPCIONES] [contenedor] 🔥 </center>
+<p class="admonition-title">docker [ run | start | stop | restart ] [OPCIONES] [contenedor]</p>
 </div>
+<div class="center-table">
 <table>
 <thead>
 <tr>
@@ -1691,51 +1692,55 @@
 </tr>
 </tbody>
 </table>
-<p>Si nos fijamos en la salida vemos que lo primero que hace es buscar la imagen “hello-world” en local, al no encontrarlo, lo descarga de un repositorio de docker y posteriormente lo ejecuta. </p>
-<p>Si lo ejecutáis una segunda vez el código ya se ejecutará directamente en local (/var/lib/docker/).</p>
-<p>También podemos apreciar que la imagen que se carga es “hello-world:latest”, es decir, la última versión de la imagen del contenedor.</p>
+</div>
+<ul>
+<li>
+<p>Si nos fijamos en la salida vemos que lo primero que hace es buscar la imagen “<strong>hello-world</strong>” en local, al no encontrarlo, lo descarga de un <strong>repositorio</strong> de docker y posteriormente lo ejecuta. </p>
+</li>
+<li>
+<p>Si lo ejecutáis una segunda vez el código ya se ejecutará directamente en local (<strong>/var/lib/docker/</strong>).</p>
+</li>
+<li>
+<p>También podemos apreciar que la imagen que se carga es “<strong>hello-world:latest</strong>”, es decir, la <strong>última versión</strong> de la imagen del contenedor.</p>
+</li>
+</ul>
 <figure>
   <img src="imagenes/docker/ejemplo_1.png" width="700">
 </figure>
 
+<p><strong>Muestra los contenedores del sistema</strong></p>
 <div class="admonition info">
-<p class="admonition-title">Mostrar los contenedores del sistema, tanto parados como activos</p>
-<p></p><center> 🔥 docker ps [opciones] 🔥 </center>
-<p>✨ Con –a se muestran todos los contenedores, los activos y los detenidos.</p>
+<p class="admonition-title">docker ps [opciones]</p>
+<p>✨ Con <strong>–a</strong> se muestran todos los contenedores, los activos y los detenidos.</p>
 <p>✨ Una vez sabemos su “nombre” o su “ID” podemos arrancarlo/pararlo/reiniciarlo.</p>
 </div>
+<p><strong>Copiar o renombrar contenedores.</strong></p>
 <div class="admonition info">
-<p class="admonition-title">Copiar o renombrar contenedores.</p>
-<p></p><center> 🔥 docker [ cp |rename ] [contenedor] 🔥 </center> 
+<p class="admonition-title">docker [ cp | rename ] [contenedor]</p>
 </div>
+<p><strong>Ejecutar comandos dentro del contenedor</strong></p>
 <div class="admonition info">
-<p class="admonition-title">Ejecutar comandos dentro del contenedor</p>
-<p></p><center> 🔥 docker exec [OPCIONES] NombreContenedor Comando [ArgumentosComando] 🔥 </center>
-<p>✨ -d: Ejecuta en segundo plano.</p>
-<p>✨-it: Enlaza la entrada y salida a nuestro terminal. Es como entrar al terminal del contenedor.</p>
+<p class="admonition-title">docker exec [OPCIONES] NombreContenedor Comando [ArgumentosComando]</p>
+<p>✨ <strong>-d</strong>: Ejecuta en segundo plano.</p>
+<p>✨ <strong>-it</strong>: Enlaza la entrada y salida a nuestro terminal. Es como entrar al terminal del contenedor.</p>
 </div>
+<p><strong>Acceder a los logs de ejecución del contenedor.</strong></p>
 <div class="admonition info">
-<p class="admonition-title">Acceder a los logs de ejecución del contenedor.</p>
-<p></p><center> 🔥 docker logs [OPCIONES] NombreContenedor 🔥 </center>
+<p class="admonition-title">docker logs [OPCIONES] NombreContenedor</p>
 </div>
+<p><strong>Elimina un contenedor.</strong></p>
 <div class="admonition info">
-<p class="admonition-title">Listar todos los contenedores.</p>
-<p></p><center> 🔥 docker container ls –a 🔥 </center>
+<p class="admonition-title"> docker container rm NombreContenedor</p>
 </div>
+<p><strong>Crear una imagen a partir de un contenedor</strong></p>
 <div class="admonition info">
-<p class="admonition-title">Eliminar un contenedor</p>
-<p></p><center> 🔥 docker container rm NombreContenedor 🔥 </center>
-<p>✨ Elimina un contenedor.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Crear una imagen a partir de un contenedor</p>
-<p></p><center> 🔥 docker commit contenedor imagen 🔥 </center>
+<p class="admonition-title">docker commit contenedor imagen</p>
 <p>✨Crear una imagen de un contenedor es la forma más sencilla para subir nuestro contenedor a la nube o para hacer un backup local.</p>
 </div>
 <h2 id="ejemplos-basicos-en-docker"><strong>Ejemplos Básicos en Docker</strong><a class="headerlink" href="#ejemplos-basicos-en-docker" title="Permanent link">¶</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">Aviso</p>
-<p>En los siguientes ejemplos el nombre del contenedor será Salva.</p>
+<p><strong>En los siguientes ejemplos el nombre del contenedor será Salva.</strong></p>
 </div>
 <ul>
 <li>Crear un contenedor nuevo con la última versión de Ubuntu.</li>
@@ -1797,7 +1802,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </sp
 <p><a href="https://youtu.be/4Qg3lo-Dej0">Guardarnos las imágenes en un <strong>USB</strong>.</a></p>
 </li>
 <li>
-<p><a href="https://youtu.be/H67DulUqURg">Subir las imágenes a <strong>Docker HUB</strong>.</a>.</p>
+<p><a href="https://youtu.be/H67DulUqURg">Subir las imágenes a <strong>Docker HUB</strong>.</a></p>
 </li>
 </ol></div>
 
