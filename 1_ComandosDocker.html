@@ -1796,15 +1796,29 @@ docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </sp
 </code></pre></div>
 <h2 id="como-trabajar-en-clasecasa-usando-docker"><strong>¿Cómo trabajar en clase/casa usando docker?</strong><a class="headerlink" href="#como-trabajar-en-clasecasa-usando-docker" title="Permanent link">¶</a></h2>
 <p>Muchos de vosotros hacéis uso de Windows en casa, por lo que os puede entrar dudas de cómo podemos llevar nuestro trabajo a casa para seguir con él.</p>
-<p>Existen dos opciones explicadas en los siguientes vídeos:</p>
-<ol>
-<li>
-<p><a href="https://youtu.be/4Qg3lo-Dej0">Guardarnos las imágenes en un <strong>USB</strong>.</a></p>
-</li>
-<li>
-<p><a href="https://youtu.be/H67DulUqURg">Subir las imágenes a <strong>Docker HUB</strong>.</a></p>
-</li>
-</ol></div>
+<h3 id="opcion-1-pasar-el-contendor-a-una-memoria-externa">Opción 1: Pasar el contendor a una memoria externa.<a class="headerlink" href="#opcion-1-pasar-el-contendor-a-una-memoria-externa" title="Permanent link">¶</a></h3>
+<center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4Qg3lo-Dej0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</center>
+
+<h3 id="opcion-2-pasar-el-contenedor-a-un-repositorio-privado-de-dockerhub">Opción 2: Pasar el contenedor a un repositorio privado de DockerHUB.<a class="headerlink" href="#opcion-2-pasar-el-contenedor-a-un-repositorio-privado-de-dockerhub" title="Permanent link">¶</a></h3>
+<center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/H67DulUqURg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</center>
+
+<p>Resumen de los comandos:</p>
+<p>Antes de nada debemos habernos <strong>creado un usuario y un repositorio privado</strong> en la plataforma <a href="https://hub.docker.com/">"Docker_hub"</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Nos registramos desde el terminal en docker hub.</span>
+docker<span class="w"> </span>login<span class="w"> </span>UsuarioDockerHUB
+<span class="c1"># Creamos la imagen ya asociada al repositorio de nuestro usuario.</span>
+docker<span class="w"> </span>commit<span class="w"> </span>NombreContenedor<span class="w"> </span>UsuarioDockerHUB/repositorio:nombnre_imagen
+<span class="c1"># Subimos el contenedor a docker hub.</span>
+docker<span class="w"> </span>push<span class="w"> </span>UsuarioDockerHUB/repositorio:nombnre_imagen
+</code></pre></div></div>
 
 
 
