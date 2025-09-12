@@ -1592,70 +1592,93 @@
 
 <div><h1 id="scripts-en-linux">Scripts en Linux.<a class="headerlink" href="#scripts-en-linux" title="Permanent link">¶</a></h1>
 <h1 id="repaso-de-comandos">Repaso de Comandos.<a class="headerlink" href="#repaso-de-comandos" title="Permanent link">¶</a></h1>
-<p><a download="Ejercicios_Repaso" href="recursos/1_Ejercicios_Repaso.pdf">1_Ejercicios_Repaso.pdf</a></p>
+<p><a download="Ejercicios_Repaso" href="recursos/1_Ejercicios_Repaso.docx">1_Ejercicios_Repaso.docx</a></p>
 <p><a download="EsquemaLinux" href="recursos/2_EsquemaLinux.pdf">2_EsquemaLinux.pdf</a></p>
 <p><a download="Find" href="recursos/3_Repaso_Find.pdf">3_Repaso_Find.pdf</a></p>
 <p><a download="TAR" href="recursos/4_Repaso_TAR.pdf">4_Repaso_TAR.pdf</a></p>
 <p><a download="RepasoComandos" href="recursos/5_Repaso_Comandos.pdf">5_Repaso_Comandos.pdf</a></p>
 <h2 id="creacion-de-scripts">Creación de Scripts.<a class="headerlink" href="#creacion-de-scripts" title="Permanent link">¶</a></h2>
+<h3 id="donde-creo-mis-scripts">¿Dónde creo mis scripts?<a class="headerlink" href="#donde-creo-mis-scripts" title="Permanent link">¶</a></h3>
 <ul>
-<li>¿Dónde creo mis scripts?</li>
+<li>
+<p>Si empezamos a crear el script en un directorio donde no tenemos <ins class="critic"><strong>permisos</strong></ins> de escritura no nos dejará guardar los cambios!</p>
+</li>
+<li>
+<p>Si hacemos uso de <ins class="critic"><strong>rutas relativas</strong></ins> el origen siempre es el lugar donde se encuentra el script.</p>
+</li>
 </ul>
-<p>Lo primero que debemos preguntarnos es dónde vamos a crear el script.
-Si empezamos a crear el script en un directorio donde no tenemos permisos de escritura no nos dejará guardar los cambios y nuestro trabajo será en vano.</p>
-<ul>
-<li>¿Con qué creo mis scripts?</li>
-</ul>
-<p>Para la creación de scripts usaremos el editor de texto nano:</p>
-<center>
-
-| Controles    | <center> Funcionamiento </center>      |
-| :----: | :-- |
-| `nano “NombreFichero”.sh`   | Genera o Abre el fichero para su edición.          |
-| `Control + o`    | Guardar Cambios.                                           |
-| `Control + x`    | Salir.                                      |
-| `Control + _`     | Ir a una línea.           |
-| `Alt + U`     | Deshacer.                                      |
-| `Alt + E`      | Rehacer.     |
-
-</center>
-
-<p>En la leyenda “^” equivale a “Control” y “M-“ equivale a “Alt”.</p>
-<figure>
+<h3 id="con-que-creo-mis-scripts">¿Con qué creo mis scripts?<a class="headerlink" href="#con-que-creo-mis-scripts" title="Permanent link">¶</a></h3>
+<p>Para la creación de scripts usaremos el <ins class="critic"><strong>editor de texto</strong></ins> nano:</p>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Controles</th>
+<th style="text-align: left;"><center> Funcionamiento </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>nano “NombreFichero”.sh</code></td>
+<td style="text-align: left;">Genera o Abre el fichero para su edición.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Control + o</code></td>
+<td style="text-align: left;">Guardar Cambios.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Control + x</code></td>
+<td style="text-align: left;">Salir.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Control + _</code></td>
+<td style="text-align: left;">Ir a una línea.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Alt + U</code></td>
+<td style="text-align: left;">Deshacer.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Alt + E</code></td>
+<td style="text-align: left;">Rehacer.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">NANO</p>
+<p><strong>En la leyenda “^” equivale a “Control” y “M-“ equivale a “Alt”.</strong></p>
+<p><figure>
   <img src="imagenes/scripts/nano.png" width="800">
-</figure>
-
-<ul>
-<li>¿Cómo empiezo mis scripts?</li>
-</ul>
-<p>Lo primero será crear el “shebang”  🔀 #!/bin/bash. </p>
+</figure></p>
+</div>
+<h3 id="como-empiezo-mis-scripts">¿Cómo empiezo mis scripts?<a class="headerlink" href="#como-empiezo-mis-scripts" title="Permanent link">¶</a></h3>
+<p>Lo primero será crear el “shebang”  🔀 <ins class="critic"><strong>#!/bin/bash.</strong></ins></p>
 <figure>
   <img src="imagenes/scripts/shebang.png" width="200">
 </figure>
 
-<p>La función del shebang es decirle al sistema operativo que cuando le digamos de ejecutar este fichero use el SHELL bash, cuya ubicación dentro del sistema es /bin/bash.
-Si vamos a la ruta /bin, veremos que existe un ejecutable llamado “bash”.</p>
+<p>La función del shebang es decirle al sistema operativo que cuando le digamos de ejecutar este fichero use el SHELL bash, cuya ubicación dentro del sistema es /bin/bash.</p>
+<p>Si vamos a la ruta /bin, veremos que existe un ejecutable llamado “bash”.</p>
 <figure>
   <img src="imagenes/scripts/bash.png" width="500">
 </figure>
 
-<ul>
-<li>¿Cómo ejecuto mis scripts?</li>
-</ul>
-<p>Una vez guardados los cambios debemos darle permisos de ejecución al fichero, en caso de que estemos trabajando con un script. Es importante solo dar permiso de ejecución al usuario propietario, si no se puede producir una brecha de seguridad, pues los scripts suelen almacenar/manipular datos/servicios importantes de nuestro servidor. </p>
+<h3 id="como-ejecuto-mis-scripts">¿Cómo ejecuto mis scripts?<a class="headerlink" href="#como-ejecuto-mis-scripts" title="Permanent link">¶</a></h3>
+<p>Una vez guardados los cambios debemos darle <ins class="critic"><strong>permisos de ejecución al fichero</strong></ins>, en caso de que estemos trabajando con un script. Es importante solo dar permiso de ejecución al usuario propietario, si no se puede producir una <ins class="critic"><strong>brecha de seguridad</strong></ins>, pues los scripts suelen almacenar/manipular datos/servicios importantes de nuestro servidor. </p>
 <div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>“NombreFichero”.sh
 </code></pre></div>
 <p>Una vez hecho, ya podemos ejecutar nuestro script de una de las siguientes formas:</p>
 <div class="highlight"><pre><span></span><code>./”NombreFichero”.sh
-bash<span class="w"> </span>“NombreFIchero”.sh
+bash<span class="w"> </span>“NombreFichero”.sh
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>No uséis el comando “sh script.sh” donde script.sh es el nombre de vuestro script. Esto fuerza al terminal a usar el shell SHELL, y nosotros vamos a usar BASH. Por lo que en ciertos comandos nos dará error al usar SHELL. </p>
+<p><strong>No uséis el comando <ins class="critic">sh script.sh</ins> donde script.sh es el nombre de vuestro script. Esto fuerza al terminal a usar el shell SHELL, y nosotros vamos a usar BASH. Por lo que en ciertos comandos nos dará error al usar SHELL.</strong></p>
 </div>
 <h2 id="comentarios">Comentarios<a class="headerlink" href="#comentarios" title="Permanent link">¶</a></h2>
 <p>Importante el uso de comentarios para poder describir que hace cada parte del código, tanto de cara a vosotros como de cara a compañeros de trabajo que vayan a modificar tu código.</p>
-<p>Para ello se usa 🔀 <strong>“#”</strong>:</p>
+<p>Para ello se usa 🔀 <ins class="critic"><strong>“#”</strong></ins>:</p>
 <figure>
   <img src="imagenes/scripts/ejemplo1.png" width="600">
 </figure></div>
