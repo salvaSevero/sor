@@ -1633,11 +1633,10 @@
 
 <div><h1 id="argumentos">Argumentos.<a class="headerlink" href="#argumentos" title="Permanent link">¶</a></h1>
 <p>Un argumento es un parámetros que se le pasa a una función o a un programa. Es decir, son variables de entrada. Puede haber más de uno o ninguno.</p>
-<center>
-!!! danger "Script con argumentos" 
-    ./script.sh arg1 arg2 arg3 … argN
-</center>
-
+<div class="admonition danger">
+<p class="admonition-title">Script con argumentos</p>
+<p><strong>./script.sh arg1 arg2 arg3 … argN</strong></p>
+</div>
 <h3 id="ejemplo">Ejemplo:<a class="headerlink" href="#ejemplo" title="Permanent link">¶</a></h3>
 <p>Ejecutamos el mismo script con diferentes argumentos, dando salidas distintas.</p>
 <figure>
@@ -1662,34 +1661,61 @@
 </li>
 </ul>
 <h3 id="ejemplo-1">Ejemplo 1.<a class="headerlink" href="#ejemplo-1" title="Permanent link">¶</a></h3>
-<center>
-!!! info "Script con argumentos" 
-    ./soyUnScript.sh salva 1010 "Salva Serrano" /home/Salva /bin/bash
-</center>
-
-<center>
-
-| Variable    | <center> Contenido </center>      |
-| :----: | :-- |
-| `$0`     | soyUnScript.sh |
-| `$1`   | salva        |
-| `$2`    | 1010         |
-| `$3`    | Salva Serrano     |
-| `$4`     | /home/Salva   |
-| `$5`     | /bin/bash  |
-| `$*`     | salva 1010 "Salva Serrano" /home/Salva /bin/bash  |
-| `$#`     | 5 |
-
-</center>
-
+<div class="admonition info">
+<p class="admonition-title">Script con argumentos</p>
+<p><strong>./soyUnScript.sh salva 1010 "Salva Serrano" /home/Salva /bin/bash</strong></p>
+</div>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;"><center> Contenido </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>$0</code></td>
+<td style="text-align: left;">soyUnScript.sh</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>$1</code></td>
+<td style="text-align: left;">salva</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>$2</code></td>
+<td style="text-align: left;">1010</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>$3</code></td>
+<td style="text-align: left;">Salva Serrano</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>$4</code></td>
+<td style="text-align: left;">/home/Salva</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>$5</code></td>
+<td style="text-align: left;">/bin/bash</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>$*</code></td>
+<td style="text-align: left;">salva 1010 "Salva Serrano" /home/Salva /bin/bash</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>$#</code></td>
+<td style="text-align: left;">5</td>
+</tr>
+</tbody>
+</table>
+</div>
 <ul>
 <li>Los argumentos van separados por espacios y en caso de insertar un metacaracter, como por ejemplo asterisco (*), es necesario escaparlo con \:</li>
 </ul>
-<center>
-!!! warning "Escapar carácteres especiales" 
-    ./soyUnScript.sh 5 \\* 10
-</center>
-
+<div class="admonition warning">
+<p class="admonition-title">Escapar carácteres especiales</p>
+<p><strong>./soyUnScript.sh 5 \* 10</strong></p>
+</div>
 <h3 id="ejemplo-de">Ejemplo de $#.<a class="headerlink" href="#ejemplo-de" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>

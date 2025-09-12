@@ -1651,19 +1651,42 @@
 
 <div><h1 id="comparadores">Comparadores.<a class="headerlink" href="#comparadores" title="Permanent link">¶</a></h1>
 <h2 id="comparadores-aritmeticos">Comparadores Aritméticos.<a class="headerlink" href="#comparadores-aritmeticos" title="Permanent link">¶</a></h2>
-<center>
-
-| Comparador    | <center> Significado </center>      |
-| :----: | :-- |
-| `-eq`   | Igual a (Equeal to)        |
-| `-ne` | No Igual (Not Equal)    |
-| `-gt`    | Mayor que (Greater Than)    |
-| `-ge`     | Mayor o igual (Greater or Equal)       |
-| `-lt`     | Menor que (Lower Than)   |
-| `-le`     | Menor o igual (Lower or Equal)    |
-
-</center>
-
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Comparador</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>-eq</code></td>
+<td style="text-align: left;">Igual a (Equeal to)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-ne</code></td>
+<td style="text-align: left;">No Igual (Not Equal)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-gt</code></td>
+<td style="text-align: left;">Mayor que (Greater Than)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-ge</code></td>
+<td style="text-align: left;">Mayor o igual (Greater or Equal)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-lt</code></td>
+<td style="text-align: left;">Menor que (Lower Than)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-le</code></td>
+<td style="text-align: left;">Menor o igual (Lower or Equal)</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h3 id="ejemplo-1">Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$edad</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
@@ -1687,23 +1710,58 @@
 <span class="k">fi</span>
 </code></pre></div>
 <h2 id="comparadores-de-archivos">Comparadores de Archivos.<a class="headerlink" href="#comparadores-de-archivos" title="Permanent link">¶</a></h2>
-<center>
-
-| Comparador    | <center> Significado </center>      |
-| :----: | :-- |
-| `-f`   | Verdadero si es un fichero      |
-| `-e` | Verdadero si existe   |
-| `-d`    | Verdadero si es un directorio    |
-| `-r`     | Verdadero si tengo permisos de lectura     |
-| `-w`     | Verdadero si tengo permisos de escritura   |
-| `-x`     | Verdadero si tengo permisos de ejecución   |
-| `-O`     | Verdadero si soy el usuario propietario  |
-| `-G`     | Verdadero si pertenezco al grupo propietario   |
-| `-s`     | Verdadero si el fichero NO está vacío    |
-| `-L`     | Verdadero si se trata de un enlace simbólico   |
-
-</center>
-
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Comparador</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>-f</code></td>
+<td style="text-align: left;">Verdadero si es un fichero</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-e</code></td>
+<td style="text-align: left;">Verdadero si existe</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-d</code></td>
+<td style="text-align: left;">Verdadero si es un directorio</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-r</code></td>
+<td style="text-align: left;">Verdadero si tengo permisos de lectura</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-w</code></td>
+<td style="text-align: left;">Verdadero si tengo permisos de escritura</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-x</code></td>
+<td style="text-align: left;">Verdadero si tengo permisos de ejecución</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-O</code></td>
+<td style="text-align: left;">Verdadero si soy el usuario propietario</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-G</code></td>
+<td style="text-align: left;">Verdadero si pertenezco al grupo propietario</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-s</code></td>
+<td style="text-align: left;">Verdadero si el fichero NO está vacío</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-L</code></td>
+<td style="text-align: left;">Verdadero si se trata de un enlace simbólico</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h3 id="ejemplo-1_1">Ejemplo 1<a class="headerlink" href="#ejemplo-1_1" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">$carpeta</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
@@ -1730,17 +1788,34 @@
 <span class="k">fi</span>
 </code></pre></div>
 <h2 id="comparadores-de-cadenas-variables">Comparadores de cadenas / variables.<a class="headerlink" href="#comparadores-de-cadenas-variables" title="Permanent link">¶</a></h2>
-<center>
-
-| Comparador    | <center> Significado </center>      |
-| :----: | :-- |
-| `=`   | Verdadero si es igual      |
-| `!=` | Verdadero si es diferente |
-| `-n`    | Verdadero si la variable tiene contenido  |
-| `-z`     | Verdadero si la variable está vacía    |
-
-</center>
-
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Comparador</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>=</code></td>
+<td style="text-align: left;">Verdadero si es igual</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>!=</code></td>
+<td style="text-align: left;">Verdadero si es diferente</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-n</code></td>
+<td style="text-align: left;">Verdadero si la variable tiene contenido</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-z</code></td>
+<td style="text-align: left;">Verdadero si la variable está vacía</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h3 id="ejemplo-1_2">Ejemplo 1<a class="headerlink" href="#ejemplo-1_2" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ajc"</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
