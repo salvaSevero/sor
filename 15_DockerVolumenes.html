@@ -1655,14 +1655,12 @@
 <ul>
 <li>Un contenedor por defecto no tiene persistencia.</li>
 </ul>
-<center>
-!!! danger "PERSISTENCIA"
-        Se entiende por contenedor persistente que aquel contenedor que almacene los datos incluso después de haber sido borrado dicho contenedor.
-
-        Es decir, si borramos un contenedor persistente podríamos continuar con todos nuestros datos al recrearlo.
-</center>
-
-<p>Para que se guarden tenemos 3 opciones:</p>
+<div class="admonition danger">
+<p class="admonition-title">PERSISTENCIA</p>
+<p>Se entiende por <mark class="critic"><strong>contenedor persistente</strong></mark> que aquel contenedor que almacene los datos incluso después de haber sido borrado dicho contenedor.</p>
+<p>Es decir, si borramos un contenedor persistente podríamos continuar con todos nuestros datos al recrearlo.</p>
+</div>
+<p>Para que se guarden tenemos <strong>3 opciones</strong>:</p>
 <figure>
   <img src="imagenes/scripts/35.png" width="400">
 </figure>
@@ -1684,16 +1682,21 @@
 <p>⚡ Es la forma más habitual de trabajar.</p>
 <p>⚡ Podemos hacer uso de los comandos "docker volume XXX" para gestionarlos.</p>
 <h3 id="ejemplo_1">Ejemplo.<a class="headerlink" href="#ejemplo_1" title="Permanent link">¶</a></h3>
-<center>
-!!! info "MOUNT"
-    Podemos hacer uso tanto de -v como de - -mount para crear volúmenes en docker.
-</center>
-
+<div class="admonition info">
+<p class="admonition-title">MOUNT</p>
+<p><strong>Podemos hacer uso tanto de -v como de - -mount para crear volúmenes en docker.</strong></p>
+</div>
 <p>Se ha creado un volumen "miVol" que apunta a /home del contenedor.</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>ejemploVol<span class="w"> </span>-v<span class="w"> </span>miVol:/home<span class="w"> </span>ubuntu
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>ejemploVol<span class="w"> </span>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span>miVol,target<span class="o">=</span>/home<span class="w"> </span>ubuntu
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Target</p>
+<p></p><center>
+<strong>El target, en el ejemplo /home, hace referencia al /home del contendor.</strong>
+</center>
+</div>
 <p>Si ahora realizo los siguientes pasos:</p>
 <div class="highlight"><pre><span></span><code>1. Crear un fichero en el /home del contenedor.
 
