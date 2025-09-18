@@ -1669,22 +1669,54 @@
 
 <div><h1 id="expresiones-regulares">Expresiones Regulares<a class="headerlink" href="#expresiones-regulares" title="Permanent link">¶</a></h1>
 <p>Las expresiones regulares nos van a ayudar a seleccionar cadenas de texto que contengan un patrón.</p>
-<center>
-
-| Símbolo    | <center> Significado </center>      |
-| :----: | :-- |
-| `*`   | 0 o más repeticiones del carácter anterior        |
-| `.` | Un carácter cualquiera, pero únicamente 1    |
-| `?`    | Una o ninguna repetición del carácter anterior.    |
-| `+`     | El carácter anterior se repetir una o más veces.    |
-| `[]`     | Indica una lista de caracteres que se pueden dar.  |
-| `{}`     | Nos permite especificar el número de repeticiones.   |
-| `^`     | La línea comienza por ...  |
-| `[^...]`     | Todo lo que NO sea ...   |
-| `$`     | La línea termina por ...   |
-
-</center>
-
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Símbolo</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>*</code></td>
+<td style="text-align: left;">0 o más repeticiones del carácter anterior</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>.</code></td>
+<td style="text-align: left;">Un carácter cualquiera, pero únicamente 1</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>?</code></td>
+<td style="text-align: left;">Una o ninguna repetición del carácter anterior.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>+</code></td>
+<td style="text-align: left;">El carácter anterior se repetir una o más veces.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>[]</code></td>
+<td style="text-align: left;">Indica una lista de caracteres que se pueden dar.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>{}</code></td>
+<td style="text-align: left;">Nos permite especificar el número de repeticiones.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>^</code></td>
+<td style="text-align: left;">La línea comienza por ...</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>[^...]</code></td>
+<td style="text-align: left;">Todo lo que NO sea ...</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>$</code></td>
+<td style="text-align: left;">La línea termina por ...</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">¶</a></h2>
 <h3 id="ejemplo-del-uso-de">Ejemplo del uso de "."<a class="headerlink" href="#ejemplo-del-uso-de" title="Permanent link">¶</a></h3>
 <ul>
@@ -1822,27 +1854,21 @@
 </figure>
 
 <h2 id="expresiones-habituales">Expresiones Habituales.<a class="headerlink" href="#expresiones-habituales" title="Permanent link">¶</a></h2>
-<center>
-!!! info "Cualquier caracter"
-    .*
-
-    El “.” nos da cualquier carácter, y el “*” nos dice que cualquier carácter se repita 0 o más veces.
-</center>
-
-<center>
-!!! info "Seleccionar una línea exacta"
-    ^XXXXX$
-
-    Con la “^” le indicamos que la expresión regular se da a comienzo de línea y con “$” indicamos que además debe terminar la línea con la expresión regular. “XXXX” es la expresión regular que queramos usar.
-</center>
-
-<center>
-!!! info "Seleccionar las líneas en blanco"
-    ^$
-
-    Con esto le estamos diciendo que la línea empiece y termine con nada en medio.
-</center>
-
+<div class="admonition info">
+<p class="admonition-title">Cualquier caracter</p>
+<p><strong>.*</strong></p>
+<p>El “.” nos da cualquier carácter, y el “*” nos dice que cualquier carácter se repita 0 o más veces.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Seleccionar una línea exacta</p>
+<p><strong>^XXXXX$</strong></p>
+<p>Con la “^” le indicamos que la expresión regular se da a comienzo de línea y con “$” indicamos que además debe terminar la línea con la expresión regular. “XXXX” es la expresión regular que queramos usar.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Seleccionar las líneas en blanco</p>
+<p><strong>^$</strong></p>
+<p>Con esto le estamos diciendo que la línea empiece y termine con nada en medio.</p>
+</div>
 <h2 id="ejemplos-avanzados">Ejemplos Avanzados.<a class="headerlink" href="#ejemplos-avanzados" title="Permanent link">¶</a></h2>
 <h3 id="uids-asignados-a-usuarios-1000-en-adelante">UIDs asignados a usuarios (1000 en adelante).<a class="headerlink" href="#uids-asignados-a-usuarios-1000-en-adelante" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/etc/passwd<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">':'</span><span class="w"> </span>-f3<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-wE<span class="w"> </span><span class="s1">'^[1-9][0-9]{3,}'</span>

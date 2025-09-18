@@ -1648,18 +1648,18 @@
 <li>Los clientes deben tener instalado el paquete openssh-client.</li>
 </ul>
 <h2 id="ssh">SSH.<a class="headerlink" href="#ssh" title="Permanent link">¶</a></h2>
-<center>
-!!! danger "Estructura SSH"
-        ssh usuario@IP Origen Destino
+<div class="admonition danger">
+<p class="admonition-title">Estructura SSH</p>
+<p></p><center>
+<strong>ssh usuario@IP Origen Destino</strong>
 </center>
-
+</div>
 <p>Vamos a utilizar este servicio para acceder a diferentes equipos, ejecutar comandos en ellos y recoger información de éstos.</p>
 <p>Es importante tener en cuenta que estamos usando <strong>contraseñas en texto plano (sin cifrar)</strong> que es algo totalmente desaconsejado, al igual que acceder al usuario con "root". Para hacerlo realmente seguro habría que realizarlo con pares de claves (privada/pública) que veréis en el módulo de servicios/seguridad informática.</p>
-<center>
-!!! info "INFO"
-        Si el usuario es el mismo en servidor y cliente no es necesario especificarlo.
-</center>
-
+<div class="admonition info">
+<p class="admonition-title">INFO</p>
+<p>Si el usuario es el mismo en servidor y cliente no es necesario especificarlo.</p>
+</div>
 <h3 id="ejemplo-1-acceder-a-una-maquina-y-devolver-la-informacion-de-un-comando">Ejemplo 1. Acceder a una máquina y devolver la información de un comando.<a class="headerlink" href="#ejemplo-1-acceder-a-una-maquina-y-devolver-la-informacion-de-un-comando" title="Permanent link">¶</a></h3>
 <figure>
   <img src="imagenes/scripts/31.png" width="700">
@@ -1684,19 +1684,17 @@
 <ul>
 <li>Este servicio está pensado principalmente para transferir o recibir ficheros a/desde ordenadores remotos.</li>
 </ul>
-<center>
-!!! danger "Estructura SCP"
-        scp usuario@IP Origen Destino
+<div class="admonition danger">
+<p class="admonition-title">Estructura SCP</p>
+<p></p><center>
+<strong>scp usuario@IP Origen Destino</strong>
 </center>
-
+</div>
 <div class="admonition info">
 <p class="admonition-title">Ejemplos</p>
-<div class="highlight"><pre><span></span><code>Usuario: root
-
-Contraseña: salva
-
-Cliente: 172.17.0.3
-</code></pre></div>
+<p>Usuario: root</p>
+<p>Contraseña: salva</p>
+<p>Cliente: 172.17.0.3</p>
 </div>
 <h3 id="ejemplo-1-pasar-un-fichero-a-la-carpeta-homead-del-equipo-remoto-1721703">Ejemplo 1: Pasar un fichero a la carpeta /home/ad del equipo remoto 172.17.0.3<a class="headerlink" href="#ejemplo-1-pasar-un-fichero-a-la-carpeta-homead-del-equipo-remoto-1721703" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>sshpass<span class="w"> </span>-p<span class="w"> </span><span class="s1">'salva'</span><span class="w"> </span>scp<span class="w"> </span>hosts.txt<span class="w"> </span><span class="m">172</span>.17.0.3:/home

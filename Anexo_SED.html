@@ -1669,27 +1669,60 @@
 <ul>
 <li>SED (Stream Editor): Es un editor de texto en línea.</li>
 </ul>
-<center>
-!!! danger "Estructura SED"
-    sed –n ‘/PATRÓN/’p “fichero”
+<div class="admonition danger">
+<p class="admonition-title">Estructura SED</p>
+<p></p><center>
+<strong>sed –n ‘/PATRÓN/’p “fichero”</strong>
 </center>
-
-<center>
-
-| Opción    | <center> Significado </center>      |
-| :----: | :-- |
-| `–n`   | No imprime el fichero por pantalla.       |
-| `p` | Busca el patrón en el fichero y lo imprime por pantalla.    |
-| `/…/`    | Para indicar que buscamos un patrón usamos las barras laterales. Sin barras se puede indicar una línea del fichero   |
-| `d`    | Muestra el fichero eliminando las líneas que coinciden con el patrón.  |
-| `s`    | Sustituye un patrón1 por patrón2. |
-| `g`    | Hace que se sustituya en todas las coincidencias. |
-| `-e`    | Permite agrupar sustituciones una tras otra. |
-| `&amp;`    | Hace referencia a lo sustituido por el patrón. |
-| `-i`    | Modifica realmente el fichero. |
-
-</center>
-
+</div>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Opción</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>–n</code></td>
+<td style="text-align: left;">No imprime el fichero por pantalla.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>p</code></td>
+<td style="text-align: left;">Busca el patrón en el fichero y lo imprime por pantalla.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>/…/</code></td>
+<td style="text-align: left;">Para indicar que buscamos un patrón usamos las barras laterales. Sin barras se puede indicar una línea del fichero</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>d</code></td>
+<td style="text-align: left;">Muestra el fichero eliminando las líneas que coinciden con el patrón.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>s</code></td>
+<td style="text-align: left;">Sustituye un patrón1 por patrón2.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>g</code></td>
+<td style="text-align: left;">Hace que se sustituya en todas las coincidencias.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-e</code></td>
+<td style="text-align: left;">Permite agrupar sustituciones una tras otra.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>&amp;</code></td>
+<td style="text-align: left;">Hace referencia a lo sustituido por el patrón.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-i</code></td>
+<td style="text-align: left;">Modifica realmente el fichero.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">¶</a></h2>
 <h3 id="selecciona-las-lineas-donde-encuentra-la-coincidencia-ubuntu">Selecciona las líneas donde encuentra la coincidencia “ubuntu”:<a class="headerlink" href="#selecciona-las-lineas-donde-encuentra-la-coincidencia-ubuntu" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'/ubuntu/'</span>p<span class="w"> </span>/etc/passwd
@@ -1712,22 +1745,24 @@
 </figure>
 
 <h2 id="eliminar-coincidencias">Eliminar Coincidencias.<a class="headerlink" href="#eliminar-coincidencias" title="Permanent link">¶</a></h2>
-<center>
-!!! info "Eliminar coincidencias SED"
-    sed  ‘/PATRÓN/d’ “fichero”
+<div class="admonition info">
+<p class="admonition-title">Eliminar coincidencias SED</p>
+<p></p><center>
+<strong>sed  ‘/PATRÓN/d’ “fichero”</strong>
 </center>
-
+</div>
 <h3 id="elimina-la-primera-linea">Elimina la primera línea:<a class="headerlink" href="#elimina-la-primera-linea" title="Permanent link">¶</a></h3>
 <figure>
   <img src="imagenes/scripts/70.png" width="600">
 </figure>
 
 <h2 id="sustituir-elementos">Sustituir elementos.<a class="headerlink" href="#sustituir-elementos" title="Permanent link">¶</a></h2>
-<center>
-!!! info "Sustituye coincidencias SED"
-    sed s’/Patrón1/Patrón2/’g
+<div class="admonition info">
+<p class="admonition-title">Sustituye coincidencias SED</p>
+<p></p><center>
+<strong>sed s’/Patrón1/Patrón2/’g</strong>
 </center>
-
+</div>
 <h3 id="ejemplo-sustituye-los-patrones-salva-por-mr-salva">Ejemplo: Sustituye los patrones salva por Mr. Salva.<a class="headerlink" href="#ejemplo-sustituye-los-patrones-salva-por-mr-salva" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>sed<span class="w"> </span>s<span class="s1">'/salva/Mr. Salva/'</span>g<span class="w"> </span>lista.txt
 </code></pre></div>
@@ -1742,11 +1777,12 @@
 <div class="highlight"><pre><span></span><code>sed<span class="w"> </span>s<span class="s1">'/#.*//'</span>g<span class="w"> </span>ejemplos.txt
 </code></pre></div>
 <h2 id="anidar-varios-comandos-sed">Anidar varios comandos sed.<a class="headerlink" href="#anidar-varios-comandos-sed" title="Permanent link">¶</a></h2>
-<center>
-!!! info "Sustituye múltiples coincidencias SED"
-    sed –e  s’/Patrón1/Patrón2/’g    –e     s’/Patrón1/Patrón2/’g    
+<div class="admonition info">
+<p class="admonition-title">Sustituye múltiples coincidencias SED</p>
+<p></p><center>
+<strong>sed –e  s’/Patrón1/Patrón2/’g    –e     s’/Patrón1/Patrón2/’g</strong>
 </center>
-
+</div>
 <h3 id="ejemplo-anade-tras-cada-letra-minuscula-encontrada-posteriormente-al-final-de-linea-borra-los-ultimos">Ejemplo: Añade ":" tras cada letra minúscula encontrada, posteriormente al final de línea borra los últimos ":".<a class="headerlink" href="#ejemplo-anade-tras-cada-letra-minuscula-encontrada-posteriormente-al-final-de-linea-borra-los-ultimos" title="Permanent link">¶</a></h3>
 <ul>
 <li>Importante que el carácter especial “&amp;” hace referencia a lo sustituido en el patrón 1.</li>
@@ -1756,11 +1792,12 @@
 </figure>
 
 <h2 id="cambiar-el-contenido-de-un-fichero">Cambiar el contenido de un fichero.<a class="headerlink" href="#cambiar-el-contenido-de-un-fichero" title="Permanent link">¶</a></h2>
-<center>
-!!! info "Sustituye coincidencias SED y actualiza el fichero"
-    sed -i  s’/Patrón1/Patrón2/’g 
+<div class="admonition info">
+<p class="admonition-title">Sustituye coincidencias SED y actualiza el fichero</p>
+<p></p><center>
+<strong>sed -i  s’/Patrón1/Patrón2/’g</strong>
 </center>
-
+</div>
 <ul>
 <li>
 <p>Todos estos ejemplos <strong>NO</strong> cambian el fichero en sí, solo muestran la salida de cómo quedaría. </p>
