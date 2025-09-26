@@ -1607,19 +1607,19 @@
 <p>Va realizando comprobaciones y cuando una coincida, realiza una serie de acciones programadas y finaliza la condición.</p>
 <ul>
 <li>
-<p>Cada opción debe ir finalizada de paréntesis “)”.</p>
+<p>Cada opción debe ir finalizada de paréntesis <mark class="critic"><strong>)</strong></mark>.</p>
 </li>
 <li>
-<p>Cada acción debajo de cada condición debe ir finalizada de doble punto y coma “;;”</p>
+<p>Cada acción debajo de cada condición debe ir finalizada de doble punto y coma <mark class="critic"><strong>;;</strong></mark></p>
 </li>
 <li>
-<p>Con el metacaracter “<em>” conseguimos que coincida cualquier cosa, por lo que siempre se cumplirá la condición. </em><em>Es equivalente al “else”</em>*.</p>
+<p>Con el metacaracter <mark class="critic"><strong>*</strong></mark> conseguimos que coincida cualquier cosa, por lo que siempre se cumplirá la condición. <ins class="critic">Es equivalente al “else”</ins>.</p>
 </li>
 <li>
 <p>Se puede hacer uso de expresiones regulares.</p>
 </li>
 <li>
-<p>Se debe usar <strong>“esac”</strong> para finalizar la estructura.</p>
+<p>Se debe usar <mark class="critic"><strong>esac</strong></mark> para finalizar la estructura.</p>
 </li>
 </ul>
 <h3 id="ejemplo-1-ejemplo-de-un-menu">Ejemplo 1. Ejemplo de un Menú.<a class="headerlink" href="#ejemplo-1-ejemplo-de-un-menu" title="Permanent link">¶</a></h3>
@@ -1662,10 +1662,9 @@
 </figure>
 
 <h3 id="ejemplo-4-el-uso-de">Ejemplo 4. El uso de ;;&amp;.<a class="headerlink" href="#ejemplo-4-el-uso-de" title="Permanent link">¶</a></h3>
-<center>
-!!! danger "Con 🔀 ;;&amp; 🔀 podemos ejecutar múltiples condiciones"
-</center>
-
+<div class="admonition danger">
+<p class="admonition-title">Con  <mark class="critic"><strong>;;&amp;</strong></mark>  podemos ejecutar múltiples condiciones</p>
+</div>
 <ul>
 <li>
 <p>Con “;;” le decimos al script que si se cumple esa condición termine la estructura y salga del “case” (una línea después del esac). </p>
@@ -1674,7 +1673,10 @@
 <p>Usando <strong>“;;&amp;”</strong> estamos indicando que en caso de ser cierta esa comprobación, ejecute las instrucciones asociadas, pero que siga comprobando el resto de opciones y si hay alguna cierta ejecute también las acciones asociadas a ella.</p>
 </li>
 </ul>
-<p>En el siguiente ejemplo la primera cláusula tiene un “;;&amp;”, por lo que por ejemplo si el usuario selecciona “Viernes” se mostrará por pantalla “A estudiar” y posteriormente se mostrará también “A descansar”, puesto que seguirá comprobando el resto de condiciones de la estructura case.</p>
+<div class="admonition tip">
+<p class="admonition-title">Ejemplo</p>
+<p><strong>La primera cláusula tiene un “;;&amp;”, por lo que si el usuario selecciona “Viernes” se mostrará por pantalla “A estudiar” y posteriormente se mostrará también “A descansar”, puesto que seguirá comprobando el resto de condiciones de la estructura case.</strong></p>
+</div>
 <figure>
   <img src="imagenes/scripts/22.png" width="500">
 </figure></div>
