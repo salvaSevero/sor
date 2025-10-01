@@ -1662,12 +1662,10 @@
 <h2 id="for-in">FOR IN<a class="headerlink" href="#for-in" title="Permanent link">¶</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">FOR IN</p>
-<div class="highlight"><pre><span></span><code>```bash
-for VARIABLE in LISTA
-do
-        ACCIONES
-done
-```
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>VARIABLE<span class="w"> </span><span class="k">in</span><span class="w"> </span>LISTA
+<span class="k">do</span>
+<span class="w">        </span>ACCIONES
+<span class="k">done</span>
 </code></pre></div>
 </div>
 <ul>
@@ -1675,20 +1673,20 @@ done
 <p>Permite recorrer una lista.</p>
 </li>
 <li>
-<p>Importante el espacio entre los corchetes y el uso de “do” y “done” para crear la estructura.</p>
+<p>Uso de “do” y “done” para crear la estructura.</p>
 </li>
 <li>
-<p>Por defecto se interpreta como un objeto de la lista todo aquello que va separado por un espacio en blanco.</p>
+<p>Por defecto se interpreta como un objeto de la lista todo aquello que va separado por un espacio en blanco <mark class="critic"><strong>(IFS)</strong></mark>.</p>
 </li>
 <li>
-<p>Usaremos una variable y en cada iteración dicha variable tendrá un valor de la lista.</p>
+<p>Usaremos una variable y en cada <mark class="critic">iteración</mark> dicha variable tendrá un valor de la lista.</p>
 </li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Iteración</p>
-<div class="highlight"><pre><span></span><code>Se refiere a cada vez que se va ejecutando el bucle. La primera ejecución con el primer objeto de la lista es la primera iteración, la segunda vez será
-la segunda iteración, y así sucesivamente.
-</code></pre></div>
+<p></p><center>
+<strong>Se refiere a cada ejecución del bucle. La primera ejecución con el primer objeto de la lista es la primera iteración, la segunda vez será la segunda iteración, y así sucesivamente.</strong>
+</center>
 </div>
 <h2 id="ejemplos-de-listas">Ejemplos de listas.<a class="headerlink" href="#ejemplos-de-listas" title="Permanent link">¶</a></h2>
 <h3 id="ejemplo-de-lista-usando-literales">Ejemplo de lista usando literales.<a class="headerlink" href="#ejemplo-de-lista-usando-literales" title="Permanent link">¶</a></h3>
@@ -1760,20 +1758,21 @@ la segunda iteración, y así sucesivamente.
 <span class="k">done</span>
 </code></pre></div>
 <h3 id="ejemplo-recorriendo-un-fichero-con-espacios-en-blanco-usando-ifs">Ejemplo recorriendo un fichero CON espacios en blanco usando IFS.<a class="headerlink" href="#ejemplo-recorriendo-un-fichero-con-espacios-en-blanco-usando-ifs" title="Permanent link">¶</a></h3>
-<center>
-!!! danger "Cambiar el IFS"
-        IFS=$'{\n}'
+<div class="admonition danger">
+<p class="admonition-title">Cambiar el IFS</p>
+<p></p><center>
+<strong>IFS=$'{\n}'</strong>
 </center>
-
+</div>
 <ul>
 <li>
-<p>El IFS es el separador por defecto del sistema.</p>
+<p>El <strong>IFS</strong> es el <ins class="critic">separador por defecto del sistema</ins>.</p>
 </li>
 <li>
 <p>Existe la variable de entorno $IFS que nos indica cuál es.</p>
 </li>
 <li>
-<p>Podemos modificarla dentro de nuestro script como cualquier variable 🔀 IFS=$'{\n}'</p>
+<p>Podemos modificarla dentro de nuestro script como cualquier variable 🔀 IFS=$'{\n}' (En este ejemplo el separador por defecto es el salto de línea).</p>
 </li>
 <li>
 <p>Por defecto el IFS es el espacio en blanco, por esa razón cada objeto de una lista está separado por un espacio en blanco.</p>
