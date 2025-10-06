@@ -1644,12 +1644,10 @@
 <h2 id="while">While<a class="headerlink" href="#while" title="Permanent link">¶</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">WHILE</p>
-<div class="highlight"><pre><span></span><code>```bash
-while [ CONDICIÓN ]
-do
-        ACCIONES
-done
-```
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>CONDICIÓN<span class="w"> </span><span class="o">]</span>
+<span class="k">do</span>
+<span class="w">        </span>ACCIONES
+<span class="k">done</span>
 </code></pre></div>
 </div>
 <ul>
@@ -1657,21 +1655,19 @@ done
 <p>El bucle while se repite mientras la condición sea verdadera.</p>
 </li>
 <li>
-<p>Es posible realizar bucles infinitos que están siempre ejecutándose, por ejemplo haciendo uso de la sentencia “true”, la cual siempre hace que la comprobación sea verdadera.</p>
+<p>Es posible realizar <strong>bucles infinitos</strong> que están siempre ejecutándose, por ejemplo haciendo uso de la sentencia “true”, la cual siempre hace que la comprobación sea verdadera.</p>
 </li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">BUCLE INFINITO</p>
-<div class="highlight"><pre><span></span><code>```bash
-while [ true ]
-do
-        echo "BUCLE INFINITO"
-done
-```
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">]</span>
+<span class="k">do</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"BUCLE INFINITO"</span>
+<span class="k">done</span>
 </code></pre></div>
 </div>
 <ul>
-<li>Importante el espacio entre los corchetes y el uso de “do” y “done” para crear la estructura.</li>
+<li>Importante el espacio entre los corchetes y el uso de <strong>“do” y “done”</strong> para crear la estructura.</li>
 </ul>
 <h3 id="ejemplo-1-repite-hasta-que-el-usuario-meta-un-numero-entre-1-y-10">Ejemplo 1. Repite hasta que el usuario meta un numero entre 1 y 10<a class="headerlink" href="#ejemplo-1-repite-hasta-que-el-usuario-meta-un-numero-entre-1-y-10" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Elige un numero entre 1 y 10"</span><span class="w"> </span>numero
