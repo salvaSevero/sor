@@ -14,7 +14,7 @@
         <link rel="prev" href="39_Seguridad.html">
       
       
-        <link rel="next" href="Anexo_ExpresionesRegulares.html">
+        <link rel="next" href="Anexo_CRON.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -1457,6 +1457,8 @@
       
         
       
+        
+      
     
     
     
@@ -1578,6 +1580,29 @@
   
   
     <li class="md-nav__item">
+      <a href="Anexo_CRON.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CRONTAB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Anexo_ExpresionesRegulares.html" class="md-nav__link">
         
   
@@ -1652,6 +1677,12 @@
 <p class="admonition-title">Estructura SSH</p>
 <p></p><center>
 <strong>ssh usuario@IP Origen Destino</strong>
+</center>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Si no accedemos como root pero queremos ejecutar un comando de administrador.</p>
+<p></p><center>
+<strong>sshpass -p 'pass' ssh usuario@IP Origen Destino "echo PASS_SUDO | sudo -S COMANDO"</strong>
 </center>
 </div>
 <p>Vamos a utilizar este servicio para acceder a diferentes equipos, ejecutar comandos en ellos y recoger información de éstos.</p>

@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/22_NFS.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/Anexo_CRON.html">
       
       
-        <link rel="prev" href="21_UsuariosSamba.html">
+        <link rel="prev" href="Anexo_SSH.html">
       
       
-        <link rel="next" href="23_Windows.html">
+        <link rel="next" href="Anexo_ExpresionesRegulares.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>NFS - Sistemas Operativos en Red</title>
+        <title>CRONTAB - Sistemas Operativos en Red</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nfs" class="md-skip">
+        <a href="#crontab" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NFS
+              CRONTAB
             
           </span>
         </div>
@@ -800,10 +800,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -815,11 +813,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -835,7 +833,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             UD3. Compartición de Recursos
@@ -969,32 +967,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    NFS
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="22_NFS.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="22_NFS.html" class="md-nav__link">
         
   
   
@@ -1005,89 +981,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ventajas-nfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ventajas NFS.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#desventajas-nfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Desventajas NFS.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-y-configuracion-en-servidor-ubuntu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación y Configuración en servidor Ubuntu.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-y-configuracion-en-cliente-ubuntu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación y Configuración en cliente Ubuntu.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-y-configuracion-en-cliente-windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación y Configuración en cliente Windows.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#opciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      Opciones.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#montaje-automatico" class="md-nav__link">
-    <span class="md-ellipsis">
-      Montaje automático.
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1551,8 +1444,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1568,11 +1463,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1588,7 +1483,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Anexo
@@ -1622,10 +1517,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="Anexo_CRON.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CRONTAB
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Anexo_CRON.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1636,6 +1553,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1710,140 +1665,159 @@
 
 
 
-<div><h1 id="nfs">NFS<a class="headerlink" href="#nfs" title="Permanent link">¶</a></h1>
+<div><h1 id="crontab">Crontab.<a class="headerlink" href="#crontab" title="Permanent link">¶</a></h1>
 <ul>
-<li>NFS (Network File System) es un protocolo que permite la compartición de recursos entre sistemas heterogéneos.</li>
-<li>Creado por Sun Microsystems en 1985.</li>
-<li>Versión actual NFSv4. Las versiones anteriores prácticamente no tienen medidas de seguridad implementadas.</li>
-<li>Es compatible con una autenticación externa con Kerberos.</li>
-<li>Está implementado en Linux, macOS y Windows.</li>
+<li>
+<p>Se utiliza para automatizar tareas a ciertas horas del día. </p>
+</li>
+<li>
+<p>El <ins class="critic"><strong>demonio cron</strong></ins> es el que se encarga del correcto funcionamiento de crontab. </p>
+</li>
+<li>
+<p>Se ejecuta en segundo plano. </p>
+</li>
+<li>
+<p>Cada usuario, incluido root, tiene su propio fichero de crontab, cuyas tareas se ejecutan aunque su usuario no se encuentre logueado en ese momento. </p>
+</li>
+<li>
+<p>El fichero de opciones se almacena en <strong>/var/spool/cron/crontabs</strong>, pero solo se debe modificar con la <ins class="critic"><strong>herramienta crontab</strong></ins>. </p>
+</li>
+<li>
+<p>Los errores se registran en  <ins class="critic"><strong>/var/log/syslog</strong></ins>. </p>
+</li>
 </ul>
-<h2 id="ventajas-nfs">Ventajas NFS.<a class="headerlink" href="#ventajas-nfs" title="Permanent link">¶</a></h2>
-<p>✅ Al centralizar los recursos evitamos tener varias copias en diferentes equipos de la red → Ahorrando espacio y evitando duplicidad de información.</p>
-<p>✅ Asegura la integridad de los datos al obligar a que todas las escrituras sean finalizadas antes de que otro usuario haga modificaciones.</p>
-<p>✅ Permite la compartición de los perfiles de usuario (/home/).</p>
-<p>✅ Permite compartir dispositivos de almacenamiento externos como memorias flash o discos externos. </p>
-<p>✅ Características de seguridad para el control de acceso: ACLS o KERBEROS.</p>
-<h2 id="desventajas-nfs">Desventajas NFS.<a class="headerlink" href="#desventajas-nfs" title="Permanent link">¶</a></h2>
-<p>❌ No soporta "failover", es decir, si se produce un error no puede conmutar automáticamente a un segundo servidor. </p>
-<p>❌ NFS no tiene balanceo de carga. Por lo que no pueden haber más de un servidor compartiendo la carga de trabajo.</p>
-<p>❌ NFS tiene una carencia en el control de permisos, identifica a los usuarios directamente por UID/GID, por lo que si en el servidor existe un usuario “javi” con UID 1003 y en el cliente hay un usuario “maría” con UID 1003 el sistema NFS los confunde y a ambos les da los mismos permisos. Para solventarlo se combina con un servicio LDAP que se encargará de la gestión de los permisos. </p>
-<h2 id="instalacion-y-configuracion-en-servidor-ubuntu">Instalación y Configuración  en servidor Ubuntu.<a class="headerlink" href="#instalacion-y-configuracion-en-servidor-ubuntu" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>nfs-kernel-server
-</code></pre></div>
-<h3 id="confirmar-instalacion">Confirmar instalación.<a class="headerlink" href="#confirmar-instalacion" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nfs-server
-</code></pre></div>
-<h3 id="configuracion-del-servicio">Configuración del servicio.<a class="headerlink" href="#configuracion-del-servicio" title="Permanent link">¶</a></h3>
-<ol>
-<li>Crea en el servidor la carpeta a compartir.</li>
-</ol>
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>/srv/nfsEjemplo
-chown<span class="w"> </span>nobody:nogroup<span class="w"> </span>/srv/nfsEjemplo
-chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>/srv/nfsEjemplo
-</code></pre></div>
-<ol start="2">
-<li>Modificar fichero de configuración <strong>(/etc/exports)</strong>.</li>
-</ol>
-<p>Cada línea es un recurso compartido.</p>
-<center>
-!!! danger "Estructura /etc/exports"
-    ruta cliente_1(opciones) cliente_2(opciones) …
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p></p><center>
+Más información con el comando “man crontab” 
 </center>
-
-<div class="highlight"><pre><span></span><code>/srv/nfsEjemplo<span class="w"> </span>*<span class="o">(</span>rw,sync,no_root_squash,no_subtree_check<span class="o">)</span>
+</div>
+<h2 id="configuracion">Configuración.<a class="headerlink" href="#configuracion" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>crontab<span class="w"> </span><span class="o">[</span>-u<span class="w"> </span>user<span class="o">]</span><span class="w"> </span><span class="o">[</span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>-r<span class="w"> </span><span class="p">|</span><span class="w"> </span>-e<span class="o">]</span><span class="w"> </span><span class="o">[</span>-i<span class="o">]</span><span class="w"> </span>
 </code></pre></div>
-<h3 id="reiniciar-el-servicio">Reiniciar el servicio.<a class="headerlink" href="#reiniciar-el-servicio" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>nfs-server
-</code></pre></div>
-<h2 id="instalacion-y-configuracion-en-cliente-ubuntu">Instalación y Configuración en cliente Ubuntu.<a class="headerlink" href="#instalacion-y-configuracion-en-cliente-ubuntu" title="Permanent link">¶</a></h2>
-<h3 id="instalacion">Instalación.<a class="headerlink" href="#instalacion" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>nfs-common<span class="w"> </span>rpcbind
-</code></pre></div>
-<h3 id="configuracion">Configuración.<a class="headerlink" href="#configuracion" title="Permanent link">¶</a></h3>
-<ol>
-<li>Creamos un punto de montaje donde se conectará a la carpeta NFS del servidor.</li>
-</ol>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/mnt/compartida
-</code></pre></div>
-<ol start="2">
-<li>Le damos permisos totales para evitar problemas de usuarios que no existan en cliente/servidor con mismo UID/GID.</li>
-</ol>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>/mnt/compartida
-</code></pre></div>
-<ol start="3">
-<li>Montamos con el servidor.</li>
-</ol>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span><span class="m">192</span>.168.56.100:/srv/nfsEjemplo<span class="w"> </span>/mnt/compartida
-</code></pre></div>
-<ol start="4">
-<li>Comprobamos el montaje</li>
-</ol>
-<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h
-</code></pre></div>
-<h2 id="instalacion-y-configuracion-en-cliente-windows">Instalación y Configuración en cliente Windows.<a class="headerlink" href="#instalacion-y-configuracion-en-cliente-windows" title="Permanent link">¶</a></h2>
-<h3 id="instalacion_1">Instalación.<a class="headerlink" href="#instalacion_1" title="Permanent link">¶</a></h3>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Opción</th>
+<th style="text-align: left;"><center> Uso </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>–e</code></td>
+<td style="text-align: left;">Edita el fichero de crontab.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>l</code></td>
+<td style="text-align: left;">Lista las tareas programadas.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-r</code></td>
+<td style="text-align: left;">Elimina las tareas programadas de un usuario</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-i</code></td>
+<td style="text-align: left;">Pregunta si estamos seguros de eliminar las tareas programadas.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">SUDO</p>
+<p></p><center>
+<strong>Para crear una tarea programada que use permisos de administrador editamos el crontab de root: sudo crontab -e</strong>
+</center>
+</div>
 <ul>
-<li>Es necesario activar NFS en las características de Windows:</li>
+<li>En el propio documento de crontab tenéis una explicación de su uso (<strong>fijarse en la última línea</strong>):</li>
 </ul>
-<center>
-!!! danger ""
-    Panel de control → Programas → Programas y características → Activar o desactivar las características de Windows
-</center>
-
 <figure>
-  <img src="imagenes/samba/9.png" width="800">
+  <img src="imagenes/scripts/76.png" width="700">
 </figure>
 
-<h3 id="configuracion_1">Configuración.<a class="headerlink" href="#configuracion_1" title="Permanent link">¶</a></h3>
-<figure>
-  <img src="imagenes/samba/10.png" width="600">
-</figure>
-
-<h2 id="opciones">Opciones.<a class="headerlink" href="#opciones" title="Permanent link">¶</a></h2>
-<center>
-
-| Opción             | <center> Significado </center>      |
-| :---------------: | :-- |
-| `ro`       | Solo lectura       |
-| `rw`        | Lectura y Escritura    |
-| `sync`    | Escribe en disco y luego confirma que la tarea ha sido realizada. Más lenta pero evita problemas posibles problemas de sincronismo.   |
-| `async`    | Deshabilita sync. Confirma que la tarea ha sido realizadad y luego escribe en disco. Mejor rendimiento pero más posibilidad de crear ficheros corruptos. |
-| `root_squash`    | Un usuario administrador del sistema pierde sus privilegios al acceder de forma remota por NFS. En su lugar, se les trata como un usuario “nfsnobody” que es un usuario con permisos mínimos.   |
-| `no_root_squash`        | Deshabilita la opción root_squash.      |
-| `subtree_check`     | Tiene en cuenta los permisos de las carpetas padre.    |
-| `no_subtree_check`     | No tiene en cuenta los permisos de las carpetas padre.   |
-
-!!! info "async"
-    Mejora el rendimiento a cambio de que exista el riesgo de corrupción en los archivos o, incluso, en todo el sistema de archivos, si se produjese una interrupción del fluido eléctrico o un bloqueo del sistema. Recibe la orden de escritura y confirma al cliente que ha sido realizada con éxito (mentira, ya que no ha sido realizada), acto seguido puede recibir X órdenes de otros clientes y a todos les hará lo mismo, finalmente realiza escribe todos los cambios a la vez. Por tanto es más rápido que el método síncrono ya que no debe realizar tantos accesos a memoria.
-
-</center>
-
-<h3 id="ejemplos">Ejemplos<a class="headerlink" href="#ejemplos" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>/home<span class="w"> </span>*<span class="o">(</span>rw,sync,no_root_squash,no_subtree_check<span class="o">)</span>
-~/compartida<span class="w"> </span>*<span class="o">(</span>rw,sync,no_subtree_check<span class="o">)</span>
-
-/usr/local<span class="w">   </span><span class="m">192</span>.168.0.1<span class="o">(</span>ro<span class="o">)</span><span class="w"> </span><span class="m">192</span>.168.0.2<span class="o">(</span>ro<span class="o">)</span>
-/srv/salva<span class="w">        </span><span class="m">192</span>.168.0.1<span class="o">(</span>rw<span class="o">)</span><span class="w"> </span><span class="m">192</span>.168.0.2<span class="o">(</span>rw<span class="o">)</span>
-
-/srv/local<span class="w"> </span><span class="m">192</span>.168.0.0/255.255.255.0<span class="o">(</span>ro<span class="o">)</span>
-/srv/pepe<span class="w">      </span><span class="m">192</span>.168.0.0/255.255.255.0<span class="o">(</span>rw<span class="o">)</span>
-</code></pre></div>
-<h2 id="montaje-automatico">Montaje automático.<a class="headerlink" href="#montaje-automatico" title="Permanent link">¶</a></h2>
-<p>La configuración de montaje de esta forma tiene un gran inconveniente, si se reinicia el cliente la configuración se pierde. Para solucionarlo se dispone de un archivo denominado /etc/fstab (file systems table) donde se guarda la información necesaria sobre los diferentes volúmenes que se montarán durante el arranque del sistema.</p>
-<p>Para modificar este archivo se debe tener en cuenta:</p>
-<p>Cada línea del archivo representa un volumen diferente y atiende al siguiente formato:</p>
-<p>Dispositivo: Referencia al volumen que vamos a montar. En este caso su valor será 192.168.2.4:/home/sor/compartida.</p>
-<p>Punto de montaje: La carpeta donde se montarán los datos del volumen. Su valor para la primera carpeta será /mnt/nfs/home/sor/compartida.</p>
-<p>Sistema de archivos: Indica el sistema de archivos utilizado en el volumen. En ambos casos, el valor será nfs.</p>
-<p>Opciones: Indica los parámetros que usará mount para montar el dispositivo. Estarán separadas por comas y no incluirán espacios. En este caso las opciones serán auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800. Estas opciones son explicadas en detalle en la documentación oficial de ubuntu Enlace.</p>
-<p>Frecuencia de respaldo: Frecuencia con la que se utiliza la herramienta dump para respaldar (copiar) el sistema de archivos. Si su valor es cero, el volumen no se respalda.</p>
-<p>Orden de revisión: Orden en el que la herramienta fsck revisa el volumen en busca de posibles errores durante el proceso de inicio. Si su valor es cero, el volumen no se revisa.</p>
-<p>Por lo tanto se debe incluir la línea indicada abajo para realizar la configuración automática del montaje:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/fstab
-<span class="c1">#IP_SERVIDOR:RUTA_SERVIDOR RUTA_CLIENTE nfs OPCIONES 0 0</span>
-<span class="m">192</span>.168.2.4:/home/sor/compartida<span class="w"> </span>/mnt/nfs/home/sor/compartida<span class="w"> </span>nfs<span class="w"> </span>auto,noatime,nolock,bg,nfsvers<span class="o">=</span><span class="m">3</span>,intr,tcp,actimeo<span class="o">=</span><span class="m">1800</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
-</code></pre></div></div>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Opción</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>m</code></td>
+<td style="text-align: left;">Minuto en el que se tiene que ejecutar la tarea (0-59).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>h</code></td>
+<td style="text-align: left;">Hora en el que se tiene que ejecutar la tarea (0-23).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>dom</code></td>
+<td style="text-align: left;">Día del mes en el que se tiene que ejecutar la tarea (1-31).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>mon</code></td>
+<td style="text-align: left;">Mes en el que se tiene que ejecutar la tarea (1-12).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>dow</code></td>
+<td style="text-align: left;">Día de la semana en el que se tiene que ejecutar la tarea (0-7).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>command</code></td>
+<td style="text-align: left;">Tarea programada.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>
+<p>Caracteres especiales:</p>
+<p>💥 *: Representa cualquier cosa, por ejemplo cualquier día o mes.</p>
+<p>💥 <strong>1,3,5</strong>: Se puede intercalar con la coma varios días, meses, etc...</p>
+<p>💥 <strong>1-12</strong>: Se puede usar para incluir todos los números entre 1 y 12.</p>
+</li>
+<li>
+<p>Palabras reservadas:</p>
+<p>💥 <strong>@yearly</strong>: ejecutar cada año. </p>
+<p>💥 <strong>@monthly</strong>: ejecutar una vez al mes. </p>
+<p>💥 <strong>@weekly</strong>: una vez a la semana.</p>
+<p>💥 <strong>@daily/@midnight</strong>: una vez al día.</p>
+<p>💥 <strong>@hourly</strong>: cada hora.</p>
+<p>💥 <strong>@reboot</strong>: Al arrancar la máquina.</p>
+</li>
+</ul>
+<h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">¶</a></h2>
+<details class="question">
+<summary>A las 00:00 el día 1 de Enero, caiga cuando caiga (lunes – domingo)</summary>
+<p>0 0 1 1 * cd /home/salva; bash miscript.sh</p>
+</details>
+<details class="question">
+<summary>Todos los días a las 08:30</summary>
+<p>30 8 * * * cd /home/salva; bash miscript.sh</p>
+</details>
+<details class="question">
+<summary>El día 1 de cada mes, cada hora en punto.</summary>
+<p>0 * 1 * * cd /home/salva; bash miscript.sh</p>
+</details>
+<details class="question">
+<summary>Todos los lunes a las 09:00.</summary>
+<p>0 9 * * 1 cd /home/salva; bash miscript.sh</p>
+</details>
+<details class="question">
+<summary>Ejecutar cada hora.</summary>
+<p>@hourly cd /bin/ejecutar; ./script.sh</p>
+</details>
+<details class="question">
+<summary>Ejecutar con cada reinicio.</summary>
+<p>@reboot cd /bin/ejecutar; ./script.sh</p>
+</details>
+<div class="admonition warning">
+<p class="admonition-title">Permisos.</p>
+<p><strong>El crontab ejecuta las tareas con los permisos que tiene el usuario que lo haya configurado, por lo que los scripts programados deben ser ejecutables y debemos tener permisos.</strong></p>
+</div></div>
 
 
 
