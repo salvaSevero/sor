@@ -11,10 +11,10 @@
         <link rel="canonical" href="https://salvasevero.github.io/sor/19_Docker_Redes.html">
       
       
-        <link rel="prev" href="16_EjemploDocker_WP.html">
+        <link rel="prev" href="15_DockerVolumenes.html">
       
       
-        <link rel="next" href="20_Vagrant.html">
+        <link rel="next" href="16_EjemploDocker_WP.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -398,29 +398,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="16_EjemploDocker_WP.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Ejemplo WP
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -513,6 +490,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="16_EjemploDocker_WP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo WP
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1705,20 +1705,46 @@
 </ul>
 <h2 id="comando-docker-network">Comando Docker Network.<a class="headerlink" href="#comando-docker-network" title="Permanent link">¶</a></h2>
 <p>Algunos de las opciones más habituales a la hora de crear una red en docker son:</p>
-<center>
-
-| Opción    | <center> Significado </center>      |
-| :----: | :-- |
-| `--driver` |  Si queremos modo bridge, host, none. |
-| `--internal`    | Restringe el acceso desde el exterior. Sin Internet. |
-| `--gateway`     | Indica la puerta de enlace de la red.   |
-| `--ip-range` | Delimita el rango de IPs asignables al contenedor.  |
-| `--subnet`    | Define la subred en formato CIDR |
-| `--ip`    | Especificar una IP en concreto |
-| `--dns`    | Especificar un servidor DNS en particular |
-
-</center>
-
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Opción</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>--driver</code></td>
+<td style="text-align: left;">Si queremos modo bridge, host, none.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--internal</code></td>
+<td style="text-align: left;">Restringe el acceso desde el exterior. Sin Internet.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--gateway</code></td>
+<td style="text-align: left;">Indica la puerta de enlace de la red.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--ip-range</code></td>
+<td style="text-align: left;">Delimita el rango de IPs asignables al contenedor.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--subnet</code></td>
+<td style="text-align: left;">Define la subred en formato CIDR</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--ip</code></td>
+<td style="text-align: left;">Especificar una IP en concreto</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>--dns</code></td>
+<td style="text-align: left;">Especificar un servidor DNS en particular</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h3 id="crear-una-red">Crear una red.<a class="headerlink" href="#crear-una-red" title="Permanent link">¶</a></h3>
 <p>Ejemplo de una red:</p>
 <p>✔️ Nombre: miRED </p>
@@ -1727,33 +1753,33 @@
 <p>✔️ Puerta de enlace: 172.20.2.100</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>--subnet<span class="o">=</span><span class="m">172</span>.20.0.0/16<span class="w"> </span>--ip-range<span class="o">=</span><span class="m">172</span>.20.2.0/24<span class="w"> </span>--gateway<span class="o">=</span><span class="m">172</span>.20.2.100<span class="w"> </span>miRED
 </code></pre></div>
+<details class="question">
+<summary>Si la opción driver la dejo vacía, qué tipo de red se crea.</summary>
+<p><strong>Se crea una red tipo bridge que es la red por defecto.</strong></p>
+</details>
 <h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">¶</a></h2>
 <h3 id="crear-un-contenedor-con-una-red">Crear un contenedor con una red.<a class="headerlink" href="#crear-un-contenedor-con-una-red" title="Permanent link">¶</a></h3>
 <p>Se le asigna una red llamada "redInterna" creada con anterioridad.</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>miCONTENEDOR<span class="w"> </span>--network<span class="w"> </span>redInterna<span class="w"> </span>miIMAGEN
 </code></pre></div>
 <h3 id="conectar-una-red-a-un-contenedor-ya-existente">Conectar una red a un contenedor ya existente.<a class="headerlink" href="#conectar-una-red-a-un-contenedor-ya-existente" title="Permanent link">¶</a></h3>
-<center>
-!!! danger "BRIDGE"
-    Solo funciona con redes tipo Bridge. Para redes host debemos recrear el contenedor.
-</center>
-
+<div class="admonition danger">
+<p class="admonition-title">Solo funciona con redes tipo Bridge. Para redes host debemos recrear el contenedor.</p>
+</div>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>connect<span class="w"> </span>miRED<span class="w"> </span>miCONTENEDOR
 </code></pre></div>
 <h3 id="conectar-un-contenedor-a-la-red-de-la-maquina-anfitriona">Conectar un contenedor a la red de la máquina anfitriona.<a class="headerlink" href="#conectar-un-contenedor-a-la-red-de-la-maquina-anfitriona" title="Permanent link">¶</a></h3>
-<center>
-!!! tip "Red HOST"
-    Existe una red por defecto llamada host que une el contenedor con la red de la máquina anfitriona. 
-</center>
-
+<div class="admonition tip">
+<p class="admonition-title">La red host que une el contenedor con la red de la máquina anfitriona.</p>
+</div>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>miCONTENEDOR<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>miIMAGEN
 </code></pre></div>
 <h3 id="conectar-un-contenedor-ya-existente-a-la-red-host">Conectar un contenedor ya existente a la red host.<a class="headerlink" href="#conectar-un-contenedor-ya-existente-a-la-red-host" title="Permanent link">¶</a></h3>
-<center>
-!!! danger "Limitación red HOST"
-    Debemos crear una imagen del contenedor y recrearlo.
-</center>
-
+<div class="admonition danger">
+<p class="admonition-title">Limitación red HOST</p>
+<p>No se puede cambiar la conexión a una red host de un contenedor existente.</p>
+<p>Debemos crear una imagen del contenedor y recrearlo.</p>
+</div>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>commit<span class="w"> </span>miCONTENEDOR<span class="w"> </span>miIMAGEN
 docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>miCONTENEDOR<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>miIMAGEN
 </code></pre></div>
