@@ -1747,11 +1747,6 @@
 </ul>
 <p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" muted controls alt="type:video"><source src="imagenes/samba/TecladoWindows.mkv" type="video/mp4"></source></video></div></p>
 <h2 id="cliente-linux">Cliente Linux<a class="headerlink" href="#cliente-linux" title="Permanent link">¶</a></h2>
-<h3 id="cambiar-idioma-y-teclado_1">Cambiar Idioma y Teclado<a class="headerlink" href="#cambiar-idioma-y-teclado_1" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>keyboard-configuration
-sudo<span class="w"> </span>service<span class="w"> </span>keyboard-setup<span class="w"> </span>restart
-</code></pre></div>
-<p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" muted controls alt="type:video"><source src="imagenes/samba/TecladoUbuntu.mkv" type="video/mp4"></source></video></div></p>
 <h3 id="conectar-mediante-interfaz-grafica">Conectar mediante Interfaz gráfica.<a class="headerlink" href="#conectar-mediante-interfaz-grafica" title="Permanent link">¶</a></h3>
 <p>En Linux podemos acceder desde una carpeta usando el protocolo smb:</p>
 <div class="highlight"><pre><span></span><code>smb://usuario@IPServidor/CarpetaCompartida
@@ -1830,7 +1825,15 @@ smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span
 </code></pre></div>
 <p>Otra opción es usar -c del comando:</p>
 <div class="highlight"><pre><span></span><code>smbclient<span class="w"> </span><span class="se">\\\\</span><span class="m">172</span>.17.0.2<span class="se">\\</span>ejercicio1<span class="w"> </span>--password<span class="w"> </span><span class="m">123</span><span class="w"> </span>-c<span class="w">  </span><span class="s2">"get Fic_Servidor Fic_Cliente; put Fic_Cliente Fic_Servidor"</span>
-</code></pre></div></div>
+</code></pre></div>
+<h3 id="cambiar-idioma-y-teclado_1">Cambiar Idioma y Teclado<a class="headerlink" href="#cambiar-idioma-y-teclado_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>En caso de que fuese necesario cambiar configuración del teclado.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>keyboard-configuration
+sudo<span class="w"> </span>service<span class="w"> </span>keyboard-setup<span class="w"> </span>restart
+</code></pre></div>
+<p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" muted controls alt="type:video"><source src="imagenes/samba/TecladoUbuntu.mkv" type="video/mp4"></source></video></div></p></div>
 
 
 
