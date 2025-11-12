@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://salvasevero.github.io/sor/18_Secciones.html">
       
       
-        <link rel="prev" href="17_Samba.html">
+        <link rel="prev" href="17_2_Samba_Conexion.html">
       
       
         <link rel="next" href="21_UsuariosSamba.html">
@@ -859,6 +859,8 @@
       
         
       
+        
+      
     
     
     
@@ -903,6 +905,29 @@
   
   <span class="md-ellipsis">
     Samba
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="17_2_Samba_Conexion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conexiones
     
   </span>
   
@@ -1726,46 +1751,93 @@ guest<span class="w"> </span><span class="nv">ok</span><span class="w"> </span><
 write<span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>@Ceos,<span class="w"> </span>administrador,<span class="w"> </span>user1<span class="w"> </span>
 directory<span class="w"> </span><span class="nv">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0755</span>
 </code></pre></div>
-<center>
-!!! note "Resumen Ejemplo"
-    * Estas líneas crean un recurso compartido con el nombre compartidoUser1 en el directorio /media/compartido/user1 de solo lectura, con acceso de invitado, los usuarios administrador y user1 pueden escribir y el grupo @Ceos también.
-
-    * Además, se aplicará una máscara de permisos automática de 0755 a los ficheros y carpetas que se creen en este recurso.
-</center>
-
-<center>
-
-| Opción    | <center> Significado </center>      |
-| :----: | :-- |
-| `[XXXX]`   | Nombre del recurso a compartir.        |
-| `comment` | Comentario que describe el directorio que se está compartiendo.    |
-| `path`    | Ruta absoluta de la carpeta a compartir.    |
-| `browsable`     | Permite navegar por el directorio usando el navegador de directorios. Por defecto "yes".         |
-| `guest ok`     | No es necesario introducir contraseña (modo invitado). Por defecto "yes".        |
-| `public`     | Equivalente a guest ok.     |
-| `read only`   | Solo permite la lectura en la carpeta. Por defecto "yes".     |
-| `writeable`   | Permite la escritura. Por defecto "no". |
-| `write list`   | Usuarios o grupos que pueden accedder con permiso de escritura.        |
-| `create Mask` | Indica los permisos de los ficheros creados por los clientes. Por defecto 0744.    |
-| `directory Mask`    | Indica los permisos de los directorios creados. Por defecto 0755.    |
-| `valid users`     | Usuarios o grupos que pueden acceder al recurso compartido.         |
-| `admin users`     | Usuarios o grupos pueden acceder como administradores.       |
-
-!!! info "DOCUMENTACIÓN"
-    [Página oficial de samba.](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html)
-
-</center>
-
-<center>
-!!! tip "PATH en /srv"
-    Se puede compartir cualquier carpeta, no obstante, por estándar las carpetas compartidas de un servidor suelen encontrarse dentro del directorio /srv. 
-</center>
-
-<center>
-!!! danger "Sticky Bit"
-    El primer bit del “umask” se usa para opciones especiales (stickybit, SGID o SUID) que quedan fuera de los contenidos del módulo, lo dejaremos a 0.
-</center>
-
+<div class="admonition note">
+<p class="admonition-title">Resumen Ejemplo</p>
+<ul>
+<li>
+<p>Estas líneas crean un recurso compartido con el nombre compartidoUser1 en el directorio /media/compartido/user1 de solo lectura, con acceso de invitado, los usuarios administrador y user1 pueden escribir y el grupo @Ceos también.</p>
+</li>
+<li>
+<p>Además, se aplicará una máscara de permisos automática de 0755 a los ficheros y carpetas que se creen en este recurso.</p>
+</li>
+</ul>
+</div>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Opción</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>[XXXX]</code></td>
+<td style="text-align: left;">Nombre del recurso a compartir.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>comment</code></td>
+<td style="text-align: left;">Comentario que describe el directorio que se está compartiendo.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>path</code></td>
+<td style="text-align: left;">Ruta absoluta de la carpeta a compartir.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>browsable</code></td>
+<td style="text-align: left;">Permite navegar por el directorio usando el navegador de directorios. Por defecto "yes".</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>guest ok</code></td>
+<td style="text-align: left;">No es necesario introducir contraseña (modo invitado). Por defecto "yes".</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>public</code></td>
+<td style="text-align: left;">Equivalente a guest ok.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>read only</code></td>
+<td style="text-align: left;">Solo permite la lectura en la carpeta. Por defecto "yes".</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>writeable</code></td>
+<td style="text-align: left;">Permite la escritura. Por defecto "no".</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>write list</code></td>
+<td style="text-align: left;">Usuarios o grupos que pueden accedder con permiso de escritura.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>create Mask</code></td>
+<td style="text-align: left;">Indica los permisos de los ficheros creados por los clientes. Por defecto 0744.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>directory Mask</code></td>
+<td style="text-align: left;">Indica los permisos de los directorios creados. Por defecto 0755.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>valid users</code></td>
+<td style="text-align: left;">Usuarios o grupos que pueden acceder al recurso compartido.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>admin users</code></td>
+<td style="text-align: left;">Usuarios o grupos pueden acceder como administradores.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">DOCUMENTACIÓN</p>
+<p><a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html">Página oficial de samba.</a></p>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">PATH en /srv</p>
+<p>Se puede compartir cualquier carpeta, no obstante, por estándar las carpetas compartidas de un servidor suelen encontrarse dentro del directorio /srv. </p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Sticky Bit</p>
+<p>El primer bit del “umask” se usa para opciones especiales (stickybit, SGID o SUID) que quedan fuera de los contenidos del módulo, lo dejaremos a 0.</p>
+</div>
 <h2 id="videos-de-ejemplo">Vídeos de Ejemplo.<a class="headerlink" href="#videos-de-ejemplo" title="Permanent link">¶</a></h2>
 <p><a href="https://youtu.be/1x5NnJsFC9Q">Secciones dentro de SAMBA.</a></p></div>
 

@@ -859,6 +859,8 @@
       
         
       
+        
+      
     
     
     
@@ -903,6 +905,29 @@
   
   <span class="md-ellipsis">
     Samba
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="17_2_Samba_Conexion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conexiones
     
   </span>
   
@@ -1710,17 +1735,13 @@
 <p>⚡ force user = salva</p>
 <p>⚡ force group = alumnos</p>
 <p>De esta forma cuando accedamos al sistema como invitado accederemos como el usuario salva que tiene el grupo principal alumnos.</p>
-<center>
-!!! danger ""
-    No es recomendable utilizar force user = root porque estaría entrando todo el mundo como administrador.
-</center>
-
+<div class="admonition danger">
+<p>No es recomendable utilizar force user = root porque estaría entrando todo el mundo como administrador.</p>
+</div>
 <h2 id="usuarios">Usuarios<a class="headerlink" href="#usuarios" title="Permanent link">¶</a></h2>
-<center>
-!!! danger ""
-    Los usuarios deben existir tanto en samba como en el servidor.
-</center>
-
+<div class="admonition danger">
+<p>Los usuarios deben existir tanto en samba como en el servidor.</p>
+</div>
 <h3 id="crear-usuario-en-el-servidor">Crear usuario en el servidor<a class="headerlink" href="#crear-usuario-en-el-servidor" title="Permanent link">¶</a></h3>
 <p>Si no queremos que este usuario pueda acceder al sistema podemos ponerle un shell inexistente y no ponerle contraseña en el sistema.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>useradd<span class="w"> </span>-s<span class="w"> </span>/bin/true<span class="w"> </span>“usuario”
@@ -1729,17 +1750,34 @@
 <p>Es recomendable que la contraseña sea diferente a la usada en el sistema.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>smbpasswd<span class="w"> </span>–a<span class="w"> </span>“usuario”
 </code></pre></div>
-<center>
-
-| Opciones de smbpasswd    | <center> Significado </center>      |
-| :----: | :-- |
-| `-a`    | Crear usuario |
-| `-d` |    Deshabilitar usuario en samba.  |
-| `-x`    | Eliminar un usuario |
-| `-e`    | Habilitar usuario en samba |
-
-</center>
-
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Opciones de smbpasswd</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>-a</code></td>
+<td style="text-align: left;">Crear usuario</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-d</code></td>
+<td style="text-align: left;">Deshabilitar usuario en samba.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-x</code></td>
+<td style="text-align: left;">Eliminar un usuario</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-e</code></td>
+<td style="text-align: left;">Habilitar usuario en samba</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h3 id="comprobar-usuarios-creados-en-samba">Comprobar usuarios creados en SAMBA<a class="headerlink" href="#comprobar-usuarios-creados-en-samba" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pdbedit<span class="w"> </span>-L
 </code></pre></div>
@@ -1748,20 +1786,15 @@
 <p>Se puede restringir los usuarios que pueden tener acceso a un recurso:</p>
 <p>⚡ valid users = salva pepe jorge</p>
 <p>⚡ invalid users = root @profesores @root</p>
-<center>
-!!! danger ""
-    El “@” indica que se hace referencia a un grupo. Por tanto ningún usuario perteneciente al grupo root o de profesores puede acceder.
-
-    Si un usuario está en el listado de “valid users” y en el de “invalid users” se le deniega el acceso.
-</center>
-
+<div class="admonition danger">
+<p>El “@” indica que se hace referencia a un grupo. Por tanto ningún usuario perteneciente al grupo root o de profesores puede acceder.</p>
+<p>Si un usuario está en el listado de “valid users” y en el de “invalid users” se le deniega el acceso.</p>
+</div>
 <p>Los usuarios dentro de esta lista actuarán como root.</p>
 <p>⚡ admin users = salva</p>
-<center>
-!!! danger ""
-    No es una práctica recomendable, solo debe ser usada si es totalmente necesaria.
-</center>
-
+<div class="admonition danger">
+<p>No es una práctica recomendable, solo debe ser usada si es totalmente necesaria.</p>
+</div>
 <h2 id="restriccion-por-ip">Restricción por IP<a class="headerlink" href="#restriccion-por-ip" title="Permanent link">¶</a></h2>
 <p>hosts allow | deny: Permite restringir el acceso por IP:</p>
 <ul>
@@ -1771,34 +1804,40 @@
 <li>Permitir por parte de red →   hosts allow = 192.168.   </li>
 <li>Rechazar por parte de red →  hosts deny = 10.  (Deniega acceso a todos los hosts que comiencen por 10.)</li>
 </ul>
-<center>
-
-| Opción    | <center> Significado </center>      |
-| :----: | :-- |
-| `hosts allow` |   Especifica desde qué direcciones IP se podrá acceder al servicio.  |
-| `hosts deny`    | Especifica los rangos no permitidos, del mismo modo que host allow. |
-
-!!! danger "Orden de Ejecución"
-    Su funcionamiento es más permisivo, es decir, si tenemos:
-
-       hosts allow = 127.0.0.1 192.168.2.0/24 192.168.3.0/24
-
-       hosts deny = 127.0.0.1 192.168.2.0/24 192.168.3.0/24
-
-     Permite el acceso porque manda el allow ante el deny.
-
-</center>
-
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Opción</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>hosts allow</code></td>
+<td style="text-align: left;">Especifica desde qué direcciones IP se podrá acceder al servicio.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>hosts deny</code></td>
+<td style="text-align: left;">Especifica los rangos no permitidos, del mismo modo que host allow.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Orden de Ejecución</p>
+<p>Su funcionamiento es más permisivo, es decir, si tenemos:</p>
+<p>hosts allow = 127.0.0.1 192.168.2.0/24 192.168.3.0/24</p>
+<p>hosts deny = 127.0.0.1 192.168.2.0/24 192.168.3.0/24</p>
+<p>Permite el acceso porque manda el allow ante el deny.</p>
+</div>
 <h2 id="restaurar-conexiones-en-windows">Restaurar Conexiones en Windows.<a class="headerlink" href="#restaurar-conexiones-en-windows" title="Permanent link">¶</a></h2>
 <p>En Windows las conexiones se quedan guardadas en memoria, por lo que una vez iniciado sesión en un servicio SAMBA, por ejemplo con el usuario "salva" ya no nos saltará de nuevo la ventana para introducir las credenciales de nuevo.</p>
 <p>En caso de que queramos borrar esa memoria debemos abrir una consola "cmd" y ejecutar "net use * /DEL".</p>
-<center>
-
-!!! danger "Borrar Caché Windows (CMD)"
-    net use * /DEL
-
-</center>
-
+<div class="admonition danger">
+<p class="admonition-title">Borrar Caché Windows (CMD)</p>
+<p>net use * /DEL</p>
+</div>
 <h2 id="logs">Logs.<a class="headerlink" href="#logs" title="Permanent link">¶</a></h2>
 <p>Los logs del sistema se suelen guardar en <strong>/var/log</strong>:</p>
 <ul>
@@ -1807,15 +1846,26 @@
 <li>/var/log/samba: Logs relacionados con samba.</li>
 </ul>
 <p>Por defecto en samba se almacena los fallos del servicio en syslog y los fallos de autenticación en auth.log.</p>
-<center>
-
-| Opción    | <center> Significado </center>      |
-| :----: | :-- |
-| `log level` |     Especifica el nivel de detalle que se guardará en un log.  |
-| `log file`    | Dónde vamos a guardar los logs. |
-
-</center>
-
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Opción</th>
+<th style="text-align: left;"><center> Significado </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>log level</code></td>
+<td style="text-align: left;">Especifica el nivel de detalle que se guardará en un log.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>log file</code></td>
+<td style="text-align: left;">Dónde vamos a guardar los logs.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>Se puede especificar el detalle del registro por módulos, por ejemplo el módulo de auth_audit muestra información sobre los intentos de acceso.</p>
 <figure>
   <img src="imagenes/samba/8.png" width="400">
