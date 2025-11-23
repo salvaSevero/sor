@@ -1027,18 +1027,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usuarios" class="md-nav__link">
+  <a href="#usuarios-y-grupos" class="md-nav__link">
     <span class="md-ellipsis">
-      Usuarios
+      Usuarios y Grupos.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#restriccion-por-usuarios" class="md-nav__link">
+  <a href="#restriccion-por-usuarios-y-grupos" class="md-nav__link">
     <span class="md-ellipsis">
-      Restricción por usuarios.
+      Restricción por usuarios y grupos.
     </span>
   </a>
   
@@ -1738,13 +1738,13 @@
 <div class="admonition danger">
 <p>No es recomendable utilizar force user = root porque estaría entrando todo el mundo como administrador.</p>
 </div>
-<h2 id="usuarios">Usuarios<a class="headerlink" href="#usuarios" title="Permanent link">¶</a></h2>
+<h2 id="usuarios-y-grupos">Usuarios y Grupos.<a class="headerlink" href="#usuarios-y-grupos" title="Permanent link">¶</a></h2>
 <div class="admonition danger">
 <p>Los usuarios deben existir tanto en samba como en el servidor.</p>
 </div>
 <h3 id="crear-usuario-en-el-servidor">Crear usuario en el servidor<a class="headerlink" href="#crear-usuario-en-el-servidor" title="Permanent link">¶</a></h3>
 <p>Si no queremos que este usuario pueda acceder al sistema podemos ponerle un shell inexistente y no ponerle contraseña en el sistema.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>useradd<span class="w"> </span>-s<span class="w"> </span>/bin/true<span class="w"> </span>“usuario”
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>useradd<span class="w"> </span>-s<span class="w"> </span>/bin/true<span class="w"> </span>“usuario”<span class="w"> </span>-G<span class="w"> </span>grupo
 </code></pre></div>
 <h3 id="crear-usuario-en-samba">Crear usuario en SAMBA<a class="headerlink" href="#crear-usuario-en-samba" title="Permanent link">¶</a></h3>
 <p>Es recomendable que la contraseña sea diferente a la usada en el sistema.</p>
@@ -1781,7 +1781,14 @@
 <h3 id="comprobar-usuarios-creados-en-samba">Comprobar usuarios creados en SAMBA<a class="headerlink" href="#comprobar-usuarios-creados-en-samba" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pdbedit<span class="w"> </span>-L
 </code></pre></div>
-<h2 id="restriccion-por-usuarios">Restricción por usuarios.<a class="headerlink" href="#restriccion-por-usuarios" title="Permanent link">¶</a></h2>
+<h3 id="grupos">Grupos.<a class="headerlink" href="#grupos" title="Permanent link">¶</a></h3>
+<p>Si queremos que un usuario pertenezca a un grupo, <ins class="critic"><strong>solo es necesario crearlo en el sistema</strong></ins>.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>groupadd<span class="w"> </span>NombreGrupo
+sudo<span class="w"> </span>usermod<span class="w"> </span>“usuario”<span class="w"> </span>-aG<span class="w"> </span>NombreGrupo
+<span class="c1">#Para comprobar los usuarios que pertenecen a un grupo.</span>
+sudo<span class="w"> </span>getent<span class="w"> </span>group<span class="w"> </span>NombreGrupo
+</code></pre></div>
+<h2 id="restriccion-por-usuarios-y-grupos">Restricción por usuarios y grupos.<a class="headerlink" href="#restriccion-por-usuarios-y-grupos" title="Permanent link">¶</a></h2>
 <p>En caso de que no permitamos el acceso de invitados (guest ok = no) el servidor nos solicitará nuestras credenciales.</p>
 <p>Se puede restringir los usuarios que pueden tener acceso a un recurso:</p>
 <p>⚡ valid users = salva pepe jorge</p>
