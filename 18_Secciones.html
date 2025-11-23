@@ -1741,6 +1741,15 @@
 <p>Permite indicar las opciones para el /home de los usuarios existentes en el servidor. De tal forma que podríamos acceder a nuestro /home desde cualquier máquina del grupo de trabajo de la siguiente forma: <strong>\IP_SERVIDOR\usuario.</strong></p>
 <h2 id="seccion-printers">Sección [printers].<a class="headerlink" href="#seccion-printers" title="Permanent link">¶</a></h2>
 <p>Información del trato para la compartición de impresoras en red.</p>
+<h3 id="instalar-el-paquete-cups-que-gestiona-impresoras">Instalar el paquete CUPS que gestiona impresoras.<a class="headerlink" href="#instalar-el-paquete-cups-que-gestiona-impresoras" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>install<span class="w"> </span>cups
+service<span class="w"> </span>cups<span class="w"> </span>start
+service<span class="w"> </span>smbd<span class="w"> </span>start
+service<span class="w"> </span>nmbd<span class="w"> </span>start
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">El servicio nmbd es un paquete de samba que permite la resolución de nombres de equipos dentro de una red.</p>
+</div>
 <h2 id="seccion-personalizada">Sección Personalizada.<a class="headerlink" href="#seccion-personalizada" title="Permanent link">¶</a></h2>
 <p>Cuando vamos a crear nuestra carpeta compartida, crearemos nuestra propia sección.</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>compartidoUser1<span class="o">]</span>
