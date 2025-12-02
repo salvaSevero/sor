@@ -1101,9 +1101,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#montaje-automatico" class="md-nav__link">
+  <a href="#montaje-automatico-del-cliente-en-sistemas-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      Montaje automático.
+      Montaje automático del cliente en sistemas Linux.
     </span>
   </a>
   
@@ -1817,11 +1817,12 @@ chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span
   <img src="imagenes/samba/9.png" width="800">
 </figure>
 
-<h3 id="configuracion_1">Configuración.<a class="headerlink" href="#configuracion_1" title="Permanent link">¶</a></h3>
 <figure>
-  <img src="imagenes/samba/10.png" width="600">
+  <img src="imagenes/samba/13.png" width="600">
 </figure>
 
+<div class="highlight"><pre><span></span><code><span class="nb">mount </span><span class="n">-o</span> <span class="n">anon</span> <span class="p">\\</span><span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">141</span><span class="p">\</span><span class="n">pruebas</span> <span class="n">Z</span><span class="p">:</span>
+</code></pre></div>
 <h2 id="opciones">Opciones.<a class="headerlink" href="#opciones" title="Permanent link">¶</a></h2>
 <div class="center-table">
 <table>
@@ -1881,16 +1882,29 @@ chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span
 /srv/local<span class="w"> </span><span class="m">192</span>.168.0.0/255.255.255.0<span class="o">(</span>ro<span class="o">)</span>
 /srv/pepe<span class="w">      </span><span class="m">192</span>.168.0.0/255.255.255.0<span class="o">(</span>rw<span class="o">)</span>
 </code></pre></div>
-<h2 id="montaje-automatico">Montaje automático.<a class="headerlink" href="#montaje-automatico" title="Permanent link">¶</a></h2>
-<p>La configuración de montaje de esta forma tiene un gran inconveniente, si se reinicia el cliente la configuración se pierde. Para solucionarlo se dispone de un archivo denominado /etc/fstab (file systems table) donde se guarda la información necesaria sobre los diferentes volúmenes que se montarán durante el arranque del sistema.</p>
-<p>Para modificar este archivo se debe tener en cuenta:</p>
+<h2 id="montaje-automatico-del-cliente-en-sistemas-linux">Montaje automático del cliente en sistemas Linux.<a class="headerlink" href="#montaje-automatico-del-cliente-en-sistemas-linux" title="Permanent link">¶</a></h2>
+<p>El fichero <mark class="critic"><strong>/etc/fstab</strong></mark> (file systems table) almacena la información necesaria sobre los diferentes volúmenes que se montarán durante el arranque del sistema.</p>
 <p>Cada línea del archivo representa un volumen diferente y atiende al siguiente formato:</p>
-<p>Dispositivo: Referencia al volumen que vamos a montar. En este caso su valor será 192.168.2.4:/home/sor/compartida.</p>
-<p>Punto de montaje: La carpeta donde se montarán los datos del volumen. Su valor para la primera carpeta será /mnt/nfs/home/sor/compartida.</p>
-<p>Sistema de archivos: Indica el sistema de archivos utilizado en el volumen. En ambos casos, el valor será nfs.</p>
-<p>Opciones: Indica los parámetros que usará mount para montar el dispositivo. Estarán separadas por comas y no incluirán espacios. En este caso las opciones serán auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800. Estas opciones son explicadas en detalle en la documentación oficial de ubuntu Enlace.</p>
-<p>Frecuencia de respaldo: Frecuencia con la que se utiliza la herramienta dump para respaldar (copiar) el sistema de archivos. Si su valor es cero, el volumen no se respalda.</p>
-<p>Orden de revisión: Orden en el que la herramienta fsck revisa el volumen en busca de posibles errores durante el proceso de inicio. Si su valor es cero, el volumen no se revisa.</p>
+<ul>
+<li>
+<p><strong>Dispositivo</strong>: Referencia al volumen que vamos a montar. En este caso su valor será 192.168.2.4:/home/sor/compartida.</p>
+</li>
+<li>
+<p><strong>Punto de montaje</strong>: La carpeta donde se montarán los datos del volumen. Su valor para la primera carpeta será /mnt/nfs/home/sor/compartida.</p>
+</li>
+<li>
+<p><strong>Sistema de archivos</strong>: Indica el sistema de archivos utilizado en el volumen. En ambos casos, el valor será nfs.</p>
+</li>
+<li>
+<p><strong>Opciones</strong>: Indica los parámetros que usará mount para montar el dispositivo. Estarán separadas por comas y no incluirán espacios. En este caso las opciones serán auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800. Estas opciones son explicadas en detalle en la documentación oficial de ubuntu Enlace.</p>
+</li>
+<li>
+<p><strong>Frecuencia de respaldo</strong>: Frecuencia con la que se utiliza la herramienta dump para respaldar (copiar) el sistema de archivos. Si su valor es cero, el volumen no se respalda.</p>
+</li>
+<li>
+<p><strong>Orden de revisión</strong>: Orden en el que la herramienta fsck revisa el volumen en busca de posibles errores durante el proceso de inicio. Si su valor es cero, el volumen no se revisa.</p>
+</li>
+</ul>
 <p>Por lo tanto se debe incluir la línea indicada abajo para realizar la configuración automática del montaje:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/fstab
 <span class="c1">#IP_SERVIDOR:RUTA_SERVIDOR RUTA_CLIENTE nfs OPCIONES 0 0</span>
