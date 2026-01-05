@@ -1701,6 +1701,53 @@
 
 <div><h1 id="configuracion-ad">Configuración AD.<a class="headerlink" href="#configuracion-ad" title="Permanent link">¶</a></h1>
 <h2 id="instalar-ad-en-aws">Instalar AD en AWS.<a class="headerlink" href="#instalar-ad-en-aws" title="Permanent link">¶</a></h2>
+<h3 id="instancia-windows-server">Instancia Windows Server.<a class="headerlink" href="#instancia-windows-server" title="Permanent link">¶</a></h3>
+<p>Vamos a crear dos instancias de Windows Server, uno será nuestro servidor y el otro actuará de cliente.</p>
+<ul>
+<li><strong>AMI</strong>: Windows Server.</li>
+<li>
+<p><strong>Tipo</strong>: </p>
+<p>💥 Servidor: t3.large</p>
+<p>💥 Cliente: t3.medium</p>
+</li>
+<li>
+<p><strong>Par de claves</strong>: Vockey.</p>
+</li>
+<li><strong>Subred</strong>: Zona de disponibilidad us-east-1a.</li>
+<li>
+<p><strong>Grupo de Seguridad</strong>: </p>
+<p>💥 Permitir el tráfico entrante de RDP desde cualquier IP. </p>
+<p>💥 Permitir el tráfico entrante de la red privada.</p>
+</li>
+<li>
+<p><strong>Almacenamiento</strong>: 40 GB de gp3.</p>
+</li>
+</ul>
+<h3 id="configuracion-de-la-red">Configuración de la red.<a class="headerlink" href="#configuracion-de-la-red" title="Permanent link">¶</a></h3>
+<p>Una de las cosas que necesitamos es que los clientes puedan resolver nuestro dominio, por ejemplo ad.sor.com.</p>
+<p>Para ello vamos a poner a los clientes como servidor DNS el propio servidor AD, de tal forma que cuando los clientes pregunten por ad.sor.com el servidor les contestará que se trata de su IP.</p>
+<div class="admonition note">
+<p class="admonition-title">Esto también se podría hacer con una resolución DNS estática en cada cliente apuntando el dominio a la IP del servidor.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Es importante poner un segundo servidor DNS como puede ser el 8.8.8.8 de Google.</p>
+</div>
+<h4 id="paso-1-crear-conjunto-de-opciones-de-dhcp">Paso 1. Crear Conjunto de Opciones de DHCP.<a class="headerlink" href="#paso-1-crear-conjunto-de-opciones-de-dhcp" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Nombre de dominio</strong>: ad.sor.com</li>
+<li><strong>Servidores de nombre de dominio</strong>: IP_SERVIDOR, 8.8.8.8</li>
+</ul>
+<h4 id="paso-2-habilitar-el-dhcp-nuevo-en-la-vpc">Paso 2. Habilitar el DHCP nuevo en la VPC.<a class="headerlink" href="#paso-2-habilitar-el-dhcp-nuevo-en-la-vpc" title="Permanent link">¶</a></h4>
+<ul>
+<li>Editar la configuración de la VPC para cambiar las opciones de DHCP activo.</li>
+<li>Dejar marcadas las resoluciones de DNS.</li>
+</ul>
+<h4 id="paso-3-reiniciar-las-maquinas-ec2">Paso 3. Reiniciar las máquinas EC2.<a class="headerlink" href="#paso-3-reiniciar-las-maquinas-ec2" title="Permanent link">¶</a></h4>
+<h3 id="configuracion-del-servidor">Configuración del Servidor.<a class="headerlink" href="#configuracion-del-servidor" title="Permanent link">¶</a></h3>
+<ul>
+<li>Cambiar el nombre del equipo por SORDC01.</li>
+<li>Activar rol de    </li>
+</ul>
 <center>
 
 <iframe width="1335" height="751" src="https://www.youtube.com/embed/DJQ1f84_GcI" title="AD con AWS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

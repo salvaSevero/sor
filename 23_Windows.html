@@ -1149,9 +1149,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requisitos-del-sistema-windows-server-2022" class="md-nav__link">
+  <a href="#requisitos-del-sistema-windows-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Requisitos del Sistema Windows Server 2022:
+      Requisitos del Sistema Windows Server:
     </span>
   </a>
   
@@ -1718,7 +1718,9 @@
 
 
 <div><h1 id="windows-server">Windows Server<a class="headerlink" href="#windows-server" title="Permanent link">¶</a></h1>
-<h2 id="requisitos-del-sistema-windows-server-2022">Requisitos del Sistema Windows Server 2022:<a class="headerlink" href="#requisitos-del-sistema-windows-server-2022" title="Permanent link">¶</a></h2>
+<h2 id="requisitos-del-sistema-windows-server">Requisitos del Sistema Windows Server:<a class="headerlink" href="#requisitos-del-sistema-windows-server" title="Permanent link">¶</a></h2>
+<p>Se pueden consultar los requisitos mínimos en la página oficial de <a href="https://learn.microsoft.com/es-es/windows-server/get-started/hardware-requirements?tabs=cpu&amp;pivots=windows-server-2025">Microsoft</a>.</p>
+<p>Requisitos mínimos de Windows 2025:</p>
 <p>✅ Procesador 64 bits a 1,4GHz.</p>
 <p>✅ RAM 2GB con entorno de escritorio.</p>
 <p>✅ 32GB de Disco Duro.</p>
@@ -1732,39 +1734,31 @@
 <p><strong>CAL de Dispositivo</strong>: Por cada dispositivo que registremos en el dominio (impresoras, ordenadores, tablets..) necesitaremos una licencia.</p>
 </li>
 </ul>
-<center>
-!!! info ""
-    Las licencias de dispositivo salen rentable si un mismo ordenador lo van a usar múltiples usuarios, mientras que si cada usuario va a usar un ordenador o más será más rentable una licencia de usuario.
-</center>
-
+<div class="admonition info">
+<p>Las licencias de dispositivo salen rentable si un mismo ordenador lo van a usar múltiples usuarios, mientras que si cada usuario va a usar un ordenador o más será más rentable una licencia de usuario.</p>
+</div>
 <p>Además existe otra licencia independiente para su uso de forma remota.</p>
 <ul>
-<li><strong>CAL RDS (Remote Desktop Services)</strong>:  Son licencias para el acceso mediante escritorio remoto. </li>
+<li><strong>CAL RDS (Remote Desktop Services)</strong>:  Son licencias para el acceso mediante escritorio remoto al servidor windows server. </li>
 </ul>
-<center>
-!!! danger ""
-    El que tengas una licencia que te permita acceder a un servicio remoto de un dispositivo, no te quita de que ese dispositivo también cuente con una licencia CAL especial, a parte de la licencia de usuario/dispositivo.
-</center>
-
-<p>Las RDS CAL se activan a través del Administrador de licenciamiento (online), en cambio sobre las CAL de usuarios y dispositivos no hay un control, pero sí estás obligado a llevar un registro en caso de una auditoría de software.</p>
+<div class="admonition warning">
+<ul>
+<li>Las RDS CAL se activan a través del Administrador de licenciamiento (online).</li>
+<li>Sobre las CAL de usuarios y dispositivos no hay un control, pero sí estás obligado a llevar un registro en caso de una auditoría de software.</li>
+</ul>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Las CAL no son retrocompatibles con versiones superiores de Windows Server.</p>
+</div>
 <h3 id="ejemplo-licencias">Ejemplo Licencias.<a class="headerlink" href="#ejemplo-licencias" title="Permanent link">¶</a></h3>
 <p>En mi empresa tengo 40 empleados, pero hacen turnos de día (8horas), tarde (8 horas) y noches (8 horas). Por tanto, los trabajadores no coinciden a la vez en la oficina, se decide usar licencias por dispositivo y que los trabajadores compartan ordenadores (dispositivos).</p>
 <h3 id="ejemplo-licencias_1">Ejemplo Licencias.<a class="headerlink" href="#ejemplo-licencias_1" title="Permanent link">¶</a></h3>
 <p>En mi empresa cada trabajador dispone de un portátil y un ordenador fijo de oficina. Por tanto, como cada usuario tiene 1 o más dispositivos, es más rentable tener licencias por usuario.</p>
 <h2 id="versiones-de-windows-server">Versiones de Windows Server:<a class="headerlink" href="#versiones-de-windows-server" title="Permanent link">¶</a></h2>
+<p><a href="https://learn.microsoft.com/es-es/windows-server/get-started/editions-comparison?pivots=windows-server-2025&amp;tabs=full-comparison">Página oficial Windows Server.</a></p>
 <figure>
   <img src="imagenes/win/1.png" width="800">
 </figure>
-
-<figure>
-  <img src="imagenes/win/2.png" width="600">
-</figure>
-
-<center>
-
-[Página oficial Windows Server.](https://learn.microsoft.com/es-es/windows-server/get-started/editions-comparison-windows-server-2022?tabs=full-comparison )
-
-</center>
 
 <h3 id="existen-4-versiones">Existen 4 versiones:<a class="headerlink" href="#existen-4-versiones" title="Permanent link">¶</a></h3>
 <ul>
@@ -1785,10 +1779,11 @@
 <p>🔥 Revisión en caliente: Permite actualizar el servidor sin necesidad de reiniciar.</p>
 <p>🔥 SMB a través de QUIC: Permite acceder a recursos samba a través de Internet de una forma segura. QUIC se ocupa del cifrado y la integridad de los datos transferidos mediante samba.</p>
 </li>
-<li>
-<p><strong>LTSB (Long –Term Servicing Branch)</strong>: Son versiones con una garantía de actualizaciones de 10 años, es decir, se comprometen a ir sacando actualizaciones de seguridad y mantener el sistema operativo de esta versión.</p>
-</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">LTSB (Long –Term Servicing Branch).</p>
+<p>Son versiones con una garantía de actualizaciones de 10 años, es decir, se comprometen a ir sacando actualizaciones de seguridad y mantener el sistema operativo de esta versión.</p>
+</div>
 <h2 id="azure">Azure.<a class="headerlink" href="#azure" title="Permanent link">¶</a></h2>
 <p>Azure es la plataforma cloud de Microsoft que nos ofrece poder crear y gestionar servidores virtuales en la nube.</p>
 <p>Podemos gestionar la red virtual entre nuestros servidores virtuales, crear plataformas de desarrollo o integrar aplicaciones, gestionar el almacenamiento y las copias de seguridad,  monitorización de los servicios, etc. </p>
@@ -1810,10 +1805,10 @@
 <p>Es un hipervisor de máquinas virtuales, permite por tanto la creación y gestión de máquinas virtuales. </p>
 </li>
 <li>
-<p>Es un hipervisor de tipo 1 (bare metal), por tanto viene integrado en el propio sistema operativo y no requiere de instalaciones adicionales. </p>
+<p>Es un hipervisor de <strong>tipo 1 (bare metal)</strong>, por tanto viene integrado en el propio sistema operativo y no requiere de instalaciones adicionales. </p>
 </li>
 <li>
-<p>Vmware o VirtualBox serían un ejemplo de hipervisor de tipo 2, los cuales deben ser instalados encima del sistema operativo (Windows/MAC/Linux) de la máquina anfitriona.</p>
+<p>Vmware o VirtualBox serían un ejemplo de <strong>hipervisor de tipo 2</strong>, los cuales deben ser instalados encima del sistema operativo (Windows/MAC/Linux) de la máquina anfitriona.</p>
 </li>
 </ul>
 <figure>
