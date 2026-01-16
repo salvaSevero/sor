@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/28_AD_Grupos.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/40_PowerShell.html">
       
       
-        <link rel="prev" href="27_AD_Usuarios.html">
-      
-      
-        <link rel="next" href="29_AD_UnidadesOrganizativas.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Grupos - Sistemas Operativos en Red</title>
+        <title>PowerShell. - Sistemas Operativos en Red</title>
       
     
     
@@ -76,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#grupos-en-active-directory" class="md-skip">
+        <a href="#powershell" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -111,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Grupos
+              PowerShell.
             
           </span>
         </div>
@@ -1022,10 +1018,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1065,11 +1059,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -1085,7 +1079,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             UD4. Windows Server
@@ -1165,32 +1159,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Grupos
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="28_AD_Grupos.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="28_AD_Grupos.html" class="md-nav__link">
         
   
   
@@ -1201,89 +1173,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tipos-de-grupos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tipos de grupos:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ambito-de-grupo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ámbito de grupo:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#administrador-del-grupo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Administrador del grupo.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#membresia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Membresía.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#estrategia-agdlp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Estrategia AGDLP.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#perfiles-de-contrasenas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Perfiles de contraseñas.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#video-explicativo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vídeo Explicativo.
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1735,133 +1624,15 @@
 
 
 
-<div><h1 id="grupos-en-active-directory">Grupos en Active Directory.<a class="headerlink" href="#grupos-en-active-directory" title="Permanent link">¶</a></h1>
-<p>Un grupo es un conjunto de usuarios o equipos que tienen una serie de permisos para acceder a ciertos recursos o realizar ciertas tareas.</p>
-<h2 id="tipos-de-grupos">Tipos de grupos:<a class="headerlink" href="#tipos-de-grupos" title="Permanent link">¶</a></h2>
-<ul>
-<li>
-<p><strong>Predeterminados (builtin)</strong>: Aquellos que se crean automáticamente con la configuración del dominio de Active Directory.</p>
-<ul>
-<li>Ejemplo: “Domain Users” o “Domain Admins”.</li>
-</ul>
-</li>
-<li>
-<p><strong>Grupos de Distribución</strong>: Se usa habitualmente en el correo electrónico para envío masivo de correos. Se conocen también como listas de distribución, se suele usar junto con Microsoft Exchange.</p>
-</li>
-<li>
-<p><strong>Grupos de Seguridad</strong>: Se utilizan para aplicar permisos a los usuarios pertenecientes a dicho grupo.</p>
-</li>
-</ul>
-<h2 id="ambito-de-grupo">Ámbito de grupo:<a class="headerlink" href="#ambito-de-grupo" title="Permanent link">¶</a></h2>
-<p>El ámbito de grupo es el alcance del grupo, es decir si son válidos dentro de un dominio, dentro de un árbol (subdominio) o dentro de un bosque (diferentes dominios).</p>
-<ul>
-<li>
-<p><strong>Grupos locales de equipo</strong>: Son los grupos del equipo, no forman parte de Active Directory.</p>
-</li>
-<li>
-<p><strong>Grupos Locales de dominio</strong>: Son aquellos grupos cuyo ámbito está dentro del dominio (árbol) al que pertenecen, es decir, sus miembros pueden pertenecer a otros dominios (teniendo relaciones de confianza), pero los recursos a los que puede acceder son sólo los del dominio al que pertenece el grupo.</p>
-</li>
-<li>
-<p><strong>Grupos Globales</strong>: Pueden hacer referencia a cualquier recurso de cualquier dominio de Active Directory (bosque), pero todos sus miembros deben pertenecer al mismo dominio (árbol).</p>
-</li>
-<li>
-<p><strong>Grupos Universales</strong>: Pueden hacer referencia a cualquier dominio de Active Directory y además sus miembros pueden pertenecer a diferentes dominios del mismo servicio de Active Directory (bosque).</p>
-</li>
-</ul>
-<div class="center-table">
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Ámbito</th>
-<th style="text-align: center;"><center> Usuarios de cualquier dominio </center></th>
-<th style="text-align: center;"><center> Recursos de cualquier dominio </center></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>Local de Dominio</code></td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Global</code></td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Universal</code></td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-</tr>
-</tbody>
-</table>
+<div><h1 id="powershell">PowerShell.<a class="headerlink" href="#powershell" title="Permanent link">¶</a></h1>
+<h2 id="mostrar-los-grupos-vacios">Mostrar los grupos vacíos.<a class="headerlink" href="#mostrar-los-grupos-vacios" title="Permanent link">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Hay que tener en cuenta que no hay que borrar los grupos predeterminados vacíos del propio dominio.</p>
 </div>
-<h2 id="administrador-del-grupo">Administrador del grupo.<a class="headerlink" href="#administrador-del-grupo" title="Permanent link">¶</a></h2>
-<ul>
-<li>
-<p>Es recomendable agregar un administrador por grupo:</p>
-<p>⚡ Esto quita trabajo a los administradores del dominio para agregar/eliminar usuarios del grupo.</p>
-<p>⚡ Habitualmente el administrador suele ser el jefe del departamento.</p>
-</li>
-</ul>
-<figure>
-  <img src="imagenes/win/52.png" width="900">
-</figure>
-
-<h2 id="membresia">Membresía.<a class="headerlink" href="#membresia" title="Permanent link">¶</a></h2>
-<p>A parte de que a un grupo pertenezcan varios usuarios tamnbién podemos hacer que <ins class="critic"><strong>un grupo pertenezca a otro grupo</strong></ins>, esto permite una mejor organización.</p>
-<div class="admonition tip">
-<p class="admonition-title">Ejemplo: El grupo de profesores incluye a los grupos de "Informática", "Historia", "Lengua", etc.</p>
-</div>
-<figure>
-  <img src="imagenes/win/51.png" width="900">
-</figure>
-
-<h2 id="estrategia-agdlp">Estrategia AGDLP.<a class="headerlink" href="#estrategia-agdlp" title="Permanent link">¶</a></h2>
-<p>Cuando tenemos entornos grandes con varios subdominios o incluso dominios con relaciones de confianza se usa la estrategia AGDLP para ayudar con la organización y gestión de los grupos.</p>
-<ul>
-<li>
-<p>Sigue las siguiente estrategia.</p>
-<p>⚡ Los grupos globales se componen de usuarios y representan <ins class="critic"><strong>roles</strong></ins>.</p>
-<p>⚡ Los grupos locales de dominio se componen de grupos y se asocian a los recursos.</p>
-</li>
-</ul>
-<h3 id="ejemplo">Ejemplo.<a class="headerlink" href="#ejemplo" title="Permanent link">¶</a></h3>
-<ul>
-<li>
-<p>Dado el recurso "Exámenes" creamos dos grupos locales de dominio (DL) uno <strong>DL_Lectura</strong> y otro <strong>DL_Escritura</strong>.</p>
-</li>
-<li>
-<p>Al grupo DL_Lectura asociamos el grupo global (GG) <strong>GG_Alumno_2H</strong>.</p>
-</li>
-<li>
-<p>Al grupo DL_Escritura asociamos el grupo global (GG) <strong>GG_Profesores_Informatica</strong>.</p>
-</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Ventaja.</p>
-<p>La principal ventaja es la gestión, ahora solo tenemos que preocuparnos de agregar grupos, no de ver qué permisos tiene cada grupo en un mismo recurso.</p>
-<p>Es mayor trabajo al principio, pues debemos crear más grupos, pero una vez establecido su gestión se hace más sencilla, especialmente en una empresa grande con muchos departamentos, personal, roles, etc.</p>
-</div>
-<h2 id="perfiles-de-contrasenas">Perfiles de contraseñas.<a class="headerlink" href="#perfiles-de-contrasenas" title="Permanent link">¶</a></h2>
-<ul>
-<li>
-<p>Podemos generar perfiles de contraseñas y asociarlas a grupos para que cumplan:</p>
-<p>⚡ Longitud mínima de caractéres.</p>
-<p>⚡ Uso de mayúsculas, números, símbolos.</p>
-<p>⚡ No contener tu nombre de usuario.</p>
-</li>
-</ul>
-<figure>
-  <img src="imagenes/win/53.png" width="900">
-</figure>
-
-<h2 id="video-explicativo">Vídeo Explicativo.<a class="headerlink" href="#video-explicativo" title="Permanent link">¶</a></h2>
-<center>
-
-<iframe width="1335" height="751" src="https://www.youtube.com/embed/wqE7pB36Ueg" title="Grupos en Windows Server 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-</center></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-ADGroup</span> <span class="n">-Filter</span> <span class="p">*</span> <span class="n">-Properties</span> <span class="n">Members</span> <span class="p">|</span>
+<span class="nb">Where-Object</span> <span class="p">{</span> <span class="o">-not</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Members</span> <span class="p">}</span> <span class="p">|</span>
+<span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">DistinguishedName</span>
+</code></pre></div></div>
 
 
 
