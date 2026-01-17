@@ -1061,6 +1061,8 @@
       
         
       
+        
+      
     
     
     
@@ -1214,6 +1216,29 @@
   
   
     <li class="md-nav__item">
+      <a href="40_PowerShell.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PowerShell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="30_NIC.html" class="md-nav__link">
         
   
@@ -1308,15 +1333,6 @@
       Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#video-explicativo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vídeo Explicativo.
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#raid-redundant-array-of-independent-disks" class="md-nav__link">
@@ -1713,48 +1729,34 @@
 <ul>
 <li>Nos permite tener nuestros datos separados de nuestro sistema operativo, de tal forma que si falla el sistema no perdemos nuestros datos a la hora de restaurarlo.</li>
 </ul>
-<p>En el siguiente vídeo se explica como añadir un disco a un sistema Windows Server.</p>
-<h2 id="video-explicativo">Vídeo Explicativo.<a class="headerlink" href="#video-explicativo" title="Permanent link">¶</a></h2>
-<center>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_SVvjlkspNM?si=wOxkYLiPf6hPLAyi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-</center>
-
 <h2 id="raid-redundant-array-of-independent-disks">RAID (Redundant Array of Independent Disks).<a class="headerlink" href="#raid-redundant-array-of-independent-disks" title="Permanent link">¶</a></h2>
 <ul>
 <li>
 <p>Combinación de varios discos independientes que funcionan como si fuera un único dispositivo de almacenamiento.</p>
 </li>
 <li>
-<p>Los datos pueden desglosarse en fragmentos, cada fragmento guardándose en un disco diferente de forma simultánea ➡️ mayor rendimiento.</p>
+<p>Los datos pueden desglosarse en fragmentos, cada fragmento guardándose en un disco diferente de forma simultánea ➡️ <strong>mayor rendimiento</strong>.</p>
 </li>
 <li>
-<p>Los datos pueden duplicarse en varios discos ➡️ redundancia.</p>
+<p>Los datos pueden duplicarse en varios discos ➡️ <strong>redundancia</strong>.</p>
 </li>
 <li>
-<p>Se puede establecer RAID mediante software o mediante hardware.</p>
+<p>Se puede establecer RAID mediante <strong>software o hardware</strong>.</p>
 </li>
 </ul>
-<center>
-!!! danger "Software RAID "
-    RAID gestionado por el sistema operativo. Consume recursos de la CPU.
-</center>
-
-<center>
-!!! danger "Hardware RAID"
-     Gestionado por una controladora (tarjeta RAID) que hace creer al sistema operativo que existe un único disco. 
-
-     Este método es más rápido que el software RAID y libera de carga de trabajo a la CPU. 
-
-    <figure>
-        <img src="imagenes/win/16.png" width="400">
-    </figure>
-
-    La controladora RAID se conecta a la placa base por PCIe y coniene puertos SATA para conectar los discos directamente a la controladora y no a la placa base.
-
-</center>
-
+<div class="admonition danger">
+<p class="admonition-title">Software RAID </p>
+<p>RAID gestionado por el sistema operativo. Consume recursos de la CPU.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Hardware RAID</p>
+<p>Gestionado por una controladora (tarjeta RAID) que hace creer al sistema operativo que existe un único disco. </p>
+<p>Este método es más rápido que el software RAID y libera de carga de trabajo a la CPU. </p>
+<p><figure>
+    <img src="imagenes/win/16.png" width="400">
+</figure></p>
+<p>La controladora RAID se conecta a la placa base por PCIe y coniene puertos SATA para conectar los discos directamente a la controladora y no a la placa base.</p>
+</div>
 <h2 id="tipos-de-raid">Tipos de RAID.<a class="headerlink" href="#tipos-de-raid" title="Permanent link">¶</a></h2>
 <h3 id="raid-0">RAID 0.<a class="headerlink" href="#raid-0" title="Permanent link">¶</a></h3>
 <ul>
@@ -1828,8 +1830,36 @@
 </figure>
 
 <h2 id="crear-raid-en-windows-server">Crear RAID en Windows Server.<a class="headerlink" href="#crear-raid-en-windows-server" title="Permanent link">¶</a></h2>
+<h3 id="configuracion-del-raid">Configuración del RAID.<a class="headerlink" href="#configuracion-del-raid" title="Permanent link">¶</a></h3>
+<ul>
+<li>Debemos acceder en el <strong>Administrador de Discos (Disk Management).</strong></li>
+</ul>
+<figure>
+    <img src="imagenes/win/57.png" width="1000">
+</figure>
+
+<ul>
+<li>
+<p>Al hacer botón derecho sobre uno de los discos de datos podremos ver las opciones:</p>
+<p>🔥 <strong>Volumen Simple</strong>: Es un volumen normal que se le asocia una letra para su acceso (D:).</p>
+<p>🔥 <strong>Volumen Distribuido</strong>: Se almacena un fichero en un disco y el siguiente fichero en otro disco. No es RAID, no tiene tolerancia a fallos.</p>
+<p>🔥 <strong>Volumen Seccionado</strong>: RAID 0.</p>
+<p>🔥 <strong>Volumen Reflejado</strong>: RAID 1</p>
+</li>
+</ul>
 <center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-J7sRtpJSM0?si=UB5OUaCqGL8FECSh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1335" height="751" src="https://www.youtube.com/embed/-J7sRtpJSM0" title="RAID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+
+<h3 id="creacion-de-los-discos-virtuales">Creación de los discos Virtuales.<a class="headerlink" href="#creacion-de-los-discos-virtuales" title="Permanent link">¶</a></h3>
+<h4 id="aws">AWS.<a class="headerlink" href="#aws" title="Permanent link">¶</a></h4>
+<center>
+<iframe width="1335" height="751" src="https://www.youtube.com/embed/Tfjyo5pEDqc" title="Volúmenes RAID Windows en  AWS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+
+<h4 id="virtualbox">VirtualBox.<a class="headerlink" href="#virtualbox" title="Permanent link">¶</a></h4>
+<center>
+<iframe width="1335" height="751" src="https://www.youtube.com/embed/_SVvjlkspNM" title="Añadir Disco Virtual al Servidor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </center></div>
 
 
