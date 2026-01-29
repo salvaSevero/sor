@@ -1063,6 +1063,8 @@
       
         
       
+        
+      
     
     
     
@@ -1381,6 +1383,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#anexo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anexo.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#video-explicativo" class="md-nav__link">
     <span class="md-ellipsis">
       Vídeo Explicativo.
@@ -1411,6 +1422,29 @@
   
   <span class="md-ellipsis">
     Equipos y Papelera
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="41_Impresoras.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Servidor de impresión
     
   </span>
   
@@ -1715,26 +1749,94 @@
 <p>➡️ Se crea una carpeta por cada usuario.</p>
 <p>➡️Se usa el uso del "$" para que no sea visible la carpeta compartida.</p>
 <figure>
-    <img src="imagenes/win/25.png" width="500">
+    <img src="imagenes/win/25.png" width="700">
 </figure>
 
 <h3 id="2-modificar-permisos">2. Modificar Permisos.<a class="headerlink" href="#2-modificar-permisos" title="Permanent link">¶</a></h3>
 <p>Modificar los permisos de la carpeta compartida para que los usuarios puedan realizar cambios en ella.</p>
+<div class="admonition important">
+<p class="admonition-title">Recuerda poner permisos de lectura/escritura a los usuarios del dominio.</p>
+</div>
 <figure>
-    <img src="imagenes/win/24.png" width="500">
+    <img src="imagenes/win/24.png" width="700">
 </figure>
 
 <h3 id="3-crear-gpo-de-redireccion">3. Crear GPO de redirección.<a class="headerlink" href="#3-crear-gpo-de-redireccion" title="Permanent link">¶</a></h3>
 <p>Crear una Directiva de Grupo (GPO) a nivel de usuario para redirigir las carpetas del cliente al recurso compartido.</p>
 <p>➡️ Por ejemplo podemos indicar que solo se sincronice la carpeta "Escritorio" del cliente en el servidor.</p>
+<div class="admonition tip">
+<p class="admonition-title">Si creais la directiva dentro de la carpeta SOR, solo afectará a los usuarios que hay dentro de esta carpeta.</p>
+</div>
 <figure>
-    <img src="imagenes/win/26.png" width="700">
+    <img src="imagenes/win/26.png" width="1200">
 </figure>
+
+<ul>
+<li>La opción marcada en la siguiente imagen permite que únicamente el propietario pueda accedera esa carpeta, evitando que incluso un administrador pueda acceder.</li>
+</ul>
+<figure>
+    <img src="imagenes/win/70.png" width="600">
+</figure>
+
+<h3 id="4-comprobar-que-efectivamente-se-ha-realizado-al-redireccion">4. Comprobar que efectivamente se ha realizado al redirección.<a class="headerlink" href="#4-comprobar-que-efectivamente-se-ha-realizado-al-redireccion" title="Permanent link">¶</a></h3>
+<h4 id="41-ver-que-el-escritorio">4.1 Ver que el Escritorio.<a class="headerlink" href="#41-ver-que-el-escritorio" title="Permanent link">¶</a></h4>
+<ul>
+<li>Iniciar sesión en un cliente del dominio con un usuario que se encuentre en "SOR" y ver la redirección en la carpeta del Escritorio.</li>
+</ul>
+<figure>
+    <img src="imagenes/win/71.png" width="600">
+</figure>
+
+<h4 id="42-comprobar-que-la-gpo-se-esta-aplicando">4.2 Comprobar que la GPO se está aplicando.<a class="headerlink" href="#42-comprobar-que-la-gpo-se-esta-aplicando" title="Permanent link">¶</a></h4>
+<ul>
+<li>Desde un PowerShell podemos comprobar si se está ejecutando la política con el comando <mark class="critic"><strong>gpresult /R</strong></mark></li>
+</ul>
+<figure>
+    <img src="imagenes/win/72.png" width="600">
+</figure>
+
+<h4 id="43-comprobar-la-carpeta-compartida">4.3 Comprobar la carpeta compartida.<a class="headerlink" href="#43-comprobar-la-carpeta-compartida" title="Permanent link">¶</a></h4>
+<ul>
+<li>Desde el servidor vamos a la carpeta compartida y vemos que se hayan creado los ficheros.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Para poder acceder a la carpeta de un tercero siendo administrador deberemos cambiar los permisos de dicha carpeta.</p>
+</div>
+<figure>
+    <img src="imagenes/win/73.png" width="600">
+</figure>
+
+<h2 id="anexo">Anexo.<a class="headerlink" href="#anexo" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p>No se puede aplicar GPOs directamente sobre la carpeta por defecto “Users”. Por ello es muy recomendable crear nuestros usuarios en nuestras propias Unidades Organizativas y no dejarlas en la carpeta “Users” por defecto.</p>
+</li>
+<li>
+<p>No es recomendable modificar el “Default Domain Policy” que afecta a todo el dominio.</p>
+</li>
+<li>
+<p>Si queréis aplicar los cambios en los equipos clientes sin necesidad de cerrar sesión, esperar o reiniciar, podemos forzar la actualización de las políticas mediante el comando “gpupdate /force”</p>
+</li>
+<li>
+<p>Con el comando “gpresult /R” podemos comprobar que GPOs se están aplicando en mi usuario.</p>
+</li>
+</ul>
+<h3 id="comandos-que-se-lanzan-desde-el-cliente">Comandos que se lanzan desde el cliente.<a class="headerlink" href="#comandos-que-se-lanzan-desde-el-cliente" title="Permanent link">¶</a></h3>
+<center>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Fuerza la sincronización de las GPOs.</span>
+gpupdate<span class="w"> </span>/force
+
+<span class="c1">##Comprueba las GPOs aplicadas.</span>
+gpresult<span class="w"> </span>/R
+</code></pre></div>
+
+</center>
 
 <h2 id="video-explicativo">Vídeo Explicativo.<a class="headerlink" href="#video-explicativo" title="Permanent link">¶</a></h2>
 <center>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hnLQlfdlmNw?si=CUdJz25cO8YOTpps" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1335" height="751" src="https://www.youtube.com/embed/hnLQlfdlmNw" title="Perfiles Móviles (Roaming Profile) Windows Server" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 </center></div>
 
