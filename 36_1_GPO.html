@@ -1452,6 +1452,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ejemplos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos de uso.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#niveles" class="md-nav__link">
     <span class="md-ellipsis">
       Niveles.
@@ -1470,36 +1479,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#video-explicativo" class="md-nav__link">
+  <a href="#filtros-de-seguridad" class="md-nav__link">
     <span class="md-ellipsis">
-      Vídeo Explicativo.
+      Filtros de Seguridad.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#herencia-en-las-gpos" class="md-nav__link">
+  <a href="#herencia" class="md-nav__link">
     <span class="md-ellipsis">
-      Herencia en las GPOs.
+      Herencia.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#carpeta-sysvol" class="md-nav__link">
+  <a href="#plantillas" class="md-nav__link">
     <span class="md-ellipsis">
-      Carpeta SYSVOL.
+      Plantillas.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#filtros-gpos" class="md-nav__link">
+  <a href="#video-explicativo-general" class="md-nav__link">
     <span class="md-ellipsis">
-      Filtros GPOs.
+      Vídeo Explicativo General.
     </span>
   </a>
   
@@ -1796,13 +1805,30 @@
 
 <div><h1 id="directivas-de-grupo-gpo">Directivas de Grupo (GPO).<a class="headerlink" href="#directivas-de-grupo-gpo" title="Permanent link">¶</a></h1>
 <p>Son <strong>políticas/normas/directivas</strong> que se pueden aplicar sobre <strong>usuarios/grupos/equipos</strong>.</p>
-<p>Ejemplos de uso:</p>
+<p>Se almacenan en la carpeta compartida <mark class="critic"><strong>SYSVOL</strong></mark>.</p>
+<figure>
+  <img src="imagenes/win/75.png" width="1000">
+</figure>
+
+<center>
+
+<iframe width="1335" height="751" src="https://www.youtube.com/embed/LnWI4vo0oTk" title="SYSVOL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</center>
+
+<h2 id="ejemplos-de-uso">Ejemplos de uso.<a class="headerlink" href="#ejemplos-de-uso" title="Permanent link">¶</a></h2>
 <ul>
 <li>
 <p>Limitar acceso de usuarios o grupos a ciertas unidades de disco.</p>
 </li>
 <li>
 <p>Limitar el tamaño máximo de ciertos archivos.</p>
+</li>
+<li>
+<p>Evitar que realicen instalaciones.</p>
+</li>
+<li>
+<p>Programar las actualizaciones a ciertas horas.</p>
 </li>
 </ul>
 <h2 id="niveles">Niveles.<a class="headerlink" href="#niveles" title="Permanent link">¶</a></h2>
@@ -1817,87 +1843,133 @@
 <li>
 <p><strong>Dominio</strong>: Afecta a todos los usuarios del dominio.</p>
 </li>
+<li>
+<p><strong>Unidad Organizativa</strong>: Afecta a todos los usuarios/equipos dentro de una OU.</p>
+</li>
 </ul>
 <figure>
-  <img src="imagenes/win/27.png" width="400">
+  <img src="imagenes/win/28.png" width="600">
 </figure>
 
 <ul>
-<li>Unidad Organizativa: Afecta a todos los usuarios/equipos dentro de una OU.</li>
+<li>Al crear una GPO se puede configurar para “Equipos” o “Usuarios”, el menú de ambos es muy parecido, pero las acciones dentro de dichos menús son diferentes.</li>
 </ul>
 <figure>
-  <img src="imagenes/win/28.png" width="400">
+  <img src="imagenes/win/29.png" width="600">
 </figure>
 
-<p>Al crear una GPO se puede configurar para “Equipos” o “Usuarios”, el menú de ambos es muy parecido, pero las acciones dentro de dichos menús son diferentes.</p>
+<ul>
+<li>Existe la posibilidad de añadir una política ya creada previamente (descargada de la web de Microsoft o de terceros).</li>
+</ul>
 <figure>
-  <img src="imagenes/win/29.png" width="400">
-</figure>
-
-<p>Existe la posibilidad de añadir una política ya creada previamente (descargada de la web de Microsoft o de terceros).</p>
-<figure>
-  <img src="imagenes/win/30.png" width="400">
+  <img src="imagenes/win/30.png" width="600">
 </figure>
 
 <h2 id="prioridades">Prioridades.<a class="headerlink" href="#prioridades" title="Permanent link">¶</a></h2>
-<p>En caso de que existan varias unidades organizativas puede suceder dos cosas:</p>
-<p>a. Las políticas se contradicen, en cuyo caso prevalece la de mayor prioridad (OU &gt; Dominio &gt; Sitio &gt; Local). En caso de que ambas GPO sean del mismo nivel, prevalecerá la más restrictiva.</p>
+<h3 id="gpos-de-diferente-nivel">GPOs de diferente Nivel.<a class="headerlink" href="#gpos-de-diferente-nivel" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>Si se contradicen prevalece la de mayor nivel <strong>OU &gt; Dominio &gt; Sitio &gt; Local</strong>.</p>
+</li>
+<li>
+<p>Si no se contradicen se unifican.</p>
+</li>
+</ul>
 <figure>
-  <img src="imagenes/win/31.png" width="400">
+  <img src="imagenes/win/31.png" width="600">
 </figure>
 
-<p>b.  Las políticas no se contradicen, en cuyo caso se unifican.</p>
+<h3 id="gpos-de-mismo-nivel">GPOs de mismo Nivel.<a class="headerlink" href="#gpos-de-mismo-nivel" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>En caso de que existan del mismo nivel, por ejemplo de OU, y se apliquen en carpetas diferentes, por ejemplo una en una carpeta padre y otra en la carpeta hijo:</p>
+<p>🔥 Si se contradicen prevalece la más específica, es decir si afecta a un usuario de la carpeta hijo, prevalecerá la GPO (UO) aplicada en dicha subcarpeta.</p>
+<p>🔥 Si no se contradicen se unifican.</p>
+</li>
+<li>
+<p>En caso de que sean GPOs del mismo nivel y aplicadas en la misma UO.</p>
+<p>🔥 Si hay contradicción prevalece la que esté forzada.</p>
+<p>🔥 Si no hay ninguna forzada prevalece la que mayor prioridad tenga (menor número de orden).</p>
+<p>🔥 Si no hay contradicción se unifican.</p>
+</li>
+</ul>
 <figure>
-  <img src="imagenes/win/32.png" width="400">
+  <img src="imagenes/win/77.png" width="900">
 </figure>
 
-<h2 id="video-explicativo">Vídeo Explicativo.<a class="headerlink" href="#video-explicativo" title="Permanent link">¶</a></h2>
+<ul>
+<li>Las políticas no se contradicen, en cuyo caso se unifican.</li>
+</ul>
+<h2 id="filtros-de-seguridad">Filtros de Seguridad.<a class="headerlink" href="#filtros-de-seguridad" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p>Podemos indicar a qué grupos / usuarios / equipos afectará la GPO.</p>
+</li>
+<li>
+<p>Podemos también indicar a quién no afectará dicha GPO.</p>
+</li>
+<li>
+<p>Los filtros WMI sirven para crear filtros específicos dependiendo de la arquitectura, si es de 32 o 64 bits.</p>
+</li>
+</ul>
+<figure>
+  <img src="imagenes/win/74.png" width="600">
+</figure>
+
 <center>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/58H4FgFWC8E?si=zMHjcPu9SSQ3oAEP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1335" height="751" src="https://www.youtube.com/embed/r58x4WdADZA" title="Filtros Seguridad GPO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 </center>
 
-<h2 id="herencia-en-las-gpos">Herencia en las GPOs.<a class="headerlink" href="#herencia-en-las-gpos" title="Permanent link">¶</a></h2>
+<h2 id="herencia">Herencia.<a class="headerlink" href="#herencia" title="Permanent link">¶</a></h2>
+<p>Las GPOs al igual que los permisos en los recursos compartidos se heredan.</p>
+<ul>
+<li>Podemos bloquear dicha herencia para que no herede las políticas.</li>
+</ul>
 <center>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/n51YdgVQ68Q?si=4yVtRYM9PwTPGXer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1335" height="751" src="https://www.youtube.com/embed/n51YdgVQ68Q" title="Herencia GPO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 </center>
 
-<h2 id="carpeta-sysvol">Carpeta SYSVOL.<a class="headerlink" href="#carpeta-sysvol" title="Permanent link">¶</a></h2>
+<h2 id="plantillas">Plantillas.<a class="headerlink" href="#plantillas" title="Permanent link">¶</a></h2>
+<p>Podemos generar plantillas, esto nos sirve para cuando queramos crear varias GPOs con una misma base.</p>
+<figure>
+  <img src="imagenes/win/76.png" width="1200">
+</figure>
+
+<div class="admonition tip">
+<p class="admonition-title">Ejemplo.</p>
+<p>Queremos crear políticas diferentes en la OU Alumnos, en la de Profesores y en la de Inspectores, pero todas las políticas tienen en común que las contraseñas deben ser de más de 12 caractéres, deben contener símbolos, etc...</p>
+<p>Crearíamos una plantilla con esas restricciones de contraseña y las GPOs que creasemos en las OUs (Alumnos, Profesores, Inspectores) se crearían partiendo de dicha plantilla.</p>
+</div>
+<h2 id="video-explicativo-general">Vídeo Explicativo General.<a class="headerlink" href="#video-explicativo-general" title="Permanent link">¶</a></h2>
 <center>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LnWI4vo0oTk?si=_ekCiN8T7gIrq39g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-</center>
-
-<h2 id="filtros-gpos">Filtros GPOs.<a class="headerlink" href="#filtros-gpos" title="Permanent link">¶</a></h2>
-<center>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/r58x4WdADZA?si=8g8zw_aCiO4UW24U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1335" height="751" src="https://www.youtube.com/embed/58H4FgFWC8E" title="GPO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 </center>
 
 <h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">¶</a></h2>
-<h3 id="bbloquear-la-consola-cmd-en-los-clientes">Bbloquear la consola (CMD) en los clientes.<a class="headerlink" href="#bbloquear-la-consola-cmd-en-los-clientes" title="Permanent link">¶</a></h3>
+<h3 id="bloquear-la-consola-cmd-en-los-clientes">Bloquear la consola (CMD) en los clientes.<a class="headerlink" href="#bloquear-la-consola-cmd-en-los-clientes" title="Permanent link">¶</a></h3>
 <figure>
-  <img src="imagenes/win/33.png" width="600">
+  <img src="imagenes/win/33.png" width="900">
 </figure>
 
-<h3 id="bbloquear-powershell-en-los-clientes">Bbloquear powershell en los clientes.<a class="headerlink" href="#bbloquear-powershell-en-los-clientes" title="Permanent link">¶</a></h3>
+<h3 id="bloquear-powershell-en-los-clientes">Bloquear powershell en los clientes.<a class="headerlink" href="#bloquear-powershell-en-los-clientes" title="Permanent link">¶</a></h3>
 <ol>
 <li>Sacamos la ruta absoluta del ejecutable:</li>
 </ol>
 <figure>
-  <img src="imagenes/win/35.png" width="500">
+  <img src="imagenes/win/35.png" width="800">
 </figure>
 
 <ol start="2">
 <li>Usamos la ruta absoluta para crear una directiva de software.</li>
 </ol>
 <figure>
-  <img src="imagenes/win/34.png" width="500">
+  <img src="imagenes/win/34.png" width="800">
 </figure>
 
 <h2 id="anexo">Anexo.<a class="headerlink" href="#anexo" title="Permanent link">¶</a></h2>
