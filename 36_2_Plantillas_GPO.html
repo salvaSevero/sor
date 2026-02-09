@@ -1733,43 +1733,26 @@
 
 <div><h1 id="templates-plantillas">Templates / Plantillas.<a class="headerlink" href="#templates-plantillas" title="Permanent link">¶</a></h1>
 <p>Existen ciertas plantillas (extensión .admx) que permiten incorporar nuevas configuraciones a las GPOs.</p>
-<p>Por ejemplo. Si queremos bloquear el uso de adobe flash en nuestro navegador Edge, tendremos que bajarnos y aplicar plantillas para que dichas opciones más específicas aparezcan.</p>
+<div class="admonition tip">
+<p class="admonition-title">Por ejemplo para ejecutar GPOs sobre el navegador Microsoft Edge.</p>
+</div>
 <h2 id="uso-de-plantillas">Uso de Plantillas.<a class="headerlink" href="#uso-de-plantillas" title="Permanent link">¶</a></h2>
 <h3 id="1-descargar-y-ejecutar-el-instalador-de-plantillas">1. Descargar y Ejecutar el instalador de plantillas.<a class="headerlink" href="#1-descargar-y-ejecutar-el-instalador-de-plantillas" title="Permanent link">¶</a></h3>
 <p>En este ejemplo vamos a usar un pack de plantillas de Microsoft.</p>
-<center>
-
-!!! info ""
-    [Descarga Plantillas Windows](recursos/PlantillasWindows.msi){:download="PlantillasWindows.msi"}
-
-</center>
-
+<div class="admonition info">
+<p><a download="recursos/PlantillasWindows.msi" href="recursos/PlantillasWindows.msi">Descarga Plantillas Windows 10</a></p>
+<p><a href="https://www.microsoft.com/en-us/edge/business/download?cs=3457492030&amp;form=MA13FJ">Descarga Plantillas Microsoft Edge</a></p>
+</div>
 <h3 id="2-esto-creara-las-plantillas-en-el-sistema">2. Esto creará las plantillas en el sistema.<a class="headerlink" href="#2-esto-creara-las-plantillas-en-el-sistema" title="Permanent link">¶</a></h3>
 <ul>
 <li>
-<p>En este ejemplo se guardan en "C:\Program Files (x86)\Microsoft Group Policy"</p>
+<p>En este ejemplo se guardan en "<strong>C:\Program Files (x86)\Microsoft Group Policy</strong>"</p>
 </li>
 <li>
-<p>Dentro encontraremos una carpeta "PolicyDefinitions" donde encontraremos las plantillas .admx y .adml según el idioma.</p>
+<p>Dentro encontraremos una carpeta "<strong>PolicyDefinitions</strong>" donde encontraremos las plantillas <strong>.admx y .adml</strong> según el idioma.</p>
 </li>
 </ul>
-<h3 id="3-incorporar-las-plantillas-al-sistema-de-gpos">3. Incorporar las plantillas al sistema de GPOs.<a class="headerlink" href="#3-incorporar-las-plantillas-al-sistema-de-gpos" title="Permanent link">¶</a></h3>
-<ul>
-<li>
-<p>La carpeta compartida por defecto "SYSVOL" almacena y comparte con los clientes todas las GPOs del sistema.</p>
-</li>
-<li>
-<p>Debemos copiar la carpeta PolicyDefinitions en ella. Se debe usar el mismo nombre.</p>
-</li>
-<li>
-<p>Podemos borrar u obviar las carpetas de idiomas excepto la del idioma que nos interesa (inglés/español).</p>
-</li>
-</ul>
-<figure>
-  <img src="imagenes/win/36.png" width="600">
-</figure>
-
-<h3 id="4-acceder-al-administrador-de-politicas-de-grupo">4. Acceder al Administrador de Políticas de Grupo.<a class="headerlink" href="#4-acceder-al-administrador-de-politicas-de-grupo" title="Permanent link">¶</a></h3>
+<h3 id="3-acceder-al-administrador-de-politicas-de-grupo">3. Acceder al Administrador de Políticas de Grupo.<a class="headerlink" href="#3-acceder-al-administrador-de-politicas-de-grupo" title="Permanent link">¶</a></h3>
 <ul>
 <li>Al "Editar" o "Crear" cualquier GPO ya tendremos toda las nuevas opciones dentro de "Plantillas Administrativas".</li>
 </ul>
