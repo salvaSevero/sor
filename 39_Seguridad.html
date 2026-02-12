@@ -1752,7 +1752,7 @@
 <p>Puede ejecutar un virus (keylogger, sniffer, ransomware) que ponga en un aprieto a todo el sistema.</p>
 </li>
 <li>
-<p>Es peor cuando los usuarios administradores son los mismso para muchos equipos locales, pues el atacante podría saltar fácilmente entre ellos.</p>
+<p>Es peor cuando los usuarios administradores son los mismos para muchos equipos locales, pues el atacante podría saltar fácilmente entre ellos.</p>
 </li>
 </ul>
 </li>
@@ -1760,17 +1760,17 @@
 <h3 id="comprobar-que-usuarios-pertenecen-a-un-grupo-local">Comprobar qué usuarios pertenecen a un grupo local.<a class="headerlink" href="#comprobar-que-usuarios-pertenecen-a-un-grupo-local" title="Permanent link">¶</a></h3>
 <p>Dentro de "Local Users and Groups" podemos ver los grupos locales del sistema y los usuarios que pertencen a él.</p>
 <figure>
-  <img src="imagenes/win/44.png" width="500">
+  <img src="imagenes/win/44.png" width="700">
 </figure>
 
 <h3 id="eliminar-todos-los-administradores-locales-de-los-equipos-del-dominio-mediante-una-gpo">Eliminar todos los administradores locales de los equipos del dominio mediante una GPO.<a class="headerlink" href="#eliminar-todos-los-administradores-locales-de-los-equipos-del-dominio-mediante-una-gpo" title="Permanent link">¶</a></h3>
 <p>Editamos una GPO y creamos una nueva política de grupos locales.</p>
 <figure>
-  <img src="imagenes/win/41.png" width="500">
+  <img src="imagenes/win/41.png" width="700">
 </figure>
 
 <figure>
-  <img src="imagenes/win/42.png" width="300">
+  <img src="imagenes/win/42.png" width="500">
 </figure>
 
 <p>Esta política va a realizar lo siguiente:</p>
@@ -1786,24 +1786,24 @@
 </li>
 </ul>
 <h2 id="gpos-recomendables">GPOs Recomendables.<a class="headerlink" href="#gpos-recomendables" title="Permanent link">¶</a></h2>
-<h3 id="1-bbloquear-la-consola-cmd-en-los-clientes">1. Bbloquear la consola (CMD) en los clientes.<a class="headerlink" href="#1-bbloquear-la-consola-cmd-en-los-clientes" title="Permanent link">¶</a></h3>
+<h3 id="1-bloquear-la-consola-cmd-en-los-clientes">1. Bloquear la consola (CMD) en los clientes.<a class="headerlink" href="#1-bloquear-la-consola-cmd-en-los-clientes" title="Permanent link">¶</a></h3>
 <figure>
-  <img src="imagenes/win/33.png" width="700">
+  <img src="imagenes/win/33.png" width="900">
 </figure>
 
-<h3 id="2-bbloquear-powershell-en-los-clientes">2. Bbloquear powershell en los clientes.<a class="headerlink" href="#2-bbloquear-powershell-en-los-clientes" title="Permanent link">¶</a></h3>
+<h3 id="2-bloquear-powershell-en-los-clientes">2. Bloquear powershell en los clientes.<a class="headerlink" href="#2-bloquear-powershell-en-los-clientes" title="Permanent link">¶</a></h3>
 <ol>
 <li>Sacamos la ruta absoluta del ejecutable:</li>
 </ol>
 <figure>
-  <img src="imagenes/win/35.png" width="700">
+  <img src="imagenes/win/35.png" width="900">
 </figure>
 
 <ol start="2">
 <li>Usamos la ruta absoluta para crear una directiva de software.</li>
 </ol>
 <figure>
-  <img src="imagenes/win/34.png" width="700">
+  <img src="imagenes/win/34.png" width="900">
 </figure>
 
 <h3 id="3-bloquear-el-acceso-al-panel-de-control">3. Bloquear el acceso al Panel de Control.<a class="headerlink" href="#3-bloquear-el-acceso-al-panel-de-control" title="Permanent link">¶</a></h3>
@@ -1826,7 +1826,7 @@
   <img src="imagenes/win/48.png" width="800">
 </figure>
 
-<h3 id="7-evitar-reincicios-de-equipos-por-actualizaciones">7. Evitar reincicios de equipos por actualizaciones.<a class="headerlink" href="#7-evitar-reincicios-de-equipos-por-actualizaciones" title="Permanent link">¶</a></h3>
+<h3 id="7-evitar-reinicios-de-equipos-por-actualizaciones">7. Evitar reinicios de equipos por actualizaciones.<a class="headerlink" href="#7-evitar-reinicios-de-equipos-por-actualizaciones" title="Permanent link">¶</a></h3>
 <p>Nos ayudará a impedir que mientras haya un usuaro registrado en el equipo se reinicie el equipo por una actualización.</p>
 <figure>
   <img src="imagenes/win/49.png" width="800">
