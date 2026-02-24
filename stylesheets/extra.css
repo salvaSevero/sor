@@ -1,7 +1,5 @@
-[data-md-color-scheme="javi"] {
-  --md-primary-fg-color:        #0077b6;
-  --md-primary-fg-color--light: #0077b6;
-  --md-primary-fg-color--dark:  #0077b6;
+[data-md-color-scheme="default"] {
+  --md-default-bg-color:               rgb(246, 241, 241); 
 }
 
 [data-md-color-scheme="slate"] {

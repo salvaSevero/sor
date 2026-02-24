@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/Anexo_SED.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/Anexo_CloudShellScript.html">
       
       
-        <link rel="prev" href="Anexo_ExpresionesRegulares.html">
+        <link rel="prev" href="Anexo_SED.html">
       
-      
-        <link rel="next" href="Anexo_CloudShellScript.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Comando SED - Sistemas Operativos en Red</title>
+        <title>Script Windows Server - Sistemas Operativos en Red</title>
       
     
     
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#comando-sed" class="md-skip">
+        <a href="#aws-cli" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -111,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Comando SED
+              Script Windows Server
             
           </span>
         </div>
@@ -1640,6 +1638,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="Anexo_SED.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comando SED
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1657,7 +1678,7 @@
   
   
   <span class="md-ellipsis">
-    Comando SED
+    Script Windows Server
     
   </span>
   
@@ -1665,12 +1686,12 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="Anexo_SED.html" class="md-nav__link md-nav__link--active">
+      <a href="Anexo_CloudShellScript.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Comando SED
+    Script Windows Server
     
   </span>
   
@@ -1693,45 +1714,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ejemplos" class="md-nav__link">
+  <a href="#objetivo" class="md-nav__link">
     <span class="md-ellipsis">
-      Ejemplos.
+      Objetivo.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#eliminar-coincidencias" class="md-nav__link">
+  <a href="#averiguar-cual-es-la-ultima-version-de-la-cual-dispone-aws" class="md-nav__link">
     <span class="md-ellipsis">
-      Eliminar Coincidencias.
+      Averiguar cuál es la última versión de la cual dispone AWS.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sustituir-elementos" class="md-nav__link">
+  <a href="#script-de-aws-cli" class="md-nav__link">
     <span class="md-ellipsis">
-      Sustituir elementos.
+      Script de AWS-CLI.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#anidar-varios-comandos-sed" class="md-nav__link">
+  <a href="#ejecutar-powershell-desde-aws-cli-ssm" class="md-nav__link">
     <span class="md-ellipsis">
-      Anidar varios comandos sed.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cambiar-el-contenido-de-un-fichero" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cambiar el contenido de un fichero.
+      Ejecutar PowerShell desde aws-cli (SSM).
     </span>
   </a>
   
@@ -1741,29 +1753,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Anexo_CloudShellScript.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Script Windows Server
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1792,151 +1781,298 @@
 
 
 
-<div><h1 id="comando-sed">Comando SED<a class="headerlink" href="#comando-sed" title="Permanent link">¶</a></h1>
-<ul>
-<li>SED (Stream Editor): Es un editor de texto en línea.</li>
-</ul>
-<div class="admonition danger">
-<p class="admonition-title">Estructura SED</p>
-<p></p><center>
-<strong>sed –n ‘/PATRÓN/’p “fichero”</strong>
-</center>
+<div><h1 id="aws-cli">AWS-CLI.<a class="headerlink" href="#aws-cli" title="Permanent link">¶</a></h1>
+<h2 id="objetivo">Objetivo.<a class="headerlink" href="#objetivo" title="Permanent link">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Vamos a crear una máquina EC2 con Windows Server e instalar el rol de AD, DNS, Impresión y de Compartición de Recursos.</p>
 </div>
+<p>La máquina EC2 tendrá las siguientes características:</p>
+<ul>
+<li><strong>Nombre</strong>: WindowsServerSOR </li>
+<li><strong>Tipo</strong>: t3.medium </li>
+<li><strong>Clave</strong>: vockey </li>
+<li><strong>Almacenamiento</strong>: 45GB (gp3) </li>
+<li>
+<p><strong>Seguridad</strong>: </p>
+<p>⚠️ Permitir el tráfico desde cualquier lugar del protocolo RDP.</p>
+<p>⚠️ Permitir todo tipo de tráfico proveniente de la red interna de aws (VPC). </p>
+</li>
+<li>
+<p><strong>IP Elástica</strong>.</p>
+</li>
+</ul>
+<h2 id="averiguar-cual-es-la-ultima-version-de-la-cual-dispone-aws">Averiguar cuál es la última versión de la cual dispone AWS.<a class="headerlink" href="#averiguar-cual-es-la-ultima-version-de-la-cual-dispone-aws" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>ssm<span class="w"> </span>get-parameters-by-path<span class="w"> </span>--path<span class="w"> </span>/aws/service/ami-windows-latest<span class="w"> </span>–query<span class="w"> </span><span class="s2">"Parameters[].Name"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>English<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Base
+</code></pre></div>
+<h2 id="script-de-aws-cli">Script de AWS-CLI.<a class="headerlink" href="#script-de-aws-cli" title="Permanent link">¶</a></h2>
+<p>El siguiente script:</p>
+<ul>
+<li>
+<p>Crea una EC2 de Windows Server.</p>
+</li>
+<li>
+<p>Modifica las opciones de DHCP para que los clientes tengan como DNS el servidor.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#Se detiene si el script detecta algún error.</span>
+<span class="nb">set</span> <span class="o">-</span><span class="n">e</span>
+<span class="c1">#Variables.</span>
+<span class="n">INSTANCE_NAME</span><span class="o">=</span><span class="s2">"WindowsServerSOR"</span>
+<span class="n">SG_NAME</span><span class="o">=</span><span class="s2">"WindowsServerSOR-SG"</span>
+<span class="n">KEY_NAME</span><span class="o">=</span><span class="s2">"vockey"</span>
+<span class="n">INSTANCE_TYPE</span><span class="o">=</span><span class="s2">"t3.medium"</span>
+
+<span class="n">echo</span> <span class="s2">"Obteniendo VPC por defecto..."</span>
+
+<span class="n">VPC_ID</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ec2</span> <span class="n">describe</span><span class="o">-</span><span class="n">vpcs</span> \
+  <span class="o">--</span><span class="n">filters</span> <span class="n">Name</span><span class="o">=</span><span class="n">isDefault</span><span class="p">,</span><span class="n">Values</span><span class="o">=</span><span class="n">true</span> \
+  <span class="o">--</span><span class="n">query</span> <span class="s2">"Vpcs[0].VpcId"</span> \
+  <span class="o">--</span><span class="n">output</span> <span class="n">text</span><span class="p">)</span>
+<span class="c1">#Obtiene el CIDR de la red para aplicarlo en el grupo de seguridad.</span>
+<span class="n">VPC_CIDR</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ec2</span> <span class="n">describe</span><span class="o">-</span><span class="n">vpcs</span> \
+  <span class="o">--</span><span class="n">vpc</span><span class="o">-</span><span class="n">ids</span> <span class="err">$</span><span class="n">VPC_ID</span> \
+  <span class="o">--</span><span class="n">query</span> <span class="s2">"Vpcs[0].CidrBlock"</span> \
+  <span class="o">--</span><span class="n">output</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="n">echo</span> <span class="s2">"VPC: $VPC_ID"</span>
+<span class="n">echo</span> <span class="s2">"CIDR: $VPC_CIDR"</span>
+
+<span class="n">echo</span> <span class="s2">"Obteniendo última AMI Windows Server 2025..."</span>
+
+<span class="n">AMI_ID</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ssm</span> <span class="n">get</span><span class="o">-</span><span class="n">parameters</span> \
+  <span class="o">--</span><span class="n">names</span> <span class="o">/</span><span class="n">aws</span><span class="o">/</span><span class="n">service</span><span class="o">/</span><span class="n">ami</span><span class="o">-</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="o">/</span><span class="n">Windows_Server</span><span class="o">-</span><span class="mi">2025</span><span class="o">-</span><span class="n">English</span><span class="o">-</span><span class="n">Full</span><span class="o">-</span><span class="n">Base</span> \
+  <span class="o">--</span><span class="n">query</span> <span class="s2">"Parameters[0].Value"</span> \
+  <span class="o">--</span><span class="n">output</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="n">echo</span> <span class="s2">"AMI: $AMI_ID"</span>
+
+<span class="n">echo</span> <span class="s2">"Comprobando si existe el Security Group..."</span>
+
+<span class="n">SG_ID</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ec2</span> <span class="n">describe</span><span class="o">-</span><span class="n">security</span><span class="o">-</span><span class="n">groups</span> \
+  <span class="o">--</span><span class="n">filters</span> <span class="n">Name</span><span class="o">=</span><span class="n">group</span><span class="o">-</span><span class="n">name</span><span class="p">,</span><span class="n">Values</span><span class="o">=</span><span class="err">$</span><span class="n">SG_NAME</span> <span class="n">Name</span><span class="o">=</span><span class="n">vpc</span><span class="o">-</span><span class="nb">id</span><span class="p">,</span><span class="n">Values</span><span class="o">=</span><span class="err">$</span><span class="n">VPC_ID</span> \
+  <span class="o">--</span><span class="n">query</span> <span class="s2">"SecurityGroups[0].GroupId"</span> \
+  <span class="o">--</span><span class="n">output</span> <span class="n">text</span> <span class="mi">2</span><span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">[</span> <span class="s2">"$SG_ID"</span> <span class="o">!=</span> <span class="s2">"None"</span> <span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="p">[</span> <span class="o">-</span><span class="n">n</span> <span class="s2">"$SG_ID"</span> <span class="p">];</span> <span class="n">then</span>
+  <span class="n">echo</span> <span class="s2">"El Security Group ya existe: $SG_ID"</span>
+<span class="k">else</span>
+  <span class="n">echo</span> <span class="s2">"Creando Security Group..."</span>
+
+  <span class="n">SG_ID</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ec2</span> <span class="n">create</span><span class="o">-</span><span class="n">security</span><span class="o">-</span><span class="n">group</span> \
+    <span class="o">--</span><span class="n">group</span><span class="o">-</span><span class="n">name</span> <span class="err">$</span><span class="n">SG_NAME</span> \
+    <span class="o">--</span><span class="n">description</span> <span class="s2">"SG para $INSTANCE_NAME"</span> \
+    <span class="o">--</span><span class="n">vpc</span><span class="o">-</span><span class="nb">id</span> <span class="err">$</span><span class="n">VPC_ID</span> \
+    <span class="o">--</span><span class="n">query</span> <span class="s2">"GroupId"</span> \
+    <span class="o">--</span><span class="n">output</span> <span class="n">text</span><span class="p">)</span>
+
+  <span class="n">echo</span> <span class="s2">"Añadiendo reglas de seguridad..."</span>
+
+  <span class="c1"># RDP desde cualquier lugar</span>
+  <span class="n">aws</span> <span class="n">ec2</span> <span class="n">authorize</span><span class="o">-</span><span class="n">security</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">ingress</span> \
+    <span class="o">--</span><span class="n">group</span><span class="o">-</span><span class="nb">id</span> <span class="err">$</span><span class="n">SG_ID</span> \
+    <span class="o">--</span><span class="n">protocol</span> <span class="n">tcp</span> \
+    <span class="o">--</span><span class="n">port</span> <span class="mi">3389</span> \
+    <span class="o">--</span><span class="n">cidr</span> <span class="mf">0.0.0.0</span><span class="o">/</span><span class="mi">0</span>
+
+  <span class="c1"># Todo el tráfico dentro de la VPC</span>
+  <span class="n">aws</span> <span class="n">ec2</span> <span class="n">authorize</span><span class="o">-</span><span class="n">security</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">ingress</span> \
+    <span class="o">--</span><span class="n">group</span><span class="o">-</span><span class="nb">id</span> <span class="err">$</span><span class="n">SG_ID</span> \
+    <span class="o">--</span><span class="n">protocol</span> <span class="o">-</span><span class="mi">1</span> \
+    <span class="o">--</span><span class="n">cidr</span> <span class="err">$</span><span class="n">VPC_CIDR</span>
+
+  <span class="n">echo</span> <span class="s2">"Security Group creado: $SG_ID"</span>
+<span class="n">fi</span>
+
+<span class="n">echo</span> <span class="s2">"Lanzando instancia EC2..."</span>
+
+<span class="n">aws</span> <span class="n">ec2</span> <span class="n">run</span><span class="o">-</span><span class="n">instances</span> \
+  <span class="o">--</span><span class="n">image</span><span class="o">-</span><span class="nb">id</span> <span class="err">$</span><span class="n">AMI_ID</span> \
+  <span class="o">--</span><span class="n">instance</span><span class="o">-</span><span class="nb">type</span> <span class="err">$</span><span class="n">INSTANCE_TYPE</span> \
+  <span class="o">--</span><span class="n">key</span><span class="o">-</span><span class="n">name</span> <span class="err">$</span><span class="n">KEY_NAME</span> \
+  <span class="o">--</span><span class="n">security</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">ids</span> <span class="err">$</span><span class="n">SG_ID</span> \
+  <span class="o">--</span><span class="n">block</span><span class="o">-</span><span class="n">device</span><span class="o">-</span><span class="n">mappings</span> <span class="s1">'[{</span>
+      <span class="s2">"DeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sda1"</span><span class="p">,</span>
+      <span class="s2">"Ebs"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"VolumeSize"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+          <span class="s2">"VolumeType"</span><span class="p">:</span> <span class="s2">"gp3"</span><span class="p">,</span>
+          <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">true</span>
+      <span class="p">}</span>
+  <span class="p">}]</span><span class="s1">' </span><span class="se">\</span>
+<span class="s1">  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$INSTANCE_NAME}]" </span><span class="se">\</span>
+<span class="s1">  --associate-public-ip-address</span>
+<span class="n">echo</span> <span class="s2">"Esperando a que esté en estado running..."</span>
+
+<span class="n">aws</span> <span class="n">ec2</span> <span class="n">wait</span> <span class="n">instance</span><span class="o">-</span><span class="n">running</span> <span class="o">--</span><span class="n">instance</span><span class="o">-</span><span class="n">ids</span> <span class="err">$</span><span class="n">INSTANCE_ID</span>
+
+<span class="n">echo</span> <span class="s2">"Comprobando si ya tiene Elastic IP asociada..."</span>
+
+<span class="n">EXISTING_EIP</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ec2</span> <span class="n">describe</span><span class="o">-</span><span class="n">addresses</span> \
+  <span class="o">--</span><span class="n">filters</span> <span class="n">Name</span><span class="o">=</span><span class="n">instance</span><span class="o">-</span><span class="nb">id</span><span class="p">,</span><span class="n">Values</span><span class="o">=</span><span class="err">$</span><span class="n">INSTANCE_ID</span> \
+  <span class="o">--</span><span class="n">query</span> <span class="s2">"Addresses[0].PublicIp"</span> \
+  <span class="o">--</span><span class="n">output</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">[</span> <span class="s2">"$EXISTING_EIP"</span> <span class="o">!=</span> <span class="s2">"None"</span> <span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="p">[</span> <span class="o">-</span><span class="n">n</span> <span class="s2">"$EXISTING_EIP"</span> <span class="p">];</span> <span class="n">then</span>
+  <span class="n">echo</span> <span class="s2">"La instancia ya tiene Elastic IP: $EXISTING_EIP"</span>
+  <span class="n">PUBLIC_IP</span><span class="o">=</span><span class="err">$</span><span class="n">EXISTING_EIP</span>
+<span class="k">else</span>
+  <span class="n">echo</span> <span class="s2">"No tiene Elastic IP. Creando una nueva..."</span>
+
+  <span class="n">ALLOC_ID</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ec2</span> <span class="n">allocate</span><span class="o">-</span><span class="n">address</span> \
+    <span class="o">--</span><span class="n">domain</span> <span class="n">vpc</span> \
+    <span class="o">--</span><span class="n">query</span> <span class="s2">"AllocationId"</span> \
+    <span class="o">--</span><span class="n">output</span> <span class="n">text</span><span class="p">)</span>
+
+  <span class="n">aws</span> <span class="n">ec2</span> <span class="n">associate</span><span class="o">-</span><span class="n">address</span> \
+    <span class="o">--</span><span class="n">instance</span><span class="o">-</span><span class="nb">id</span> <span class="err">$</span><span class="n">INSTANCE_ID</span> \
+    <span class="o">--</span><span class="n">allocation</span><span class="o">-</span><span class="nb">id</span> <span class="err">$</span><span class="n">ALLOC_ID</span>
+
+  <span class="n">PUBLIC_IP</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ec2</span> <span class="n">describe</span><span class="o">-</span><span class="n">addresses</span> \
+    <span class="o">--</span><span class="n">allocation</span><span class="o">-</span><span class="n">ids</span> <span class="err">$</span><span class="n">ALLOC_ID</span> \
+    <span class="o">--</span><span class="n">query</span> <span class="s2">"Addresses[0].PublicIp"</span> \
+    <span class="o">--</span><span class="n">output</span> <span class="n">text</span><span class="p">)</span>
+
+  <span class="n">echo</span> <span class="s2">"Elastic IP creada y asociada: $PUBLIC_IP"</span>
+<span class="n">fi</span>
+<span class="n">echo</span> <span class="s2">"Creando nuevas DHCP Options..."</span>
+
+<span class="c1"># Comprobar si ya existe un DHCP Options Set con ese nombre</span>
+<span class="n">DHCP_ID</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ec2</span> <span class="n">describe</span><span class="o">-</span><span class="n">dhcp</span><span class="o">-</span><span class="n">options</span> \
+  <span class="o">--</span><span class="n">filters</span> <span class="n">Name</span><span class="o">=</span><span class="n">tag</span><span class="p">:</span><span class="n">Name</span><span class="p">,</span><span class="n">Values</span><span class="o">=</span><span class="n">sor</span><span class="o">-</span><span class="n">dhcp</span> \
+  <span class="o">--</span><span class="n">query</span> <span class="s2">"DhcpOptions[0].DhcpOptionsId"</span> \
+  <span class="o">--</span><span class="n">output</span> <span class="n">text</span> <span class="mi">2</span><span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">[</span> <span class="s2">"$DHCP_ID"</span> <span class="o">!=</span> <span class="s2">"None"</span> <span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="p">[</span> <span class="o">-</span><span class="n">n</span> <span class="s2">"$DHCP_ID"</span> <span class="p">];</span> <span class="n">then</span>
+  <span class="n">echo</span> <span class="s2">"DHCP Options ya existe: $DHCP_ID"</span>
+<span class="k">else</span>
+  <span class="n">echo</span> <span class="s2">"Creando DHCP Options sor-dhcp..."</span>
+
+  <span class="n">DHCP_ID</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ec2</span> <span class="n">create</span><span class="o">-</span><span class="n">dhcp</span><span class="o">-</span><span class="n">options</span> \
+    <span class="o">--</span><span class="n">dhcp</span><span class="o">-</span><span class="n">configurations</span> \
+      <span class="n">Key</span><span class="o">=</span><span class="n">domain</span><span class="o">-</span><span class="n">name</span><span class="p">,</span><span class="n">Values</span><span class="o">=</span><span class="n">sor</span><span class="o">.</span><span class="n">com</span> \
+      <span class="n">Key</span><span class="o">=</span><span class="n">domain</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="n">servers</span><span class="p">,</span><span class="n">Values</span><span class="o">=</span><span class="err">$</span><span class="n">PUBLIC_IP</span><span class="p">,</span><span class="mf">8.8.8.8</span> \
+    <span class="o">--</span><span class="n">query</span> <span class="s2">"DhcpOptions.DhcpOptionsId"</span> \
+    <span class="o">--</span><span class="n">output</span> <span class="n">text</span><span class="p">)</span>
+
+  <span class="c1"># Añadir tag Name=sor-dhcp</span>
+  <span class="n">aws</span> <span class="n">ec2</span> <span class="n">create</span><span class="o">-</span><span class="n">tags</span> \
+    <span class="o">--</span><span class="n">resources</span> <span class="err">$</span><span class="n">DHCP_ID</span> \
+    <span class="o">--</span><span class="n">tags</span> <span class="n">Key</span><span class="o">=</span><span class="n">Name</span><span class="p">,</span><span class="n">Value</span><span class="o">=</span><span class="n">sor</span><span class="o">-</span><span class="n">dhcp</span>
+
+  <span class="n">echo</span> <span class="s2">"DHCP Options creado: $DHCP_ID"</span>
+<span class="n">fi</span>
+
+<span class="n">echo</span> <span class="s2">"Asociando DHCP Options a la VPC..."</span>
+
+<span class="n">aws</span> <span class="n">ec2</span> <span class="n">associate</span><span class="o">-</span><span class="n">dhcp</span><span class="o">-</span><span class="n">options</span> \
+  <span class="o">--</span><span class="n">dhcp</span><span class="o">-</span><span class="n">options</span><span class="o">-</span><span class="nb">id</span> <span class="err">$</span><span class="n">DHCP_ID</span> \
+  <span class="o">--</span><span class="n">vpc</span><span class="o">-</span><span class="nb">id</span> <span class="err">$</span><span class="n">VPC_ID</span>
+
+<span class="n">echo</span> <span class="s2">"DHCP Options aplicado a la VPC $VPC_ID"</span>
+</code></pre></div>
+<h2 id="ejecutar-powershell-desde-aws-cli-ssm">Ejecutar PowerShell desde aws-cli (SSM).<a class="headerlink" href="#ejecutar-powershell-desde-aws-cli-ssm" title="Permanent link">¶</a></h2>
+<p>Vamos a activar los roles de Windows Server desde AWS-CLI.</p>
+<div class="admonition important">
+<p class="admonition-title">La manera correcta no es “inyectar” PowerShell por SSH/RDP, sino usar <ins class="critic">AWS Systems Manager (SSM)</ins>.</p>
+</div>
+<ul>
+<li>Con SSM puedes ejecutar comandos remotamente en Windows usando la función <ins class="critic"><strong>AWS-RunPowerShellScript</strong></ins>.</li>
+</ul>
+<h3 id="activar-el-labrole-en-el-servidor-windows-server">Activar el LabRole en el servidor Windows Server.<a class="headerlink" href="#activar-el-labrole-en-el-servidor-windows-server" title="Permanent link">¶</a></h3>
+<p>1️⃣ Modificamos Rol de la máquina servidora a LabRole.</p>
+<figure>
+<img src="imagenes/win/78.png" width="1200">
+</figure>
+
+<p>2️⃣ Conectamos mediante SSM.</p>
+<figure>
+<img src="imagenes/win/79.png" width="1000">
+</figure>
+
+<figure>
+<img src="imagenes/win/80.png" width="900">
+</figure>
+
+<p>3️⃣ Comprobación de que funciona desde CloudShell.</p>
+<div class="highlight"><pre><span></span><code><span class="n">aws</span> <span class="n">ssm</span> <span class="n">send</span><span class="o">-</span><span class="n">command</span>   <span class="o">--</span><span class="n">instance</span><span class="o">-</span><span class="n">ids</span> <span class="n">i</span><span class="o">-</span><span class="n">XXXXXXXXXXXXXXX</span>   <span class="o">--</span><span class="n">document</span><span class="o">-</span><span class="n">name</span> <span class="s2">"AWS-RunPowerShellScript"</span>   <span class="o">--</span><span class="n">parameters</span> <span class="n">commands</span><span class="o">=</span><span class="s2">"Get-Service"</span>
+</code></pre></div>
+<h3 id="cambiar-el-nombre-del-servidor">Cambiar el nombre del servidor.<a class="headerlink" href="#cambiar-el-nombre-del-servidor" title="Permanent link">¶</a></h3>
+<p>Antes de Instalar los roles vamos a cambiar el nombre del servidor.</p>
+<div class="admonition warning">
+<p class="admonition-title">Este cambio requiere un reinicio, por lo que no será instantáneo.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">COMMAND_ID</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ssm</span> <span class="n">send</span><span class="o">-</span><span class="n">command</span> \
+<span class="o">--</span><span class="n">instance</span><span class="o">-</span><span class="n">ids</span> <span class="n">i</span><span class="o">-</span><span class="n">XXXXXXXX</span> \
+<span class="o">--</span><span class="n">document</span><span class="o">-</span><span class="n">name</span> <span class="s2">"AWS-RunPowerShellScript"</span> \
+<span class="o">--</span><span class="n">parameters</span> <span class="s1">'commands=[</span>
+<span class="s2">"Rename-Computer -NewName </span><span class="se">\"</span><span class="s2">SORDC</span><span class="se">\"</span><span class="s2"> -Force -Restart"</span>
+<span class="p">]</span><span class="s1">' --query "Command.CommandId" --output text)</span>
+</code></pre></div>
+<h4 id="comprobacion">Comprobación.<a class="headerlink" href="#comprobacion" title="Permanent link">¶</a></h4>
+<ul>
+<li>Podemos comprobar si el comando SSM se ha terminado de ejecutar con éxito.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">aws</span> <span class="n">ssm</span> <span class="n">get</span><span class="o">-</span><span class="n">command</span><span class="o">-</span><span class="n">invocation</span> \
+  <span class="o">--</span><span class="n">command</span><span class="o">-</span><span class="nb">id</span> <span class="err">$</span><span class="n">COMMAND_ID</span> \
+  <span class="o">--</span><span class="n">instance</span><span class="o">-</span><span class="nb">id</span> <span class="n">i</span><span class="o">-</span><span class="n">XXXXXXXXXXXXXXXX</span>
+</code></pre></div>
+<ul>
+<li>Cuando el Response devuelva 0 ya podemos proseguir con el siguiente script.</li>
+</ul>
 <div class="center-table">
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Opción</th>
-<th style="text-align: left;"><center> Significado </center></th>
+<th style="text-align: center;">Estado</th>
+<th style="text-align: center;"><center> Código </center></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><code>–n</code></td>
-<td style="text-align: left;">No imprime el fichero por pantalla.</td>
+<td style="text-align: center;"><code>En proceso</code></td>
+<td style="text-align: center;">-1</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>p</code></td>
-<td style="text-align: left;">Busca el patrón en el fichero y lo imprime por pantalla.</td>
+<td style="text-align: center;"><code>Terminado</code></td>
+<td style="text-align: center;">0</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>/…/</code></td>
-<td style="text-align: left;">Para indicar que buscamos un patrón usamos las barras laterales. Sin barras se puede indicar una línea del fichero</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>d</code></td>
-<td style="text-align: left;">Muestra el fichero eliminando las líneas que coinciden con el patrón.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>s</code></td>
-<td style="text-align: left;">Sustituye un patrón1 por patrón2.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>g</code></td>
-<td style="text-align: left;">Hace que se sustituya en todas las coincidencias.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>-e</code></td>
-<td style="text-align: left;">Permite agrupar sustituciones una tras otra.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>&amp;</code></td>
-<td style="text-align: left;">Hace referencia a lo sustituido por el patrón.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>-i</code></td>
-<td style="text-align: left;">Modifica realmente el fichero.</td>
+<td style="text-align: center;"><code>Fallo</code></td>
+<td style="text-align: center;">Diferente de 0,-1</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="ejemplos">Ejemplos.<a class="headerlink" href="#ejemplos" title="Permanent link">¶</a></h2>
-<h3 id="selecciona-las-lineas-donde-encuentra-la-coincidencia-ubuntu">Selecciona las líneas donde encuentra la coincidencia “ubuntu”:<a class="headerlink" href="#selecciona-las-lineas-donde-encuentra-la-coincidencia-ubuntu" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'/ubuntu/'</span>p<span class="w"> </span>/etc/passwd
+<h3 id="insalar-los-roles">Insalar los roles.<a class="headerlink" href="#insalar-los-roles" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">COMMAND_ID</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ssm</span> <span class="n">send</span><span class="o">-</span><span class="n">command</span> \
+  <span class="o">--</span><span class="n">instance</span><span class="o">-</span><span class="n">ids</span> <span class="n">i</span><span class="o">-</span><span class="n">XXXXXXXXXXXXX</span> \
+  <span class="o">--</span><span class="n">document</span><span class="o">-</span><span class="n">name</span> <span class="s2">"AWS-RunPowerShellScript"</span> \
+  <span class="o">--</span><span class="n">comment</span> <span class="s2">"Instalación AD DS + DNS + File + Print"</span> \
+  <span class="o">--</span><span class="n">parameters</span> <span class="s1">'commands=[</span>
+<span class="s2">"$DomainName = </span><span class="se">\"</span><span class="s2">sor.local</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span>
+<span class="s2">"$NetbiosName = </span><span class="se">\"</span><span class="s2">SOR</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span>
+<span class="s2">"$SafeModePassword = ConvertTo-SecureString </span><span class="se">\"</span><span class="s2">P@ssw0rd123!</span><span class="se">\"</span><span class="s2"> -AsPlainText -Force"</span><span class="p">,</span>
+<span class="s2">"Install-WindowsFeature AD-Domain-Services -IncludeManagementTools"</span><span class="p">,</span>
+<span class="s2">"Install-WindowsFeature DNS -IncludeManagementTools"</span><span class="p">,</span>
+<span class="s2">"Install-WindowsFeature FS-FileServer"</span><span class="p">,</span>
+<span class="s2">"Install-WindowsFeature Print-Server"</span><span class="p">,</span>
+<span class="s2">"Install-ADDSForest -DomainName $DomainName -DomainNetbiosName $NetbiosName -SafeModeAdministratorPassword $SafeModePassword -InstallDNS -Force"</span>
+<span class="p">]</span><span class="s1">' --query "Command.CommandId" --output text)</span>
 </code></pre></div>
-<h3 id="selecciona-la-linea-1-fijate-que-al-ser-una-linea-no-lleva-barras">Selecciona la línea 1 (Fíjate que al ser una línea no lleva barras):<a class="headerlink" href="#selecciona-la-linea-1-fijate-que-al-ser-una-linea-no-lleva-barras" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'1'</span>p<span class="w"> </span>/etc/passwd
-</code></pre></div>
-<h3 id="seleccionar-de-la-linea-5-a-la-7">Seleccionar de la línea 5 a la 7:<a class="headerlink" href="#seleccionar-de-la-linea-5-a-la-7" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'5,7'</span>p<span class="w"> </span>/etc/passwd
-</code></pre></div>
-<h3 id="seleccionar-la-ultima-linea">Seleccionar la última línea:<a class="headerlink" href="#seleccionar-la-ultima-linea" title="Permanent link">¶</a></h3>
-<p>Muestra la última línea del fichero.</p>
-<p>La opción -n hace que no imprima el resto del fichero y la opción "p" que imprima la selección, en este caso la última línea.</p>
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'$'</span>p<span class="w"> </span>/etc/passwd
-</code></pre></div>
-<h3 id="selecciona-desde-que-detecta-el-patron-hasta-el-final-del-fichero">Selecciona desde que detecta el patrón hasta el final del fichero:<a class="headerlink" href="#selecciona-desde-que-detecta-el-patron-hasta-el-final-del-fichero" title="Permanent link">¶</a></h3>
-<p>El $ sin barras (//) hace referencia a la última línea.</p>
-<figure>
-  <img src="imagenes/scripts/69.png" width="800">
-</figure>
-
-<h2 id="eliminar-coincidencias">Eliminar Coincidencias.<a class="headerlink" href="#eliminar-coincidencias" title="Permanent link">¶</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Eliminar coincidencias SED</p>
-<p></p><center>
-<strong>sed  ‘/PATRÓN/d’ “fichero”</strong>
-</center>
-</div>
-<h3 id="elimina-la-primera-linea">Elimina la primera línea:<a class="headerlink" href="#elimina-la-primera-linea" title="Permanent link">¶</a></h3>
-<figure>
-  <img src="imagenes/scripts/70.png" width="600">
-</figure>
-
-<h2 id="sustituir-elementos">Sustituir elementos.<a class="headerlink" href="#sustituir-elementos" title="Permanent link">¶</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Sustituye coincidencias SED</p>
-<p></p><center>
-<strong>sed s’/Patrón1/Patrón2/’g</strong>
-</center>
-</div>
-<h3 id="ejemplo-sustituye-los-patrones-salva-por-mr-salva">Ejemplo: Sustituye los patrones salva por Mr. Salva.<a class="headerlink" href="#ejemplo-sustituye-los-patrones-salva-por-mr-salva" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>s<span class="s1">'/salva/Mr. Salva/'</span>g<span class="w"> </span>lista.txt
-</code></pre></div>
-<h3 id="ejemplo-cuando-encuentra-un-guion-borra-el-resto-de-la-linea">Ejemplo: Cuando encuentra  un guión borra el resto de la línea.<a class="headerlink" href="#ejemplo-cuando-encuentra-un-guion-borra-el-resto-de-la-linea" title="Permanent link">¶</a></h3>
-<p>Se elimina cualquier cosa (.*) que encuentre después de un guión.</p>
-<p>La salida del ejemplo sería "HOLA".</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"HOLA - QUÉ TAL???"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>s<span class="s1">'/-.*//'</span>g
-</code></pre></div>
-<h3 id="ejemplo-borra-los-comentarios">Ejemplo: Borra los comentarios.<a class="headerlink" href="#ejemplo-borra-los-comentarios" title="Permanent link">¶</a></h3>
-<p>El ".*" es una expresión regular que indica cualquier cadena de texto.</p>
-<p>Por tanto se sustituye cualquier cadena de texto precedida de un # por una cadena vacía, de ahí las dos barras //.</p>
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>s<span class="s1">'/#.*//'</span>g<span class="w"> </span>ejemplos.txt
-</code></pre></div>
-<h2 id="anidar-varios-comandos-sed">Anidar varios comandos sed.<a class="headerlink" href="#anidar-varios-comandos-sed" title="Permanent link">¶</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Sustituye múltiples coincidencias SED</p>
-<p></p><center>
-<strong>sed –e  s’/Patrón1/Patrón2/’g    –e     s’/Patrón1/Patrón2/’g</strong>
-</center>
-</div>
-<h3 id="ejemplo-anade-tras-cada-letra-minuscula-encontrada-posteriormente-al-final-de-linea-borra-los-ultimos">Ejemplo: Añade ":" tras cada letra minúscula encontrada, posteriormente al final de línea borra los últimos ":".<a class="headerlink" href="#ejemplo-anade-tras-cada-letra-minuscula-encontrada-posteriormente-al-final-de-linea-borra-los-ultimos" title="Permanent link">¶</a></h3>
+<h4 id="comprobacion_1">Comprobación.<a class="headerlink" href="#comprobacion_1" title="Permanent link">¶</a></h4>
 <ul>
-<li>Importante que el carácter especial “&amp;” hace referencia a lo sustituido en el patrón 1.</li>
+<li>Guardamos en una variable el ID del comando y consultamos su estado.</li>
 </ul>
-<figure>
-  <img src="imagenes/scripts/74.png" width="600">
-</figure>
+<div class="highlight"><pre><span></span><code><span class="n">COMMAND_ID</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">aws</span> <span class="n">ssm</span> <span class="n">send</span><span class="o">-</span><span class="n">command</span> <span class="o">...</span> <span class="o">--</span><span class="n">query</span> <span class="s2">"Command.CommandId"</span> <span class="o">--</span><span class="n">output</span> <span class="n">text</span><span class="p">)</span>
 
-<h2 id="cambiar-el-contenido-de-un-fichero">Cambiar el contenido de un fichero.<a class="headerlink" href="#cambiar-el-contenido-de-un-fichero" title="Permanent link">¶</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Sustituye coincidencias SED y actualiza el fichero</p>
-<p></p><center>
-<strong>sed -i  s’/Patrón1/Patrón2/’g</strong>
-</center>
-</div>
-<ul>
-<li>
-<p>Todos estos ejemplos <strong>NO</strong> cambian el fichero en sí, solo muestran la salida de cómo quedaría. </p>
-</li>
-<li>
-<p>Para cambiar el contenido usaremos la opción -i.</p>
-</li>
-</ul>
-<h3 id="reemplazamos-en-el-fichero-las-cadenas-de-texto-salva-por-salvador">Reemplazamos en el fichero las cadenas de texto salva por Salvador.<a class="headerlink" href="#reemplazamos-en-el-fichero-las-cadenas-de-texto-salva-por-salvador" title="Permanent link">¶</a></h3>
-<p>Recordad que si no usamos la opción -i nos muestra por pantalla como quedaría el fichero, pero NO lo cambia.</p>
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i<span class="w"> </span>s<span class="s1">'/salva/Salvador/'</span>g<span class="w"> </span>ejemplos.txt
-</code></pre></div></div>
+<span class="c1">#Consultar el estado.</span>
+<span class="n">aws</span> <span class="n">ssm</span> <span class="n">get</span><span class="o">-</span><span class="n">command</span><span class="o">-</span><span class="n">invocation</span> \
+  <span class="o">--</span><span class="n">command</span><span class="o">-</span><span class="nb">id</span> <span class="err">$</span><span class="n">COMMAND_ID</span> \
+  <span class="o">--</span><span class="n">instance</span><span class="o">-</span><span class="nb">id</span> <span class="n">i</span><span class="o">-</span><span class="n">XXXXXXXXXXXXXXX</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Recuerda que este proceso conlleva un reinicio y por tanto en algún momento puede devolver un Timeout.</p>
+</div></div>
 
 
 
