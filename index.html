@@ -1701,37 +1701,40 @@
 
 <div><h1 id="maquinas-virtuales-y-contenedores"><strong>Máquinas virtuales y Contenedores.</strong><a class="headerlink" href="#maquinas-virtuales-y-contenedores" title="Permanent link">¶</a></h1>
 <h2 id="que-es-la-virtualizacion"><strong>¿Qué es la virtualización?</strong><a class="headerlink" href="#que-es-la-virtualizacion" title="Permanent link">¶</a></h2>
-<p>Permite reservar una serie de recursos del sistema (RAM, CPU, DISCO) para emular un sistema operativo (guest  / invitado) dentro de otro (host / anfitrión).</p>
-<p><strong>Ventajas:</strong></p>
+<p>Permite reservar una serie de <ins class="critic"><strong>recursos del sistema (RAM, CPU, DISCO)</strong></ins> para emular un sistema operativo <mark class="critic"><strong>(guest  / invitado)</strong></mark> dentro de otro <mark class="critic"><strong>(host / anfitrión)</strong></mark>.</p>
 <ul>
-<li>Podemos aprovechar mejor el hardware de la máquina anfitriona, ya que estamos ejecutando varios "ordenadores" en uno mismo, aprovechando recursos que de otra forma es posible que no se llegaran a usar.</li>
-<li>Permite ejecutar software que quizá sea incompatible con tu sistema operativo anfitrión, ya sea por un motivo de versiones o porque son sistemas operativos diferentes (Windows, Linux, MAC).</li>
+<li>
+<p>Podemos aprovechar mejor el hardware, ejecutamos varias máquinas dentro de una, aprovechando los recursos (CPU, RAM, Disco) al máximo, ya que que de otra forma tendríamos que tener varios equipos físicos. </p>
+</li>
+<li>
+<p>Permite ejecutar software/aplicaciones incompatible con tu sistema operativo anfitrión, ya sea por un motivo de versiones o porque son sistemas operativos diferentes (Windows, Linux, MAC).</p>
+</li>
 </ul>
 <h2 id="que-es-un-hipervisor"><strong>¿Qué es un Hipervisor?</strong><a class="headerlink" href="#que-es-un-hipervisor" title="Permanent link">¶</a></h2>
-<p>El hipervisor es la parte software que permite crear y gestionar las máquinas virtuales (asignar recursos, crear los discos virtuales, etc). </p>
-<p>Se distinguen <strong>dos tipos</strong>:</p>
-<p><strong>Hipervisores de tipo 1</strong> (hipervisores bare metal):</p>
+<p>El hipervisor es el <strong>software que permite crear y gestionar las máquinas virtuales</strong> (asignar recursos, crear los discos virtuales, etc). </p>
+<p>Se distinguen <mark class="critic">dos tipos</mark>:</p>
+<h3 id="hipervisores-de-tipo-1-hipervisores-bare-metal">Hipervisores de tipo 1 (hipervisores bare metal):<a class="headerlink" href="#hipervisores-de-tipo-1-hipervisores-bare-metal" title="Permanent link">¶</a></h3>
 <ul>
 <li>
-<p>No necesitan de un sistema operativo anfitrión para comunicarse con los componentes del ordenador, por tanto la comunicación entre las máquinas virtuales y los componentes es más directa, rápida y eficiente. Es decir, si una máquina virtual necesita hacer una operación, se comunicará con el hipervisor y éste con la CPU. </p>
-</li>
-<li>
-<p>Ejemplos: VMWare ESXi, KVM, Hyper-V</p>
+<p>No necesitan del sistema operativo anfitrión para comunicarse con los componentes del ordenador, por tanto la comunicación entre las máquinas virtuales y los componentes es más directa, rápida y eficiente. Es decir, si una máquina virtual necesita hacer una operación, se comunicará con el hipervisor y éste con la CPU. </p>
+<p></p><div class="ejemplo">📌 Ejemplos: <strong>VMWare ESXi, KVM, Hyper-V</strong></div>
 </li>
 </ul>
-<p><strong>Hipervisores de tipo 2</strong> (hipervisores alojados):</p>
+<h3 id="hipervisores-de-tipo-2-hipervisores-alojados">Hipervisores de tipo 2 (hipervisores alojados):<a class="headerlink" href="#hipervisores-de-tipo-2-hipervisores-alojados" title="Permanent link">¶</a></h3>
 <ul>
 <li>
 <p>Son una aplicación más del sistema operativo instalado en la máquina y el hipervisor accede al hardware de la máquina a través de ese sistema operativo. Por tanto, si una máquina virtual requiere hacer una operación, pasará la orden al hipervisor, éste al sistema operativo y de ahí a la CPU.</p>
-</li>
-<li>
-<p>Ejemplos: VirtualBox y VMWare Workstation.</p>
+<p></p><div class="ejemplo">📌 Ejemplos: <strong>VirtualBox y VMWare Workstation</strong>.</div>
 </li>
 </ul>
 <figure>
   <img src="imagenes/docker/hypervisores.png" width="700">
 </figure>
 
+<details class="question">
+<summary>¿Cuál de los dos tipos es más eficiente?</summary>
+<p><strong>Son más rápidos y eficientes los hipervisores de tipo 1: VMWare ESXi, KVM, Hyper-V</strong></p>
+</details>
 <h2 id="que-es-un-contenedor"><strong>¿Qué es un Contenedor?</strong><a class="headerlink" href="#que-es-un-contenedor" title="Permanent link">¶</a></h2>
 <figure>
   <img src="imagenes/docker/contenedores.png" width="650">
@@ -1739,15 +1742,15 @@
 
 <ul>
 <li>
-<p>Los contenedores, a diferencia de las máquinas virtuales, comparten el kernel, archivos binarios y librerías del sistema operativo (anfitrión).</p>
-<p>💥 Por tanto un host Linux podrá crear contenedores relacionados con Linux, y un host Windows podrá crear contenedores Windows.</p>
+<p>Los contenedores, a diferencia de las máquinas virtuales, <ins class="critic"><strong>comparten el kernel del sistema operativo anfitrión</strong></ins> aunque cada contenedor puede incluir sus propias aplicaciones, binarios y librerías.</p>
+<p>💥 Al compartir el kernel un host Linux podrá crear contenedores relacionados con Linux (comparten mismo kernel), y un host Windows podrá crear contenedores Windows.</p>
 </li>
 </ul>
 <div class="admonition tip">
-<p class="admonition-title"><strong>NOTA</strong></p>
+<p class="admonition-title">NOTA IMPORTANTE</p>
 <ul>
 <li>Windows tiene la posibilidad de ejecutar contenedores Linux a través del aislamiento de Hyper-V (WSL). </li>
-<li>Básicamente activas un Kernel Linux en Windows y por tanto en Windows sí puedes generar contenedores de Linux.
+<li>Básicamente emulas un Kernel Linux en Windows y por tanto en Windows sí puedes generar contenedores de Linux.
 <figure>
     <img src="imagenes/docker/windows.png" width="550">
 </figure></li>
@@ -1755,28 +1758,83 @@
 </div>
 <ul>
 <li>
-<p>Cada contenedor ocupa mucho menos espacio, puesto que se ahorra todo los ficheros del sistema del sistema operativo que ahora recoge de la máquina anfitriona.</p>
+<p>Cada contenedor ocupa mucho <ins class="critic"><strong>menos espacio</strong></ins>, puesto que reutiliza ficheros del sistema del sistema operativo de la máquina anfitriona.</p>
 </li>
 <li>
-<p>Su objetivo no es simular un sistema operativo completo, sino un servicio/aplicación en concreto, por tanto aquí también se produce un ahorro de espacio en disco.</p>
-<p>💥 Aunque un único contenedor puede emular varios servicios/aplicaciones es habitual tener varios contenedores y cada uno que tenga únicamente corriendo 1 servicio/  aplicación y las dependencias que se necesitan para que éste funcione.</p>
+<p><ins class="critic"><strong>Arranque más rápido</strong></ins> que una máquina virtual, pues aprovecha los procesos y ficheros del sistema del anfitrión.</p>
 </li>
 <li>
-<p>Arranca mucho más rápido que una máquina virtual, pues utiliza los procesos y ficheros del sistema del anfitrión, el cual ya se encuentra arrancado.</p>
-</li>
-<li>
-<p>Docker es integrable con servicios en la nube:</p>
-<p>💥 <strong>AWS (Amazon Web Service).</strong></p>
-<p>💥 <strong>Azure (Microsoft).</strong></p>
-<p>💥 <strong>Google Cloud.</strong></p>
-</li>
-<li>
-<p>Docker es un software que permite la creación y gestión de contenedores. </p>
+<p><ins class="critic">Su objetivo es simular un <strong>servicio/aplicación</strong> no un sistema operativo completo</ins>.</p>
 </li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">AVISO</p>
+<p>Lo habitual es tener un contenedor por servicio y no usar un contenedor para todos los servicios.</p>
+</div>
+<h2 id="que-es-docker"><strong>¿Qué es Docker?</strong><a class="headerlink" href="#que-es-docker" title="Permanent link">¶</a></h2>
 <figure>
   <img src="imagenes/docker/docker.png" width="200">
-</figure></div>
+</figure>
+
+<ul>
+<li>
+<p><mark class="critic">Docker es un software que permite la <strong>creación y gestión de contenedores</strong></mark>. </p>
+</li>
+<li>
+<p>Compatible con Windows / Linux / MacOS.</p>
+</li>
+<li>
+<p>Integrable con servicios en la nube:</p>
+<p>💥 AWS (Amazon Web Service).</p>
+<p>💥 Azure (Microsoft).</p>
+<p>💥 Google Cloud.</p>
+</li>
+<li>
+<p>Existe el repositorio <a href="https://hub.docker.com/">dockerhub</a>  donde podemos subir nuestros contenedores personalizados o bajarnos contenedores de terceros.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Es importante descargar contenedores de proveedores fiables para evitar contenedores con malware.</p>
+</div>
+<h2 id="resumen"><strong>Resumen</strong><a class="headerlink" href="#resumen" title="Permanent link">¶</a></h2>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Característica</th>
+<th style="text-align: center;">Máquina virtual</th>
+<th style="text-align: center;">Contenedor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>¿Qué ejecuta?</strong></td>
+<td style="text-align: center;">Un sistema operativo completo</td>
+<td style="text-align: center;">Una aplicación o servicio</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Kernel</strong></td>
+<td style="text-align: center;">Cada VM tiene su propio kernel</td>
+<td style="text-align: center;">Comparte el kernel del sistema anfitrión</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Arranque</strong></td>
+<td style="text-align: center;">Más lento</td>
+<td style="text-align: center;">Muy rápido</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Consumo de recursos</strong></td>
+<td style="text-align: center;">Mayor</td>
+<td style="text-align: center;">Menor</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Uso típico</strong></td>
+<td style="text-align: center;">Servidores, laboratorios y ejecutar diferentes SO</td>
+<td style="text-align: center;">Servicios y aplicaciones</td>
+</tr>
+</tbody>
+</table>
+</div></div>
 
 
 

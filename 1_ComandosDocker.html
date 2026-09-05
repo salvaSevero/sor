@@ -405,9 +405,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#comandos" class="md-nav__link">
+  <a href="#comandos-basicos" class="md-nav__link">
     <span class="md-ellipsis">
-      Comandos.
+      Comandos Básicos.
     </span>
   </a>
   
@@ -426,6 +426,15 @@
   <a href="#como-trabajar-en-clasecasa-usando-docker" class="md-nav__link">
     <span class="md-ellipsis">
       ¿Cómo trabajar en clase/casa usando docker?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen
     </span>
   </a>
   
@@ -1777,103 +1786,75 @@
 
 
 <div><h1 id="comandos-basicos-en-docker">Comandos Básicos en Docker<a class="headerlink" href="#comandos-basicos-en-docker" title="Permanent link">¶</a></h1>
-<h2 id="comandos">Comandos.<a class="headerlink" href="#comandos" title="Permanent link">¶</a></h2>
-<p><strong>Crear un contenedor</strong></p>
-<div class="admonition danger">
+<h2 id="comandos-basicos">Comandos Básicos.<a class="headerlink" href="#comandos-basicos" title="Permanent link">¶</a></h2>
+<h3 id="crear-y-arrancar-un-contenedor">Crear y arrancar un contenedor.<a class="headerlink" href="#crear-y-arrancar-un-contenedor" title="Permanent link">¶</a></h3>
+<div class="admonition info">
 <p class="admonition-title">docker [ run | start | stop | restart ] [OPCIONES] [contenedor]</p>
 </div>
-<div class="center-table">
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Argumentos</th>
-<th style="text-align: left;"><center> Función </center></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>run</code></td>
-<td style="text-align: left;">Crea y arranca un contenedor --&gt; Si lo ejecutas varias veces ejecutas varios contenedores.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>start | stop |restart</code></td>
-<td style="text-align: left;">Arranca/Detiene/Reinicia un contenedor ya existente.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>-d</code></td>
-<td style="text-align: left;">Arranca en segundo plano.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>-p</code></td>
-<td style="text-align: left;">Traducción de puertos entre el contenedor y la máquina anfitriona. Solo se puede hacer a la hora de crear la máquina.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>--name</code></td>
-<td style="text-align: left;">Nombre de la máquina.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>-it</code></td>
-<td style="text-align: left;">Redirige la salida al terminal del contenedor, es decir, accedes al terminal del contenedor.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>
-<p>Si nos fijamos en la salida vemos que lo primero que hace es buscar la imagen “<strong>hello-world</strong>” en local, al no encontrarlo, lo descarga de un <strong>repositorio</strong> de docker y posteriormente lo ejecuta. </p>
-</li>
-<li>
-<p>Si lo ejecutáis una segunda vez el código ya se ejecutará directamente en local (<strong>/var/lib/docker/</strong>).</p>
-</li>
-<li>
-<p>También podemos apreciar que la imagen que se carga es “<strong>hello-world:latest</strong>”, es decir, la <strong>última versión</strong> de la imagen del contenedor.</p>
-</li>
-</ul>
+<div class="ejemplo"><strong>📌 docker run -d hello-world</strong></div>
+
 <figure>
   <img src="imagenes/docker/ejemplo_1.png" width="700">
 </figure>
 
-<p><strong>Muestra los contenedores del sistema</strong></p>
+<ul>
+<li>
+<p>Primero busca la imagen “<strong>hello-world</strong>” en local (tu ordenador), al no encontrarlo, lo descarga de un <strong>repositorio</strong> de docker (dockerhub). </p>
+</li>
+<li>
+<p>Si se ejecuta una segunda vez ya encontrará la imagen en local ya se ejecutará directamente. La imagen se guarda en (<strong>/var/lib/docker/</strong>).</p>
+</li>
+<li>
+<p>La etiqueta “<strong>hello-world:latest</strong>”, quiere decir que se está descargando la <strong>última versión</strong> de la imagen hello-world.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">La opción -d permite lanzar el contenedor en segundo plano y que quede funcionando. Sin dicha opción se crea el contenedor pero se detiene.</p>
+</div>
+<h3 id="muestra-los-contenedores-del-sistema"><strong>Muestra los contenedores del sistema</strong><a class="headerlink" href="#muestra-los-contenedores-del-sistema" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">docker ps [opciones]</p>
 <p>✨ Con <strong>–a</strong> se muestran todos los contenedores, los activos y los detenidos.</p>
 <p>✨ Una vez sabemos su “nombre” o su “ID” podemos arrancarlo/pararlo/reiniciarlo.</p>
+<p></p><div class="ejemplo">📌<strong>docker ps -a</strong></div>
 </div>
-<p><strong>Copiar o renombrar contenedores.</strong></p>
+<h3 id="renombrar-un-contenedor"><strong>Renombrar un contenedor</strong><a class="headerlink" href="#renombrar-un-contenedor" title="Permanent link">¶</a></h3>
 <div class="admonition info">
-<p class="admonition-title">docker [ cp | rename ] [contenedor]</p>
-<p>✨ Permite copiar ficheros del contenedor a la máquina anfitriona:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>cp<span class="w"> </span>NombreContendor:RutaOrigenFichero<span class="w"> </span>RutaDestinoFichero
-</code></pre></div>
+<p class="admonition-title">docker rename [Nombre Antiguo] [Nombre Nuevo]</p>
 </div>
-<p><strong>Ejecutar comandos dentro del contenedor</strong></p>
+<h3 id="copiar-un-ficherocarpeta-del-contenedor-a-la-maquina-anfitriona"><strong>Copiar un fichero/carpeta del contenedor a la máquina anfitriona</strong><a class="headerlink" href="#copiar-un-ficherocarpeta-del-contenedor-a-la-maquina-anfitriona" title="Permanent link">¶</a></h3>
+<div class="admonition info">
+<p class="admonition-title">docker cp [Fichero Origen] [Ruta Destino]</p>
+<p></p><div class="ejemplo"><strong>📌 docker cp miContenedor:/home/miFichero.txt /home/salva/miCopia.txt</strong></div>
+</div>
+<h3 id="ejecutar-comandos-dentro-del-contenedor"><strong>Ejecutar comandos dentro del contenedor</strong><a class="headerlink" href="#ejecutar-comandos-dentro-del-contenedor" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">docker exec [OPCIONES] NombreContenedor Comando [ArgumentosComando]</p>
-<p>✨ <strong>-d</strong>: Ejecuta en segundo plano.</p>
-<p>✨ <strong>-it</strong>: Enlaza la entrada y salida a nuestro terminal. Es como entrar al terminal del contenedor.</p>
+<p>✨ <strong>-it</strong>: Enlaza la entrada y salida a nuestro terminal.</p>
+<p>✨ En el siguiente ejemplo se ejecuta el comando "bash" lo que nos permite acceder a la consola del contenedor Salva.</p>
+<p></p><div class="ejemplo">📌<strong>docker exec -it Salva bash</strong></div>
 </div>
-<p><strong>Acceder a los logs de ejecución del contenedor.</strong></p>
-<div class="admonition info">
-<p class="admonition-title">docker logs [OPCIONES] NombreContenedor</p>
-</div>
-<p><strong>Elimina un contenedor.</strong></p>
+<h3 id="elimina-un-contenedor"><strong>Elimina un contenedor.</strong><a class="headerlink" href="#elimina-un-contenedor" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title"> docker container rm NombreContenedor</p>
 </div>
-<p><strong>Crear una imagen a partir de un contenedor</strong></p>
+<h3 id="crear-una-imagen-a-partir-de-un-contenedor"><strong>Crear una imagen a partir de un contenedor</strong><a class="headerlink" href="#crear-una-imagen-a-partir-de-un-contenedor" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">docker commit contenedor imagen</p>
 <p>✨Crear una imagen de un contenedor es la forma más sencilla para subir nuestro contenedor a la nube o para hacer un backup local.</p>
 </div>
+<h3 id="acceder-a-los-logs-de-ejecucion-del-contenedor"><strong>Acceder a los logs de ejecución del contenedor.</strong><a class="headerlink" href="#acceder-a-los-logs-de-ejecucion-del-contenedor" title="Permanent link">¶</a></h3>
+<div class="admonition info">
+<p class="admonition-title">docker logs [OPCIONES] NombreContenedor</p>
+</div>
 <h2 id="ejemplos-basicos-en-docker"><strong>Ejemplos Básicos en Docker</strong><a class="headerlink" href="#ejemplos-basicos-en-docker" title="Permanent link">¶</a></h2>
 <div class="admonition danger">
-<p class="admonition-title">Aviso</p>
-<p><strong>En los siguientes ejemplos el nombre del contenedor será Salva.</strong></p>
+<p class="admonition-title">En los siguientes ejemplos el nombre del contenedor será Salva.</p>
 </div>
 <ul>
 <li>Crear un contenedor nuevo con la última versión de Ubuntu.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>Salva<span class="w"> </span>ubuntu
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>Salva<span class="w"> </span>ubuntu
 </code></pre></div>
 <ul>
 <li>Acceder al contenedor haciendo uso del intérprete /bin/bash.</li>
@@ -1887,7 +1868,7 @@
 apt-get<span class="w"> </span>install<span class="w"> </span>nano<span class="w"> </span>iputils-ping<span class="w"> </span>net-tools<span class="w"> </span>iproute2
 </code></pre></div>
 <ul>
-<li>Detén el contenedor desde la máquina anfitriona.</li>
+<li>Detiene el contenedor desde la máquina anfitriona.</li>
 </ul>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>stop<span class="w"> </span>Salva
 </code></pre></div>
@@ -1902,7 +1883,7 @@ apt-get<span class="w"> </span>install<span class="w"> </span>nano<span class="w
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>cp<span class="w"> </span>Salva:/home/prueba.txt<span class="w"> </span>.
 </code></pre></div>
 <ul>
-<li>Crear una imagen del contendor.</li>
+<li>Crear una imagen del contendor llamada copiaContenedor.</li>
 </ul>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>commit<span class="w"> </span>Salva<span class="w"> </span>copiaContendor
 </code></pre></div>
@@ -1932,21 +1913,66 @@ docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </sp
 </center>
 
 <h3 id="opcion-2-pasar-el-contenedor-a-un-repositorio-privado-de-dockerhub">Opción 2: Pasar el contenedor a un repositorio privado de DockerHUB.<a class="headerlink" href="#opcion-2-pasar-el-contenedor-a-un-repositorio-privado-de-dockerhub" title="Permanent link">¶</a></h3>
+<p>Primero debemos crearnos <strong>un usuario y un repositorio privado</strong> en la plataforma <a href="https://hub.docker.com/">"Docker_hub"</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Nos registramos desde el terminal en docker hub.</span>
+docker<span class="w"> </span>login<span class="w"> </span>UsuarioDockerHUB
+
+<span class="c1"># Creamos la imagen ya asociada al repositorio de nuestro usuario.</span>
+docker<span class="w"> </span>commit<span class="w"> </span>NombreContenedor<span class="w"> </span>UsuarioDockerHUB/repositorio:nombre_imagen
+
+<span class="c1"># Subimos el contenedor a docker hub.</span>
+docker<span class="w"> </span>push<span class="w"> </span>UsuarioDockerHUB/repositorio:nombre_imagen
+</code></pre></div>
 <center>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/H67DulUqURg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 </center>
 
-<p>Resumen de los comandos:</p>
-<p>Antes de nada debemos habernos <strong>creado un usuario y un repositorio privado</strong> en la plataforma <a href="https://hub.docker.com/">"Docker_hub"</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Nos registramos desde el terminal en docker hub.</span>
-docker<span class="w"> </span>login<span class="w"> </span>UsuarioDockerHUB
-<span class="c1"># Creamos la imagen ya asociada al repositorio de nuestro usuario.</span>
-docker<span class="w"> </span>commit<span class="w"> </span>NombreContenedor<span class="w"> </span>UsuarioDockerHUB/repositorio:nombnre_imagen
-<span class="c1"># Subimos el contenedor a docker hub.</span>
-docker<span class="w"> </span>push<span class="w"> </span>UsuarioDockerHUB/repositorio:nombnre_imagen
-</code></pre></div></div>
+<div class="admonition tip">
+<p class="admonition-title">Si quisieramos descargarnos una imagen de nuestro repositorio: docker pull UsuarioDockerHUB/repositorio:nombre_imagen</p>
+</div>
+<h2 id="resumen"><strong>Resumen</strong><a class="headerlink" href="#resumen" title="Permanent link">¶</a></h2>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Argumentos</th>
+<th style="text-align: left;"><center> Función </center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>docker run -d --name NombreContenedor NombreImagen</strong></td>
+<td style="text-align: left;">Crea y arranca un contenedor --&gt; Si lo ejecutas varias veces ejecutas varios contenedores.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>docker start / stop / restart NombreContenedor</strong></td>
+<td style="text-align: left;">Arranca/Detiene/Reinicia un contenedor ya existente.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>docker exec -it NombreContenedor bash</strong></td>
+<td style="text-align: left;">Accedes a un terminal bash dentro del contenedor.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>docker ps -a</strong></td>
+<td style="text-align: left;">Ves todas los contenedores del sistema.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>docker cp NombreContenedor:/home/prueba.txt .</strong></td>
+<td style="text-align: left;">Copia del contendor a la máquina anfitriona.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>docker commit NombreContenedor NombreImagen</strong></td>
+<td style="text-align: left;">Crea una imagen de un contenedor.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>docker images</strong></td>
+<td style="text-align: left;">Muestra las imágenes de contenedores del sistema.</td>
+</tr>
+</tbody>
+</table>
+</div></div>
 
 
 
