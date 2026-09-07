@@ -288,3 +288,8 @@ ins, .critic {
 .md-typeset table tbody {
     font-size: 1.2em;
 }
+
+.md-typeset table:not([class]) {
+    margin-left: auto;
+    margin-right: auto;
+}

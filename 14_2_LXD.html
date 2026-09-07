@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/35_Equipos_Papelera.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/14_2_LXD.html">
       
       
-        <link rel="prev" href="34_PerfMovil.html">
+        <link rel="prev" href="16_EjemploDocker_WP.html">
       
       
-        <link rel="next" href="41_Impresoras.html">
+        <link rel="next" href="20_Vagrant.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Equipos y Papelera - Sistemas Operativos en Red</title>
+        <title>LXD - Sistemas Operativos en Red</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#equipos-y-papelera" class="md-skip">
+        <a href="#lxdincus-y-lxc" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Equipos y Papelera
+              LXD
             
           </span>
         </div>
@@ -231,8 +231,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -248,11 +250,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -268,7 +270,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             UD1. Virtualización
@@ -450,10 +452,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="14_2_LXD.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    LXD
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="14_2_LXD.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -464,6 +488,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lxc" class="md-nav__link">
+    <span class="md-ellipsis">
+      LXC.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lxdincus" class="md-nav__link">
+    <span class="md-ellipsis">
+      LXD\Incus.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lxc-vs-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      LXC vs Docker.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-lxd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de LXD.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combandos-basicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combandos Básicos.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1047,10 +1136,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1094,11 +1181,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -1114,7 +1201,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             UD4. Windows Server
@@ -1378,32 +1465,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Equipos y Papelera
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="35_Equipos_Papelera.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="35_Equipos_Papelera.html" class="md-nav__link">
         
   
   
@@ -1414,53 +1479,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#equipos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Equipos.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#papelera-de-reciclaje" class="md-nav__link">
-    <span class="md-ellipsis">
-      Papelera de Reciclaje.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#video-explicativo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vídeo Explicativo.
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1799,32 +1817,155 @@
 
 
 
-<div><h1 id="equipos-y-papelera">Equipos y Papelera.<a class="headerlink" href="#equipos-y-papelera" title="Permanent link">¶</a></h1>
-<h2 id="equipos">Equipos.<a class="headerlink" href="#equipos" title="Permanent link">¶</a></h2>
-<p>Cuando añadimos un equipo al dominio por defecto se introduce en el la unidad organizativa (OU) llamada "Computers".</p>
+<div><h1 id="lxdincus-y-lxc">LXD\Incus y LXC.<a class="headerlink" href="#lxdincus-y-lxc" title="Permanent link">¶</a></h1>
+<h2 id="lxc">LXC.<a class="headerlink" href="#lxc" title="Permanent link">¶</a></h2>
 <ul>
 <li>
-<p>Podemos mover el equipo manualmente mediante el botón derecho "Mover".</p>
+<p>LXC (Linux Containers) es una <strong>tecnología de contenedores</strong>, por tanto no necesita ejecutar un kernel independiente , se utiliza el kernel Linux del sistema anfitrión.</p>
 </li>
 <li>
-<p>Podemos modificar la carpeta por defecto donde se generan los nuevos equipos del dominio mediante powershell.</p>
+<p>No obstante trabajar directamente con LXC puede resultar relativamente complejo  y para ello existe LXD.</p>
 </li>
 </ul>
-<div class="admonition danger">
-<div class="highlight"><pre><span></span><code><span class="w">    </span>🌟<span class="w"> </span>redircmp<span class="w"> </span><span class="s2">"RUTA_LDAP_DESTINO"</span><span class="w"> </span>🌟
+<h2 id="lxdincus">LXD\Incus.<a class="headerlink" href="#lxdincus" title="Permanent link">¶</a></h2>
+<p>LXD es un <strong>gestor de contenedores</strong> construido sobre LXC:</p>
+<div class="highlight"><pre><span></span><code>    💥 Crear contenedores.
 
-<span class="w">    </span>Ejemplo:<span class="w"> </span><span class="s2">"redircmp "</span><span class="nv">OU</span><span class="o">=</span>Equipos,OU<span class="o">=</span>SOR,DC<span class="o">=</span>sor,DC<span class="o">=</span>com<span class="s2">"</span>
+    💥 Eliminar contenedores.
+
+    💥 Clonar contenedores.
+
+    💥 Crear instantáneas (snapshots).
+
+    💥 Gestionar imágenes.
+
+    💥 Administrar plantillas de contenedores.
 </code></pre></div>
+<figure>
+  <img src="imagenes/docker/1.png" width="300">
+</figure>
+
+<h2 id="lxc-vs-docker">LXC vs Docker.<a class="headerlink" href="#lxc-vs-docker" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p>LXC virtualiza un <strong>sistema completo</strong>, lo que hace más robusto para hacer tareas de administrador de sistemas o si es necesario combinar varios servicios (ssh, apache, gestión de usuarios, samba) dentro del mismo contenedor.</p>
+</li>
+<li>
+<p>Docker es más utilizado cuando queremos desplegar <strong>un único servicio o aplicación</strong> (un servicio web, un wordpress, una base de datos, etc).</p>
+</li>
+</ul>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Característica</th>
+<th style="text-align: center;">LXC</th>
+<th style="text-align: center;">Docker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Tipo</strong></td>
+<td style="text-align: center;">Contenedor de sistema</td>
+<td style="text-align: center;">Contenedor de aplicaciones</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Objetivo</strong></td>
+<td style="text-align: center;">Ejecutar un sistema Linux completo</td>
+<td style="text-align: center;">Ejecutar una aplicación y sus dependencias</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Init / servicios</strong></td>
+<td style="text-align: center;">Puede ejecutar systemd</td>
+<td style="text-align: center;">Normalmente ejecuta un proceso principal</td>
+</tr>
+</tbody>
+</table>
 </div>
-<h2 id="papelera-de-reciclaje">Papelera de Reciclaje.<a class="headerlink" href="#papelera-de-reciclaje" title="Permanent link">¶</a></h2>
-<p>Podemos activar una papelera de reciclaje que permitirá recuperar durante 30 días los equipos, usuarios y grupos eliminados.</p>
-<p>La carpeta se llama "Deleted Objects" y se activa en las propiedades del dominio a través del Centro de Administración de Active Directory".</p>
-<h2 id="video-explicativo">Vídeo Explicativo.<a class="headerlink" href="#video-explicativo" title="Permanent link">¶</a></h2>
-<center>
+<h4 id="ejemplo-de-uso-de-lxc">📌 <strong>Ejemplo de uso de LXC</strong>.<a class="headerlink" href="#ejemplo-de-uso-de-lxc" title="Permanent link">¶</a></h4>
+<figure>
+  <img src="imagenes/docker/2.png" width="450">
+</figure>
 
-<iframe width="1335" height="751" src="https://www.youtube.com/embed/etLc4zpyn5E" title="Equipos Y Papelera" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<h4 id="ejemplo-de-uso-de-docker">📌 <strong>Ejemplo de uso de Docker</strong>.<a class="headerlink" href="#ejemplo-de-uso-de-docker" title="Permanent link">¶</a></h4>
+<figure>
+  <img src="imagenes/docker/3.png" width="450">
+</figure>
 
-</center></div>
+<h2 id="instalacion-de-lxd">Instalación de LXD.<a class="headerlink" href="#instalacion-de-lxd" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>incus<span class="w"> </span>-y
+
+<span class="c1"># Es necesario añadir el usuario al grupo incus.</span>
+usermod<span class="w"> </span>XXXX<span class="w"> </span>-aG<span class="w"> </span>incus
+</code></pre></div>
+<h2 id="combandos-basicos">Combandos Básicos.<a class="headerlink" href="#combandos-basicos" title="Permanent link">¶</a></h2>
+<h3 id="crear-un-contenedor">Crear un contenedor.<a class="headerlink" href="#crear-un-contenedor" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">#Estamos creando un contenedor llamado cliente1 con una imagen de ubuntu24.04</span>
+incus<span class="w"> </span>launch<span class="w"> </span>images:ubuntu/24.04<span class="w"> </span>cliente1
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">¿Cómo sabemos qué imágenes podemos usar para crear un contenedor?</p>
+<p>Podemos ver las imágenes disponibles en <strong>https://images.linuxcontainers.org</strong> (incus remote list).</p>
+</div>
+<h3 id="listar-los-contenedores">Listar los contenedores.<a class="headerlink" href="#listar-los-contenedores" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>incus<span class="w"> </span>list
+</code></pre></div>
+<h3 id="parar-reiniciar-o-arrancar-un-contenedor">Parar, reiniciar o arrancar un contenedor.<a class="headerlink" href="#parar-reiniciar-o-arrancar-un-contenedor" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">#Parar:</span>
+incus<span class="w"> </span>stop<span class="w"> </span>cliente1
+
+<span class="c1">#Arrancar:</span>
+incus<span class="w"> </span>start<span class="w"> </span>cliente1
+
+<span class="c1">#Reiniciar:</span>
+incus<span class="w"> </span>restart<span class="w"> </span>cliente1
+
+<span class="c1">#Elimninar:</span>
+incus<span class="w"> </span>delete<span class="w"> </span>cliente1
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Si eliminamos un contenedor perderemos sus datos, no estarán almacenados en la máquina anfitriona.</p>
+</div>
+<h3 id="acceder-al-contenedor">Acceder al contenedor.<a class="headerlink" href="#acceder-al-contenedor" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">#Acceder al terminal como root del contenedor cliente1.</span>
+incus<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>cliente1<span class="w"> </span>--<span class="w"> </span>bash
+
+<span class="c1">#Acceder al terminal como un usuario previamente creado en el contenedor.</span>
+<span class="c1">#El usuario es alumno y el contenedor cliente1.</span>
+incus<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>cliente1<span class="w"> </span>--<span class="w"> </span>sudo<span class="w"> </span>-u<span class="w"> </span>alumno<span class="w"> </span>-i
+</code></pre></div>
+<h3 id="copiar-un-contenedor">Copiar un contenedor.<a class="headerlink" href="#copiar-un-contenedor" title="Permanent link">¶</a></h3>
+<ul>
+<li>Podemos hacer una copia entera de un contenedor.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>incus<span class="w"> </span>copy<span class="w"> </span>cliente1<span class="w"> </span>cliente2
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">¿Qué ocurre con la dirección IP?</p>
+<p>Si usamos DHCP no hay problema, pero si teníamos una IP fija configurada tendremos un problema de IP duplicada.</p>
+</div>
+<ul>
+<li>También se puede copiar un fichero de un contenedor a la máquina anfitriona.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">#Ejemplo donde me llevo el fichero index.html del contenedor cliente1 a mi directorio actual desde donde lanzo el comando.</span>
+incus<span class="w"> </span>file<span class="w"> </span>pull<span class="w"> </span>cliente1/var/www/html/index.html<span class="w"> </span>.
+
+<span class="c1">#Mismo ejemplo pero el destino es la carpeta /home/salva de la máquina anfitriona.</span>
+incus<span class="w"> </span>file<span class="w"> </span>pull<span class="w"> </span>cliente1/var/www/html/index.html<span class="w"> </span>/home/salva/
+</code></pre></div>
+<h3 id="exportar-e-importar-un-contenedor">Exportar e Importar un contenedor.<a class="headerlink" href="#exportar-e-importar-un-contenedor" title="Permanent link">¶</a></h3>
+<ul>
+<li>Si queremos llevarnos un contenedor a otro ordenador podemos hacer una copia en un fichero comprimido y subirlo a la nube o a un USB.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">#Cliente1 es el contenedor y cliente1.tar.gz es el fichero comprimido que podremos llevarnos a otro PC.</span>
+incus<span class="w"> </span><span class="nb">export</span><span class="w"> </span>cliente1<span class="w"> </span>cliente1.tar.gz
+</code></pre></div>
+<ul>
+<li>Si quisiéramos restaurar un contenedor a partir de un fichero comprimido.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>incus<span class="w"> </span>import<span class="w"> </span>cliente1.tar.gz
+</code></pre></div></div>
 
 
 
