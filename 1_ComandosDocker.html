@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/sor/1_ComandosDocker%20-%20Copy.html">
+        <link rel="canonical" href="https://salvasevero.github.io/sor/1_ComandosDocker.html">
       
       
+        <link rel="prev" href="0_MaquinasContenedores.html">
+      
+      
+        <link rel="next" href="15_DockerVolumenes.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Comandos Básicos en Docker - Sistemas Operativos en Red</title>
+        <title>Comandos Básicos Docker - Sistemas Operativos en Red</title>
       
     
     
@@ -107,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Comandos Básicos en Docker
+              Comandos Básicos Docker
             
           </span>
         </div>
@@ -227,8 +231,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -244,11 +250,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -264,7 +270,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             UD1. Virtualización
@@ -298,8 +304,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -315,11 +323,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
         
           
           <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
@@ -335,7 +343,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_2">
             <span class="md-nav__icon md-icon"></span>
             Docker
@@ -346,10 +354,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="1_ComandosDocker.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Comandos Básicos Docker
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="1_ComandosDocker.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -360,6 +390,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-basicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos Básicos.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-basicos-en-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos Básicos en Docker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-trabajar-en-clasecasa-usando-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Cómo trabajar en clase/casa usando docker?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1775,7 +1861,7 @@
 </div>
 <h3 id="elimina-un-contenedor"><strong>Elimina un contenedor.</strong><a class="headerlink" href="#elimina-un-contenedor" title="Permanent link">¶</a></h3>
 <div class="admonition info">
-<p class="admonition-title"> docker container rm NombreContenedor</p>
+<p class="admonition-title"> docker rm NombreContenedor</p>
 </div>
 <h3 id="crear-una-imagen-a-partir-de-un-contenedor"><strong>Crear una imagen a partir de un contenedor</strong><a class="headerlink" href="#crear-una-imagen-a-partir-de-un-contenedor" title="Permanent link">¶</a></h3>
 <div class="admonition info">
