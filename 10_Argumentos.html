@@ -1785,7 +1785,7 @@
 <p>Un argumento es un parámetros que se le pasa a una función o a un programa. Es decir, son variables de entrada. Puede haber más de uno o ninguno.</p>
 <div class="admonition danger">
 <p class="admonition-title">Script con argumentos</p>
-<p><strong>./script.sh arg1 arg2 arg3 … argN</strong></p>
+<p></p><center> <strong>./script.sh arg1 arg2 arg3 … argN</strong> </center>
 </div>
 <h3 id="ejemplo">Ejemplo:<a class="headerlink" href="#ejemplo" title="Permanent link">¶</a></h3>
 <p>Ejecutamos el mismo script con diferentes argumentos, dando salidas distintas.</p>
@@ -1798,22 +1798,22 @@
 <p>Se puede acceder al contenido de cada uno de los argumentos usando $X donde “X” es la posición del argumento (primero, segundo, tercero, ...).</p>
 </li>
 <li>
-<p>$0: Es el nombre del script → soyUnScript.sh.</p>
+<p><code>$0</code>: Es el nombre del script.</p>
 </li>
 <li>
-<p>$*: Una lista con todos los argumentos → salva 1010 "Salva Serrano" /home/Salva /bin/bash.</p>
+<p><code>$*</code>: Una lista con todos los argumentos.</p>
 </li>
 <li>
-<p>$#: Número de argumentos → 5.</p>
+<p><code>$#</code>: Número de argumentos.</p>
 </li>
 <li>
-<p>shift: Elimina el argumento uno ($1) y promueve una posición al resto de argumentos, es decir, lo que antes era $2 ahora será $1.</p>
+<p><code>shift</code>: Elimina el argumento uno ($1) y promueve una posición al resto de argumentos, es decir, lo que antes era $2 ahora será $1.</p>
 </li>
 </ul>
 <h3 id="ejemplo-1">Ejemplo 1.<a class="headerlink" href="#ejemplo-1" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Script con argumentos</p>
-<p><strong>./soyUnScript.sh salva 1010 "Salva Serrano" /home/Salva /bin/bash</strong></p>
+<p></p><center><strong>./soyUnScript.sh salva 1010 "Salva Serrano" /home/Salva /bin/bash</strong></center>
 </div>
 <div class="center-table">
 <table>
@@ -1864,7 +1864,7 @@
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Escapar carácteres especiales</p>
-<p><strong>./soyUnScript.sh 5 \* 10</strong></p>
+<p></p><center><strong>./soyUnScript.sh 5 \* 10</strong></center>
 </div>
 <h3 id="ejemplo-de">Ejemplo de $#.<a class="headerlink" href="#ejemplo-de" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">]</span>
