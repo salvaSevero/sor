@@ -1821,40 +1821,49 @@
 <tr>
 <th style="text-align: center;">Variable</th>
 <th style="text-align: left;"><center> Contenido </center></th>
+<th style="text-align: center;">Significado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: center;"><code>$0</code></td>
 <td style="text-align: left;">soyUnScript.sh</td>
+<td style="text-align: center;">Nombre/ruta con la que se ejecutó el script.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>$1</code></td>
 <td style="text-align: left;">salva</td>
+<td style="text-align: center;">Primer argumento.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>$2</code></td>
 <td style="text-align: left;">1010</td>
+<td style="text-align: center;">Segundo argumento.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>$3</code></td>
 <td style="text-align: left;">Salva Serrano</td>
+<td style="text-align: center;">Tercer argumento.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>$4</code></td>
 <td style="text-align: left;">/home/Salva</td>
+<td style="text-align: center;">Cuarto argumento.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>$5</code></td>
 <td style="text-align: left;">/bin/bash</td>
+<td style="text-align: center;">Quinto argumento.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>$*</code></td>
 <td style="text-align: left;">salva 1010 "Salva Serrano" /home/Salva /bin/bash</td>
+<td style="text-align: center;">Lista de argumentos.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>$#</code></td>
 <td style="text-align: left;">5</td>
+<td style="text-align: center;">Número de argumentos.</td>
 </tr>
 </tbody>
 </table>
@@ -1866,7 +1875,7 @@
 <p class="admonition-title">Escapar carácteres especiales</p>
 <p></p><center><strong>./soyUnScript.sh 5 \* 10</strong></center>
 </div>
-<h3 id="ejemplo-de">Ejemplo de $#.<a class="headerlink" href="#ejemplo-de" title="Permanent link">¶</a></h3>
+<h3 id="ejemplos-de">Ejemplos de $#.<a class="headerlink" href="#ejemplos-de" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
 <span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Se han insertado 3 argumentos."</span>
@@ -1875,9 +1884,19 @@
 <span class="k">fi</span>
 </code></pre></div>
 <figure>
-  <img src="imagenes/scripts/21.png" width="400">
+  <img src="imagenes/scripts/21.png" width="600">
 </figure>
 
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Uso: </span><span class="nv">$0</span><span class="s2"> usuario directorio"</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
+</code></pre></div>
+<details class="question">
+<summary>¿Para qué utiliza exit 1?</summary>
+<p>Para indicar  que el script ha finalizado en error, es lo que recoge $?</p>
+</details>
 <h3 id="ejemplo-shift">Ejemplo Shift.<a class="headerlink" href="#ejemplo-shift" title="Permanent link">¶</a></h3>
 <p>Se puede observar como $1 va a ir valiendo cada uno de los argumentos.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"El primer argumento es: </span><span class="nv">$1</span><span class="s2">"</span>
