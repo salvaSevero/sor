@@ -1823,19 +1823,19 @@
 <p>Permite recorrer una lista.</p>
 </li>
 <li>
-<p>Uso de “do” y “done” para crear la estructura.</p>
+<p>Uso de <code>do</code> y <code>done</code> para crear la estructura.</p>
 </li>
 <li>
-<p>Por defecto se interpreta como un objeto de la lista todo aquello que va separado por un espacio en blanco <mark class="critic"><strong>(IFS)</strong></mark>.</p>
+<p>Por defecto se interpreta como un objeto de la lista todo aquello que va separado por un espacio en blanco <code>(IFS)</code>.</p>
 </li>
 <li>
-<p>Usaremos una variable y en cada <mark class="critic">iteración</mark> dicha variable tendrá un valor de la lista.</p>
+<p>Usaremos una variable y en cada <code>iteración</code> dicha variable tendrá un valor de la lista.</p>
 </li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Iteración</p>
 <p></p><center>
-<strong>Se refiere a cada ejecución del bucle. La primera ejecución con el primer objeto de la lista es la primera iteración, la segunda vez será la segunda iteración, y así sucesivamente.</strong>
+Se refiere a cada ejecución del bucle. La primera ejecución con el primer objeto de la lista es la primera iteración, la segunda vez será la segunda iteración, y así sucesivamente.
 </center>
 </div>
 <h2 id="ejemplos-de-listas">Ejemplos de listas.<a class="headerlink" href="#ejemplos-de-listas" title="Permanent link">¶</a></h2>
@@ -1848,15 +1848,14 @@
 <span class="k">done</span>
 </code></pre></div>
 <figure>
-  <img src="imagenes/scripts/27.png" width="300">
+  <img src="imagenes/scripts/27.png" width="500">
 </figure>
 
 <h3 id="ejemplo-de-lista-usando-variables">Ejemplo de lista usando variables.<a class="headerlink" href="#ejemplo-de-lista-usando-variables" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nv">directorios</span><span class="o">=</span><span class="sb">`</span>ls<span class="sb">`</span>
-<span class="nv">iteracion</span><span class="o">=</span><span class="m">1</span>
-<span class="k">for</span><span class="w"> </span>nombres<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$directorios</span>
+<div class="highlight"><pre><span></span><code><span class="nv">iteracion</span><span class="o">=</span><span class="m">1</span>
+<span class="k">for</span><span class="w"> </span>argumento<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$*</span>
 <span class="k">do</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"El directorio en la iteracion </span><span class="nv">$iteracion</span><span class="s2"> es </span><span class="nv">$nombres</span><span class="s2">"</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"El argumento en la iteracion </span><span class="nv">$iteracion</span><span class="s2"> es </span><span class="nv">$argumento</span><span class="s2">"</span>
 <span class="w">        </span><span class="nb">let</span><span class="w"> </span><span class="nv">iteracion</span><span class="o">=</span>iteracion+1
 <span class="k">done</span>
 </code></pre></div>
@@ -1889,7 +1888,7 @@
 <span class="k">done</span>
 </code></pre></div>
 <figure>
-  <img src="imagenes/scripts/28.png" width="50">
+  <img src="imagenes/scripts/28.png" width="100">
 </figure>
 
 <h3 id="ejemplo-recorriendo-un-fichero-sin-espacios-en-blanco">Ejemplo recorriendo un fichero SIN espacios en blanco.<a class="headerlink" href="#ejemplo-recorriendo-un-fichero-sin-espacios-en-blanco" title="Permanent link">¶</a></h3>
@@ -1916,7 +1915,7 @@
 </div>
 <ul>
 <li>
-<p>El <strong>IFS</strong> es el <ins class="critic">separador por defecto del sistema</ins>.</p>
+<p>El <code>IFS</code> es el separador por defecto del sistema.</p>
 </li>
 <li>
 <p>Existe la variable de entorno $IFS que nos indica cuál es.</p>
@@ -1928,7 +1927,7 @@
 <p>Por defecto el IFS es el espacio en blanco, por esa razón cada objeto de una lista está separado por un espacio en blanco.</p>
 </li>
 </ul>
-<p>En el siguiente ejemplo cambiamos el IFS al salto de línea, de esta forma cada iteración coge una linea entera.</p>
+<h4 id="en-el-siguiente-ejemplo-cambiamos-el-ifs-al-salto-de-linea-de-esta-forma-cada-iteracion-coge-una-linea-entera">En el siguiente ejemplo cambiamos el IFS al salto de línea, de esta forma cada iteración coge una linea entera.<a class="headerlink" href="#en-el-siguiente-ejemplo-cambiamos-el-ifs-al-salto-de-linea-de-esta-forma-cada-iteracion-coge-una-linea-entera" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nv">IFS</span><span class="o">=</span><span class="s1">$'{\n}'</span>
 
 <span class="k">for</span><span class="w"> </span>linea<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>ls<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-s<span class="w"> </span><span class="s1">' '</span><span class="sb">`</span>
